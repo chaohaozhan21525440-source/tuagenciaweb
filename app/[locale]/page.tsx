@@ -1,10 +1,12 @@
-import { LocaleSwitcher } from "@/components/layout/LocaleSwitcher";
+import { setRequestLocale } from "next-intl/server";
+import { Hero } from "@/components/sections/Hero";
 
-export default function Home() {
+export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
-    <main className="container-page py-20">
-      <h1 className="text-4xl font-bold">Tuagenciaweb</h1>
-      <LocaleSwitcher />
+    <main>
+      <Hero />
     </main>
   );
 }
