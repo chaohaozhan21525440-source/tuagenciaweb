@@ -263,7 +263,7 @@ CTA: "Quiero la Tienda".
 | Mantenimiento mensual (actualizaciones + backups + soporte) | **39 €/mes** |
 | Página adicional | **89 €** |
 | Redacción de contenidos por página | **49 €** |
-| Traducción extra (idioma adicional) | **199 €** |
+| Traducción extra a otro idioma (sobre web ya entregada) | **desde 199 €** |
 | Optimización SEO técnica avanzada | **desde 249 €** |
 | Integraciones a medida (CRM, reservas, etc.) | **desde 149 €** |
 
@@ -341,7 +341,7 @@ NEXT_PUBLIC_SITE_URL=https://tuagenciaweb.es
 
 ## 11. Cumplimiento legal (RGPD / LSSI)
 
-- **Banner de cookies propio** (no Cookiebot): aceptar / rechazar / personalizar. Bloquea Vercel Analytics y cualquier analítica hasta el consentimiento. Persistencia en cookie de primera parte de 6 meses.
+- **Banner de cookies propio** (no Cookiebot): aceptar / rechazar / personalizar. Bloquea Vercel Analytics y cualquier analítica hasta el consentimiento. Persistencia del consentimiento en cookie de primera parte de 12 meses (alineado con guía AEPD).
 - **Aviso legal** (LSSI 34/2002): identidad del prestador, contacto, datos registrales. *Datos exactos pendientes de aportar (CIF/NIF, dirección, registro).*
 - **Política de privacidad** (RGPD): qué datos se recogen (formulario), base legal (consentimiento + interés legítimo), plazos, derechos ARCO+P, encargados (Vercel, Resend, Upstash).
 - **Política de cookies**: lista detallada de cookies usadas, propósito, duración, proveedor.
