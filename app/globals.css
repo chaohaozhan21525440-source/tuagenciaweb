@@ -27,19 +27,37 @@
 }
 
 @layer base {
-  html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
-    @apply font-sans; }
-  body { background: var(--color-canvas); color: var(--color-text-strong); font-family: var(--font-sans);
-    @apply bg-background text-foreground; }
-  ::selection { background: var(--color-accent); color: white; }
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    @apply font-sans;
+  }
+  body {
+    background: var(--color-canvas);
+    color: var(--color-text-strong);
+    font-family: var(--font-sans);
+    @apply bg-background text-foreground;
+  }
+  ::selection {
+    background: var(--color-accent);
+    color: white;
+  }
   * {
     @apply border-border outline-ring/50;
   }
 }
 
 @layer utilities {
-  .container-page { max-width: var(--container-max); margin-inline: auto; padding-inline: 1rem; }
-  @media (min-width: 768px) { .container-page { padding-inline: 2rem; } }
+  .container-page {
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+  @media (min-width: 768px) {
+    .container-page {
+      padding-inline: 2rem;
+    }
+  }
 }
 
 @theme inline {
