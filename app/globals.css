@@ -36,7 +36,6 @@
     background: var(--color-canvas);
     color: var(--color-text-strong);
     font-family: var(--font-sans);
-    @apply bg-background text-foreground;
   }
   ::selection {
     background: var(--color-accent);
