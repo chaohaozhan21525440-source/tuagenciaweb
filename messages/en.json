@@ -1,1 +1,168 @@
-{}
+{
+  "common": {
+    "brand": "Tuagenciaweb",
+    "tagline": "Professional websites for small businesses.",
+    "nav": {
+      "services": "Services",
+      "portfolio": "Portfolio",
+      "about": "About",
+      "blog": "Blog",
+      "contact": "Contact",
+      "cta": "Get a quote",
+      "languageToggle": "ES"
+    },
+    "footer": {
+      "tagline": "Professional websites for small businesses in Spain.",
+      "sections": { "navigate": "Navigation", "contact": "Contact", "legal": "Legal" },
+      "legalLine": "© 2026 Tuagenciaweb · VAT: pending · Built with Next.js",
+      "links": { "legalNotice": "Legal notice", "privacy": "Privacy", "cookies": "Cookies" }
+    },
+    "cookies": {
+      "title": "We use cookies",
+      "body": "We use first- and third-party cookies for anonymous analytics. You can accept, reject, or configure them.",
+      "accept": "Accept",
+      "reject": "Reject",
+      "configure": "Configure",
+      "save": "Save preferences",
+      "categories": {
+        "necessary": { "name": "Necessary", "desc": "Required for the site to work." },
+        "analytics": { "name": "Analytics", "desc": "Anonymous Vercel Analytics." }
+      }
+    },
+    "states": { "loading": "Loading…", "error": "Something went wrong. Try again.", "success": "Done." }
+  },
+  "home": {
+    "hero": {
+      "headline": "Professional websites for your business, ready in 2 weeks.",
+      "subheadline": "We design and build custom websites for small businesses. No lock-in. No surprises.",
+      "ctaPrimary": "Get a quote",
+      "ctaSecondary": "View portfolio",
+      "microcopy": "No lock-in · No surprises",
+      "badgeProjects": "30+ projects shipped"
+    },
+    "trust": { "title": "We work with", "sectors": ["Clinics", "Law firms", "Construction", "Hospitality"] },
+    "services": { "title": "Three ways to start", "subtitle": "Pick the pack that fits your project. No fine print.", "mostChosen": "Most chosen" },
+    "process": {
+      "title": "How we work",
+      "subtitle": "Start to launch: 14 business days.",
+      "steps": [
+        { "title": "Discovery", "body": "We call, understand your business, set goals." },
+        { "title": "Design", "body": "Custom mockups based on your brand and your clients." },
+        { "title": "Build", "body": "Built in Next.js, optimized for speed and SEO." },
+        { "title": "Launch", "body": "We publish, train you and stay close." }
+      ]
+    },
+    "portfolio": { "title": "Recent work", "subtitle": "Some of the projects we have shipped.", "cta": "View all projects" },
+    "differentiators": {
+      "title": "Why Tuagenciaweb",
+      "items": [
+        { "title": "Fast delivery", "body": "From kickoff to launch in 14 days." },
+        { "title": "SEO baked in", "body": "Schema, sitemap, Core Web Vitals." },
+        { "title": "Mobile-first", "body": "We design mobile first. That is where your clients are." },
+        { "title": "Direct support", "body": "You talk to whoever builds your site. No call centers." },
+        { "title": "No lock-in", "body": "You own the code from day one." },
+        { "title": "Clean code", "body": "Next.js + Tailwind. No bloated templates." }
+      ]
+    },
+    "testimonials": {
+      "title": "What our clients say",
+      "items": [
+        { "quote": "Calls went up 40% in the first month. The site looks like a much bigger company.", "author": "Marta Iglesias", "role": "Director, Iglesias Dental" },
+        { "quote": "Professional and fast. Delivered ahead of schedule.", "author": "Jorge Vilaró", "role": "Partner, Vilaró Lawyers" },
+        { "quote": "The site is very fast and Google ranks it well for my area.", "author": "Andrea Soto", "role": "Soto Construction" }
+      ]
+    },
+    "faq": {
+      "title": "Frequently asked",
+      "subtitle": "What people ask us most before starting.",
+      "items": [
+        { "q": "How much does a website cost?", "a": "From €590 for the Essential pack. See all three packs at /services." },
+        { "q": "How long does it take?", "a": "Between 7 and 21 business days depending on the pack. Average is 14." },
+        { "q": "Who owns the domain and the code?", "a": "You. We hand over credentials and the repository when we finish." },
+        { "q": "Is there any lock-in?", "a": "None. Monthly maintenance is optional." },
+        { "q": "Is hosting included?", "a": "Yes, the first year. From the second year onward it is ~€60/year at cost." },
+        { "q": "What if I don't like it?", "a": "Every pack includes revision rounds so we can adjust whatever you need." }
+      ]
+    },
+    "finalCta": { "title": "Ready for your new site?", "body": "Tell us about your project. We reply within 24h.", "ctaPrimary": "Get a quote", "ctaSecondary": "WhatsApp" }
+  },
+  "services": {
+    "hero": { "title": "Services and packs", "subtitle": "No fine print. No surprises. You decide how far we go." },
+    "compareTitle": "Pack comparison",
+    "extras": { "title": "Extra services à la carte", "subtitle": "When you need to go one step further." },
+    "faq": {
+      "title": "About the packs",
+      "items": [
+        { "q": "Can I mix packs?", "a": "Yes. You start with one and add extras when you need them." },
+        { "q": "Do you accept installments?", "a": "Yes, 50% at kickoff and 50% before launch." },
+        { "q": "What if I need something custom?", "a": "Tell us and we'll put together a fixed quote." }
+      ]
+    }
+  },
+  "portfolio": {
+    "hero": { "title": "Portfolio", "subtitle": "Some of the projects we have shipped." },
+    "filters": { "all": "All", "dental": "Clinics", "legal": "Law firms", "reforms": "Construction", "hospitality": "Hospitality" },
+    "comingSoon": "Coming soon",
+    "viewLive": "View site"
+  },
+  "about": {
+    "hero": { "title": "Honest websites for real businesses.", "subtitle": "We are a small agency focused on small and medium businesses." },
+    "story": { "title": "How we started", "body": "Tuagenciaweb was born after seeing too many abandoned, slow or ugly small business websites. We design every project from scratch, no templates, modern code." },
+    "method": { "title": "Our method" },
+    "commitments": {
+      "title": "Commitments",
+      "items": [
+        { "title": "Fixed timeline", "body": "We tell you when we deliver. If we miss it, we discount it." },
+        { "title": "You own everything", "body": "Domain, code, and data. No lock-in." },
+        { "title": "Transparency", "body": "We show you every step before moving on." },
+        { "title": "Real support", "body": "You talk to whoever codes your site." }
+      ]
+    },
+    "tech": { "title": "Tech we use" }
+  },
+  "blog": {
+    "hero": { "title": "Blog", "subtitle": "Ideas and guides on websites for small businesses." },
+    "readingTime": "{minutes} min read",
+    "related": "You may also like",
+    "ctaTitle": "Need a website?",
+    "ctaBody": "We reply within 24h.",
+    "ctaButton": "Get a quote"
+  },
+  "contact": {
+    "hero": { "title": "Let's talk", "subtitle": "Tell us about your project. We reply within 24h." },
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone (optional)",
+      "company": "Company (optional)",
+      "sector": "Sector",
+      "sectors": { "dental": "Dental clinic", "legal": "Law firm", "reforms": "Construction", "hospitality": "Hospitality", "ecommerce": "E-commerce", "other": "Other" },
+      "budget": "Budget range",
+      "budgets": { "lt1k": "Under €1,000", "b1_2k": "€1,000 – 2,000", "b2_5k": "€2,000 – 5,000", "gt5k": "Over €5,000" },
+      "message": "Tell us about your project",
+      "gdpr": "I have read the privacy policy and consent to the processing of my data.",
+      "submit": "Send",
+      "submitting": "Sending…",
+      "successTitle": "Message received",
+      "successBody": "We'll get back to you within 24 hours.",
+      "errorTitle": "Could not send",
+      "errorBody": "Try again in a minute or reach us on WhatsApp."
+    },
+    "channels": {
+      "title": "Or reach us via",
+      "whatsapp": "WhatsApp",
+      "email": "Email",
+      "phone": "Phone",
+      "schedule": "Hours",
+      "scheduleValue": "Mon-Fri · 9:00–19:00",
+      "location": "Online · All Spain"
+    }
+  },
+  "legal": {
+    "legalNotice": { "title": "Legal notice" },
+    "privacy": { "title": "Privacy policy" },
+    "cookies": { "title": "Cookie policy" },
+    "lastUpdated": "Last updated"
+  },
+  "notFound": { "title": "404", "subtitle": "This page moved or never existed.", "ctaHome": "Back to home", "ctaPortfolio": "View portfolio" }
+}
