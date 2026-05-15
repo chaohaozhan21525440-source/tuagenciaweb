@@ -71,11 +71,9 @@
   .hero-laptop { transform: scale(1.41); transform-origin: center; }
 }
 
-/* ===== Hero video: feather edges so the video's white frame bleeds into the page ===== */
-.hero-video {
-  -webkit-mask-image: radial-gradient(ellipse 92% 92% at 50% 50%, #000 58%, rgba(0,0,0,0.85) 72%, transparent 100%);
-          mask-image: radial-gradient(ellipse 92% 92% at 50% 50%, #000 58%, rgba(0,0,0,0.85) 72%, transparent 100%);
-}
+/* Hero video mask is applied inline on the <video> element to avoid Tailwind's
+   CSS minifier dropping the radial-gradient shape keyword (which silently breaks
+   the feathering on some browsers). See components/home/Hero.tsx. */
 
 /* ===== Mobile fixes (do not touch desktop) ===== */
 @media (max-width: 1023px) {

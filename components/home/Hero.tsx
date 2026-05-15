@@ -330,31 +330,31 @@ export function Hero() {
             transition={{ duration: 0.9, ease, delay: 0.25 }}
             className="hero-visual relative"
           >
-            {/* Soft brand halo — gives the video a glowing aura grounded in the page bg */}
+            {/* Soft brand halo — large blue aura behind the video, grounded in the page bg */}
             <div
               aria-hidden
-              className="pointer-events-none absolute -inset-10 -z-10 rounded-[48%]"
+              className="pointer-events-none absolute inset-[-15%] -z-10"
               style={{
                 background:
-                  "radial-gradient(closest-side, rgba(37,99,235,0.14), rgba(37,99,235,0.04) 55%, transparent 78%)",
-                filter: "blur(40px)",
+                  "radial-gradient(ellipse 55% 50% at 50% 50%, rgba(37,99,235,0.22), rgba(37,99,235,0.06) 50%, transparent 75%)",
+                filter: "blur(48px)",
               }}
             />
-            {/* Inner white-warm wash so the video's white background bleeds into the page */}
+            {/* Inner white wash so the video's white frame melts into the page */}
             <div
               aria-hidden
-              className="pointer-events-none absolute -inset-4 -z-10"
+              className="pointer-events-none absolute inset-[-6%] -z-10"
               style={{
                 background:
-                  "radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.95) 40%, rgba(255,255,255,0) 80%)",
-                filter: "blur(18px)",
+                  "radial-gradient(ellipse 60% 60% at 50% 50%, rgba(255,255,255,1) 35%, rgba(255,255,255,0.6) 60%, transparent 85%)",
+                filter: "blur(20px)",
               }}
             />
 
             {/* Video wrapper: drop-shadow follows the mask silhouette so it sheds the hard rectangle */}
             <div
               className="hero-video-shell relative"
-              style={{ filter: "drop-shadow(0 32px 50px rgba(10,23,51,0.14))" }}
+              style={{ filter: "drop-shadow(0 32px 50px rgba(10,23,51,0.12))" }}
             >
               <video
                 ref={videoRef}
@@ -365,6 +365,12 @@ export function Hero() {
                 playsInline
                 preload="auto"
                 aria-hidden
+                style={{
+                  WebkitMaskImage:
+                    "radial-gradient(ellipse 70% 78% at 50% 52%, rgba(0,0,0,1) 32%, rgba(0,0,0,0.85) 55%, rgba(0,0,0,0.35) 80%, rgba(0,0,0,0) 100%)",
+                  maskImage:
+                    "radial-gradient(ellipse 70% 78% at 50% 52%, rgba(0,0,0,1) 32%, rgba(0,0,0,0.85) 55%, rgba(0,0,0,0.35) 80%, rgba(0,0,0,0) 100%)",
+                }}
               >
                 <source src="/hero-video.mp4" type="video/mp4" />
               </video>
