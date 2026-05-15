@@ -93,11 +93,11 @@ Capa por capa (z-index ascendente):
 - **z-10 — Frame de laptop**: SVG inline o componente con shell de notebook (tres modos posibles: usar un asset SVG genérico tipo "Mac mockup" desde uigradients/figma export, o componer borde + esquinas redondeadas con HTML/CSS). La pantalla contiene la captura `dentistlab.png` con `object-cover`. Inclinación `-3deg`, shadow `0_40px_80px_-30px_rgba(15,23,42,0.25)`.
 - **z-20 — Frame de móvil**: shell de smartphone posicionado `absolute` saliendo del lado derecho del laptop (overlap ~30%). Contiene `chinaway.png` (tiene tonos cyan que combinan con la paleta). Inclinación `+5deg`, shadow más densa.
 - **z-30 — 3 cards flotantes** absolute-positioned con `bg.elevated` + border + radius `0.75rem` + shadow suave + padding `p-3`:
-  - **Top-right** (over-the-laptop): `+42 proyectos entregados`. Icono `CheckCircle` cyan, número en font-display bold 2xl, label text-xs muted.
+  - **Top-right** (over-the-laptop): `+30 proyectos entregados`. Icono `CheckCircle` cyan, número en font-display bold 2xl, label text-xs muted. *Mismo número que la banda inferior; el cliente lo actualiza cuando tenga la cifra real.*
   - **Center-left**: `95 Google PageSpeed`. Icono `Gauge`.
   - **Bottom-right**: `+300% leads`. Icono `TrendUp`.
 
-Decisión técnica de los frames laptop/phone: si no encontramos un SVG mockup limpio rápido, los componemos con primitives CSS (rounded border + bezel) y dentro la `next/image` con la captura. Resultado: idéntico visualmente con peso cero adicional.
+**Decisión técnica de los frames laptop/phone**: se implementan con **primitivos CSS** (rounded border + bezel + shadow) que envuelven una `next/image` con la captura. Camino sin dependencias ni assets externos, peso cero adicional, resultado visualmente equivalente a un mockup SVG. No se busca SVG asset porque añade complejidad sin ganancia visible al tamaño de hero.
 
 ### 4.4 Motion
 
@@ -260,7 +260,7 @@ Toda la implementación usa lo ya instalado: framer-motion, @phosphor-icons/reac
 1. **Foto IA del equipo**: el cliente ha aceptado el riesgo de detección. Mitigación: sin nombres, crop al muro inglés, copy genérico.
 2. **Logo en PNG, no SVG**: aceptado por el cliente. next/image optimiza a WebP/AVIF para uso web. Si más adelante consigue el SVG, se sustituye en minutos.
 3. **Cambio de paleta global**: cualquier branding externo previo (capturas screenshots de la web v1, OG cacheadas) ya no coincide. Aceptable porque la web está recién lanzada y nadie ha cacheado nada relevante.
-4. **Mockups de laptop/phone**: si no encontramos un SVG asset limpio en 30 min de búsqueda, los componemos con primitivos CSS (border + radius + bezel). Decisión durante implementación.
+4. **Mockups de laptop/phone**: implementados con primitivos CSS (decidido), sin SVG asset externo. Si el resultado visual no convence al cliente tras ver el primer deploy, se sustituyen por SVG mockups en una iteración posterior.
 
 ## 10. Fuera de alcance
 
