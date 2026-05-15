@@ -7,6 +7,10 @@ const geist = Geist({ subsets: ["latin"], variable: "--font-geist", display: "sw
 export const metadata: Metadata = {
   title: "Tuagenciaweb",
   description: "Webs profesionales para tu negocio, listas en 2 semanas.",
+  icons: {
+    icon: "/logo/favicon.png",
+    apple: "/logo/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
