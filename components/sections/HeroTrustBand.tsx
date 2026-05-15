@@ -4,8 +4,6 @@ import { FadeUp } from "@/components/motion/FadeUp";
 
 const ICONS: Record<string, typeof Check> = { Check, Lightning, ShieldCheck };
 
-// Inline tech logos as simple-icon style SVG paths (grayscale, becomes accent on hover).
-// Sourced from simple-icons.org (CC0). Keep paths minimal.
 const TechLogos = () => (
   <ul className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2 text-[var(--color-text-muted)]">
     {[
@@ -32,20 +30,22 @@ export function HeroTrustBand() {
   return (
     <section className="border-y border-[var(--color-border-default)] bg-[var(--color-elevated)]">
       <FadeUp>
-        <div className="container-page grid grid-cols-1 items-start gap-8 py-10 md:grid-cols-4 md:divide-x md:divide-[var(--color-border-default)]">
+        <div className="container-page grid grid-cols-1 items-start gap-8 py-10 md:grid-cols-4">
           {items.map((it) => {
             const Icon = ICONS[it.icon] ?? Check;
             return (
-              <div key={it.label} className="flex items-start gap-3 md:px-6 md:first:pl-0">
-                <Icon size={28} weight="duotone" className="shrink-0 text-[var(--color-accent)]" />
+              <div key={it.label} className="flex items-start gap-4">
+                <span className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-[var(--color-accent-soft)] text-[var(--color-accent)]">
+                  <Icon size={24} weight="duotone" />
+                </span>
                 <div>
-                  <p className="font-display text-xl font-bold leading-none">{it.highlight}</p>
-                  <p className="mt-1 text-xs text-[var(--color-text-muted)]">{it.label}</p>
+                  <p className="font-display text-xl font-bold leading-tight">{it.highlight}</p>
+                  <p className="mt-1 text-xs leading-snug text-[var(--color-text-muted)]">{it.label}</p>
                 </div>
               </div>
             );
           })}
-          <div className="md:px-6">
+          <div>
             <p className="text-xs font-semibold uppercase tracking-wider text-[var(--color-text-muted)]">{t("techTitle")}</p>
             <TechLogos />
           </div>

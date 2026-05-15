@@ -1,11 +1,15 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { Button } from "@/components/ui/button";
-import { PaintBrush, MagnifyingGlass, DeviceMobile, Rocket, Play, Star, CheckCircle, Gauge, TrendUp } from "@phosphor-icons/react";
+import { PaintBrush, MagnifyingGlass, DeviceMobile, Rocket, Play, Star } from "@phosphor-icons/react";
+import { LaptopMockup } from "@/components/sections/hero/LaptopMockup";
+import { PhoneMockup } from "@/components/sections/hero/PhoneMockup";
+import { FloatingCardCheck } from "@/components/sections/hero/FloatingCardCheck";
+import { FloatingCardGauge } from "@/components/sections/hero/FloatingCardGauge";
+import { FloatingCardSparkline } from "@/components/sections/hero/FloatingCardSparkline";
 
 const ICONS: Record<string, typeof PaintBrush> = {
   PaintBrush,
@@ -32,15 +36,23 @@ export function Hero() {
   const t = useTranslations("home.hero");
   const features = t.raw("features") as Array<{ title: string; icon: string }>;
 
+  // Split badge strings into number + label fragments
+  const projectsParts = t("badgeProjects").split(" ");
+  const projectsNumber = projectsParts[0];
+  const projectsLabel = projectsParts.slice(1).join(" ");
+  const leadsParts = t("badgeLeads").split(" ");
+  const leadsNumber = leadsParts[0];
+  const leadsLabel = leadsParts.slice(1).join(" ");
+
   return (
     <section className="relative min-h-[100dvh] overflow-hidden">
-      {/* gradient orb top-right */}
+      {/* Gradient orb top-right */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(800px 600px at 90% -10%, rgba(31, 163, 229, 0.18), transparent 60%)",
+            "radial-gradient(800px 600px at 90% -10%, rgba(12, 120, 247, 0.18), transparent 60%)",
         }}
       />
 
@@ -107,8 +119,8 @@ export function Hero() {
               const Icon = ICONS[f.icon] ?? PaintBrush;
               return (
                 <li key={f.title} className="flex items-center gap-3">
-                  <span className="flex size-9 shrink-0 items-center justify-center rounded-md bg-[var(--color-accent-soft)] text-[var(--color-accent)]">
-                    <Icon size={18} weight="bold" />
+                  <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[var(--color-accent-soft)] text-[var(--color-accent)]">
+                    <Icon size={20} weight="bold" />
                   </span>
                   <span className="text-sm font-medium">{f.title}</span>
                 </li>
@@ -140,71 +152,27 @@ export function Hero() {
           transition={{ delay: 0.2, duration: 0.5, ease: "easeOut" }}
           className="relative md:col-span-5"
         >
-          {/* Laptop frame */}
-          <div className="relative mx-auto w-full max-w-[520px] -rotate-[3deg]">
-            <div className="overflow-hidden rounded-[1.25rem] border border-[var(--color-border-default)] bg-[var(--color-elevated)] shadow-[0_40px_80px_-30px_rgba(15,23,42,0.30)]">
-              {/* Browser bar */}
-              <div className="flex items-center gap-1.5 border-b border-[var(--color-border-default)] bg-[var(--color-divider)] px-4 py-3">
-                <span className="size-2.5 rounded-full bg-[#FF5F57]" />
-                <span className="size-2.5 rounded-full bg-[#FEBC2E]" />
-                <span className="size-2.5 rounded-full bg-[#28C840]" />
-              </div>
-              <Image
-                src="/portfolio/dentistlab.png"
-                alt="Dentistlab"
-                width={1280}
-                height={800}
-                priority
-                className="h-auto w-full"
-              />
-            </div>
+          {/* Laptop */}
+          <div className="-rotate-[3deg]">
+            <LaptopMockup src="/portfolio/dentistlab.png" alt="Dentistlab" />
           </div>
 
-          {/* Phone frame */}
-          <div className="absolute -right-4 bottom-4 hidden w-[140px] rotate-[5deg] md:block lg:w-[170px]">
-            <div className="overflow-hidden rounded-[1.75rem] border-[6px] border-[var(--color-text-strong)] bg-[var(--color-text-strong)] shadow-[0_30px_50px_-20px_rgba(15,23,42,0.35)]">
-              <Image
-                src="/portfolio/chinaway.png"
-                alt="Chinaway"
-                width={400}
-                height={800}
-                className="h-auto w-full"
-              />
-            </div>
+          {/* Phone overlap, only md+ */}
+          <div className="absolute -right-4 bottom-4 hidden rotate-[5deg] md:block">
+            <PhoneMockup src="/portfolio/chinaway.png" alt="Chinaway" />
           </div>
 
           {/* Floating cards */}
-          <motion.div
-            animate={floatLoop(0)}
-            className="absolute -top-4 right-0 hidden flex-row items-center gap-3 rounded-xl border border-[var(--color-border-default)] bg-[var(--color-elevated)] px-4 py-3 shadow-[0_15px_40px_-15px_rgba(15,23,42,0.20)] md:flex"
-          >
-            <CheckCircle size={22} weight="duotone" className="text-[var(--color-accent)]" />
-            <div>
-              <p className="font-display text-lg font-bold leading-none">{t("badgeProjects").split(" ")[0]}</p>
-              <p className="text-[10px] uppercase tracking-wider text-[var(--color-text-muted)]">{t("badgeProjects").split(" ").slice(1).join(" ")}</p>
-            </div>
+          <motion.div animate={floatLoop(0)} className="absolute -top-4 right-0 hidden md:block">
+            <FloatingCardCheck number={projectsNumber} label={projectsLabel} />
           </motion.div>
 
-          <motion.div
-            animate={floatLoop(1)}
-            className="absolute top-1/2 -left-6 hidden -translate-y-1/2 flex-row items-center gap-3 rounded-xl border border-[var(--color-border-default)] bg-[var(--color-elevated)] px-4 py-3 shadow-[0_15px_40px_-15px_rgba(15,23,42,0.20)] lg:flex"
-          >
-            <Gauge size={22} weight="duotone" className="text-[var(--color-accent)]" />
-            <div>
-              <p className="font-display text-lg font-bold leading-none">{t("badgePagespeed").split(" ")[0]}</p>
-              <p className="text-[10px] uppercase tracking-wider text-[var(--color-text-muted)]">{t("badgePagespeed").split(" ").slice(1).join(" ")}</p>
-            </div>
+          <motion.div animate={floatLoop(1)} className="absolute top-1/2 -left-6 hidden -translate-y-1/2 lg:block">
+            <FloatingCardGauge value={95} label={t("badgePagespeed").split(" ").slice(1).join(" ")} />
           </motion.div>
 
-          <motion.div
-            animate={floatLoop(2)}
-            className="absolute -bottom-6 right-8 hidden flex-row items-center gap-3 rounded-xl border border-[var(--color-border-default)] bg-[var(--color-elevated)] px-4 py-3 shadow-[0_15px_40px_-15px_rgba(15,23,42,0.20)] md:flex"
-          >
-            <TrendUp size={22} weight="duotone" className="text-[var(--color-accent)]" />
-            <div>
-              <p className="font-display text-lg font-bold leading-none">{t("badgeLeads").split(" ")[0]}</p>
-              <p className="text-[10px] uppercase tracking-wider text-[var(--color-text-muted)]">{t("badgeLeads").split(" ").slice(1).join(" ")}</p>
-            </div>
+          <motion.div animate={floatLoop(2)} className="absolute -bottom-6 right-8 hidden md:block">
+            <FloatingCardSparkline number={leadsNumber} label={leadsLabel} />
           </motion.div>
         </motion.div>
       </div>
