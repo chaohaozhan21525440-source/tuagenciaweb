@@ -330,18 +330,45 @@ export function Hero() {
             transition={{ duration: 0.9, ease, delay: 0.25 }}
             className="hero-visual relative"
           >
-            <video
-              ref={videoRef}
-              className="hero-laptop block h-auto w-full select-none rounded-2xl shadow-[0_30px_60px_-20px_rgba(10,23,51,0.20)]"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="auto"
+            {/* Soft brand halo — gives the video a glowing aura grounded in the page bg */}
+            <div
               aria-hidden
+              className="pointer-events-none absolute -inset-10 -z-10 rounded-[48%]"
+              style={{
+                background:
+                  "radial-gradient(closest-side, rgba(37,99,235,0.14), rgba(37,99,235,0.04) 55%, transparent 78%)",
+                filter: "blur(40px)",
+              }}
+            />
+            {/* Inner white-warm wash so the video's white background bleeds into the page */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -inset-4 -z-10"
+              style={{
+                background:
+                  "radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.95) 40%, rgba(255,255,255,0) 80%)",
+                filter: "blur(18px)",
+              }}
+            />
+
+            {/* Video wrapper: drop-shadow follows the mask silhouette so it sheds the hard rectangle */}
+            <div
+              className="hero-video-shell relative"
+              style={{ filter: "drop-shadow(0 32px 50px rgba(10,23,51,0.14))" }}
             >
-              <source src="/hero-video.mp4" type="video/mp4" />
-            </video>
+              <video
+                ref={videoRef}
+                className="hero-laptop hero-video block h-auto w-full select-none"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
+                aria-hidden
+              >
+                <source src="/hero-video.mp4" type="video/mp4" />
+              </video>
+            </div>
 
             <FloatingCard
               visible={cardsVisible}

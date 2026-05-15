@@ -71,6 +71,12 @@
   .hero-laptop { transform: scale(1.41); transform-origin: center; }
 }
 
+/* ===== Hero video: feather edges so the video's white frame bleeds into the page ===== */
+.hero-video {
+  -webkit-mask-image: radial-gradient(ellipse 92% 92% at 50% 50%, #000 58%, rgba(0,0,0,0.85) 72%, transparent 100%);
+          mask-image: radial-gradient(ellipse 92% 92% at 50% 50%, #000 58%, rgba(0,0,0,0.85) 72%, transparent 100%);
+}
+
 /* ===== Mobile fixes (do not touch desktop) ===== */
 @media (max-width: 1023px) {
   /* Contacto: hide the floating "Respuesta media < 24h" card on mobile so it doesn't escape the viewport */
