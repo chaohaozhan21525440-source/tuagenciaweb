@@ -248,21 +248,22 @@ export function Hero() {
           >
             <Image
               src="/hero-mockup-cutout.png"
-              alt="Vista de la web Nexora en MacBook y iPhone"
+              alt="Vista de la web en MacBook y iPhone"
               width={1536}
               height={1024}
               priority
               className="block h-auto w-full select-none"
               draggable={false}
+              style={{ transform: "scale(1.15)", transformOrigin: "center" }}
             />
 
-            <div className="absolute right-[-30px] top-[-10px] z-10 animate-[float_6.5s_ease-in-out_infinite]">
+            <div className="absolute right-[-4%] top-[-4%] z-10 animate-[float_6.5s_ease-in-out_infinite]">
               <Card42 />
             </div>
-            <div className="absolute right-[-10px] top-[36%] z-10 animate-[float_7.5s_ease-in-out_-2s_infinite]">
+            <div className="absolute right-[-6%] top-[32%] z-10 animate-[float_7.5s_ease-in-out_-2s_infinite]">
               <CardPageSpeed />
             </div>
-            <div className="absolute bottom-[2%] left-[12%] z-10 animate-[float_8s_ease-in-out_-4s_infinite]">
+            <div className="absolute bottom-[2%] left-[14%] z-10 animate-[float_8s_ease-in-out_-4s_infinite]">
               <Card300 />
             </div>
           </motion.div>
