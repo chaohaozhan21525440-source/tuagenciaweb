@@ -10,7 +10,7 @@ const NAV = [
   { href: "#proyectos", label: "Proyectos" },
   { href: "/sobre-nosotros", label: "Sobre nosotros" },
   { href: "#blog", label: "Blog" },
-  { href: "#contacto", label: "Contacto" },
+  { href: "/contacto", label: "Contacto" },
 ];
 
 const Chevron = (p: React.SVGProps<SVGSVGElement>) => (
