@@ -1,142 +1,273 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ArrowRight, Play, CheckCircle, Lightning, ChartLineUp, MagnifyingGlass, Star } from "@phosphor-icons/react";
-import { LaptopMockup } from "@/components/hero/LaptopMockup";
-import { PhoneMockup } from "@/components/hero/PhoneMockup";
-import { FloatingMetric } from "@/components/hero/FloatingMetric";
+import Image from "next/image";
+import Link from "next/link";
+import { motion, type Variants } from "framer-motion";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
-const fade = (i: number) => ({
-  initial: { opacity: 0, y: 24 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.7, ease, delay: i * 0.08 },
-});
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease } },
+};
+
+const stagger: Variants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.08, delayChildren: 0.05 } },
+};
+
+const ArrowRight = (p: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 20 20" fill="none" {...p}>
+    <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+const Play = (p: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 20 20" fill="none" {...p}>
+    <rect x="3" y="5" width="14" height="11" rx="2.5" stroke="currentColor" strokeWidth="1.7" />
+    <path d="M9 8.5l3 1.7-3 1.7v-3.4z" fill="currentColor" />
+  </svg>
+);
+const Monitor = (p: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 28 28" fill="none" {...p}>
+    <rect x="3.5" y="4.5" width="21" height="14" rx="2" stroke="currentColor" strokeWidth="1.7" />
+    <path d="M10 22h8M14 18.5V22" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+  </svg>
+);
+const Rocket = (p: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 28 28" fill="none" {...p}>
+    <path d="M19 4c1.7 0 5 .6 5 5 0 4-3 7-5.5 8.5L13 13l3-3c1.5-1.5 2.7-3.7 3-6z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
+    <circle cx="17.5" cy="10.5" r="1.6" fill="currentColor" />
+    <path d="M11 17l-3 3M14 20l-2 2M8 14l-3 3" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+    <path d="M11 21c-2 1-4 1-4-2 3 0 3-2 4-2" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+const Search = (p: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 28 28" fill="none" {...p}>
+    <circle cx="12.5" cy="12.5" r="6.5" stroke="currentColor" strokeWidth="1.7" />
+    <path d="M17.5 17.5l5 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+  </svg>
+);
+const Phone = (p: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 28 28" fill="none" {...p}>
+    <rect x="8" y="3.5" width="12" height="21" rx="3" stroke="currentColor" strokeWidth="1.7" />
+    <path d="M12 21h4" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+  </svg>
+);
+const Trending = (p: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 22 22" fill="none" {...p}>
+    <path d="M3 16l5-5 3 3 7-8M13 6h5v5" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+const Bars = (p: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 22 22" fill="none" {...p}>
+    <rect x="3.5" y="12" width="3" height="6.5" rx="0.7" fill="currentColor" />
+    <rect x="9.5" y="8" width="3" height="10.5" rx="0.7" fill="currentColor" />
+    <rect x="15.5" y="4" width="3" height="14.5" rx="0.7" fill="currentColor" />
+  </svg>
+);
+
+function Card42() {
+  return (
+    <div className="w-[214px] rounded-2xl bg-white p-4 shadow-[0_30px_60px_-20px_rgba(10,23,51,0.18),0_12px_24px_-10px_rgba(10,23,51,0.10),0_0_0_1px_rgba(10,23,51,0.04)]">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-2.5">
+          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[var(--color-brand-soft,#eff4ff)]">
+            <Trending className="h-5 w-5 text-[var(--color-brand,#2563eb)]" />
+          </div>
+          <div className="text-[34px] font-extrabold leading-none tracking-tight text-[var(--color-ink-900,#0a1733)]">
+            +42
+          </div>
+        </div>
+        <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-[11px] font-semibold text-emerald-600">
+          +18%
+        </span>
+      </div>
+      <div className="mt-2 text-[12.5px] text-[var(--color-ink-500,#475569)]">
+        Solicitudes este mes
+      </div>
+      <svg viewBox="0 0 200 44" className="mt-2 h-9 w-full" aria-hidden>
+        <defs>
+          <linearGradient id="sp42" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stopColor="#10b981" stopOpacity="0.22" />
+            <stop offset="1" stopColor="#10b981" stopOpacity="0" />
+          </linearGradient>
+        </defs>
+        <path d="M0 34 L22 30 L44 32 L66 24 L88 26 L110 18 L132 22 L154 14 L176 9 L200 3" fill="none" stroke="#10b981" strokeWidth="2" />
+        <path d="M0 34 L22 30 L44 32 L66 24 L88 26 L110 18 L132 22 L154 14 L176 9 L200 3 L200 44 L0 44 Z" fill="url(#sp42)" />
+      </svg>
+    </div>
+  );
+}
+
+function CardPageSpeed() {
+  const R = 32;
+  const C = 2 * Math.PI * R;
+  const VAL = 95;
+  return (
+    <div className="flex w-[178px] flex-col items-center rounded-2xl bg-white p-4 text-center shadow-[0_30px_60px_-20px_rgba(10,23,51,0.18),0_12px_24px_-10px_rgba(10,23,51,0.10),0_0_0_1px_rgba(10,23,51,0.04)]">
+      <svg viewBox="0 0 90 90" className="h-[84px] w-[84px]" aria-hidden>
+        <circle cx="45" cy="45" r={R} fill="none" stroke="#e6f4ec" strokeWidth="8" />
+        <circle cx="45" cy="45" r={R} fill="none" stroke="#10b981" strokeWidth="8" strokeLinecap="round" strokeDasharray={`${(VAL / 100) * C} ${C}`} transform="rotate(-90 45 45)" />
+        <text x="45" y="52" textAnchor="middle" fontSize="24" fontWeight="800" fill="#0a1733">{VAL}</text>
+      </svg>
+      <div className="mt-1 text-[13px] font-bold text-[var(--color-ink-900,#0a1733)]">Google PageSpeed</div>
+      <div className="mt-0.5 text-[11.5px] font-semibold text-emerald-600">Excelente</div>
+    </div>
+  );
+}
+
+function Card300() {
+  return (
+    <div className="flex w-[300px] items-center gap-3.5 rounded-2xl bg-white py-3.5 pl-4 pr-5 shadow-[0_30px_60px_-20px_rgba(10,23,51,0.18),0_12px_24px_-10px_rgba(10,23,51,0.10),0_0_0_1px_rgba(10,23,51,0.04)]">
+      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[var(--color-brand-soft,#eff4ff)]">
+        <Bars className="h-5 w-5 text-[var(--color-brand,#2563eb)]" />
+      </div>
+      <div className="min-w-0 flex-1">
+        <div className="text-[24px] font-extrabold leading-none tracking-tight text-[var(--color-ink-900,#0a1733)]">+300%</div>
+        <div className="mt-1 text-[11.5px] leading-snug text-[var(--color-ink-500,#475569)]">
+          Más leads generados
+          <br />
+          con nuestras webs
+        </div>
+      </div>
+      <svg viewBox="0 0 80 36" className="h-9 w-[70px] shrink-0" aria-hidden>
+        <path d="M0 28 L12 24 L24 26 L36 18 L48 14 L60 8 L72 4 L80 2" fill="none" stroke="#10b981" strokeWidth="2" />
+      </svg>
+    </div>
+  );
+}
+
+const features = [
+  { Icon: Monitor, title: "Diseño a medida", sub: "100% personalizado" },
+  { Icon: Rocket, title: "Rápido y seguro", sub: "Carga en < 2s" },
+  { Icon: Search, title: "SEO optimizado", sub: "Posicionamos tu web" },
+  { Icon: Phone, title: "Responsive", sub: "Perfecto en todos los dispositivos" },
+] as const;
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-12 md:pt-20">
-      {/* Ambient glow + grid */}
-      <div aria-hidden className="bg-hero-glow absolute inset-0" />
+    <section className="relative overflow-hidden pt-8 md:pt-14">
       <div
         aria-hidden
-        className="absolute inset-0 [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,black,transparent_75%)]"
-      >
-        <div className="bg-grid-soft absolute inset-0" />
-      </div>
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse 80% 50% at 80% 0%, rgba(37,99,235,0.12), transparent 60%), radial-gradient(ellipse 60% 60% at 20% 100%, rgba(37,99,235,0.06), transparent 70%)",
+        }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, rgba(15,23,42,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(15,23,42,0.04) 1px, transparent 1px)",
+          backgroundSize: "48px 48px",
+          WebkitMaskImage: "radial-gradient(ellipse 70% 60% at 50% 0%, black, transparent 75%)",
+          maskImage: "radial-gradient(ellipse 70% 60% at 50% 0%, black, transparent 75%)",
+        }}
+      />
 
-      <div className="container-page relative grid grid-cols-1 items-center gap-16 pb-24 lg:grid-cols-12 lg:gap-12 lg:pb-32">
-        {/* LEFT */}
-        <div className="lg:col-span-6">
-          <motion.div {...fade(0)} className="inline-flex items-center gap-2 rounded-full border border-[var(--color-ink-100)] bg-white px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-ink-700)] shadow-sm">
-            <span className="relative flex size-2">
-              <span className="absolute inline-flex size-full animate-ping rounded-full bg-[var(--color-success)] opacity-60" />
-              <span className="relative inline-flex size-2 rounded-full bg-[var(--color-success)]" />
+      <motion.div
+        initial="hidden"
+        animate="show"
+        variants={stagger}
+        className="relative mx-auto grid max-w-[1280px] grid-cols-12 items-center gap-10 px-6 pb-20 md:px-8"
+      >
+        <div className="col-span-12 pt-2 lg:col-span-6">
+          <motion.div
+            variants={fadeUp}
+            className="inline-flex items-center gap-2 rounded-full border border-[var(--color-ink-100,#e2e8f0)] bg-white px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-ink-700,#1e293b)] shadow-sm"
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-60" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
             </span>
-            Disponibles 2 slots · Mayo 2026
+            Diseño web · SEO · Resultados
           </motion.div>
 
-          <motion.h1 {...fade(1)} className="mt-7 font-display text-[clamp(2.75rem,6vw,4.75rem)] font-bold leading-[1.02] tracking-[-0.03em] text-[var(--color-ink-900)]">
-            Webs que convierten visitas en <span className="text-[var(--color-brand)]">clientes</span>.
+          <motion.h1
+            variants={fadeUp}
+            className="mt-7 whitespace-nowrap font-bold leading-[1.04] tracking-[-0.03em] text-[var(--color-ink-900,#0a1733)] text-[clamp(2.4rem,4.5vw,4rem)]"
+          >
+            Diseñamos webs que
+            <br />
+            <span className="text-[var(--color-brand,#2563eb)]">convierten visitas</span>
+            <br />
+            en clientes.
           </motion.h1>
 
-          <motion.p {...fade(2)} className="mt-6 max-w-xl text-lg leading-relaxed text-[var(--color-ink-500)]">
-            Pack único, sin cuotas mensuales abusivas. Diseñamos, desarrollamos y posicionamos tu web. Diseño, desarrollo, SEO y dominio incluidos.
+          <motion.p
+            variants={fadeUp}
+            className="mt-7 max-w-[520px] text-[17px] leading-[1.6] text-[var(--color-ink-500,#475569)]"
+          >
+            Creamos páginas web modernas, rápidas y optimizadas para SEO para que tu negocio genere más contactos y ventas todos los días.
           </motion.p>
 
-          <motion.div {...fade(3)} className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <a
-              href="#precios"
-              className="ring-brand group inline-flex items-center justify-center gap-2 rounded-[var(--radius-control)] bg-[var(--color-brand)] px-6 py-3.5 text-base font-semibold text-white shadow-[0_18px_40px_-12px_rgba(37,99,235,0.55)] transition-all hover:bg-[var(--color-brand-hover)] active:scale-[0.98]"
+          <motion.div variants={fadeUp} className="mt-9 flex flex-wrap items-center gap-3">
+            <Link
+              href="#presupuesto"
+              className="group inline-flex items-center gap-2.5 rounded-xl bg-[var(--color-brand,#2563eb)] px-5 py-3.5 text-[15px] font-semibold text-white shadow-[0_18px_40px_-12px_rgba(37,99,235,0.55)] transition-all hover:bg-[var(--color-brand-hover,#1d4ed8)] active:scale-[0.98]"
             >
-              Ver packs y precios
-              <ArrowRight size={18} weight="bold" className="transition-transform group-hover:translate-x-0.5" />
-            </a>
-            <a
+              Solicitar presupuesto
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            </Link>
+            <Link
               href="#proyectos"
-              className="ring-brand inline-flex items-center justify-center gap-2 rounded-[var(--radius-control)] border border-[var(--color-ink-200)] bg-white px-6 py-3.5 text-base font-semibold text-[var(--color-ink-900)] transition-all hover:border-[var(--color-ink-300)] active:scale-[0.98]"
+              className="inline-flex items-center gap-2 rounded-xl border border-[var(--color-ink-200,#cbd5e1)] bg-white px-5 py-3.5 text-[15px] font-semibold text-[var(--color-ink-900,#0a1733)] transition-all hover:border-[var(--color-ink-300,#94a3b8)] active:scale-[0.98]"
             >
-              <Play size={16} weight="fill" />
+              <Play className="h-4 w-4" />
               Ver proyectos
-            </a>
+            </Link>
           </motion.div>
 
-          {/* Trust row */}
-          <motion.div {...fade(4)} className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-3 text-sm">
-            <div className="flex items-center gap-1.5">
-              <div className="flex items-center gap-0.5 text-amber-400">
-                {[0, 1, 2, 3, 4].map((i) => (
-                  <Star key={i} size={15} weight="fill" />
-                ))}
-              </div>
-              <span className="font-semibold text-[var(--color-ink-900)]">5.0</span>
-              <span className="text-[var(--color-ink-400)]">en Google</span>
-            </div>
-            <span className="hidden h-4 w-px bg-[var(--color-ink-100)] md:block" />
-            <span className="text-[var(--color-ink-500)]">+30 proyectos entregados</span>
-            <span className="hidden h-4 w-px bg-[var(--color-ink-100)] md:block" />
-            <span className="text-[var(--color-ink-500)]">Entrega en 2–3 semanas</span>
+          <motion.div
+            variants={stagger}
+            initial="hidden"
+            animate="show"
+            className="mt-12 grid max-w-[560px] grid-cols-2 gap-4 sm:grid-cols-4"
+          >
+            {features.map(({ Icon, title, sub }) => (
+              <motion.div key={title} variants={fadeUp} className="flex flex-col items-start">
+                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--color-brand-soft,#eff4ff)] text-[var(--color-brand,#2563eb)]">
+                  <Icon className="h-6 w-6" />
+                </div>
+                <div className="text-[14px] font-semibold text-[var(--color-ink-900,#0a1733)]">{title}</div>
+                <div className="mt-0.5 text-balance text-[12.5px] leading-snug text-[var(--color-ink-400,#64748b)]">{sub}</div>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
 
-        {/* RIGHT */}
-        <motion.div
-          initial={{ opacity: 0, y: 30, scale: 0.98 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.9, ease, delay: 0.25 }}
-          className="relative lg:col-span-6"
-        >
-          {/* Laptop */}
-          <LaptopMockup src="/portfolio/dentistlab.png" alt="Dentistlab" />
-
-          {/* Phone overlap (md+) */}
-          <div className="pointer-events-none absolute -right-2 bottom-2 hidden md:block lg:-right-4 lg:bottom-4">
-            <PhoneMockup src="/portfolio/chinaway.png" alt="Chinaway" />
-          </div>
-
-          {/* Floating metrics */}
-          <div className="pointer-events-none absolute -left-2 top-6 hidden md:block lg:-left-8 lg:top-4">
-            <FloatingMetric
-              icon={<ChartLineUp size={20} weight="bold" />}
-              value="+42 leads"
-              label="este mes"
-              iconBg="brand"
-              delay={0}
+        <div className="relative col-span-12 lg:col-span-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.9, ease, delay: 0.25 }}
+            className="relative"
+            style={{ minHeight: 580 }}
+          >
+            <Image
+              src="/hero-mockup-cutout.png"
+              alt="Vista de la web Nexora en MacBook y iPhone"
+              width={1536}
+              height={1024}
+              priority
+              className="block h-auto w-full select-none"
+              draggable={false}
             />
-          </div>
 
-          <div className="pointer-events-none absolute -top-2 right-8 hidden lg:block">
-            <FloatingMetric
-              icon={<Lightning size={20} weight="fill" />}
-              value="95+"
-              label="PageSpeed"
-              iconBg="brand"
-              delay={0.5}
-            />
-          </div>
-
-          <div className="pointer-events-none absolute left-12 -bottom-6 hidden md:block">
-            <FloatingMetric
-              icon={<CheckCircle size={20} weight="fill" />}
-              value="+300%"
-              label="conversiones"
-              iconBg="success"
-              delay={1}
-            />
-          </div>
-
-          <div className="pointer-events-none absolute right-2 bottom-24 hidden xl:block">
-            <FloatingMetric
-              icon={<MagnifyingGlass size={20} weight="bold" />}
-              value="SEO ready"
-              label="optimizado"
-              iconBg="brand"
-              delay={1.5}
-            />
-          </div>
-        </motion.div>
-      </div>
+            <div className="absolute right-[-30px] top-[-10px] z-10 animate-[float_6.5s_ease-in-out_infinite]">
+              <Card42 />
+            </div>
+            <div className="absolute right-[-10px] top-[36%] z-10 animate-[float_7.5s_ease-in-out_-2s_infinite]">
+              <CardPageSpeed />
+            </div>
+            <div className="absolute bottom-[2%] left-[12%] z-10 animate-[float_8s_ease-in-out_-4s_infinite]">
+              <Card300 />
+            </div>
+          </motion.div>
+        </div>
+      </motion.div>
     </section>
   );
 }

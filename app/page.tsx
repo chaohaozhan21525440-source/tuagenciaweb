@@ -1,5 +1,6 @@
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { Hero } from "@/components/home/Hero";
+import { TrustBar } from "@/components/home/TrustBar";
 
 export default function Home() {
   return (
@@ -7,6 +8,7 @@ export default function Home() {
       <SiteHeader />
       <main>
         <Hero />
+        <TrustBar />
       </main>
     </>
   );
