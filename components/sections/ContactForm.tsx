@@ -7,9 +7,12 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { CheckCircle } from "@phosphor-icons/react";
-import { submitContact } from "@/app/[locale]/contacto/actions";
 
 type Status = "idle" | "submitting" | "success" | "validation" | "ratelimit" | "send";
+
+type SubmitResult =
+  | { ok: true; honeypot?: boolean }
+  | { ok: false; error: "validation" | "ratelimit" | "send"; retryAfterSeconds?: number };
 
 export function ContactForm() {
   const t = useTranslations("contact.form");
@@ -18,9 +21,14 @@ export function ContactForm() {
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("submitting");
-    const result = await submitContact(new FormData(e.currentTarget));
-    if (result.ok) setStatus("success");
-    else setStatus(result.error);
+    try {
+      const res = await fetch("/api/contact", { method: "POST", body: new FormData(e.currentTarget) });
+      const result = (await res.json()) as SubmitResult;
+      if (result.ok) setStatus("success");
+      else setStatus(result.error);
+    } catch {
+      setStatus("send");
+    }
   }
 
   if (status === "success") {
