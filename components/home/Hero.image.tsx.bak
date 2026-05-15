@@ -1,7 +1,7 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
 import { motion, type Variants } from "framer-motion";
 
 const ease = [0.16, 1, 0.3, 1] as const;
@@ -74,11 +74,17 @@ function Card42() {
           <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[var(--color-brand-soft,#eff4ff)]">
             <Trending className="h-5 w-5 text-[var(--color-brand,#2563eb)]" />
           </div>
-          <div className="text-[34px] font-extrabold leading-none tracking-tight text-[var(--color-ink-900,#0a1733)]">+42</div>
+          <div className="text-[34px] font-extrabold leading-none tracking-tight text-[var(--color-ink-900,#0a1733)]">
+            +42
+          </div>
         </div>
-        <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-[11px] font-semibold text-emerald-600">+18%</span>
+        <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-[11px] font-semibold text-emerald-600">
+          +18%
+        </span>
       </div>
-      <div className="mt-2 text-[12.5px] text-[var(--color-ink-500,#475569)]">Solicitudes este mes</div>
+      <div className="mt-2 text-[12.5px] text-[var(--color-ink-500,#475569)]">
+        Solicitudes este mes
+      </div>
       <svg viewBox="0 0 200 44" className="mt-2 h-9 w-full" aria-hidden>
         <defs>
           <linearGradient id="sp42" x1="0" y1="0" x2="0" y2="1">
@@ -138,96 +144,7 @@ const features = [
   { Icon: Phone, title: "Responsive", sub: "Perfecto en todos los dispositivos" },
 ] as const;
 
-/**
- * Floating card animation, synced to the looping hero video.
- *
- * Cycle (5000ms total):
- *   0ms     hide cards
- *   1400ms  show cards (with per-card stagger 0 / 150 / 300ms)
- *   4000ms  hide cards (ease-in, slide slightly outward)
- *   5000ms  loop restart
- *
- * `direction` controls exit slide direction (right for right-side cards,
- * left for the bottom-left card).
- */
-function useHeroCardCycle() {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    let showTimer: ReturnType<typeof setTimeout> | undefined;
-    let hideTimer: ReturnType<typeof setTimeout> | undefined;
-
-    const runCycle = () => {
-      setVisible(false);
-      if (showTimer) clearTimeout(showTimer);
-      if (hideTimer) clearTimeout(hideTimer);
-      showTimer = setTimeout(() => setVisible(true), 1400);
-      hideTimer = setTimeout(() => setVisible(false), 4000);
-    };
-
-    runCycle();
-    const cycleId = setInterval(runCycle, 5000);
-
-    return () => {
-      clearInterval(cycleId);
-      if (showTimer) clearTimeout(showTimer);
-      if (hideTimer) clearTimeout(hideTimer);
-    };
-  }, []);
-
-  return visible;
-}
-
-type FloatingCardProps = {
-  visible: boolean;
-  delay: number;
-  direction: "right" | "left";
-  className?: string;
-  children: React.ReactNode;
-};
-
-function FloatingCard({ visible, delay, direction, className, children }: FloatingCardProps) {
-  const hiddenX = direction === "right" ? 28 : -28;
-  return (
-    <motion.div
-      className={className}
-      initial={{ opacity: 0, x: hiddenX, scale: 0.95 }}
-      animate={
-        visible
-          ? {
-              opacity: 1,
-              x: 0,
-              scale: 1,
-              transition: { type: "spring", stiffness: 120, damping: 18, delay },
-            }
-          : {
-              opacity: 0,
-              x: hiddenX,
-              scale: 0.95,
-              transition: { duration: 0.45, ease: "easeIn" },
-            }
-      }
-    >
-      {children}
-    </motion.div>
-  );
-}
-
 export function Hero() {
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-  const cardsVisible = useHeroCardCycle();
-
-  // Some mobile browsers respect autoplay only when the muted attribute is
-  // present and the play() call follows a user-gesture or DOMContentLoaded
-  // tick. We re-trigger play on mount for safety.
-  useEffect(() => {
-    const v = videoRef.current;
-    if (!v) return;
-    v.muted = true;
-    const p = v.play();
-    if (p && typeof p.catch === "function") p.catch(() => {});
-  }, []);
-
   return (
     <section className="relative overflow-hidden pt-8 md:pt-14">
       <div
@@ -256,7 +173,6 @@ export function Hero() {
         variants={stagger}
         className="relative mx-auto grid max-w-[1280px] grid-cols-12 items-center gap-10 px-6 pb-20 md:px-8"
       >
-        {/* LEFT */}
         <div className="col-span-12 pt-2 lg:col-span-6">
           <motion.div
             variants={fadeUp}
@@ -289,14 +205,14 @@ export function Hero() {
 
           <motion.div variants={fadeUp} className="mt-9 flex flex-wrap items-center gap-3">
             <Link
-              href="/contacto"
+              href="#presupuesto"
               className="group inline-flex items-center gap-2.5 rounded-xl bg-[var(--color-brand,#2563eb)] px-5 py-3.5 text-[15px] font-semibold text-white shadow-[0_18px_40px_-12px_rgba(37,99,235,0.55)] transition-all hover:bg-[var(--color-brand-hover,#1d4ed8)] active:scale-[0.98]"
             >
               Solicitar presupuesto
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </Link>
             <Link
-              href="/#proyectos"
+              href="#proyectos"
               className="inline-flex items-center gap-2 rounded-xl border border-[var(--color-ink-200,#cbd5e1)] bg-white px-5 py-3.5 text-[15px] font-semibold text-[var(--color-ink-900,#0a1733)] transition-all hover:border-[var(--color-ink-300,#94a3b8)] active:scale-[0.98]"
             >
               <Play className="h-4 w-4" />
@@ -322,7 +238,6 @@ export function Hero() {
           </motion.div>
         </div>
 
-        {/* RIGHT */}
         <div className="relative col-span-12 lg:col-span-6">
           <motion.div
             initial={{ opacity: 0, y: 30, scale: 0.98 }}
@@ -330,45 +245,25 @@ export function Hero() {
             transition={{ duration: 0.9, ease, delay: 0.25 }}
             className="hero-visual relative"
           >
-            <video
-              ref={videoRef}
-              className="hero-laptop block h-auto w-full select-none rounded-2xl shadow-[0_30px_60px_-20px_rgba(10,23,51,0.20)]"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="auto"
-              aria-hidden
-            >
-              <source src="/hero-video.mp4" type="video/mp4" />
-            </video>
+            <Image
+              src="/hero-mockup-cutout.png"
+              alt="Vista de la web en MacBook y iPhone"
+              width={1536}
+              height={1024}
+              priority
+              className="hero-laptop block h-auto w-full select-none"
+              draggable={false}
+            />
 
-            <FloatingCard
-              visible={cardsVisible}
-              delay={0}
-              direction="right"
-              className="hidden lg:block absolute right-[11%] top-[-10%] z-10"
-            >
+            <div className="hidden lg:block absolute right-[11%] top-[-10%] z-10 animate-[float_6.5s_ease-in-out_infinite]">
               <Card42 />
-            </FloatingCard>
-
-            <FloatingCard
-              visible={cardsVisible}
-              delay={0.15}
-              direction="right"
-              className="hidden lg:block absolute right-[-9%] top-[6%] z-10"
-            >
+            </div>
+            <div className="hidden lg:block absolute right-[-9%] top-[6%] z-10 animate-[float_7.5s_ease-in-out_-2s_infinite]">
               <CardPageSpeed />
-            </FloatingCard>
-
-            <FloatingCard
-              visible={cardsVisible}
-              delay={0.3}
-              direction="left"
-              className="hidden lg:block absolute bottom-[2%] left-[18%] z-10"
-            >
+            </div>
+            <div className="hidden lg:block absolute bottom-[2%] left-[18%] z-10 animate-[float_8s_ease-in-out_-4s_infinite]">
               <Card300 />
-            </FloatingCard>
+            </div>
           </motion.div>
         </div>
       </motion.div>
