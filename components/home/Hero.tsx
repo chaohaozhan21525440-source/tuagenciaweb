@@ -330,7 +330,7 @@ export function Hero() {
             transition={{ duration: 0.9, ease, delay: 0.25 }}
             className="hero-visual relative"
           >
-            {/* Soft brand halo — large blue aura behind the video, grounded in the page bg */}
+            {/* Brand halo behind the video — large blue aura grounded in the page bg */}
             <div
               aria-hidden
               className="pointer-events-none absolute inset-[-15%] -z-10"
@@ -340,41 +340,34 @@ export function Hero() {
                 filter: "blur(48px)",
               }}
             />
-            {/* Inner white wash so the video's white frame melts into the page */}
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-[-6%] -z-10"
-              style={{
-                background:
-                  "radial-gradient(ellipse 60% 60% at 50% 50%, rgba(255,255,255,1) 35%, rgba(255,255,255,0.6) 60%, transparent 85%)",
-                filter: "blur(20px)",
-              }}
-            />
 
-            {/* Video wrapper: drop-shadow follows the mask silhouette so it sheds the hard rectangle */}
-            <div
-              className="hero-video-shell relative"
-              style={{ filter: "drop-shadow(0 32px 50px rgba(10,23,51,0.12))" }}
+            {/*
+              Video itself uses mix-blend-mode: multiply so the white frame of
+              the source clip is multiplied against the white page background
+              and disappears entirely. The radial mask provides the final soft
+              feather around the silhouette. drop-shadow is moved here (not on
+              a wrapper) so it follows the masked outline, not a hard rectangle.
+            */}
+            <video
+              ref={videoRef}
+              className="hero-laptop hero-video relative block h-auto w-full select-none"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              aria-hidden
+              style={{
+                mixBlendMode: "multiply",
+                WebkitMaskImage:
+                  "radial-gradient(ellipse 78% 82% at 50% 52%, rgba(0,0,0,1) 50%, rgba(0,0,0,0.7) 75%, rgba(0,0,0,0) 100%)",
+                maskImage:
+                  "radial-gradient(ellipse 78% 82% at 50% 52%, rgba(0,0,0,1) 50%, rgba(0,0,0,0.7) 75%, rgba(0,0,0,0) 100%)",
+                filter: "drop-shadow(0 32px 45px rgba(10,23,51,0.12))",
+              }}
             >
-              <video
-                ref={videoRef}
-                className="hero-laptop hero-video block h-auto w-full select-none"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="auto"
-                aria-hidden
-                style={{
-                  WebkitMaskImage:
-                    "radial-gradient(ellipse 70% 78% at 50% 52%, rgba(0,0,0,1) 32%, rgba(0,0,0,0.85) 55%, rgba(0,0,0,0.35) 80%, rgba(0,0,0,0) 100%)",
-                  maskImage:
-                    "radial-gradient(ellipse 70% 78% at 50% 52%, rgba(0,0,0,1) 32%, rgba(0,0,0,0.85) 55%, rgba(0,0,0,0.35) 80%, rgba(0,0,0,0) 100%)",
-                }}
-              >
-                <source src="/hero-video.mp4" type="video/mp4" />
-              </video>
-            </div>
+              <source src="/hero-video.mp4" type="video/mp4" />
+            </video>
 
             <FloatingCard
               visible={cardsVisible}

@@ -67,8 +67,8 @@
 /* ===== Hero responsive (laptop scale only on desktop) ===== */
 .hero-visual { min-height: auto; }
 @media (min-width: 1024px) {
-  .hero-visual { min-height: 580px; }
-  .hero-laptop { transform: scale(1.41); transform-origin: center; }
+  .hero-visual { min-height: 620px; }
+  .hero-laptop { transform: scale(1.55); transform-origin: center; }
 }
 
 /* Hero video mask is applied inline on the <video> element to avoid Tailwind's
