@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return buildMetadata({
     locale: locale as "es" | "en",
     path: "/",
-    title: `Tuagenciaweb · ${t("headline")}`,
+    title: `Tuagenciaweb · ${t("headlineLead")} ${t("headlineHighlight")}`,
     description: t("subheadline"),
   });
 }
