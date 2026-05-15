@@ -5,7 +5,31 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/*
+ * taste-skill dial justification (feat/full-redesign)
+ * --------------------------------------------------
+ * DESIGN_VARIANCE = 7
+ *   El sitio anterior era plano y genérico. Necesitamos personalidad clara:
+ *   asimetría hero 60/40, masonry portfolio, offsets en mockups, ritmo
+ *   tipográfico marcado. Aun así limitamos el 8-10 (caos) para conservar
+ *   confianza comercial.
+ * MOTION_INTENSITY = 5
+ *   Animaciones presentes (SplitText, BlurText, Magnet, count-up, aurora
+ *   sutil) pero nunca compiten con el CTA: nada bloqueante, nada que tape
+ *   el LCP. Respetamos prefers-reduced-motion en cada componente.
+ * VISUAL_DENSITY = 4
+ *   Aire abundante, lectura cómoda, scroll calmado. Padding generoso en
+ *   cards (p-8/p-10), sin "cockpit". Justificado: el copy es comercial,
+ *   no un dashboard.
+ *
+ * Reglas anti-slop aplicadas: prohibido Inter como display (usamos
+ * Cabinet Grotesk + Geist), prohibido #000 puro (#0E1116 institucional),
+ * prohibido gradiente purple→pink (un único accent azul real #0c78f7),
+ * prohibidos avatares stock (iniciales sobre accent-soft).
+ */
+
 @theme {
+  /* legacy aliases kept for backwards compat */
   --color-canvas: #fafafa;
   --color-elevated: #ffffff;
   --color-dark: #0e2a4a;
@@ -14,17 +38,42 @@
   --color-text-muted: #94a3b8;
   --color-border-default: #e2e8f0;
   --color-divider: #f1f5f9;
-  --color-accent: #0c78f7;
   --color-accent-hover: #0a5fc7;
-  --color-accent-soft: #e8f1ff;
   --color-accent-foreground: #ffffff;
+
+  /* new palette tokens */
+  --color-accent: #0c78f7;
   --color-accent-deep: #0e2a4a;
+  --color-accent-soft: #e8f0fe;
+  --color-accent-ink: #062b6e;
+
+  --color-ink-900: #0e1116;
+  --color-ink-700: #1f2937;
+  --color-ink-500: #4b5563;
+  --color-ink-400: #6b7280;
+  --color-ink-300: #9ca3af;
+  --color-ink-200: #e5e7eb;
+  --color-ink-100: #f1f5f9;
+  --color-ink-50: #f8fafc;
+
+  --color-success: #0fa968;
+  --color-warning: #f59e0b;
+  --color-danger: #dc2626;
 
   --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-cabinet), var(--font-geist), sans-serif;
 
-  --radius-card: 1.25rem;
+  /* radius scale per redesign spec */
+  --radius-chip: 10px;
+  --radius-control: 14px;
+  --radius-card: 20px;
+  --radius-shell: 28px;
   --radius-pill: 9999px;
+
+  --shadow-soft: 0 8px 30px rgba(15, 23, 42, 0.06);
+  --shadow-lift: 0 18px 50px -12px rgba(12, 120, 247, 0.18);
+  --shadow-ring: 0 0 0 1px rgba(14, 42, 74, 0.06);
+
   --container-max: 1400px;
 }
 
@@ -36,7 +85,7 @@
   }
   body {
     background: var(--color-canvas);
-    color: var(--color-text-strong);
+    color: var(--color-ink-900);
     font-family: var(--font-sans);
   }
   ::selection {
@@ -45,6 +94,11 @@
   }
   * {
     @apply border-border outline-ring/50;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 4px;
   }
 }
 
@@ -59,6 +113,60 @@
       padding-inline: 2rem;
     }
   }
+  /* Smooth accordion height via grid trick */
+  .accordion-grid {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 280ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .accordion-grid[data-open="true"] {
+    grid-template-rows: 1fr;
+  }
+  .accordion-grid > div {
+    overflow: hidden;
+  }
+}
+
+/* Aurora background (CSS port from react-bits/Backgrounds/Aurora) */
+@keyframes aurora-shift-a {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50%      { transform: translate3d(6%, -4%, 0) scale(1.05); }
+}
+@keyframes aurora-shift-b {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50%      { transform: translate3d(-5%, 4%, 0) scale(1.08); }
+}
+@keyframes aurora-shift-c {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1.02); }
+  50%      { transform: translate3d(3%, 5%, 0) scale(0.96); }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-aurora] > * { animation: none !important; }
+  *, *::before, *::after {
+    animation-duration: 0ms !important;
+    transition-duration: 0ms !important;
+  }
+}
+
+/* underline-on-hover ghost link */
+.link-underline {
+  position: relative;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 1.5px;
+  width: 100%;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 250ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.link-underline:hover::after,
+.link-underline:focus-visible::after {
+  transform: scaleX(1);
 }
 
 @theme inline {

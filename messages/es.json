@@ -5,20 +5,23 @@
     "nav": {
       "services": "Servicios",
       "portfolio": "Portfolio",
+      "pricing": "Precios",
       "about": "Sobre nosotros",
       "blog": "Blog",
       "contact": "Contacto",
-      "cta": "Pedir presupuesto",
+      "cta": "Empieza tu proyecto",
       "languageToggle": "EN"
     },
     "footer": {
-      "tagline": "Webs profesionales para pymes y autónomos en España.",
+      "tagline": "Webs profesionales para pymes y autónomos en España. Pago único, sin cuotas mensuales.",
       "sections": {
+        "product": "Producto",
         "navigate": "Navegación",
         "contact": "Contacto",
         "legal": "Legal"
       },
-      "legalLine": "© 2026 Tuagenciaweb · CIF/NIF: pendiente · Hecho con Next.js",
+      "legalLine": "© 2026 Tuagenciaweb · CIF/NIF: pendiente",
+      "microclaim": "DISEÑO · DESARROLLO · RESULTADOS",
       "links": {
         "legalNotice": "Aviso legal",
         "privacy": "Privacidad",
@@ -45,85 +48,173 @@
   },
   "home": {
     "hero": {
-      "tagline": "DISEÑO · DESARROLLO · RESULTADOS",
-      "headlineLead": "Diseñamos webs que",
+      "eyebrow": "Disponibles 2 slots — Mayo 2026",
+      "headlinePart1": "Diseñamos webs que",
       "headlineHighlight": "convierten visitas en clientes",
-      "subheadline": "Creamos páginas web modernas, rápidas y optimizadas para SEO para que tu negocio genere más contactos y ventas todos los días.",
-      "ctaPrimary": "Solicitar presupuesto",
-      "ctaSecondary": "Ver proyectos",
-      "features": [
-        { "title": "Diseño a medida", "icon": "PaintBrush" },
-        { "title": "SEO optimizado", "icon": "MagnifyingGlass" },
-        { "title": "Responsive", "icon": "DeviceMobile" },
-        { "title": "Entrega rápida", "icon": "Rocket" }
-      ],
-      "rating": "5,0 valoración media",
-      "ratingSource": "Clientes verificados",
-      "badgeProjects": "+30 proyectos entregados",
-      "badgePagespeed": "95 Google PageSpeed",
-      "badgeLeads": "+300% leads"
+      "subheadline": "Pack único, sin cuotas mensuales abusivas. Diseño, desarrollo, SEO y dominio incluidos. La web es 100% tuya desde el día 1.",
+      "ctaPrimary": "Ver packs y precios",
+      "ctaSecondary": "Ver portfolio",
+      "micro1": "Entregamos en 2–3 semanas",
+      "micro2": "Pago único",
+      "micro3": "Sin permanencia"
     },
-    "heroBand": {
+    "logosTrust": {
+      "title": "Ya confían en nosotros"
+    },
+    "valueProps": {
       "items": [
-        { "icon": "Check", "highlight": "+30", "label": "proyectos entregados" },
-        { "icon": "Lightning", "highlight": "14 días", "label": "entrega media" },
-        { "icon": "ShieldCheck", "highlight": "Sin permanencia", "label": "el código es tuyo" }
-      ],
-      "techTitle": "Tecnologías que usamos"
+        {
+          "title": "Entrega en 2–3 semanas",
+          "body": "Plazo cerrado por contrato. Si nos retrasamos, te lo descontamos del precio final."
+        },
+        {
+          "title": "Pago único, cero sorpresas",
+          "body": "Te decimos el precio antes de empezar y no se mueve. Sin renovaciones automáticas ni cargos ocultos."
+        },
+        {
+          "title": "Diseño que convierte",
+          "body": "Cada bloque pensado para llevar al visitante hacia la llamada, la reserva o la compra."
+        }
+      ]
     },
-    "trust": { "title": "Trabajamos en", "sectors": ["Clínicas", "Despachos", "Reformas", "Hostelería"] },
     "services": {
-      "title": "Tres formas de empezar",
-      "subtitle": "Elige el pack que encaja con tu proyecto. Sin letra pequeña.",
-      "mostChosen": "Más elegido"
+      "eyebrow": "Servicios",
+      "title": "Todo lo que necesita tu web, en un solo equipo.",
+      "subtitle": "Diseño, código y SEO bajo el mismo techo. Sin agencias subcontratadas, sin pelotas entre proveedores.",
+      "items": [
+        {
+          "title": "Diseño web a medida",
+          "body": "Landings, webs corporativas y multi-página. Diseñadas desde cero para tu marca, no plantillas recicladas."
+        },
+        {
+          "title": "Tienda online",
+          "body": "E-commerce con Stripe, gestión de stock básica y emails transaccionales. Hasta 50 productos en el pack base."
+        },
+        {
+          "title": "SEO técnico",
+          "body": "Schema, sitemaps multilingües, Core Web Vitals cuidados. Tu web carga antes que la competencia."
+        },
+        {
+          "title": "Mantenimiento opcional",
+          "body": "Si lo quieres. Cuando lo quieres. Sin contratos largos. Cobramos solo si hay trabajo de verdad."
+        }
+      ]
     },
     "process": {
-      "title": "Cómo trabajamos",
-      "subtitle": "De inicio a fin: 14 días laborables.",
+      "eyebrow": "Cómo trabajamos",
+      "title": "De la primera llamada al lanzamiento, en 4 pasos.",
+      "subtitle": "Sin sorpresas. Te enseñamos cada paso antes de seguir.",
       "steps": [
-        { "title": "Reunión", "body": "Te llamamos, entendemos tu negocio y definimos objetivos." },
-        { "title": "Diseño", "body": "Mockups a medida basados en tu marca y tus clientes." },
-        { "title": "Desarrollo", "body": "Construimos en Next.js, optimizado para velocidad y SEO." },
-        { "title": "Lanzamiento", "body": "Publicamos, te formamos y te acompañamos." }
+        { "title": "Llamada", "body": "30 minutos. Entendemos tu negocio, tus clientes y tus objetivos reales." },
+        { "title": "Diseño", "body": "Mockups a medida basados en referencias tuyas y de tu sector." },
+        { "title": "Desarrollo", "body": "Next.js + Tailwind, optimizado para velocidad y SEO desde el primer commit." },
+        { "title": "Publicación", "body": "Lanzamos, te formamos para que la edites tú mismo y te entregamos todo." }
       ]
     },
-    "portfolio": { "title": "Trabajo reciente", "subtitle": "Algunos proyectos que hemos lanzado.", "cta": "Ver todos los proyectos" },
-    "differentiators": {
-      "title": "Por qué Tuagenciaweb",
-      "items": [
-        { "title": "Entrega rápida", "body": "De la primera reunión al lanzamiento en 14 días." },
-        { "title": "SEO de base", "body": "Schema, sitemap, Core Web Vitals cuidados." },
-        { "title": "Mobile-first", "body": "Diseñamos primero el móvil. Es donde están tus clientes." },
-        { "title": "Soporte directo", "body": "Hablas con quien hace la web. Sin call centers." },
-        { "title": "Sin permanencia", "body": "El código es tuyo desde el primer día." },
-        { "title": "Código limpio", "body": "Next.js + Tailwind. Nada de plantillas pesadas." }
-      ]
+    "portfolio": {
+      "eyebrow": "Portfolio",
+      "title": "Webs reales, lanzadas y rentables.",
+      "subtitle": "Una muestra de los proyectos que hemos diseñado y desarrollado este último año.",
+      "cta": "Ver todos los proyectos",
+      "viewCase": "Ver caso",
+      "comingSoon": "Próximamente"
+    },
+    "pricing": {
+      "eyebrow": "Precios",
+      "title": "Un precio cerrado. La web es tuya para siempre.",
+      "callout": "Pack único, sin cuotas mensuales abusivas. La web es 100% tuya.",
+      "mostChosen": "Más elegido",
+      "priceNote": "pago único · sin cuota mensual",
+      "startWith": "Empezar con {pack}",
+      "excludedExample": "Cuota mensual obligatoria",
+      "microcopy": "Sin permanencia. Sin renovaciones automáticas. El código fuente y el dominio son tuyos."
+    },
+    "comparativa": {
+      "eyebrow": "Comparativa honesta",
+      "title": "Por qué pagar una vez sale más barato que «pagar poco al mes».",
+      "subtitle": "Lo que cobran otras agencias en 3 años frente a lo que cobramos nosotros una sola vez.",
+      "colOthers": "Otras agencias",
+      "colUs": "tuagenciaweb.es",
+      "rows": [
+        { "label": "Coste inicial", "others": "0 – 500 €", "us": "590 – 1.890 €" },
+        { "label": "Cuota mensual", "others": "60 – 150 €/mes durante años", "us": "0 €" },
+        { "label": "Propiedad del dominio", "others": "De la agencia", "us": "Tuya" },
+        { "label": "Código fuente", "others": "Cerrado", "us": "Tuyo, en tu GitHub" },
+        { "label": "Si te vas", "others": "Pierdes la web", "us": "Te la llevas" },
+        { "label": "Coste a 3 años", "others": "2.160 € – 5.400 €", "us": "590 € – 1.890 € (una vez)" }
+      ],
+      "footnote": "Cifras estimadas en base a presupuestos públicos de agencias del sector pyme en España (2024–2026)."
     },
     "testimonials": {
-      "title": "Lo que dicen nuestros clientes",
+      "eyebrow": "Testimonios",
+      "title": "Negocios reales, resultados reales.",
+      "prev": "Anterior",
+      "next": "Siguiente",
+      "goTo": "Ir al testimonio",
       "items": [
-        { "quote": "Subió las llamadas un 40% el primer mes. La web parece de una empresa mucho más grande.", "author": "Marta Iglesias", "role": "Directora, Clínica Dental Iglesias" },
-        { "quote": "Profesionales y rápidos. Entregaron antes de lo previsto.", "author": "Jorge Vilaró", "role": "Socio, Vilaró Abogados" },
-        { "quote": "La web carga muy rápido y Google la posiciona bien para mi zona.", "author": "Andrea Soto", "role": "Reformas Soto" }
+        {
+          "quote": "Subió las llamadas un 40% el primer mes. La web parece de una empresa mucho más grande.",
+          "author": "Marta Iglesias",
+          "role": "Directora, Clínica Dental Iglesias",
+          "kind": "sample"
+        },
+        {
+          "quote": "Pagamos una vez y se acabó. Sin cuotas mensuales eternas como con la agencia anterior.",
+          "author": "Jorge Vilaró",
+          "role": "Socio, Vilaró Abogados",
+          "kind": "sample"
+        },
+        {
+          "quote": "Carga muy rápido, posiciona bien y la edito yo mismo desde Google Search Console. Diez sobre diez.",
+          "author": "Andrea Soto",
+          "role": "Reformas Soto",
+          "kind": "sample"
+        },
+        {
+          "quote": "Me entregaron el repositorio, el dominio y el panel. Por primera vez siento que la web es mía.",
+          "author": "Luis Carballo",
+          "role": "Restaurante Carballo, A Coruña",
+          "kind": "sample"
+        }
       ]
     },
     "faq": {
-      "title": "Preguntas frecuentes",
-      "subtitle": "Lo que más nos preguntan antes de empezar.",
+      "eyebrow": "Preguntas frecuentes",
+      "title": "Lo que más nos preguntan antes de empezar.",
+      "subtitle": "Si tienes una duda que no está aquí, escríbenos por WhatsApp y la resolvemos en minutos.",
       "items": [
-        { "q": "¿Cuánto cuesta una web?", "a": "Desde 590 € el pack Esencial. Tienes los tres packs detallados en /servicios." },
-        { "q": "¿Cuánto se tarda?", "a": "Entre 7 y 21 días laborables según el pack. La media es 14 días." },
-        { "q": "¿Quién es dueño del dominio y del código?", "a": "Tú. Te entregamos las credenciales y el repositorio al finalizar." },
-        { "q": "¿Hay permanencia?", "a": "Ninguna. El mantenimiento mensual es opcional." },
-        { "q": "¿Incluye hosting?", "a": "Sí, el primer año. A partir del segundo año son ~60 €/año a coste." },
-        { "q": "¿Qué pasa si no me gusta?", "a": "Tienes rondas de revisiones incluidas en cada pack para ajustar lo que haga falta." }
+        {
+          "q": "¿Por qué no cobráis cuota mensual como otras agencias?",
+          "a": "Porque consideramos abusivo cobrar 80–150€/mes durante años por una web que ya está construida y que apenas requiere mantenimiento real. Nuestro pack incluye un precio cerrado, único, y tú decides después si quieres mantenimiento puntual o no. La web, el dominio y el código son tuyos desde el día 1."
+        },
+        {
+          "q": "¿Y si necesito cambios después del lanzamiento?",
+          "a": "Cada pack incluye rondas de revisiones antes de publicar. Si después quieres más cambios, pagas solo por las horas reales. Sin contratos de mantenimiento obligatorios."
+        },
+        {
+          "q": "¿Quién es dueño del dominio y del hosting?",
+          "a": "Tú, siempre. El dominio se registra a tu nombre y te entregamos las credenciales. Te explicamos cómo renovarlo (~12 €/año en tu propio proveedor)."
+        },
+        {
+          "q": "¿Hacéis SEO de verdad o solo lo pones en la oferta?",
+          "a": "SEO técnico real desde el primer commit: Schema.org, sitemap multilingüe, Core Web Vitals optimizados, OG dinámico. Te enseñamos a verificarlo tú mismo con PageSpeed y Search Console."
+        },
+        {
+          "q": "¿Cuánto se tarda en tener la web online?",
+          "a": "Entre 2 y 3 semanas según el pack. Pack Esencial: 7 días. Profesional: 14 días. Tienda online: 21 días. Plazo cerrado por contrato."
+        },
+        {
+          "q": "¿Aceptáis pagos a plazos?",
+          "a": "Sí, 50% al firmar y 50% antes del lanzamiento. Sin intereses, sin tarjetas, transferencia normal."
+        }
       ]
     },
-    "finalCta": {
-      "title": "¿Listo para tu nueva web?",
-      "body": "Cuéntanos tu proyecto. Te respondemos en 24h.",
-      "ctaPrimary": "Pedir presupuesto",
-      "ctaSecondary": "WhatsApp"
+    "ctaFinal": {
+      "eyebrow": "Listos para empezar",
+      "title": "¿Listo para una web que pague su propio coste en menos de 6 meses?",
+      "subtitle": "Cuéntanos tu proyecto en una llamada de 30 minutos. Si encajamos, empezamos esa misma semana.",
+      "ctaPrimary": "Empieza tu proyecto",
+      "ctaSecondary": "Reservar llamada"
     }
   },
   "services": {

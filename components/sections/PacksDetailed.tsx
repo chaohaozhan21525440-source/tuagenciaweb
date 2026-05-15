@@ -11,7 +11,7 @@ import { cn } from "@/lib/cn";
 
 export function PacksDetailed() {
   const locale = useLocale() as "es" | "en";
-  const t = useTranslations("home.services");
+  const t = useTranslations("home.pricing");
 
   return (
     <section className="py-16 md:py-24">

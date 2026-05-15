@@ -2,7 +2,7 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import { buildMetadata } from "@/lib/seo";
 import { PortfolioGrid } from "@/components/sections/PortfolioGrid";
-import { FinalCTA } from "@/components/sections/FinalCTA";
+import { CTAFinal } from "@/components/home/CTAFinal";
 import { FadeUp } from "@/components/motion/FadeUp";
 
 function PortfolioHero() {
@@ -35,7 +35,7 @@ export default async function PortfolioPage({ params }: { params: Promise<{ loca
     <main>
       <PortfolioHero />
       <PortfolioGrid />
-      <FinalCTA />
+      <CTAFinal />
     </main>
   );
 }

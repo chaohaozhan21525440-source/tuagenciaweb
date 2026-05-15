@@ -12,7 +12,11 @@ export function CookieBanner() {
   const [configuring, setConfiguring] = useState(false);
 
   useEffect(() => {
-    setShow(readConsent() === null);
+    // Defer the consent read to avoid a cascading render in the same tick.
+    const id = window.requestAnimationFrame(() => {
+      setShow(readConsent() === null);
+    });
+    return () => window.cancelAnimationFrame(id);
   }, []);
 
   if (!show) return null;

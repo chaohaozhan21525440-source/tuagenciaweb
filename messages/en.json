@@ -5,16 +5,18 @@
     "nav": {
       "services": "Services",
       "portfolio": "Portfolio",
+      "pricing": "Pricing",
       "about": "About",
       "blog": "Blog",
       "contact": "Contact",
-      "cta": "Get a quote",
+      "cta": "Start your project",
       "languageToggle": "ES"
     },
     "footer": {
-      "tagline": "Professional websites for small businesses in Spain.",
-      "sections": { "navigate": "Navigation", "contact": "Contact", "legal": "Legal" },
-      "legalLine": "© 2026 Tuagenciaweb · VAT: pending · Built with Next.js",
+      "tagline": "Professional websites for small businesses in Spain. One-off payment, no monthly fees.",
+      "sections": { "product": "Product", "navigate": "Navigation", "contact": "Contact", "legal": "Legal" },
+      "legalLine": "© 2026 Tuagenciaweb · VAT: pending",
+      "microclaim": "DESIGN · DEVELOPMENT · RESULTS",
       "links": { "legalNotice": "Legal notice", "privacy": "Privacy", "cookies": "Cookies" }
     },
     "cookies": {
@@ -33,77 +35,174 @@
   },
   "home": {
     "hero": {
-      "tagline": "DESIGN · DEVELOPMENT · RESULTS",
-      "headlineLead": "We build websites that",
+      "eyebrow": "Booking 2 slots — May 2026",
+      "headlinePart1": "We build websites that",
       "headlineHighlight": "turn visitors into clients",
-      "subheadline": "We design and code modern, fast, SEO-optimized websites so your business gets more leads and sales every day.",
-      "ctaPrimary": "Get a quote",
-      "ctaSecondary": "View projects",
-      "features": [
-        { "title": "Custom design", "icon": "PaintBrush" },
-        { "title": "SEO optimized", "icon": "MagnifyingGlass" },
-        { "title": "Responsive", "icon": "DeviceMobile" },
-        { "title": "Fast delivery", "icon": "Rocket" }
-      ],
-      "rating": "5.0 average rating",
-      "ratingSource": "Verified clients",
-      "badgeProjects": "30+ projects shipped",
-      "badgePagespeed": "95 Google PageSpeed",
-      "badgeLeads": "+300% leads"
+      "subheadline": "One single pack, no abusive monthly fees. Design, development, SEO and domain included. The site is 100% yours from day one.",
+      "ctaPrimary": "See packs & pricing",
+      "ctaSecondary": "View portfolio",
+      "micro1": "Delivered in 2–3 weeks",
+      "micro2": "One-off payment",
+      "micro3": "No lock-in"
     },
-    "heroBand": {
+    "logosTrust": {
+      "title": "Trusted by"
+    },
+    "valueProps": {
       "items": [
-        { "icon": "Check", "highlight": "30+", "label": "projects shipped" },
-        { "icon": "Lightning", "highlight": "14 days", "label": "average delivery" },
-        { "icon": "ShieldCheck", "highlight": "No lock-in", "label": "you own the code" }
-      ],
-      "techTitle": "Tech we use"
+        {
+          "title": "Delivered in 2–3 weeks",
+          "body": "Fixed timeline in the contract. If we miss it, we discount it from the final price."
+        },
+        {
+          "title": "One-off payment, zero surprises",
+          "body": "We tell you the price before kickoff and it doesn't move. No auto-renewals, no hidden fees."
+        },
+        {
+          "title": "Design that converts",
+          "body": "Every block engineered to push the visitor toward the call, booking or purchase."
+        }
+      ]
     },
-    "trust": { "title": "We work with", "sectors": ["Clinics", "Law firms", "Construction", "Hospitality"] },
-    "services": { "title": "Three ways to start", "subtitle": "Pick the pack that fits your project. No fine print.", "mostChosen": "Most chosen" },
+    "services": {
+      "eyebrow": "Services",
+      "title": "Everything your site needs, under one roof.",
+      "subtitle": "Design, code and SEO in one team. No subcontracted agencies, no finger-pointing between vendors.",
+      "items": [
+        {
+          "title": "Custom web design",
+          "body": "Landings, corporate sites and multi-page. Designed from scratch for your brand, not recycled templates."
+        },
+        {
+          "title": "Online shop",
+          "body": "E-commerce with Stripe, basic stock management and transactional emails. Up to 50 products in the base pack."
+        },
+        {
+          "title": "Technical SEO",
+          "body": "Schema, multilingual sitemaps, optimized Core Web Vitals. Your site loads before your competition."
+        },
+        {
+          "title": "Optional maintenance",
+          "body": "When you want it. As you want it. No long contracts. We bill only for real work."
+        }
+      ]
+    },
     "process": {
-      "title": "How we work",
-      "subtitle": "Start to launch: 14 business days.",
+      "eyebrow": "How we work",
+      "title": "From the first call to launch, in 4 steps.",
+      "subtitle": "No surprises. We show you every step before moving on.",
       "steps": [
-        { "title": "Discovery", "body": "We call, understand your business, set goals." },
-        { "title": "Design", "body": "Custom mockups based on your brand and your clients." },
-        { "title": "Build", "body": "Built in Next.js, optimized for speed and SEO." },
-        { "title": "Launch", "body": "We publish, train you and stay close." }
+        { "title": "Call", "body": "30 minutes. We learn your business, your clients and your real goals." },
+        { "title": "Design", "body": "Custom mockups based on your references and your sector." },
+        { "title": "Build", "body": "Next.js + Tailwind, optimized for speed and SEO from the first commit." },
+        { "title": "Launch", "body": "We publish, train you to edit it yourself, and hand everything over." }
       ]
     },
-    "portfolio": { "title": "Recent work", "subtitle": "Some of the projects we have shipped.", "cta": "View all projects" },
-    "differentiators": {
-      "title": "Why Tuagenciaweb",
-      "items": [
-        { "title": "Fast delivery", "body": "From kickoff to launch in 14 days." },
-        { "title": "SEO baked in", "body": "Schema, sitemap, Core Web Vitals." },
-        { "title": "Mobile-first", "body": "We design mobile first. That is where your clients are." },
-        { "title": "Direct support", "body": "You talk to whoever builds your site. No call centers." },
-        { "title": "No lock-in", "body": "You own the code from day one." },
-        { "title": "Clean code", "body": "Next.js + Tailwind. No bloated templates." }
-      ]
+    "portfolio": {
+      "eyebrow": "Portfolio",
+      "title": "Real websites, shipped and profitable.",
+      "subtitle": "A sample of projects we have designed and developed this past year.",
+      "cta": "View all projects",
+      "viewCase": "View case",
+      "comingSoon": "Coming soon"
+    },
+    "pricing": {
+      "eyebrow": "Pricing",
+      "title": "One fixed price. The site is yours forever.",
+      "callout": "One single pack, no abusive monthly fees. The site is 100% yours.",
+      "mostChosen": "Most chosen",
+      "priceNote": "one-off · no monthly fee",
+      "startWith": "Start with {pack}",
+      "excludedExample": "Mandatory monthly fee",
+      "microcopy": "No lock-in. No auto-renewals. Source code and domain are yours."
+    },
+    "comparativa": {
+      "eyebrow": "Honest comparison",
+      "title": "Why paying once is cheaper than \"paying a little every month\".",
+      "subtitle": "What other agencies charge over 3 years versus what we charge a single time.",
+      "colOthers": "Other agencies",
+      "colUs": "tuagenciaweb.es",
+      "rows": [
+        { "label": "Setup cost", "others": "€0 – 500", "us": "€590 – 1,890" },
+        { "label": "Monthly fee", "others": "€60 – 150/mo for years", "us": "€0" },
+        { "label": "Domain ownership", "others": "Agency's", "us": "Yours" },
+        { "label": "Source code", "others": "Locked", "us": "Yours, on your GitHub" },
+        { "label": "If you leave", "others": "You lose the site", "us": "You take it with you" },
+        { "label": "3-year cost", "others": "€2,160 – 5,400", "us": "€590 – 1,890 (once)" }
+      ],
+      "footnote": "Figures estimated from public quotes by Spanish SMB-sector agencies (2024–2026)."
     },
     "testimonials": {
-      "title": "What our clients say",
+      "eyebrow": "Testimonials",
+      "title": "Real businesses, real results.",
+      "prev": "Previous",
+      "next": "Next",
+      "goTo": "Go to testimonial",
       "items": [
-        { "quote": "Calls went up 40% in the first month. The site looks like a much bigger company.", "author": "Marta Iglesias", "role": "Director, Iglesias Dental" },
-        { "quote": "Professional and fast. Delivered ahead of schedule.", "author": "Jorge Vilaró", "role": "Partner, Vilaró Lawyers" },
-        { "quote": "The site is very fast and Google ranks it well for my area.", "author": "Andrea Soto", "role": "Soto Construction" }
+        {
+          "quote": "Calls went up 40% in the first month. The site looks like a much bigger company.",
+          "author": "Marta Iglesias",
+          "role": "Director, Iglesias Dental Clinic",
+          "kind": "sample"
+        },
+        {
+          "quote": "We paid once and that was it. No endless monthly fees like with our previous agency.",
+          "author": "Jorge Vilaró",
+          "role": "Partner, Vilaró Lawyers",
+          "kind": "sample"
+        },
+        {
+          "quote": "Loads fast, ranks well, and I edit it myself from Search Console. Ten out of ten.",
+          "author": "Andrea Soto",
+          "role": "Soto Construction",
+          "kind": "sample"
+        },
+        {
+          "quote": "They handed me the repo, the domain and the dashboard. For the first time the site really feels mine.",
+          "author": "Luis Carballo",
+          "role": "Carballo Restaurant, A Coruña",
+          "kind": "sample"
+        }
       ]
     },
     "faq": {
-      "title": "Frequently asked",
-      "subtitle": "What people ask us most before starting.",
+      "eyebrow": "FAQ",
+      "title": "What people ask us most before starting.",
+      "subtitle": "If your question is not here, message us on WhatsApp and we'll answer in minutes.",
       "items": [
-        { "q": "How much does a website cost?", "a": "From €590 for the Essential pack. See all three packs at /services." },
-        { "q": "How long does it take?", "a": "Between 7 and 21 business days depending on the pack. Average is 14." },
-        { "q": "Who owns the domain and the code?", "a": "You. We hand over credentials and the repository when we finish." },
-        { "q": "Is there any lock-in?", "a": "None. Monthly maintenance is optional." },
-        { "q": "Is hosting included?", "a": "Yes, the first year. From the second year onward it is ~€60/year at cost." },
-        { "q": "What if I don't like it?", "a": "Every pack includes revision rounds so we can adjust whatever you need." }
+        {
+          "q": "Why don't you charge a monthly fee like other agencies?",
+          "a": "Because we consider it abusive to charge €80–150/month for years for a website that is already built and barely requires real maintenance. Our pack includes a fixed, one-off price, and you decide afterwards whether you want occasional maintenance or not. The site, the domain and the code are yours from day one."
+        },
+        {
+          "q": "What if I need changes after launch?",
+          "a": "Every pack includes revision rounds before publishing. If you want more changes afterwards, you pay only for the actual hours. No mandatory maintenance contracts."
+        },
+        {
+          "q": "Who owns the domain and the hosting?",
+          "a": "You, always. The domain is registered in your name and we hand over the credentials. We show you how to renew it (~€12/year via your own provider)."
+        },
+        {
+          "q": "Do you do real SEO or just claim it?",
+          "a": "Real technical SEO from the first commit: Schema.org, multilingual sitemap, optimized Core Web Vitals, dynamic OG. We teach you to verify it yourself with PageSpeed and Search Console."
+        },
+        {
+          "q": "How long until the site is live?",
+          "a": "Between 2 and 3 weeks depending on the pack. Essential: 7 days. Professional: 14 days. Online shop: 21 days. Fixed timeline in the contract."
+        },
+        {
+          "q": "Do you accept installments?",
+          "a": "Yes, 50% at kickoff and 50% before launch. No interest, no cards, standard bank transfer."
+        }
       ]
     },
-    "finalCta": { "title": "Ready for your new site?", "body": "Tell us about your project. We reply within 24h.", "ctaPrimary": "Get a quote", "ctaSecondary": "WhatsApp" }
+    "ctaFinal": {
+      "eyebrow": "Ready to start",
+      "title": "Ready for a website that pays for itself in less than 6 months?",
+      "subtitle": "Tell us about your project in a 30-minute call. If we click, we start the same week.",
+      "ctaPrimary": "Start your project",
+      "ctaSecondary": "Book a call"
+    }
   },
   "services": {
     "hero": { "title": "Services and packs", "subtitle": "No fine print. No surprises. You decide how far we go." },

@@ -3,13 +3,11 @@ import { test, expect } from "@playwright/test";
 test("ES home renders all main sections", async ({ page }) => {
   await page.goto("/es");
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Diseñamos webs que");
-  await expect(page.getByText("Tecnologías que usamos")).toBeVisible();
-  await expect(page.getByRole("heading", { name: "Tres formas de empezar" })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "Cómo trabajamos" })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "Trabajo reciente" })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "Por qué Tuagenciaweb" })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "Preguntas frecuentes" })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "¿Listo para tu nueva web?" })).toBeVisible();
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("convierten visitas en clientes");
+  await expect(page.getByText("Pack único, sin cuotas mensuales abusivas. La web es 100% tuya.")).toBeVisible();
+  await expect(page.getByText("¿Por qué no cobráis cuota mensual como otras agencias?")).toBeVisible();
+  await expect(page.getByRole("heading", { name: /Comparativa honesta|Por qué pagar una vez/ })).toBeVisible();
+  await expect(page.getByRole("heading", { name: /Listo para una web que pague/ })).toBeVisible();
 });
 
 test("EN home toggles via locale switcher", async ({ page }) => {

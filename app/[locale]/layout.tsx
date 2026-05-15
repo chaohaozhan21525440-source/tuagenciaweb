@@ -2,8 +2,8 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
+import { SiteHeader } from "@/components/layout/SiteHeader";
+import { SiteFooter } from "@/components/layout/SiteFooter";
 import { CookieBanner } from "@/components/layout/CookieBanner";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { organizationLd, localBusinessLd } from "@/lib/jsonld";
@@ -26,9 +26,9 @@ export default async function LocaleLayout({
     <NextIntlClientProvider>
       <JsonLd data={organizationLd()} />
       <JsonLd data={localBusinessLd()} />
-      <Navbar />
+      <SiteHeader />
       {children}
-      <Footer />
+      <SiteFooter />
       <CookieBanner />
     </NextIntlClientProvider>
   );

@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 import { buildMetadata } from "@/lib/seo";
 import { TeamBanner } from "@/components/about/TeamBanner";
 import { HowWeWork } from "@/components/about/HowWeWork";
-import { FinalCTA } from "@/components/sections/FinalCTA";
+import { CTAFinal } from "@/components/home/CTAFinal";
 import { FadeUp } from "@/components/motion/FadeUp";
 
 const TECH = ["Next.js", "TypeScript", "Tailwind CSS", "Vercel", "Resend", "Framer Motion"];
@@ -85,7 +85,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       <HowWeWork />
       <CommitmentsBlock />
       <TechBlock />
-      <FinalCTA />
+      <CTAFinal />
     </main>
   );
 }

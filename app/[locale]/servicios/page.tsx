@@ -5,7 +5,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { PacksDetailed } from "@/components/sections/PacksDetailed";
 import { ComparisonTable } from "@/components/sections/ComparisonTable";
 import { ExtrasTable } from "@/components/sections/ExtrasTable";
-import { FinalCTA } from "@/components/sections/FinalCTA";
+import { CTAFinal } from "@/components/home/CTAFinal";
 import { FadeUp } from "@/components/motion/FadeUp";
 
 function ServicesHero() {
@@ -65,7 +65,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
       <ComparisonTable />
       <ExtrasTable />
       <ServicesFAQ />
-      <FinalCTA />
+      <CTAFinal />
     </main>
   );
 }

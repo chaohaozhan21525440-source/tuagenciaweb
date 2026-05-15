@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Local skill-repo caches (gitignored)
+    ".cache/**",
   ]),
 ]);
 
