@@ -24,7 +24,7 @@ export function buildMetadata({ locale, path, title, description, image }: SeoIn
         en: `${SITE}/en${path === "/" ? "" : path}`,
       },
     },
-    openGraph: { title, description, url, siteName: "Tuagenciaweb", images: [{ url: ogImage }], locale, type: "website" },
+    openGraph: { title, description, url, siteName: "Tuagenciaweb · Diseño, desarrollo y resultados", images: [{ url: ogImage }], locale, type: "website" },
     twitter: { card: "summary_large_image", title, description, images: [ogImage] },
   };
 }

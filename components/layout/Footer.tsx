@@ -63,6 +63,12 @@ export function Footer() {
       </div>
 
       <div className="border-t border-white/10">
+        <div className="container-page py-3 text-center text-xs font-medium uppercase tracking-[0.25em] text-white/40">
+          DISEÑO · DESARROLLO · RESULTADOS
+        </div>
+      </div>
+
+      <div className="border-t border-white/10">
         <div className="container-page py-6 text-xs text-white/50">{tFooter("legalLine")}</div>
       </div>
     </footer>
