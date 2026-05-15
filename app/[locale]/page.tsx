@@ -5,6 +5,7 @@ import { ServicesGrid } from "@/components/sections/ServicesGrid";
 import { ProcessSteps } from "@/components/sections/ProcessSteps";
 import { PortfolioFeatured } from "@/components/sections/PortfolioFeatured";
 import { Differentiators } from "@/components/sections/Differentiators";
+import { Testimonials } from "@/components/sections/Testimonials";
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -17,6 +18,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <ProcessSteps />
       <PortfolioFeatured />
       <Differentiators />
+      <Testimonials />
     </main>
   );
 }
