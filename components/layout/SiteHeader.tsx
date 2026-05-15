@@ -8,7 +8,7 @@ import { cn } from "@/lib/cn";
 const NAV = [
   { href: "#servicios", label: "Servicios" },
   { href: "#proyectos", label: "Proyectos" },
-  { href: "#sobre-nosotros", label: "Sobre nosotros" },
+  { href: "/sobre-nosotros", label: "Sobre nosotros" },
   { href: "#blog", label: "Blog" },
   { href: "#contacto", label: "Contacto" },
 ];
