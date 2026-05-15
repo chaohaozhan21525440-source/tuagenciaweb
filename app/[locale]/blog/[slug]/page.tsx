@@ -6,6 +6,8 @@ import { Link } from "@/i18n/routing";
 import { Button } from "@/components/ui/button";
 import { getPost, listPosts, readingTime, type Locale } from "@/lib/blog";
 import { buildMetadata } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { blogPostLd } from "@/lib/jsonld";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }) {
   const { locale, slug } = await params;
@@ -36,6 +38,7 @@ export default async function PostPage({ params }: { params: Promise<{ locale: s
 
   return (
     <main className="container-page max-w-3xl py-16 md:py-24">
+      <JsonLd data={blogPostLd({ title: post.title, description: post.description, date: post.date, slug, cover: post.cover, locale: locale as "es" | "en" })} />
       <p className="text-xs uppercase tracking-wider text-[var(--color-text-muted)]">{post.tags.join(" · ")}</p>
       <h1 className="mt-3 font-display text-4xl font-bold leading-[1.1] tracking-tighter md:text-5xl">{post.title}</h1>
       <p className="mt-4 text-sm text-[var(--color-text-muted)]">
