@@ -330,23 +330,12 @@ export function Hero() {
             transition={{ duration: 0.9, ease, delay: 0.25 }}
             className="hero-visual relative"
           >
-            {/* Brand halo behind the video — large blue aura grounded in the page bg */}
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-[-15%] -z-10"
-              style={{
-                background:
-                  "radial-gradient(ellipse 55% 50% at 50% 50%, rgba(37,99,235,0.22), rgba(37,99,235,0.06) 50%, transparent 75%)",
-                filter: "blur(48px)",
-              }}
-            />
-
             {/*
-              Video itself uses mix-blend-mode: multiply so the white frame of
-              the source clip is multiplied against the white page background
-              and disappears entirely. The radial mask provides the final soft
-              feather around the silhouette. drop-shadow is moved here (not on
-              a wrapper) so it follows the masked outline, not a hard rectangle.
+              Page background now matches the video's own background (#eef1f7),
+              so we no longer need a radial mask or mix-blend-mode. The video
+              sits flat on the page and its rectangle is invisible because the
+              colours are identical. Only a soft drop-shadow is kept to add
+              elevation around the laptop/phone silhouette.
             */}
             <video
               ref={videoRef}
@@ -358,12 +347,7 @@ export function Hero() {
               preload="auto"
               aria-hidden
               style={{
-                mixBlendMode: "multiply",
-                WebkitMaskImage:
-                  "radial-gradient(ellipse 78% 82% at 50% 52%, rgba(0,0,0,1) 50%, rgba(0,0,0,0.7) 75%, rgba(0,0,0,0) 100%)",
-                maskImage:
-                  "radial-gradient(ellipse 78% 82% at 50% 52%, rgba(0,0,0,1) 50%, rgba(0,0,0,0.7) 75%, rgba(0,0,0,0) 100%)",
-                filter: "drop-shadow(0 32px 45px rgba(10,23,51,0.12))",
+                filter: "drop-shadow(0 28px 40px rgba(10,23,51,0.10))",
               }}
             >
               <source src="/hero-video.mp4" type="video/mp4" />
