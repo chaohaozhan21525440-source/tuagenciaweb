@@ -1,12 +1,24 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
-const geist = Geist({ subsets: ["latin"], variable: "--font-geist", display: "swap" });
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const display = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-display",
+  weight: ["500", "600", "700"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: "Tuagenciaweb",
-  description: "Webs profesionales para tu negocio, listas en 2 semanas.",
+  title: "Tuagenciaweb · Webs que convierten visitas en clientes",
+  description:
+    "Agencia web para pymes y autónomos. Pack único, sin cuotas mensuales. Diseño, desarrollo, SEO y dominio incluidos.",
   icons: {
     icon: "/logo/favicon.png",
     apple: "/logo/apple-touch-icon.png",
@@ -15,7 +27,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html className={geist.variable} style={{ ["--font-cabinet" as string]: "var(--font-geist)" }}>
+    <html lang="es" className={`${inter.variable} ${display.variable}`}>
       <body>{children}</body>
     </html>
   );
