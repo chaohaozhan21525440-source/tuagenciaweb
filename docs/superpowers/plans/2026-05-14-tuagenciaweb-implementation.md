@@ -129,14 +129,32 @@ Tailwind v4 uses CSS-first config via `@theme` in `globals.css`.
 }
 
 @layer base {
-  html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
-  body { background: var(--color-canvas); color: var(--color-text-strong); font-family: var(--font-sans); }
-  ::selection { background: var(--color-accent); color: white; }
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    background: var(--color-canvas);
+    color: var(--color-text-strong);
+    font-family: var(--font-sans);
+  }
+  ::selection {
+    background: var(--color-accent);
+    color: white;
+  }
 }
 
 @layer utilities {
-  .container-page { max-width: var(--container-max); margin-inline: auto; padding-inline: 1rem; }
-  @media (min-width: 768px) { .container-page { padding-inline: 2rem; } }
+  .container-page {
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+  @media (min-width: 768px) {
+    .container-page {
+      padding-inline: 2rem;
+    }
+  }
 }
 ```
 
@@ -189,7 +207,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   // Until Cabinet Grotesk is loaded (Task 7), --font-cabinet falls back to Geist.
   return (
-    <html lang="es" className={geist.variable} style={{ ["--font-cabinet" as string]: "var(--font-geist)" }}>
+    <html
+      lang="es"
+      className={geist.variable}
+      style={{ ["--font-cabinet" as string]: "var(--font-geist)" }}
+    >
       <body>{children}</body>
     </html>
   );
@@ -240,7 +262,8 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: "bg-[var(--color-accent)] text-white hover:bg-[var(--color-accent-hover)]",
-        ghost: "border border-[var(--color-border-default)] bg-[var(--color-elevated)] text-[var(--color-text-strong)] hover:bg-[var(--color-accent-soft)]",
+        ghost:
+          "border border-[var(--color-border-default)] bg-[var(--color-elevated)] text-[var(--color-text-strong)] hover:bg-[var(--color-accent-soft)]",
         link: "text-[var(--color-accent)] underline-offset-4 hover:underline",
         dark: "bg-[var(--color-dark)] text-white hover:bg-[var(--color-text-strong)]",
       },
@@ -367,11 +390,23 @@ export const contentType = "image/png";
 
 export default function Icon() {
   return new ImageResponse(
-    (
-      <div style={{ width: 32, height: 32, background: "#2C5BFF", borderRadius: 7, display: "flex", alignItems: "center", justifyContent: "center", color: "white", fontSize: 22, fontWeight: 800, fontFamily: "sans-serif" }}>
-        t
-      </div>
-    ),
+    <div
+      style={{
+        width: 32,
+        height: 32,
+        background: "#2C5BFF",
+        borderRadius: 7,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        color: "white",
+        fontSize: 22,
+        fontWeight: 800,
+        fontFamily: "sans-serif",
+      }}
+    >
+      t
+    </div>,
     { ...size },
   );
 }
@@ -387,11 +422,23 @@ export const contentType = "image/png";
 
 export default function AppleIcon() {
   return new ImageResponse(
-    (
-      <div style={{ width: 180, height: 180, background: "#2C5BFF", borderRadius: 40, display: "flex", alignItems: "center", justifyContent: "center", color: "white", fontSize: 120, fontWeight: 800, fontFamily: "sans-serif" }}>
-        t
-      </div>
-    ),
+    <div
+      style={{
+        width: 180,
+        height: 180,
+        background: "#2C5BFF",
+        borderRadius: 40,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        color: "white",
+        fontSize: 120,
+        fontWeight: 800,
+        fontFamily: "sans-serif",
+      }}
+    >
+      t
+    </div>,
     { ...size },
   );
 }
@@ -605,7 +652,10 @@ git commit -m "feat: configure next-intl with localized pathnames"
       "configure": "Configurar",
       "save": "Guardar preferencias",
       "categories": {
-        "necessary": { "name": "Necesarias", "desc": "Imprescindibles para que el sitio funcione." },
+        "necessary": {
+          "name": "Necesarias",
+          "desc": "Imprescindibles para que el sitio funcione."
+        },
         "analytics": { "name": "Analítica", "desc": "Vercel Analytics anónima." }
       }
     },
@@ -624,7 +674,10 @@ git commit -m "feat: configure next-intl with localized pathnames"
       "microcopy": "Sin permanencia · Sin sorpresas",
       "badgeProjects": "+30 proyectos entregados"
     },
-    "trust": { "title": "Trabajamos en", "sectors": ["Clínicas", "Despachos", "Reformas", "Hostelería"] },
+    "trust": {
+      "title": "Trabajamos en",
+      "sectors": ["Clínicas", "Despachos", "Reformas", "Hostelería"]
+    },
     "services": {
       "title": "Tres formas de empezar",
       "subtitle": "Elige el pack que encaja con tu proyecto. Sin letra pequeña.",
@@ -636,17 +689,27 @@ git commit -m "feat: configure next-intl with localized pathnames"
       "steps": [
         { "title": "Reunión", "body": "Te llamamos, entendemos tu negocio y definimos objetivos." },
         { "title": "Diseño", "body": "Mockups a medida basados en tu marca y tus clientes." },
-        { "title": "Desarrollo", "body": "Construimos en Next.js, optimizado para velocidad y SEO." },
+        {
+          "title": "Desarrollo",
+          "body": "Construimos en Next.js, optimizado para velocidad y SEO."
+        },
         { "title": "Lanzamiento", "body": "Publicamos, te formamos y te acompañamos." }
       ]
     },
-    "portfolio": { "title": "Trabajo reciente", "subtitle": "Algunos proyectos que hemos lanzado.", "cta": "Ver todos los proyectos" },
+    "portfolio": {
+      "title": "Trabajo reciente",
+      "subtitle": "Algunos proyectos que hemos lanzado.",
+      "cta": "Ver todos los proyectos"
+    },
     "differentiators": {
       "title": "Por qué Tuagenciaweb",
       "items": [
         { "title": "Entrega rápida", "body": "De la primera reunión al lanzamiento en 14 días." },
         { "title": "SEO de base", "body": "Schema, sitemap, Core Web Vitals cuidados." },
-        { "title": "Mobile-first", "body": "Diseñamos primero el móvil. Es donde están tus clientes." },
+        {
+          "title": "Mobile-first",
+          "body": "Diseñamos primero el móvil. Es donde están tus clientes."
+        },
         { "title": "Soporte directo", "body": "Hablas con quien hace la web. Sin call centers." },
         { "title": "Sin permanencia", "body": "El código es tuyo desde el primer día." },
         { "title": "Código limpio", "body": "Next.js + Tailwind. Nada de plantillas pesadas." }
@@ -655,21 +718,48 @@ git commit -m "feat: configure next-intl with localized pathnames"
     "testimonials": {
       "title": "Lo que dicen nuestros clientes",
       "items": [
-        { "quote": "Subió las llamadas un 40% el primer mes. La web parece de una empresa mucho más grande.", "author": "Marta Iglesias", "role": "Directora, Clínica Dental Iglesias" },
-        { "quote": "Profesionales y rápidos. Entregaron antes de lo previsto.", "author": "Jorge Vilaró", "role": "Socio, Vilaró Abogados" },
-        { "quote": "La web carga muy rápido y Google la posiciona bien para mi zona.", "author": "Andrea Soto", "role": "Reformas Soto" }
+        {
+          "quote": "Subió las llamadas un 40% el primer mes. La web parece de una empresa mucho más grande.",
+          "author": "Marta Iglesias",
+          "role": "Directora, Clínica Dental Iglesias"
+        },
+        {
+          "quote": "Profesionales y rápidos. Entregaron antes de lo previsto.",
+          "author": "Jorge Vilaró",
+          "role": "Socio, Vilaró Abogados"
+        },
+        {
+          "quote": "La web carga muy rápido y Google la posiciona bien para mi zona.",
+          "author": "Andrea Soto",
+          "role": "Reformas Soto"
+        }
       ]
     },
     "faq": {
       "title": "Preguntas frecuentes",
       "subtitle": "Lo que más nos preguntan antes de empezar.",
       "items": [
-        { "q": "¿Cuánto cuesta una web?", "a": "Desde 590 € el pack Esencial. Tienes los tres packs detallados en /servicios." },
-        { "q": "¿Cuánto se tarda?", "a": "Entre 7 y 21 días laborables según el pack. La media es 14 días." },
-        { "q": "¿Quién es dueño del dominio y del código?", "a": "Tú. Te entregamos las credenciales y el repositorio al finalizar." },
+        {
+          "q": "¿Cuánto cuesta una web?",
+          "a": "Desde 590 € el pack Esencial. Tienes los tres packs detallados en /servicios."
+        },
+        {
+          "q": "¿Cuánto se tarda?",
+          "a": "Entre 7 y 21 días laborables según el pack. La media es 14 días."
+        },
+        {
+          "q": "¿Quién es dueño del dominio y del código?",
+          "a": "Tú. Te entregamos las credenciales y el repositorio al finalizar."
+        },
         { "q": "¿Hay permanencia?", "a": "Ninguna. El mantenimiento mensual es opcional." },
-        { "q": "¿Incluye hosting?", "a": "Sí, el primer año. A partir del segundo año son ~60 €/año a coste." },
-        { "q": "¿Qué pasa si no me gusta?", "a": "Tienes rondas de revisiones incluidas en cada pack para ajustar lo que haga falta." }
+        {
+          "q": "¿Incluye hosting?",
+          "a": "Sí, el primer año. A partir del segundo año son ~60 €/año a coste."
+        },
+        {
+          "q": "¿Qué pasa si no me gusta?",
+          "a": "Tienes rondas de revisiones incluidas en cada pack para ajustar lo que haga falta."
+        }
       ]
     },
     "finalCta": {
@@ -680,7 +770,10 @@ git commit -m "feat: configure next-intl with localized pathnames"
     }
   },
   "services": {
-    "hero": { "title": "Servicios y packs", "subtitle": "Sin letra pequeña. Sin sorpresas. Tú decides hasta dónde llegamos." },
+    "hero": {
+      "title": "Servicios y packs",
+      "subtitle": "Sin letra pequeña. Sin sorpresas. Tú decides hasta dónde llegamos."
+    },
     "compareTitle": "Comparativa de packs",
     "extras": {
       "title": "Servicios extra a la carta",
@@ -689,27 +782,54 @@ git commit -m "feat: configure next-intl with localized pathnames"
     "faq": {
       "title": "Sobre los packs",
       "items": [
-        { "q": "¿Puedo mezclar packs?", "a": "Sí. Empiezas por uno y vas añadiendo extras cuando lo necesites." },
-        { "q": "¿Aceptáis pagos a plazos?", "a": "Sí, 50% al empezar y 50% antes del lanzamiento." },
-        { "q": "¿Y si necesito algo a medida?", "a": "Cuéntanoslo y te hacemos un presupuesto cerrado." }
+        {
+          "q": "¿Puedo mezclar packs?",
+          "a": "Sí. Empiezas por uno y vas añadiendo extras cuando lo necesites."
+        },
+        {
+          "q": "¿Aceptáis pagos a plazos?",
+          "a": "Sí, 50% al empezar y 50% antes del lanzamiento."
+        },
+        {
+          "q": "¿Y si necesito algo a medida?",
+          "a": "Cuéntanoslo y te hacemos un presupuesto cerrado."
+        }
       ]
     }
   },
   "portfolio": {
     "hero": { "title": "Portfolio", "subtitle": "Algunos de los proyectos que hemos lanzado." },
-    "filters": { "all": "Todos", "dental": "Clínicas", "legal": "Despachos", "reforms": "Reformas", "hospitality": "Hostelería" },
+    "filters": {
+      "all": "Todos",
+      "dental": "Clínicas",
+      "legal": "Despachos",
+      "reforms": "Reformas",
+      "hospitality": "Hostelería"
+    },
     "comingSoon": "Próximamente",
     "viewLive": "Ver web"
   },
   "about": {
-    "hero": { "title": "Webs honestas para negocios reales.", "subtitle": "Somos una agencia pequeña con foco en pymes y autónomos." },
-    "story": { "title": "Cómo nacimos", "body": "Tuagenciaweb nació de ver demasiadas webs de pyme abandonadas, lentas o feas. Diseñamos cada proyecto desde cero, sin plantillas, con código moderno." },
+    "hero": {
+      "title": "Webs honestas para negocios reales.",
+      "subtitle": "Somos una agencia pequeña con foco en pymes y autónomos."
+    },
+    "story": {
+      "title": "Cómo nacimos",
+      "body": "Tuagenciaweb nació de ver demasiadas webs de pyme abandonadas, lentas o feas. Diseñamos cada proyecto desde cero, sin plantillas, con código moderno."
+    },
     "method": { "title": "Nuestro método" },
     "commitments": {
       "title": "Compromisos",
       "items": [
-        { "title": "Tiempos cerrados", "body": "Te decimos cuándo entregamos. Si nos retrasamos, te lo descontamos." },
-        { "title": "Tú eres dueño", "body": "Del dominio, del código y de tus datos. Sin permanencia." },
+        {
+          "title": "Tiempos cerrados",
+          "body": "Te decimos cuándo entregamos. Si nos retrasamos, te lo descontamos."
+        },
+        {
+          "title": "Tú eres dueño",
+          "body": "Del dominio, del código y de tus datos. Sin permanencia."
+        },
         { "title": "Transparencia", "body": "Te enseñamos cada paso antes de seguir." },
         { "title": "Soporte real", "body": "Hablas con quien programa tu web." }
       ]
@@ -732,9 +852,21 @@ git commit -m "feat: configure next-intl with localized pathnames"
       "phone": "Teléfono (opcional)",
       "company": "Empresa (opcional)",
       "sector": "Sector",
-      "sectors": { "dental": "Clínica dental", "legal": "Despacho", "reforms": "Reformas", "hospitality": "Hostelería", "ecommerce": "E-commerce", "other": "Otro" },
+      "sectors": {
+        "dental": "Clínica dental",
+        "legal": "Despacho",
+        "reforms": "Reformas",
+        "hospitality": "Hostelería",
+        "ecommerce": "E-commerce",
+        "other": "Otro"
+      },
       "budget": "Presupuesto orientativo",
-      "budgets": { "lt1k": "Menos de 1.000 €", "b1_2k": "1.000 – 2.000 €", "b2_5k": "2.000 – 5.000 €", "gt5k": "Más de 5.000 €" },
+      "budgets": {
+        "lt1k": "Menos de 1.000 €",
+        "b1_2k": "1.000 – 2.000 €",
+        "b2_5k": "2.000 – 5.000 €",
+        "gt5k": "Más de 5.000 €"
+      },
       "message": "Cuéntanos tu proyecto",
       "gdpr": "He leído la política de privacidad y acepto el tratamiento de mis datos.",
       "submit": "Enviar",
@@ -805,7 +937,11 @@ Same structure, English copy. Key replacements:
         "analytics": { "name": "Analytics", "desc": "Anonymous Vercel Analytics." }
       }
     },
-    "states": { "loading": "Loading…", "error": "Something went wrong. Try again.", "success": "Done." }
+    "states": {
+      "loading": "Loading…",
+      "error": "Something went wrong. Try again.",
+      "success": "Done."
+    }
   },
   "home": {
     "hero": {
@@ -816,8 +952,15 @@ Same structure, English copy. Key replacements:
       "microcopy": "No lock-in · No surprises",
       "badgeProjects": "30+ projects shipped"
     },
-    "trust": { "title": "We work with", "sectors": ["Clinics", "Law firms", "Construction", "Hospitality"] },
-    "services": { "title": "Three ways to start", "subtitle": "Pick the pack that fits your project. No fine print.", "mostChosen": "Most chosen" },
+    "trust": {
+      "title": "We work with",
+      "sectors": ["Clinics", "Law firms", "Construction", "Hospitality"]
+    },
+    "services": {
+      "title": "Three ways to start",
+      "subtitle": "Pick the pack that fits your project. No fine print.",
+      "mostChosen": "Most chosen"
+    },
     "process": {
       "title": "How we work",
       "subtitle": "Start to launch: 14 business days.",
@@ -828,14 +971,24 @@ Same structure, English copy. Key replacements:
         { "title": "Launch", "body": "We publish, train you and stay close." }
       ]
     },
-    "portfolio": { "title": "Recent work", "subtitle": "Some of the projects we have shipped.", "cta": "View all projects" },
+    "portfolio": {
+      "title": "Recent work",
+      "subtitle": "Some of the projects we have shipped.",
+      "cta": "View all projects"
+    },
     "differentiators": {
       "title": "Why Tuagenciaweb",
       "items": [
         { "title": "Fast delivery", "body": "From kickoff to launch in 14 days." },
         { "title": "SEO baked in", "body": "Schema, sitemap, Core Web Vitals." },
-        { "title": "Mobile-first", "body": "We design mobile first. That is where your clients are." },
-        { "title": "Direct support", "body": "You talk to whoever builds your site. No call centers." },
+        {
+          "title": "Mobile-first",
+          "body": "We design mobile first. That is where your clients are."
+        },
+        {
+          "title": "Direct support",
+          "body": "You talk to whoever builds your site. No call centers."
+        },
         { "title": "No lock-in", "body": "You own the code from day one." },
         { "title": "Clean code", "body": "Next.js + Tailwind. No bloated templates." }
       ]
@@ -843,52 +996,111 @@ Same structure, English copy. Key replacements:
     "testimonials": {
       "title": "What our clients say",
       "items": [
-        { "quote": "Calls went up 40% in the first month. The site looks like a much bigger company.", "author": "Marta Iglesias", "role": "Director, Iglesias Dental" },
-        { "quote": "Professional and fast. Delivered ahead of schedule.", "author": "Jorge Vilaró", "role": "Partner, Vilaró Lawyers" },
-        { "quote": "The site is very fast and Google ranks it well for my area.", "author": "Andrea Soto", "role": "Soto Construction" }
+        {
+          "quote": "Calls went up 40% in the first month. The site looks like a much bigger company.",
+          "author": "Marta Iglesias",
+          "role": "Director, Iglesias Dental"
+        },
+        {
+          "quote": "Professional and fast. Delivered ahead of schedule.",
+          "author": "Jorge Vilaró",
+          "role": "Partner, Vilaró Lawyers"
+        },
+        {
+          "quote": "The site is very fast and Google ranks it well for my area.",
+          "author": "Andrea Soto",
+          "role": "Soto Construction"
+        }
       ]
     },
     "faq": {
       "title": "Frequently asked",
       "subtitle": "What people ask us most before starting.",
       "items": [
-        { "q": "How much does a website cost?", "a": "From €590 for the Essential pack. See all three packs at /services." },
-        { "q": "How long does it take?", "a": "Between 7 and 21 business days depending on the pack. Average is 14." },
-        { "q": "Who owns the domain and the code?", "a": "You. We hand over credentials and the repository when we finish." },
+        {
+          "q": "How much does a website cost?",
+          "a": "From €590 for the Essential pack. See all three packs at /services."
+        },
+        {
+          "q": "How long does it take?",
+          "a": "Between 7 and 21 business days depending on the pack. Average is 14."
+        },
+        {
+          "q": "Who owns the domain and the code?",
+          "a": "You. We hand over credentials and the repository when we finish."
+        },
         { "q": "Is there any lock-in?", "a": "None. Monthly maintenance is optional." },
-        { "q": "Is hosting included?", "a": "Yes, the first year. From the second year onward it is ~€60/year at cost." },
-        { "q": "What if I don't like it?", "a": "Every pack includes revision rounds so we can adjust whatever you need." }
+        {
+          "q": "Is hosting included?",
+          "a": "Yes, the first year. From the second year onward it is ~€60/year at cost."
+        },
+        {
+          "q": "What if I don't like it?",
+          "a": "Every pack includes revision rounds so we can adjust whatever you need."
+        }
       ]
     },
-    "finalCta": { "title": "Ready for your new site?", "body": "Tell us about your project. We reply within 24h.", "ctaPrimary": "Get a quote", "ctaSecondary": "WhatsApp" }
+    "finalCta": {
+      "title": "Ready for your new site?",
+      "body": "Tell us about your project. We reply within 24h.",
+      "ctaPrimary": "Get a quote",
+      "ctaSecondary": "WhatsApp"
+    }
   },
   "services": {
-    "hero": { "title": "Services and packs", "subtitle": "No fine print. No surprises. You decide how far we go." },
+    "hero": {
+      "title": "Services and packs",
+      "subtitle": "No fine print. No surprises. You decide how far we go."
+    },
     "compareTitle": "Pack comparison",
-    "extras": { "title": "Extra services à la carte", "subtitle": "When you need to go one step further." },
+    "extras": {
+      "title": "Extra services à la carte",
+      "subtitle": "When you need to go one step further."
+    },
     "faq": {
       "title": "About the packs",
       "items": [
-        { "q": "Can I mix packs?", "a": "Yes. You start with one and add extras when you need them." },
+        {
+          "q": "Can I mix packs?",
+          "a": "Yes. You start with one and add extras when you need them."
+        },
         { "q": "Do you accept installments?", "a": "Yes, 50% at kickoff and 50% before launch." },
-        { "q": "What if I need something custom?", "a": "Tell us and we'll put together a fixed quote." }
+        {
+          "q": "What if I need something custom?",
+          "a": "Tell us and we'll put together a fixed quote."
+        }
       ]
     }
   },
   "portfolio": {
     "hero": { "title": "Portfolio", "subtitle": "Some of the projects we have shipped." },
-    "filters": { "all": "All", "dental": "Clinics", "legal": "Law firms", "reforms": "Construction", "hospitality": "Hospitality" },
+    "filters": {
+      "all": "All",
+      "dental": "Clinics",
+      "legal": "Law firms",
+      "reforms": "Construction",
+      "hospitality": "Hospitality"
+    },
     "comingSoon": "Coming soon",
     "viewLive": "View site"
   },
   "about": {
-    "hero": { "title": "Honest websites for real businesses.", "subtitle": "We are a small agency focused on small and medium businesses." },
-    "story": { "title": "How we started", "body": "Tuagenciaweb was born after seeing too many abandoned, slow or ugly small business websites. We design every project from scratch, no templates, modern code." },
+    "hero": {
+      "title": "Honest websites for real businesses.",
+      "subtitle": "We are a small agency focused on small and medium businesses."
+    },
+    "story": {
+      "title": "How we started",
+      "body": "Tuagenciaweb was born after seeing too many abandoned, slow or ugly small business websites. We design every project from scratch, no templates, modern code."
+    },
     "method": { "title": "Our method" },
     "commitments": {
       "title": "Commitments",
       "items": [
-        { "title": "Fixed timeline", "body": "We tell you when we deliver. If we miss it, we discount it." },
+        {
+          "title": "Fixed timeline",
+          "body": "We tell you when we deliver. If we miss it, we discount it."
+        },
         { "title": "You own everything", "body": "Domain, code, and data. No lock-in." },
         { "title": "Transparency", "body": "We show you every step before moving on." },
         { "title": "Real support", "body": "You talk to whoever codes your site." }
@@ -905,16 +1117,31 @@ Same structure, English copy. Key replacements:
     "ctaButton": "Get a quote"
   },
   "contact": {
-    "hero": { "title": "Let's talk", "subtitle": "Tell us about your project. We reply within 24h." },
+    "hero": {
+      "title": "Let's talk",
+      "subtitle": "Tell us about your project. We reply within 24h."
+    },
     "form": {
       "name": "Name",
       "email": "Email",
       "phone": "Phone (optional)",
       "company": "Company (optional)",
       "sector": "Sector",
-      "sectors": { "dental": "Dental clinic", "legal": "Law firm", "reforms": "Construction", "hospitality": "Hospitality", "ecommerce": "E-commerce", "other": "Other" },
+      "sectors": {
+        "dental": "Dental clinic",
+        "legal": "Law firm",
+        "reforms": "Construction",
+        "hospitality": "Hospitality",
+        "ecommerce": "E-commerce",
+        "other": "Other"
+      },
       "budget": "Budget range",
-      "budgets": { "lt1k": "Under €1,000", "b1_2k": "€1,000 – 2,000", "b2_5k": "€2,000 – 5,000", "gt5k": "Over €5,000" },
+      "budgets": {
+        "lt1k": "Under €1,000",
+        "b1_2k": "€1,000 – 2,000",
+        "b2_5k": "€2,000 – 5,000",
+        "gt5k": "Over €5,000"
+      },
       "message": "Tell us about your project",
       "gdpr": "I have read the privacy policy and consent to the processing of my data.",
       "submit": "Send",
@@ -940,7 +1167,12 @@ Same structure, English copy. Key replacements:
     "cookies": { "title": "Cookie policy" },
     "lastUpdated": "Last updated"
   },
-  "notFound": { "title": "404", "subtitle": "This page moved or never existed.", "ctaHome": "Back to home", "ctaPortfolio": "View portfolio" }
+  "notFound": {
+    "title": "404",
+    "subtitle": "This page moved or never existed.",
+    "ctaHome": "Back to home",
+    "ctaPortfolio": "View portfolio"
+  }
 }
 ```
 
@@ -951,7 +1183,9 @@ Create `global.d.ts` at project root:
 ```ts
 import type messages from "./messages/es.json";
 declare module "next-intl" {
-  interface AppConfig { Messages: typeof messages }
+  interface AppConfig {
+    Messages: typeof messages;
+  }
 }
 ```
 
@@ -1075,13 +1309,22 @@ export function Navbar() {
     >
       <nav className="container-page flex h-16 items-center justify-between md:h-20">
         <Link href="/" className="flex items-center" aria-label="Tuagenciaweb">
-          <Image src="/logo/logo-full-light.svg" alt="Tuagenciaweb" width={180} height={36} priority />
+          <Image
+            src="/logo/logo-full-light.svg"
+            alt="Tuagenciaweb"
+            width={180}
+            height={36}
+            priority
+          />
         </Link>
 
         <ul className="hidden items-center gap-7 md:flex">
           {links.map((l) => (
             <li key={l.href}>
-              <Link href={l.href as never} className="text-sm font-medium text-[var(--color-text-body)] transition-colors hover:text-[var(--color-text-strong)]">
+              <Link
+                href={l.href as never}
+                className="text-sm font-medium text-[var(--color-text-body)] transition-colors hover:text-[var(--color-text-strong)]"
+              >
                 {l.label}
               </Link>
             </li>
@@ -1105,7 +1348,11 @@ export function Navbar() {
           <ul className="container-page flex flex-col gap-2 py-6">
             {links.map((l) => (
               <li key={l.href}>
-                <Link href={l.href as never} className="block py-2 text-lg font-medium" onClick={() => setOpen(false)}>
+                <Link
+                  href={l.href as never}
+                  className="block py-2 text-lg font-medium"
+                  onClick={() => setOpen(false)}
+                >
                   {l.label}
                 </Link>
               </li>
@@ -1113,7 +1360,9 @@ export function Navbar() {
             <li className="flex items-center gap-2 pt-4">
               <LocaleSwitcher />
               <Button asChild className="flex-1">
-                <Link href="/contacto" onClick={() => setOpen(false)}>{t("cta")}</Link>
+                <Link href="/contacto" onClick={() => setOpen(false)}>
+                  {t("cta")}
+                </Link>
               </Button>
             </li>
           </ul>
@@ -1214,32 +1463,50 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white/60">{tFooter("sections.navigate")}</h3>
+          <h3 className="mb-4 text-sm font-semibold tracking-wider text-white/60 uppercase">
+            {tFooter("sections.navigate")}
+          </h3>
           <ul className="space-y-2">
             {NAV.map((item) => (
               <li key={item.href}>
-                <Link href={item.href as never} className="text-sm text-white/85 hover:text-white">{tNav(item.key)}</Link>
+                <Link href={item.href as never} className="text-sm text-white/85 hover:text-white">
+                  {tNav(item.key)}
+                </Link>
               </li>
             ))}
           </ul>
         </div>
 
         <div>
-          <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white/60">{tFooter("sections.contact")}</h3>
+          <h3 className="mb-4 text-sm font-semibold tracking-wider text-white/60 uppercase">
+            {tFooter("sections.contact")}
+          </h3>
           <ul className="space-y-2 text-sm text-white/85">
-            <li><a href="https://wa.me/34000000000" target="_blank" rel="noopener noreferrer">{tChannels("whatsapp")}: +34 000 000 000</a></li>
-            <li><a href="mailto:hola@tuagenciaweb.es">hola@tuagenciaweb.es</a></li>
-            <li><a href="tel:+34000000000">+34 000 000 000</a></li>
+            <li>
+              <a href="https://wa.me/34000000000" target="_blank" rel="noopener noreferrer">
+                {tChannels("whatsapp")}: +34 000 000 000
+              </a>
+            </li>
+            <li>
+              <a href="mailto:hola@tuagenciaweb.es">hola@tuagenciaweb.es</a>
+            </li>
+            <li>
+              <a href="tel:+34000000000">+34 000 000 000</a>
+            </li>
             <li className="text-white/60">{tChannels("scheduleValue")}</li>
           </ul>
         </div>
 
         <div>
-          <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white/60">{tFooter("sections.legal")}</h3>
+          <h3 className="mb-4 text-sm font-semibold tracking-wider text-white/60 uppercase">
+            {tFooter("sections.legal")}
+          </h3>
           <ul className="space-y-2">
             {LEGAL.map((item) => (
               <li key={item.href}>
-                <Link href={item.href as never} className="text-sm text-white/85 hover:text-white">{tFooter(`links.${item.key}`)}</Link>
+                <Link href={item.href as never} className="text-sm text-white/85 hover:text-white">
+                  {tFooter(`links.${item.key}`)}
+                </Link>
               </li>
             ))}
           </ul>
@@ -1263,7 +1530,7 @@ import { Footer } from "@/components/layout/Footer";
   <Navbar />
   {children}
   <Footer />
-</NextIntlClientProvider>
+</NextIntlClientProvider>;
 ```
 
 - [ ] **Step 3: Visual check + commit**
@@ -1361,16 +1628,31 @@ export function CookieBanner() {
               <span>{t("categories.necessary.name")}</span>
             </label>
             <label className="flex items-center gap-2 text-sm">
-              <input type="checkbox" checked={analytics} onChange={(e) => setAnalytics(e.target.checked)} />
+              <input
+                type="checkbox"
+                checked={analytics}
+                onChange={(e) => setAnalytics(e.target.checked)}
+              />
               <span>{t("categories.analytics.name")}</span>
             </label>
-            <Button onClick={() => save({ necessary: true, analytics, ts: Date.now() })}>{t("save")}</Button>
+            <Button onClick={() => save({ necessary: true, analytics, ts: Date.now() })}>
+              {t("save")}
+            </Button>
           </div>
         ) : (
           <div className="flex flex-col gap-2 md:flex-row">
-            <Button variant="ghost" onClick={() => save({ necessary: true, analytics: false, ts: Date.now() })}>{t("reject")}</Button>
-            <Button variant="ghost" onClick={() => setConfiguring(true)}>{t("configure")}</Button>
-            <Button onClick={() => save({ necessary: true, analytics: true, ts: Date.now() })}>{t("accept")}</Button>
+            <Button
+              variant="ghost"
+              onClick={() => save({ necessary: true, analytics: false, ts: Date.now() })}
+            >
+              {t("reject")}
+            </Button>
+            <Button variant="ghost" onClick={() => setConfiguring(true)}>
+              {t("configure")}
+            </Button>
+            <Button onClick={() => save({ necessary: true, analytics: true, ts: Date.now() })}>
+              {t("accept")}
+            </Button>
           </div>
         )}
       </div>
@@ -1384,7 +1666,7 @@ export function CookieBanner() {
 ```tsx
 import { CookieBanner } from "@/components/layout/CookieBanner";
 // ...
-<CookieBanner />
+<CookieBanner />;
 ```
 
 - [ ] **Step 5: Visual check**
@@ -1420,7 +1702,15 @@ const variants: Variants = {
   show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 20 } },
 };
 
-export function FadeUp({ children, className, delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
+export function FadeUp({
+  children,
+  className,
+  delay = 0,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  delay?: number;
+}) {
   return (
     <motion.div
       initial="hidden"
@@ -1461,14 +1751,22 @@ export function Hero() {
     <section className="relative min-h-[100dvh]">
       <div className="container-page grid grid-cols-1 items-center gap-12 py-16 md:grid-cols-12 md:gap-8 md:py-24">
         <FadeUp className="md:col-span-7">
-          <p className="mb-6 inline-flex items-center gap-2 rounded-pill border border-[var(--color-border-default)] bg-[var(--color-elevated)] px-3 py-1 text-xs font-medium text-[var(--color-text-body)]">
+          <p className="rounded-pill mb-6 inline-flex items-center gap-2 border border-[var(--color-border-default)] bg-[var(--color-elevated)] px-3 py-1 text-xs font-medium text-[var(--color-text-body)]">
             <span className="size-1.5 rounded-full bg-[var(--color-accent)]" /> {t("badgeProjects")}
           </p>
-          <h1 className="font-display text-5xl font-bold leading-[0.95] tracking-tighter md:text-7xl">{t("headline")}</h1>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-[var(--color-text-body)] md:text-lg">{t("subheadline")}</p>
+          <h1 className="font-display text-5xl leading-[0.95] font-bold tracking-tighter md:text-7xl">
+            {t("headline")}
+          </h1>
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-[var(--color-text-body)] md:text-lg">
+            {t("subheadline")}
+          </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button asChild size="lg"><Link href="/contacto">{t("ctaPrimary")}</Link></Button>
-            <Button asChild size="lg" variant="ghost"><Link href="/portfolio">{t("ctaSecondary")}</Link></Button>
+            <Button asChild size="lg">
+              <Link href="/contacto">{t("ctaPrimary")}</Link>
+            </Button>
+            <Button asChild size="lg" variant="ghost">
+              <Link href="/portfolio">{t("ctaSecondary")}</Link>
+            </Button>
           </div>
           <p className="mt-4 text-xs text-[var(--color-text-muted)]">{t("microcopy")}</p>
         </FadeUp>
@@ -1546,10 +1844,14 @@ export function TrustBar() {
     <section className="border-y border-[var(--color-border-default)] bg-[var(--color-elevated)]">
       <FadeUp>
         <div className="container-page flex flex-col items-center gap-6 py-10 md:flex-row md:justify-between">
-          <p className="text-xs font-semibold uppercase tracking-wider text-[var(--color-text-muted)]">{t("title")}</p>
+          <p className="text-xs font-semibold tracking-wider text-[var(--color-text-muted)] uppercase">
+            {t("title")}
+          </p>
           <ul className="flex flex-wrap items-center gap-x-10 gap-y-3">
             {sectors.map((s) => (
-              <li key={s} className="text-base font-medium text-[var(--color-text-body)]">{s}</li>
+              <li key={s} className="text-base font-medium text-[var(--color-text-body)]">
+                {s}
+              </li>
             ))}
           </ul>
         </div>
@@ -1608,7 +1910,10 @@ export const PACKS: Pack[] = [
     name: { es: "Esencial", en: "Essential" },
     price: "590 €",
     priceNote: { es: "pago único", en: "one-off" },
-    tagline: { es: "Una landing profesional para empezar a tener presencia.", en: "A professional landing to start being online." },
+    tagline: {
+      es: "Una landing profesional para empezar a tener presencia.",
+      en: "A professional landing to start being online.",
+    },
     features: {
       es: [
         "Diseño a medida (no plantillas)",
@@ -1641,7 +1946,10 @@ export const PACKS: Pack[] = [
     name: { es: "Profesional", en: "Professional" },
     price: "990 €",
     priceNote: { es: "pago único", en: "one-off" },
-    tagline: { es: "Web completa multi-página, lista para vender y posicionar.", en: "Complete multi-page site, ready to sell and rank." },
+    tagline: {
+      es: "Web completa multi-página, lista para vender y posicionar.",
+      en: "Complete multi-page site, ready to sell and rank.",
+    },
     features: {
       es: [
         "Todo lo del Esencial",
@@ -1676,7 +1984,10 @@ export const PACKS: Pack[] = [
     name: { es: "Tienda online", en: "Online shop" },
     price: "1.890 €",
     priceNote: { es: "pago único", en: "one-off" },
-    tagline: { es: "E-commerce o proyecto a medida con pagos online.", en: "E-commerce or custom project with online payments." },
+    tagline: {
+      es: "E-commerce o proyecto a medida con pagos online.",
+      en: "E-commerce or custom project with online payments.",
+    },
     features: {
       es: [
         "Todo lo de la Profesional",
@@ -1712,7 +2023,10 @@ export const EXTRAS = [
   { name: { es: "Mantenimiento mensual", en: "Monthly maintenance" }, price: "39 €/mes" },
   { name: { es: "Página adicional", en: "Extra page" }, price: "89 €" },
   { name: { es: "Redacción de contenidos por página", en: "Copywriting per page" }, price: "49 €" },
-  { name: { es: "Traducción extra a otro idioma", en: "Extra language translation" }, price: "desde 199 €" },
+  {
+    name: { es: "Traducción extra a otro idioma", en: "Extra language translation" },
+    price: "desde 199 €",
+  },
   { name: { es: "SEO técnico avanzado", en: "Advanced technical SEO" }, price: "desde 249 €" },
   { name: { es: "Integraciones a medida", en: "Custom integrations" }, price: "desde 149 €" },
 ];
@@ -1740,7 +2054,9 @@ export function ServicesGrid() {
     <section className="py-24">
       <div className="container-page">
         <FadeUp className="max-w-2xl">
-          <h2 className="font-display text-3xl font-bold tracking-tight md:text-5xl">{t("title")}</h2>
+          <h2 className="font-display text-3xl font-bold tracking-tight md:text-5xl">
+            {t("title")}
+          </h2>
           <p className="mt-4 text-base text-[var(--color-text-body)] md:text-lg">{t("subtitle")}</p>
         </FadeUp>
 
@@ -1750,25 +2066,41 @@ export function ServicesGrid() {
               <article
                 className={cn(
                   "flex h-full flex-col rounded-[var(--radius-card)] border bg-[var(--color-elevated)] p-8",
-                  pack.highlight ? "border-[var(--color-accent)] shadow-[0_20px_60px_-30px_rgba(44,91,255,0.45)]" : "border-[var(--color-border-default)]",
+                  pack.highlight
+                    ? "border-[var(--color-accent)] shadow-[0_20px_60px_-30px_rgba(44,91,255,0.45)]"
+                    : "border-[var(--color-border-default)]",
                 )}
               >
-                {pack.highlight && <Badge className="mb-4 w-fit bg-[var(--color-accent-soft)] text-[var(--color-accent)]">{t("mostChosen")}</Badge>}
+                {pack.highlight && (
+                  <Badge className="mb-4 w-fit bg-[var(--color-accent-soft)] text-[var(--color-accent)]">
+                    {t("mostChosen")}
+                  </Badge>
+                )}
                 <pack.Icon size={32} weight="duotone" className="text-[var(--color-accent)]" />
-                <h3 className="mt-4 font-display text-2xl font-bold">{pack.name[locale]}</h3>
+                <h3 className="font-display mt-4 text-2xl font-bold">{pack.name[locale]}</h3>
                 <p className="mt-2 text-sm text-[var(--color-text-body)]">{pack.tagline[locale]}</p>
-                <p className="mt-6 font-display text-4xl font-bold tracking-tight">{pack.price}</p>
+                <p className="font-display mt-6 text-4xl font-bold tracking-tight">{pack.price}</p>
                 <p className="text-xs text-[var(--color-text-muted)]">{pack.priceNote[locale]}</p>
                 <ul className="mt-6 flex flex-1 flex-col gap-3">
                   {pack.features[locale].map((f) => (
                     <li key={f} className="flex gap-2 text-sm text-[var(--color-text-body)]">
-                      <Check size={18} weight="bold" className="mt-0.5 shrink-0 text-[var(--color-accent)]" />
+                      <Check
+                        size={18}
+                        weight="bold"
+                        className="mt-0.5 shrink-0 text-[var(--color-accent)]"
+                      />
                       <span>{f}</span>
                     </li>
                   ))}
                 </ul>
-                <p className="mt-6 text-xs font-medium text-[var(--color-text-strong)]">{pack.delivery[locale]}</p>
-                <Button asChild className="mt-6 w-full" variant={pack.highlight ? "default" : "ghost"}>
+                <p className="mt-6 text-xs font-medium text-[var(--color-text-strong)]">
+                  {pack.delivery[locale]}
+                </p>
+                <Button
+                  asChild
+                  className="mt-6 w-full"
+                  variant={pack.highlight ? "default" : "ghost"}
+                >
                   <Link href="/contacto">{pack.cta[locale]}</Link>
                 </Button>
               </article>
@@ -1786,7 +2118,7 @@ export function ServicesGrid() {
 ```tsx
 import { ServicesGrid } from "@/components/sections/ServicesGrid";
 // after <TrustBar />
-<ServicesGrid />
+<ServicesGrid />;
 ```
 
 ```bash
@@ -1814,7 +2146,9 @@ export function ProcessSteps() {
     <section className="py-24">
       <div className="container-page">
         <FadeUp className="max-w-2xl">
-          <h2 className="font-display text-3xl font-bold tracking-tight md:text-5xl">{t("title")}</h2>
+          <h2 className="font-display text-3xl font-bold tracking-tight md:text-5xl">
+            {t("title")}
+          </h2>
           <p className="mt-4 text-base text-[var(--color-text-body)] md:text-lg">{t("subtitle")}</p>
         </FadeUp>
 
@@ -1822,10 +2156,15 @@ export function ProcessSteps() {
           {steps.map((s, i) => (
             <FadeUp key={s.title} delay={i * 0.08}>
               <li className="relative">
-                <div className="font-display text-6xl font-bold leading-none text-[var(--color-accent-soft)] outline-text">
-                  <span className="bg-clip-text text-transparent" style={{ WebkitTextStroke: "1.5px var(--color-accent)" }}>{String(i + 1).padStart(2, "0")}</span>
+                <div className="font-display outline-text text-6xl leading-none font-bold text-[var(--color-accent-soft)]">
+                  <span
+                    className="bg-clip-text text-transparent"
+                    style={{ WebkitTextStroke: "1.5px var(--color-accent)" }}
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                 </div>
-                <h3 className="mt-4 font-display text-xl font-semibold">{s.title}</h3>
+                <h3 className="font-display mt-4 text-xl font-semibold">{s.title}</h3>
                 <p className="mt-2 text-sm text-[var(--color-text-body)]">{s.body}</p>
               </li>
             </FadeUp>
@@ -1842,7 +2181,7 @@ export function ProcessSteps() {
 ```tsx
 import { ProcessSteps } from "@/components/sections/ProcessSteps";
 // after <ServicesGrid />
-<ProcessSteps />
+<ProcessSteps />;
 ```
 
 ```bash
@@ -1872,15 +2211,64 @@ export type Project = {
 };
 
 export const PROJECTS: Project[] = [
-  { slug: "dentistlab", name: "Dentistlab", sector: "dental", url: "https://dentistlab.surge.sh", image: "/portfolio/dentistlab.png", year: 2025 },
-  { slug: "chinaway", name: "Chinaway", sector: "other", url: "https://chinaway.vercel.app/es", image: "/portfolio/chinaway.png", year: 2025 },
-  { slug: "reformlab-barcelona", name: "Reformlab Barcelona", sector: "reforms", url: "https://reformlab-barcelona.surge.sh", image: "/portfolio/reformlab.png", year: 2025 },
-  { slug: "forma-clinica", name: "Forma Clínica", sector: "other", url: "https://forma-clinica.surge.sh", image: "/portfolio/forma.png", year: 2025 },
-  { slug: "slot-5", name: "Próximamente", sector: "other", url: null, image: "/portfolio/placeholder.png", year: 2026, comingSoon: true },
-  { slug: "slot-6", name: "Próximamente", sector: "other", url: null, image: "/portfolio/placeholder.png", year: 2026, comingSoon: true },
+  {
+    slug: "dentistlab",
+    name: "Dentistlab",
+    sector: "dental",
+    url: "https://dentistlab.surge.sh",
+    image: "/portfolio/dentistlab.png",
+    year: 2025,
+  },
+  {
+    slug: "chinaway",
+    name: "Chinaway",
+    sector: "other",
+    url: "https://chinaway.vercel.app/es",
+    image: "/portfolio/chinaway.png",
+    year: 2025,
+  },
+  {
+    slug: "reformlab-barcelona",
+    name: "Reformlab Barcelona",
+    sector: "reforms",
+    url: "https://reformlab-barcelona.surge.sh",
+    image: "/portfolio/reformlab.png",
+    year: 2025,
+  },
+  {
+    slug: "forma-clinica",
+    name: "Forma Clínica",
+    sector: "other",
+    url: "https://forma-clinica.surge.sh",
+    image: "/portfolio/forma.png",
+    year: 2025,
+  },
+  {
+    slug: "slot-5",
+    name: "Próximamente",
+    sector: "other",
+    url: null,
+    image: "/portfolio/placeholder.png",
+    year: 2026,
+    comingSoon: true,
+  },
+  {
+    slug: "slot-6",
+    name: "Próximamente",
+    sector: "other",
+    url: null,
+    image: "/portfolio/placeholder.png",
+    year: 2026,
+    comingSoon: true,
+  },
 ];
 
-export const FEATURED_SLUGS = ["dentistlab", "chinaway", "reformlab-barcelona", "forma-clinica"] as const;
+export const FEATURED_SLUGS = [
+  "dentistlab",
+  "chinaway",
+  "reformlab-barcelona",
+  "forma-clinica",
+] as const;
 
 export function getFeatured(): Project[] {
   return FEATURED_SLUGS.map((slug) => PROJECTS.find((p) => p.slug === slug)!).filter(Boolean);
@@ -1906,7 +2294,9 @@ export function PortfolioFeatured() {
     <section className="py-24">
       <div className="container-page">
         <FadeUp className="max-w-2xl">
-          <h2 className="font-display text-3xl font-bold tracking-tight md:text-5xl">{t("title")}</h2>
+          <h2 className="font-display text-3xl font-bold tracking-tight md:text-5xl">
+            {t("title")}
+          </h2>
           <p className="mt-4 text-base text-[var(--color-text-body)] md:text-lg">{t("subtitle")}</p>
         </FadeUp>
 
@@ -1920,14 +2310,25 @@ export function PortfolioFeatured() {
                 className="group block overflow-hidden rounded-[var(--radius-card)] border border-[var(--color-border-default)] bg-[var(--color-elevated)] transition-all hover:-translate-y-1 hover:shadow-[0_25px_60px_-30px_rgba(15,23,42,0.25)]"
               >
                 <div className="aspect-[16/10] overflow-hidden bg-[var(--color-divider)]">
-                  <Image src={p.image} alt={p.name} width={1280} height={800} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+                  <Image
+                    src={p.image}
+                    alt={p.name}
+                    width={1280}
+                    height={800}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  />
                 </div>
                 <div className="flex items-center justify-between p-6">
                   <div>
                     <h3 className="font-display text-lg font-semibold">{p.name}</h3>
-                    <p className="text-xs uppercase tracking-wider text-[var(--color-text-muted)]">{p.sector} · {p.year}</p>
+                    <p className="text-xs tracking-wider text-[var(--color-text-muted)] uppercase">
+                      {p.sector} · {p.year}
+                    </p>
                   </div>
-                  <ArrowUpRight size={24} className="text-[var(--color-accent)] transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                  <ArrowUpRight
+                    size={24}
+                    className="text-[var(--color-accent)] transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
+                  />
                 </div>
               </a>
             </FadeUp>
@@ -1935,7 +2336,9 @@ export function PortfolioFeatured() {
         </div>
 
         <div className="mt-12 flex justify-center">
-          <Button asChild variant="ghost"><Link href="/portfolio">{t("cta")} →</Link></Button>
+          <Button asChild variant="ghost">
+            <Link href="/portfolio">{t("cta")} →</Link>
+          </Button>
         </div>
       </div>
     </section>
@@ -1948,7 +2351,7 @@ export function PortfolioFeatured() {
 ```tsx
 import { PortfolioFeatured } from "@/components/sections/PortfolioFeatured";
 // after <ProcessSteps />
-<PortfolioFeatured />
+<PortfolioFeatured />;
 ```
 
 ```bash
@@ -1966,7 +2369,14 @@ git commit -m "feat: add featured portfolio grid"
 
 ```tsx
 import { useTranslations } from "next-intl";
-import { Lightning, MagnifyingGlass, DeviceMobile, Headset, HandshakeIcon, Code } from "@phosphor-icons/react/dist/ssr";
+import {
+  Lightning,
+  MagnifyingGlass,
+  DeviceMobile,
+  Headset,
+  HandshakeIcon,
+  Code,
+} from "@phosphor-icons/react/dist/ssr";
 import { FadeUp } from "@/components/motion/FadeUp";
 
 const ICONS = [Lightning, MagnifyingGlass, DeviceMobile, Headset, HandshakeIcon, Code];
@@ -1979,7 +2389,9 @@ export function Differentiators() {
     <section className="bg-[var(--color-elevated)] py-24">
       <div className="container-page">
         <FadeUp className="max-w-2xl">
-          <h2 className="font-display text-3xl font-bold tracking-tight md:text-5xl">{t("title")}</h2>
+          <h2 className="font-display text-3xl font-bold tracking-tight md:text-5xl">
+            {t("title")}
+          </h2>
         </FadeUp>
 
         <div className="mt-12 grid grid-cols-1 gap-x-12 md:grid-cols-2">
@@ -1988,7 +2400,11 @@ export function Differentiators() {
             return (
               <FadeUp key={item.title} delay={i * 0.05}>
                 <div className="flex gap-5 border-t border-[var(--color-border-default)] py-7 first:border-t-0 md:[&:nth-child(2)]:border-t-0">
-                  <Icon size={28} weight="duotone" className="shrink-0 text-[var(--color-accent)]" />
+                  <Icon
+                    size={28}
+                    weight="duotone"
+                    className="shrink-0 text-[var(--color-accent)]"
+                  />
                   <div>
                     <h3 className="font-display text-lg font-semibold">{item.title}</h3>
                     <p className="mt-1 text-sm text-[var(--color-text-body)]">{item.body}</p>
@@ -2009,7 +2425,7 @@ export function Differentiators() {
 ```tsx
 import { Differentiators } from "@/components/sections/Differentiators";
 // after <PortfolioFeatured />
-<Differentiators />
+<Differentiators />;
 ```
 
 ```bash
@@ -2031,9 +2447,14 @@ import { Quotes } from "@phosphor-icons/react/dist/ssr";
 import { FadeUp } from "@/components/motion/FadeUp";
 
 function Initials({ name }: { name: string }) {
-  const initials = name.split(" ").slice(0, 2).map((n) => n[0]).join("").toUpperCase();
+  const initials = name
+    .split(" ")
+    .slice(0, 2)
+    .map((n) => n[0])
+    .join("")
+    .toUpperCase();
   return (
-    <div className="flex size-12 items-center justify-center rounded-full bg-[var(--color-accent-soft)] font-display text-base font-bold text-[var(--color-accent)]">
+    <div className="font-display flex size-12 items-center justify-center rounded-full bg-[var(--color-accent-soft)] text-base font-bold text-[var(--color-accent)]">
       {initials}
     </div>
   );
@@ -2048,14 +2469,18 @@ export function Testimonials() {
     <section className="py-24">
       <div className="container-page">
         <FadeUp className="max-w-2xl">
-          <h2 className="font-display text-3xl font-bold tracking-tight md:text-5xl">{t("title")}</h2>
+          <h2 className="font-display text-3xl font-bold tracking-tight md:text-5xl">
+            {t("title")}
+          </h2>
         </FadeUp>
 
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
           <FadeUp className="md:col-span-2">
             <article className="flex h-full flex-col rounded-[var(--radius-card)] border border-[var(--color-border-default)] bg-[var(--color-elevated)] p-8 md:p-10">
               <Quotes size={36} weight="fill" className="text-[var(--color-accent-soft)]" />
-              <blockquote className="mt-6 flex-1 font-display text-2xl font-medium leading-snug tracking-tight md:text-3xl">"{main.quote}"</blockquote>
+              <blockquote className="font-display mt-6 flex-1 text-2xl leading-snug font-medium tracking-tight md:text-3xl">
+                "{main.quote}"
+              </blockquote>
               <footer className="mt-8 flex items-center gap-4">
                 <Initials name={main.author} />
                 <div>
@@ -2070,7 +2495,9 @@ export function Testimonials() {
             {rest.map((it, i) => (
               <FadeUp key={it.author} delay={(i + 1) * 0.08}>
                 <article className="rounded-[var(--radius-card)] border border-[var(--color-border-default)] bg-[var(--color-elevated)] p-6">
-                  <blockquote className="text-base leading-relaxed text-[var(--color-text-body)]">"{it.quote}"</blockquote>
+                  <blockquote className="text-base leading-relaxed text-[var(--color-text-body)]">
+                    "{it.quote}"
+                  </blockquote>
                   <footer className="mt-4 flex items-center gap-3">
                     <Initials name={it.author} />
                     <div>
@@ -2094,7 +2521,7 @@ export function Testimonials() {
 ```tsx
 import { Testimonials } from "@/components/sections/Testimonials";
 // after <Differentiators />
-<Testimonials />
+<Testimonials />;
 ```
 
 ```bash
@@ -2112,7 +2539,12 @@ git commit -m "feat: add testimonials section with featured + secondary layout"
 
 ```tsx
 import { useTranslations } from "next-intl";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { FadeUp } from "@/components/motion/FadeUp";
 
 export function FAQ() {
@@ -2123,7 +2555,9 @@ export function FAQ() {
     <section className="bg-[var(--color-elevated)] py-24">
       <div className="container-page grid grid-cols-1 gap-12 md:grid-cols-12">
         <FadeUp className="md:col-span-5">
-          <h2 className="font-display text-3xl font-bold tracking-tight md:text-5xl">{t("title")}</h2>
+          <h2 className="font-display text-3xl font-bold tracking-tight md:text-5xl">
+            {t("title")}
+          </h2>
           <p className="mt-4 text-base text-[var(--color-text-body)]">{t("subtitle")}</p>
         </FadeUp>
 
@@ -2131,8 +2565,12 @@ export function FAQ() {
           <Accordion type="single" collapsible className="w-full">
             {items.map((it, i) => (
               <AccordionItem key={i} value={`item-${i}`}>
-                <AccordionTrigger className="text-left text-base font-semibold">{it.q}</AccordionTrigger>
-                <AccordionContent className="text-[var(--color-text-body)]">{it.a}</AccordionContent>
+                <AccordionTrigger className="text-left text-base font-semibold">
+                  {it.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-[var(--color-text-body)]">
+                  {it.a}
+                </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
@@ -2148,7 +2586,7 @@ export function FAQ() {
 ```tsx
 import { FAQ } from "@/components/sections/FAQ";
 // after <Testimonials />
-<FAQ />
+<FAQ />;
 ```
 
 ```bash
@@ -2185,11 +2623,20 @@ export function FinalCTA() {
       />
       <div className="container-page relative py-24 md:py-32">
         <FadeUp className="max-w-3xl">
-          <h2 className="font-display text-4xl font-bold leading-[1.05] tracking-tighter md:text-6xl">{t("title")}</h2>
+          <h2 className="font-display text-4xl leading-[1.05] font-bold tracking-tighter md:text-6xl">
+            {t("title")}
+          </h2>
           <p className="mt-5 text-base text-white/75 md:text-lg">{t("body")}</p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button asChild size="lg"><Link href="/contacto">{t("ctaPrimary")}</Link></Button>
-            <Button asChild size="lg" variant="ghost" className="border-white/20 bg-transparent text-white hover:bg-white/10">
+            <Button asChild size="lg">
+              <Link href="/contacto">{t("ctaPrimary")}</Link>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="ghost"
+              className="border-white/20 bg-transparent text-white hover:bg-white/10"
+            >
               <a href="https://wa.me/34000000000" target="_blank" rel="noopener noreferrer">
                 <WhatsappLogo size={20} weight="fill" />
                 {t("ctaSecondary")}
@@ -2208,7 +2655,7 @@ export function FinalCTA() {
 ```tsx
 import { FinalCTA } from "@/components/sections/FinalCTA";
 // after <FAQ />
-<FinalCTA />
+<FinalCTA />;
 ```
 
 ```bash
@@ -2238,7 +2685,14 @@ export default defineConfig({
   fullyParallel: true,
   reporter: "list",
   use: { baseURL: "http://localhost:3000", trace: "on-first-retry" },
-  webServer: { command: "npm run dev", url: "http://localhost:3000", reuseExistingServer: !process.env.CI, stdout: "ignore", stderr: "pipe", timeout: 120_000 },
+  webServer: {
+    command: "npm run dev",
+    url: "http://localhost:3000",
+    reuseExistingServer: !process.env.CI,
+    stdout: "ignore",
+    stderr: "pipe",
+    timeout: 120_000,
+  },
 });
 ```
 
@@ -2318,25 +2772,39 @@ export function PacksDetailed() {
             <article
               className={cn(
                 "flex h-full flex-col rounded-[var(--radius-card)] border bg-[var(--color-elevated)] p-8",
-                pack.highlight ? "border-[var(--color-accent)]" : "border-[var(--color-border-default)]",
+                pack.highlight
+                  ? "border-[var(--color-accent)]"
+                  : "border-[var(--color-border-default)]",
               )}
             >
-              {pack.highlight && <Badge className="mb-4 w-fit bg-[var(--color-accent-soft)] text-[var(--color-accent)]">{t("mostChosen")}</Badge>}
+              {pack.highlight && (
+                <Badge className="mb-4 w-fit bg-[var(--color-accent-soft)] text-[var(--color-accent)]">
+                  {t("mostChosen")}
+                </Badge>
+              )}
               <pack.Icon size={32} weight="duotone" className="text-[var(--color-accent)]" />
-              <h3 className="mt-4 font-display text-2xl font-bold">{pack.name[locale]}</h3>
+              <h3 className="font-display mt-4 text-2xl font-bold">{pack.name[locale]}</h3>
               <p className="mt-2 text-sm text-[var(--color-text-body)]">{pack.tagline[locale]}</p>
-              <p className="mt-6 font-display text-4xl font-bold tracking-tight">{pack.price}</p>
+              <p className="font-display mt-6 text-4xl font-bold tracking-tight">{pack.price}</p>
               <p className="text-xs text-[var(--color-text-muted)]">{pack.priceNote[locale]}</p>
               <ul className="mt-6 flex flex-1 flex-col gap-3">
                 {pack.features[locale].map((f) => (
                   <li key={f} className="flex gap-2 text-sm text-[var(--color-text-body)]">
-                    <Check size={18} weight="bold" className="mt-0.5 shrink-0 text-[var(--color-accent)]" />
+                    <Check
+                      size={18}
+                      weight="bold"
+                      className="mt-0.5 shrink-0 text-[var(--color-accent)]"
+                    />
                     <span>{f}</span>
                   </li>
                 ))}
               </ul>
               <p className="mt-6 text-xs font-medium">{pack.delivery[locale]}</p>
-              <Button asChild className="mt-6 w-full" variant={pack.highlight ? "default" : "ghost"}>
+              <Button
+                asChild
+                className="mt-6 w-full"
+                variant={pack.highlight ? "default" : "ghost"}
+              >
                 <Link href="/contacto">{pack.cta[locale]}</Link>
               </Button>
             </article>
@@ -2358,14 +2826,46 @@ import { Check, X } from "@phosphor-icons/react";
 import { PACKS } from "@/lib/packs";
 import { FadeUp } from "@/components/motion/FadeUp";
 
-const ROWS: Array<{ key: string; labels: { es: string; en: string }; values: Record<string, boolean | string> }> = [
-  { key: "pages", labels: { es: "Páginas incluidas", en: "Pages included" }, values: { essential: "1", professional: "6", shop: "10+" } },
-  { key: "blog", labels: { es: "Blog", en: "Blog" }, values: { essential: false, professional: true, shop: true } },
-  { key: "i18n", labels: { es: "Multi-idioma", en: "Multi-language" }, values: { essential: false, professional: true, shop: true } },
-  { key: "seo", labels: { es: "SEO técnico", en: "Technical SEO" }, values: { essential: false, professional: true, shop: true } },
-  { key: "shop", labels: { es: "Tienda online", en: "Online shop" }, values: { essential: false, professional: false, shop: true } },
-  { key: "support", labels: { es: "Soporte incluido", en: "Support included" }, values: { essential: "—", professional: "3 meses", shop: "6 meses" } },
-  { key: "delivery", labels: { es: "Entrega", en: "Delivery" }, values: { essential: "7 días", professional: "14 días", shop: "21 días" } },
+const ROWS: Array<{
+  key: string;
+  labels: { es: string; en: string };
+  values: Record<string, boolean | string>;
+}> = [
+  {
+    key: "pages",
+    labels: { es: "Páginas incluidas", en: "Pages included" },
+    values: { essential: "1", professional: "6", shop: "10+" },
+  },
+  {
+    key: "blog",
+    labels: { es: "Blog", en: "Blog" },
+    values: { essential: false, professional: true, shop: true },
+  },
+  {
+    key: "i18n",
+    labels: { es: "Multi-idioma", en: "Multi-language" },
+    values: { essential: false, professional: true, shop: true },
+  },
+  {
+    key: "seo",
+    labels: { es: "SEO técnico", en: "Technical SEO" },
+    values: { essential: false, professional: true, shop: true },
+  },
+  {
+    key: "shop",
+    labels: { es: "Tienda online", en: "Online shop" },
+    values: { essential: false, professional: false, shop: true },
+  },
+  {
+    key: "support",
+    labels: { es: "Soporte incluido", en: "Support included" },
+    values: { essential: "—", professional: "3 meses", shop: "6 meses" },
+  },
+  {
+    key: "delivery",
+    labels: { es: "Entrega", en: "Delivery" },
+    values: { essential: "7 días", professional: "14 días", shop: "21 días" },
+  },
 ];
 
 export function ComparisonTable() {
@@ -2376,7 +2876,9 @@ export function ComparisonTable() {
     <section className="bg-[var(--color-elevated)] py-16 md:py-24">
       <div className="container-page">
         <FadeUp>
-          <h2 className="font-display text-3xl font-bold tracking-tight md:text-5xl">{t("compareTitle")}</h2>
+          <h2 className="font-display text-3xl font-bold tracking-tight md:text-5xl">
+            {t("compareTitle")}
+          </h2>
         </FadeUp>
 
         <FadeUp className="mt-10 overflow-x-auto">
@@ -2385,7 +2887,9 @@ export function ComparisonTable() {
               <tr className="border-b border-[var(--color-border-default)]">
                 <th className="py-4 text-sm font-semibold text-[var(--color-text-muted)]"></th>
                 {PACKS.map((p) => (
-                  <th key={p.id} className="px-4 py-4 text-sm font-semibold">{p.name[locale]}</th>
+                  <th key={p.id} className="px-4 py-4 text-sm font-semibold">
+                    {p.name[locale]}
+                  </th>
                 ))}
               </tr>
             </thead>
@@ -2397,7 +2901,13 @@ export function ComparisonTable() {
                     const v = r.values[p.id];
                     return (
                       <td key={p.id} className="px-4 py-4 text-sm">
-                        {v === true ? <Check size={20} weight="bold" className="text-[var(--color-accent)]" /> : v === false ? <X size={20} className="text-[var(--color-text-muted)]" /> : <span>{v}</span>}
+                        {v === true ? (
+                          <Check size={20} weight="bold" className="text-[var(--color-accent)]" />
+                        ) : v === false ? (
+                          <X size={20} className="text-[var(--color-text-muted)]" />
+                        ) : (
+                          <span>{v}</span>
+                        )}
                       </td>
                     );
                   })}
@@ -2427,16 +2937,23 @@ export function ExtrasTable() {
     <section className="py-16 md:py-24">
       <div className="container-page">
         <FadeUp className="max-w-2xl">
-          <h2 className="font-display text-3xl font-bold tracking-tight md:text-5xl">{t("title")}</h2>
+          <h2 className="font-display text-3xl font-bold tracking-tight md:text-5xl">
+            {t("title")}
+          </h2>
           <p className="mt-4 text-base text-[var(--color-text-body)]">{t("subtitle")}</p>
         </FadeUp>
 
         <FadeUp className="mt-10">
           <ul className="divide-y divide-[var(--color-divider)] border-y border-[var(--color-border-default)]">
             {EXTRAS.map((e) => (
-              <li key={e.name.es} className="flex flex-col justify-between gap-2 py-5 md:flex-row md:items-center">
+              <li
+                key={e.name.es}
+                className="flex flex-col justify-between gap-2 py-5 md:flex-row md:items-center"
+              >
                 <span className="text-base font-medium">{e.name[locale]}</span>
-                <span className="font-display text-lg font-semibold text-[var(--color-accent)]">{e.price}</span>
+                <span className="font-display text-lg font-semibold text-[var(--color-accent)]">
+                  {e.price}
+                </span>
               </li>
             ))}
           </ul>
@@ -2452,7 +2969,12 @@ export function ExtrasTable() {
 ```tsx
 import { setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { PacksDetailed } from "@/components/sections/PacksDetailed";
 import { ComparisonTable } from "@/components/sections/ComparisonTable";
 import { ExtrasTable } from "@/components/sections/ExtrasTable";
@@ -2464,7 +2986,9 @@ function ServicesHero() {
   return (
     <section className="container-page pt-16 md:pt-24">
       <FadeUp className="max-w-3xl">
-        <h1 className="font-display text-4xl font-bold leading-[1.05] tracking-tighter md:text-6xl">{t("title")}</h1>
+        <h1 className="font-display text-4xl leading-[1.05] font-bold tracking-tighter md:text-6xl">
+          {t("title")}
+        </h1>
         <p className="mt-5 text-base text-[var(--color-text-body)] md:text-lg">{t("subtitle")}</p>
       </FadeUp>
     </section>
@@ -2478,14 +3002,20 @@ function ServicesFAQ() {
     <section className="bg-[var(--color-elevated)] py-16 md:py-24">
       <div className="container-page max-w-3xl">
         <FadeUp>
-          <h2 className="font-display text-3xl font-bold tracking-tight md:text-5xl">{t("title")}</h2>
+          <h2 className="font-display text-3xl font-bold tracking-tight md:text-5xl">
+            {t("title")}
+          </h2>
         </FadeUp>
         <FadeUp className="mt-8">
           <Accordion type="single" collapsible>
             {items.map((it, i) => (
               <AccordionItem key={i} value={`item-${i}`}>
-                <AccordionTrigger className="text-left text-base font-semibold">{it.q}</AccordionTrigger>
-                <AccordionContent className="text-[var(--color-text-body)]">{it.a}</AccordionContent>
+                <AccordionTrigger className="text-left text-base font-semibold">
+                  {it.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-[var(--color-text-body)]">
+                  {it.a}
+                </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
@@ -2546,7 +3076,10 @@ export function PortfolioGrid() {
   const t = useTranslations("portfolio");
   const [filter, setFilter] = useState<Sector | "all">("all");
 
-  const items = useMemo(() => (filter === "all" ? PROJECTS : PROJECTS.filter((p) => p.sector === filter)), [filter]);
+  const items = useMemo(
+    () => (filter === "all" ? PROJECTS : PROJECTS.filter((p) => p.sector === filter)),
+    [filter],
+  );
 
   return (
     <section className="py-12 md:py-20">
@@ -2576,21 +3109,40 @@ export function PortfolioGrid() {
             <FadeUp key={p.slug} delay={i * 0.05}>
               {p.comingSoon ? (
                 <div className="block overflow-hidden rounded-[var(--radius-card)] border border-dashed border-[var(--color-border-default)] bg-[var(--color-divider)] p-12 text-center">
-                  <p className="font-display text-lg font-semibold text-[var(--color-text-muted)]">{t("comingSoon")}</p>
+                  <p className="font-display text-lg font-semibold text-[var(--color-text-muted)]">
+                    {t("comingSoon")}
+                  </p>
                 </div>
               ) : (
-                <a href={p.url!} target="_blank" rel="noopener noreferrer" className="group block overflow-hidden rounded-[var(--radius-card)] border border-[var(--color-border-default)] bg-[var(--color-elevated)] transition-all hover:-translate-y-1 hover:shadow-[0_25px_60px_-30px_rgba(15,23,42,0.25)]">
+                <a
+                  href={p.url!}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block overflow-hidden rounded-[var(--radius-card)] border border-[var(--color-border-default)] bg-[var(--color-elevated)] transition-all hover:-translate-y-1 hover:shadow-[0_25px_60px_-30px_rgba(15,23,42,0.25)]"
+                >
                   <div className="aspect-[16/10] overflow-hidden bg-[var(--color-divider)]">
-                    <Image src={p.image} alt={p.name} width={1280} height={800} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+                    <Image
+                      src={p.image}
+                      alt={p.name}
+                      width={1280}
+                      height={800}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    />
                   </div>
                   <div className="flex items-center justify-between p-6">
                     <div>
                       <h3 className="font-display text-lg font-semibold">{p.name}</h3>
-                      <p className="text-xs uppercase tracking-wider text-[var(--color-text-muted)]">{p.sector} · {p.year}</p>
+                      <p className="text-xs tracking-wider text-[var(--color-text-muted)] uppercase">
+                        {p.sector} · {p.year}
+                      </p>
                     </div>
                     <span className="flex items-center gap-1 text-sm font-medium text-[var(--color-accent)]">
                       {t("viewLive")}
-                      <ArrowUpRight size={16} weight="bold" className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      <ArrowUpRight
+                        size={16}
+                        weight="bold"
+                        className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      />
                     </span>
                   </div>
                 </a>
@@ -2618,7 +3170,9 @@ function PortfolioHero() {
   return (
     <section className="container-page pt-16 md:pt-24">
       <FadeUp className="max-w-3xl">
-        <h1 className="font-display text-4xl font-bold leading-[1.05] tracking-tighter md:text-6xl">{t("title")}</h1>
+        <h1 className="font-display text-4xl leading-[1.05] font-bold tracking-tighter md:text-6xl">
+          {t("title")}
+        </h1>
         <p className="mt-5 text-base text-[var(--color-text-body)] md:text-lg">{t("subtitle")}</p>
       </FadeUp>
     </section>
@@ -2668,12 +3222,20 @@ function AboutHero() {
   return (
     <section className="container-page grid grid-cols-1 items-center gap-10 pt-16 md:grid-cols-12 md:pt-24">
       <FadeUp className="md:col-span-7">
-        <h1 className="font-display text-4xl font-bold leading-[1.05] tracking-tighter md:text-6xl">{t("title")}</h1>
+        <h1 className="font-display text-4xl leading-[1.05] font-bold tracking-tighter md:text-6xl">
+          {t("title")}
+        </h1>
         <p className="mt-5 text-base text-[var(--color-text-body)] md:text-lg">{t("subtitle")}</p>
       </FadeUp>
       <FadeUp delay={0.1} className="md:col-span-5">
         <div className="aspect-[4/5] overflow-hidden rounded-[var(--radius-card)] bg-[var(--color-divider)]">
-          <Image src="https://picsum.photos/seed/tuagencia-team/800/1000" alt="Equipo" width={800} height={1000} className="h-full w-full object-cover" />
+          <Image
+            src="https://picsum.photos/seed/tuagencia-team/800/1000"
+            alt="Equipo"
+            width={800}
+            height={1000}
+            className="h-full w-full object-cover"
+          />
         </div>
       </FadeUp>
     </section>
@@ -2686,8 +3248,12 @@ function StoryBlock() {
     <section className="py-16 md:py-24">
       <div className="container-page max-w-3xl">
         <FadeUp>
-          <h2 className="font-display text-3xl font-bold tracking-tight md:text-5xl">{t("title")}</h2>
-          <p className="mt-6 text-base leading-relaxed text-[var(--color-text-body)] md:text-lg">{t("body")}</p>
+          <h2 className="font-display text-3xl font-bold tracking-tight md:text-5xl">
+            {t("title")}
+          </h2>
+          <p className="mt-6 text-base leading-relaxed text-[var(--color-text-body)] md:text-lg">
+            {t("body")}
+          </p>
         </FadeUp>
       </div>
     </section>
@@ -2701,7 +3267,9 @@ function CommitmentsBlock() {
     <section className="bg-[var(--color-elevated)] py-16 md:py-24">
       <div className="container-page">
         <FadeUp className="max-w-2xl">
-          <h2 className="font-display text-3xl font-bold tracking-tight md:text-5xl">{t("title")}</h2>
+          <h2 className="font-display text-3xl font-bold tracking-tight md:text-5xl">
+            {t("title")}
+          </h2>
         </FadeUp>
         <div className="mt-12 grid grid-cols-1 gap-x-12 md:grid-cols-2">
           {items.map((it, i) => (
@@ -2724,11 +3292,15 @@ function TechBlock() {
     <section className="py-16 md:py-24">
       <div className="container-page">
         <FadeUp>
-          <h2 className="font-display text-2xl font-semibold tracking-tight md:text-3xl">{t("title")}</h2>
+          <h2 className="font-display text-2xl font-semibold tracking-tight md:text-3xl">
+            {t("title")}
+          </h2>
         </FadeUp>
         <FadeUp className="mt-8">
           <ul className="flex flex-wrap gap-x-10 gap-y-4 text-base font-medium text-[var(--color-text-body)]">
-            {TECH.map((n) => <li key={n}>{n}</li>)}
+            {TECH.map((n) => (
+              <li key={n}>{n}</li>
+            ))}
           </ul>
         </FadeUp>
       </div>
@@ -2781,7 +3353,9 @@ export function ContactChannels() {
       <ul className="mt-6 space-y-5 text-sm">
         <li className="flex items-center gap-3">
           <WhatsappLogo size={20} weight="fill" className="text-[var(--color-accent)]" />
-          <a href="https://wa.me/34000000000" target="_blank" rel="noopener noreferrer">{t("whatsapp")}: +34 000 000 000</a>
+          <a href="https://wa.me/34000000000" target="_blank" rel="noopener noreferrer">
+            {t("whatsapp")}: +34 000 000 000
+          </a>
         </li>
         <li className="flex items-center gap-3">
           <EnvelopeSimple size={20} className="text-[var(--color-accent)]" />
@@ -2793,9 +3367,13 @@ export function ContactChannels() {
         </li>
       </ul>
       <hr className="my-6 border-[var(--color-border-default)]" />
-      <p className="text-xs uppercase tracking-wider text-[var(--color-text-muted)]">{t("schedule")}</p>
+      <p className="text-xs tracking-wider text-[var(--color-text-muted)] uppercase">
+        {t("schedule")}
+      </p>
       <p className="text-sm font-medium">{t("scheduleValue")}</p>
-      <p className="mt-4 text-xs uppercase tracking-wider text-[var(--color-text-muted)]">Location</p>
+      <p className="mt-4 text-xs tracking-wider text-[var(--color-text-muted)] uppercase">
+        Location
+      </p>
       <p className="text-sm font-medium">{t("location")}</p>
     </aside>
   );
@@ -2837,8 +3415,18 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="space-y-5 rounded-[var(--radius-card)] border border-[var(--color-border-default)] bg-[var(--color-elevated)] p-8">
-      <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
+    <form
+      onSubmit={onSubmit}
+      className="space-y-5 rounded-[var(--radius-card)] border border-[var(--color-border-default)] bg-[var(--color-elevated)] p-8"
+    >
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        className="hidden"
+        aria-hidden
+      />
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
         <div className="grid gap-2">
           <Label htmlFor="name">{t("name")}</Label>
@@ -2861,19 +3449,35 @@ export function ContactForm() {
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
         <div className="grid gap-2">
           <Label htmlFor="sector">{t("sector")}</Label>
-          <select id="sector" name="sector" required className="h-11 rounded-md border border-[var(--color-border-default)] bg-[var(--color-elevated)] px-3 text-sm">
+          <select
+            id="sector"
+            name="sector"
+            required
+            className="h-11 rounded-md border border-[var(--color-border-default)] bg-[var(--color-elevated)] px-3 text-sm"
+          >
             <option value="">—</option>
-            {(["dental", "legal", "reforms", "hospitality", "ecommerce", "other"] as const).map((k) => (
-              <option key={k} value={k}>{t(`sectors.${k}` as never)}</option>
-            ))}
+            {(["dental", "legal", "reforms", "hospitality", "ecommerce", "other"] as const).map(
+              (k) => (
+                <option key={k} value={k}>
+                  {t(`sectors.${k}` as never)}
+                </option>
+              ),
+            )}
           </select>
         </div>
         <div className="grid gap-2">
           <Label htmlFor="budget">{t("budget")}</Label>
-          <select id="budget" name="budget" required className="h-11 rounded-md border border-[var(--color-border-default)] bg-[var(--color-elevated)] px-3 text-sm">
+          <select
+            id="budget"
+            name="budget"
+            required
+            className="h-11 rounded-md border border-[var(--color-border-default)] bg-[var(--color-elevated)] px-3 text-sm"
+          >
             <option value="">—</option>
             {(["lt1k", "b1_2k", "b2_5k", "gt5k"] as const).map((k) => (
-              <option key={k} value={k}>{t(`budgets.${k}` as never)}</option>
+              <option key={k} value={k}>
+                {t(`budgets.${k}` as never)}
+              </option>
             ))}
           </select>
         </div>
@@ -2889,7 +3493,12 @@ export function ContactForm() {
         <span>{t("gdpr")}</span>
       </label>
 
-      <Button type="submit" disabled={status === "submitting"} size="lg" className="w-full md:w-auto">
+      <Button
+        type="submit"
+        disabled={status === "submitting"}
+        size="lg"
+        className="w-full md:w-auto"
+      >
         {status === "submitting" ? t("submitting") : t("submit")}
       </Button>
     </form>
@@ -2911,7 +3520,9 @@ function ContactHero() {
   return (
     <section className="container-page pt-16 md:pt-24">
       <FadeUp className="max-w-3xl">
-        <h1 className="font-display text-4xl font-bold leading-[1.05] tracking-tighter md:text-6xl">{t("title")}</h1>
+        <h1 className="font-display text-4xl leading-[1.05] font-bold tracking-tighter md:text-6xl">
+          {t("title")}
+        </h1>
         <p className="mt-5 text-base text-[var(--color-text-body)] md:text-lg">{t("subtitle")}</p>
       </FadeUp>
     </section>
@@ -2926,8 +3537,12 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
       <ContactHero />
       <section className="py-12 md:py-20">
         <div className="container-page grid grid-cols-1 gap-10 md:grid-cols-12">
-          <div className="md:col-span-7"><ContactForm /></div>
-          <div className="md:col-span-5"><ContactChannels /></div>
+          <div className="md:col-span-7">
+            <ContactForm />
+          </div>
+          <div className="md:col-span-5">
+            <ContactChannels />
+          </div>
         </div>
       </section>
     </main>
@@ -2961,11 +3576,19 @@ export default function NotFound() {
   const t = useTranslations("notFound");
   return (
     <main className="container-page flex min-h-[70vh] flex-col items-start justify-center py-24">
-      <p className="font-display text-[clamp(6rem,15vw,12rem)] font-bold leading-none tracking-tighter text-[var(--color-accent)]">{t("title")}</p>
-      <h1 className="mt-4 font-display text-2xl font-semibold tracking-tight md:text-4xl">{t("subtitle")}</h1>
+      <p className="font-display text-[clamp(6rem,15vw,12rem)] leading-none font-bold tracking-tighter text-[var(--color-accent)]">
+        {t("title")}
+      </p>
+      <h1 className="font-display mt-4 text-2xl font-semibold tracking-tight md:text-4xl">
+        {t("subtitle")}
+      </h1>
       <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-        <Button asChild><Link href="/">{t("ctaHome")}</Link></Button>
-        <Button asChild variant="ghost"><Link href="/portfolio">{t("ctaPortfolio")}</Link></Button>
+        <Button asChild>
+          <Link href="/">{t("ctaHome")}</Link>
+        </Button>
+        <Button asChild variant="ghost">
+          <Link href="/portfolio">{t("ctaPortfolio")}</Link>
+        </Button>
       </div>
     </main>
   );
@@ -3124,19 +3747,21 @@ export async function listPosts(locale: Locale): Promise<PostMeta[]> {
     return [];
   }
   const posts = await Promise.all(
-    files.filter((f) => f.endsWith(".mdx")).map(async (file) => {
-      const slug = file.replace(/\.mdx$/, "");
-      const raw = await fs.readFile(path.join(dir, file), "utf8");
-      const { data } = parseFrontmatter(raw);
-      return {
-        slug,
-        title: String(data.title ?? slug),
-        description: String(data.description ?? ""),
-        date: String(data.date ?? "1970-01-01"),
-        tags: Array.isArray(data.tags) ? (data.tags as string[]) : [],
-        cover: typeof data.cover === "string" ? data.cover : null,
-      };
-    }),
+    files
+      .filter((f) => f.endsWith(".mdx"))
+      .map(async (file) => {
+        const slug = file.replace(/\.mdx$/, "");
+        const raw = await fs.readFile(path.join(dir, file), "utf8");
+        const { data } = parseFrontmatter(raw);
+        return {
+          slug,
+          title: String(data.title ?? slug),
+          description: String(data.description ?? ""),
+          date: String(data.date ?? "1970-01-01"),
+          tags: Array.isArray(data.tags) ? (data.tags as string[]) : [],
+          cover: typeof data.cover === "string" ? data.cover : null,
+        };
+      }),
   );
   return posts.sort((a, b) => (a.date < b.date ? 1 : -1));
 }
@@ -3211,15 +3836,46 @@ import { Link } from "@/i18n/routing";
 import { listPosts, type Locale } from "@/lib/blog";
 import { FadeUp } from "@/components/motion/FadeUp";
 
-function PostCard({ post, featured = false, locale }: { post: Awaited<ReturnType<typeof listPosts>>[number]; featured?: boolean; locale: Locale }) {
+function PostCard({
+  post,
+  featured = false,
+  locale,
+}: {
+  post: Awaited<ReturnType<typeof listPosts>>[number];
+  featured?: boolean;
+  locale: Locale;
+}) {
   return (
-    <Link href={{ pathname: "/blog/[slug]", params: { slug: post.slug } } as never} className={`group block overflow-hidden rounded-[var(--radius-card)] border border-[var(--color-border-default)] bg-[var(--color-elevated)] transition-all hover:-translate-y-1 ${featured ? "md:flex md:items-stretch" : ""}`}>
-      <div className={`overflow-hidden bg-[var(--color-divider)] ${featured ? "md:w-1/2" : "aspect-[16/10]"}`}>
-        <Image src={post.cover ?? `https://picsum.photos/seed/${post.slug}/1200/750`} alt={post.title} width={1200} height={750} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+    <Link
+      href={{ pathname: "/blog/[slug]", params: { slug: post.slug } } as never}
+      className={`group block overflow-hidden rounded-[var(--radius-card)] border border-[var(--color-border-default)] bg-[var(--color-elevated)] transition-all hover:-translate-y-1 ${featured ? "md:flex md:items-stretch" : ""}`}
+    >
+      <div
+        className={`overflow-hidden bg-[var(--color-divider)] ${featured ? "md:w-1/2" : "aspect-[16/10]"}`}
+      >
+        <Image
+          src={post.cover ?? `https://picsum.photos/seed/${post.slug}/1200/750`}
+          alt={post.title}
+          width={1200}
+          height={750}
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+        />
       </div>
-      <div className={`flex flex-col gap-3 p-6 ${featured ? "md:w-1/2 md:justify-center md:p-10" : ""}`}>
-        <p className="text-xs uppercase tracking-wider text-[var(--color-text-muted)]">{new Date(post.date).toLocaleDateString(locale, { year: "numeric", month: "long", day: "numeric" })}</p>
-        <h2 className={`font-display font-semibold ${featured ? "text-3xl md:text-4xl" : "text-xl"}`}>{post.title}</h2>
+      <div
+        className={`flex flex-col gap-3 p-6 ${featured ? "md:w-1/2 md:justify-center md:p-10" : ""}`}
+      >
+        <p className="text-xs tracking-wider text-[var(--color-text-muted)] uppercase">
+          {new Date(post.date).toLocaleDateString(locale, {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })}
+        </p>
+        <h2
+          className={`font-display font-semibold ${featured ? "text-3xl md:text-4xl" : "text-xl"}`}
+        >
+          {post.title}
+        </h2>
         <p className="text-sm text-[var(--color-text-body)]">{post.description}</p>
       </div>
     </Link>
@@ -3238,8 +3894,12 @@ export default async function BlogIndex({ params }: { params: Promise<{ locale: 
     <main>
       <section className="container-page pt-16 md:pt-24">
         <FadeUp className="max-w-3xl">
-          <h1 className="font-display text-4xl font-bold leading-[1.05] tracking-tighter md:text-6xl">{tHero("title")}</h1>
-          <p className="mt-5 text-base text-[var(--color-text-body)] md:text-lg">{tHero("subtitle")}</p>
+          <h1 className="font-display text-4xl leading-[1.05] font-bold tracking-tighter md:text-6xl">
+            {tHero("title")}
+          </h1>
+          <p className="mt-5 text-base text-[var(--color-text-body)] md:text-lg">
+            {tHero("subtitle")}
+          </p>
         </FadeUp>
       </section>
 
@@ -3292,11 +3952,19 @@ import { Button } from "@/components/ui/button";
 import { getPost, listPosts, readingTime, type Locale } from "@/lib/blog";
 
 export async function generateStaticParams() {
-  const all = await Promise.all((["es", "en"] as Locale[]).map(async (l) => (await listPosts(l)).map((p) => ({ locale: l, slug: p.slug }))));
+  const all = await Promise.all(
+    (["es", "en"] as Locale[]).map(async (l) =>
+      (await listPosts(l)).map((p) => ({ locale: l, slug: p.slug })),
+    ),
+  );
   return all.flat();
 }
 
-export default async function PostPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
+export default async function PostPage({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
   const post = await getPost(locale as Locale, slug);
@@ -3307,28 +3975,44 @@ export default async function PostPage({ params }: { params: Promise<{ locale: s
 
   return (
     <main className="container-page max-w-3xl py-16 md:py-24">
-      <p className="text-xs uppercase tracking-wider text-[var(--color-text-muted)]">{post.tags.join(" · ")}</p>
-      <h1 className="mt-3 font-display text-4xl font-bold leading-[1.1] tracking-tighter md:text-5xl">{post.title}</h1>
+      <p className="text-xs tracking-wider text-[var(--color-text-muted)] uppercase">
+        {post.tags.join(" · ")}
+      </p>
+      <h1 className="font-display mt-3 text-4xl leading-[1.1] font-bold tracking-tighter md:text-5xl">
+        {post.title}
+      </h1>
       <p className="mt-4 text-sm text-[var(--color-text-muted)]">
-        {new Date(post.date).toLocaleDateString(locale, { year: "numeric", month: "long", day: "numeric" })}
+        {new Date(post.date).toLocaleDateString(locale, {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        })}
         {" · "}
         {t("readingTime", { minutes: mins })}
       </p>
 
       {post.cover && (
         <div className="mt-8 overflow-hidden rounded-[var(--radius-card)] border border-[var(--color-border-default)]">
-          <Image src={post.cover} alt={post.title} width={1200} height={750} className="h-auto w-full" />
+          <Image
+            src={post.cover}
+            alt={post.title}
+            width={1200}
+            height={750}
+            className="h-auto w-full"
+          />
         </div>
       )}
 
-      <article className="prose prose-slate mt-10 max-w-none prose-headings:font-display prose-headings:tracking-tight prose-a:text-[var(--color-accent)]">
+      <article className="prose prose-slate prose-headings:font-display prose-headings:tracking-tight prose-a:text-[var(--color-accent)] mt-10 max-w-none">
         <MDXRemote source={post.content} />
       </article>
 
       <div className="mt-16 rounded-[var(--radius-card)] border border-[var(--color-border-default)] bg-[var(--color-elevated)] p-8 md:p-10">
         <h2 className="font-display text-2xl font-bold">{t("ctaTitle")}</h2>
         <p className="mt-2 text-[var(--color-text-body)]">{t("ctaBody")}</p>
-        <Button asChild className="mt-6"><Link href="/contacto">{t("ctaButton")}</Link></Button>
+        <Button asChild className="mt-6">
+          <Link href="/contacto">{t("ctaButton")}</Link>
+        </Button>
       </div>
     </main>
   );
@@ -3439,13 +4123,25 @@ git commit -m "content(blog): seed first ES + EN post"
 import { useTranslations } from "next-intl";
 import { FadeUp } from "@/components/motion/FadeUp";
 
-export function LegalPage({ title, lastUpdated, children }: { title: string; lastUpdated: string; children: React.ReactNode }) {
+export function LegalPage({
+  title,
+  lastUpdated,
+  children,
+}: {
+  title: string;
+  lastUpdated: string;
+  children: React.ReactNode;
+}) {
   const t = useTranslations("legal");
   return (
     <main className="container-page max-w-3xl py-16 md:py-24">
       <FadeUp>
-        <h1 className="font-display text-4xl font-bold leading-[1.1] tracking-tighter md:text-5xl">{title}</h1>
-        <p className="mt-3 text-sm text-[var(--color-text-muted)]">{t("lastUpdated")}: {lastUpdated}</p>
+        <h1 className="font-display text-4xl leading-[1.1] font-bold tracking-tighter md:text-5xl">
+          {title}
+        </h1>
+        <p className="mt-3 text-sm text-[var(--color-text-muted)]">
+          {t("lastUpdated")}: {lastUpdated}
+        </p>
       </FadeUp>
       <article className="prose prose-slate mt-10 max-w-none">{children}</article>
     </main>
@@ -3467,20 +4163,39 @@ export default async function AvisoLegal({ params }: { params: Promise<{ locale:
   return (
     <LegalPage title={t("title")} lastUpdated="2026-05-14">
       <h2>Identidad del prestador</h2>
-      <p><strong>Titular:</strong> [PENDIENTE: nombre o razón social]</p>
-      <p><strong>NIF / CIF:</strong> [PENDIENTE]</p>
-      <p><strong>Domicilio:</strong> [PENDIENTE]</p>
-      <p><strong>Email:</strong> hola@tuagenciaweb.es</p>
-      <p><strong>Teléfono:</strong> +34 000 000 000</p>
+      <p>
+        <strong>Titular:</strong> [PENDIENTE: nombre o razón social]
+      </p>
+      <p>
+        <strong>NIF / CIF:</strong> [PENDIENTE]
+      </p>
+      <p>
+        <strong>Domicilio:</strong> [PENDIENTE]
+      </p>
+      <p>
+        <strong>Email:</strong> hola@tuagenciaweb.es
+      </p>
+      <p>
+        <strong>Teléfono:</strong> +34 000 000 000
+      </p>
 
       <h2>Objeto</h2>
-      <p>El presente aviso legal regula el uso del sitio web tuagenciaweb.es, propiedad del titular indicado.</p>
+      <p>
+        El presente aviso legal regula el uso del sitio web tuagenciaweb.es, propiedad del titular
+        indicado.
+      </p>
 
       <h2>Condiciones de uso</h2>
-      <p>El acceso al sitio web es gratuito. El usuario se compromete a usarlo conforme a la ley y a no dañar la imagen, intereses o derechos de Tuagenciaweb.</p>
+      <p>
+        El acceso al sitio web es gratuito. El usuario se compromete a usarlo conforme a la ley y a
+        no dañar la imagen, intereses o derechos de Tuagenciaweb.
+      </p>
 
       <h2>Propiedad intelectual</h2>
-      <p>Todos los contenidos del sitio (textos, imágenes, código) son propiedad de Tuagenciaweb o cuentan con licencia de uso.</p>
+      <p>
+        Todos los contenidos del sitio (textos, imágenes, código) son propiedad de Tuagenciaweb o
+        cuentan con licencia de uso.
+      </p>
 
       <h2>Legislación aplicable</h2>
       <p>Este aviso se rige por la legislación española (LSSI-CE, Ley 34/2002).</p>
@@ -3527,16 +4242,32 @@ export default async function Privacy({ params }: { params: Promise<{ locale: st
       <p>Email: hola@tuagenciaweb.es</p>
 
       <h2>{en ? "Data we collect" : "Datos que recogemos"}</h2>
-      <p>{en ? "Contact form data: name, email, optional phone/company, sector, budget range, message." : "Datos del formulario de contacto: nombre, email, teléfono y empresa (opcionales), sector, rango de presupuesto, mensaje."}</p>
+      <p>
+        {en
+          ? "Contact form data: name, email, optional phone/company, sector, budget range, message."
+          : "Datos del formulario de contacto: nombre, email, teléfono y empresa (opcionales), sector, rango de presupuesto, mensaje."}
+      </p>
 
       <h2>{en ? "Legal basis" : "Base legal"}</h2>
-      <p>{en ? "User consent (GDPR art. 6.1.a) and legitimate interest in answering enquiries (GDPR art. 6.1.f)." : "Consentimiento del usuario (RGPD art. 6.1.a) e interés legítimo en responder a consultas (RGPD art. 6.1.f)."}</p>
+      <p>
+        {en
+          ? "User consent (GDPR art. 6.1.a) and legitimate interest in answering enquiries (GDPR art. 6.1.f)."
+          : "Consentimiento del usuario (RGPD art. 6.1.a) e interés legítimo en responder a consultas (RGPD art. 6.1.f)."}
+      </p>
 
       <h2>{en ? "Purpose" : "Finalidad"}</h2>
-      <p>{en ? "Reply to your enquiry and store it for follow-up." : "Responder a tu consulta y conservarla para seguimiento."}</p>
+      <p>
+        {en
+          ? "Reply to your enquiry and store it for follow-up."
+          : "Responder a tu consulta y conservarla para seguimiento."}
+      </p>
 
       <h2>{en ? "Retention period" : "Plazo de conservación"}</h2>
-      <p>{en ? "We keep the data for up to 3 years from the last interaction, or until you request deletion." : "Conservamos los datos hasta 3 años desde la última interacción, o hasta que solicites su supresión."}</p>
+      <p>
+        {en
+          ? "We keep the data for up to 3 years from the last interaction, or until you request deletion."
+          : "Conservamos los datos hasta 3 años desde la última interacción, o hasta que solicites su supresión."}
+      </p>
 
       <h2>{en ? "Data processors" : "Encargados del tratamiento"}</h2>
       <ul>
@@ -3546,7 +4277,11 @@ export default async function Privacy({ params }: { params: Promise<{ locale: st
       </ul>
 
       <h2>{en ? "Your rights" : "Tus derechos"}</h2>
-      <p>{en ? "Access, rectification, deletion, restriction, portability, objection. Email hola@tuagenciaweb.es." : "Acceso, rectificación, supresión, limitación, portabilidad y oposición. Email: hola@tuagenciaweb.es."}</p>
+      <p>
+        {en
+          ? "Access, rectification, deletion, restriction, portability, objection. Email hola@tuagenciaweb.es."
+          : "Acceso, rectificación, supresión, limitación, portabilidad y oposición. Email: hola@tuagenciaweb.es."}
+      </p>
     </LegalPage>
   );
 }
@@ -3580,22 +4315,50 @@ export default async function Cookies({ params }: { params: Promise<{ locale: st
   return (
     <LegalPage title={t("title")} lastUpdated="2026-05-14">
       <h2>{en ? "What are cookies" : "Qué son las cookies"}</h2>
-      <p>{en ? "Small files stored in your browser to remember preferences or measure usage." : "Pequeños archivos guardados en el navegador para recordar preferencias o medir el uso."}</p>
+      <p>
+        {en
+          ? "Small files stored in your browser to remember preferences or measure usage."
+          : "Pequeños archivos guardados en el navegador para recordar preferencias o medir el uso."}
+      </p>
 
       <h2>{en ? "Cookies we use" : "Cookies que usamos"}</h2>
       <table>
         <thead>
-          <tr><th>{en ? "Name" : "Nombre"}</th><th>{en ? "Purpose" : "Finalidad"}</th><th>{en ? "Duration" : "Duración"}</th><th>{en ? "Type" : "Tipo"}</th></tr>
+          <tr>
+            <th>{en ? "Name" : "Nombre"}</th>
+            <th>{en ? "Purpose" : "Finalidad"}</th>
+            <th>{en ? "Duration" : "Duración"}</th>
+            <th>{en ? "Type" : "Tipo"}</th>
+          </tr>
         </thead>
         <tbody>
-          <tr><td>tw_consent</td><td>{en ? "Stores cookie preferences" : "Guarda preferencias de cookies"}</td><td>12 {en ? "months" : "meses"}</td><td>{en ? "Necessary" : "Necesaria"}</td></tr>
-          <tr><td>NEXT_LOCALE</td><td>{en ? "Stores language preference" : "Guarda preferencia de idioma"}</td><td>{en ? "Session" : "Sesión"}</td><td>{en ? "Necessary" : "Necesaria"}</td></tr>
-          <tr><td>_vercel_analytics</td><td>Vercel Analytics</td><td>{en ? "Session" : "Sesión"}</td><td>{en ? "Analytics" : "Analítica"}</td></tr>
+          <tr>
+            <td>tw_consent</td>
+            <td>{en ? "Stores cookie preferences" : "Guarda preferencias de cookies"}</td>
+            <td>12 {en ? "months" : "meses"}</td>
+            <td>{en ? "Necessary" : "Necesaria"}</td>
+          </tr>
+          <tr>
+            <td>NEXT_LOCALE</td>
+            <td>{en ? "Stores language preference" : "Guarda preferencia de idioma"}</td>
+            <td>{en ? "Session" : "Sesión"}</td>
+            <td>{en ? "Necessary" : "Necesaria"}</td>
+          </tr>
+          <tr>
+            <td>_vercel_analytics</td>
+            <td>Vercel Analytics</td>
+            <td>{en ? "Session" : "Sesión"}</td>
+            <td>{en ? "Analytics" : "Analítica"}</td>
+          </tr>
         </tbody>
       </table>
 
       <h2>{en ? "How to manage them" : "Cómo gestionarlas"}</h2>
-      <p>{en ? "You can change your choice at any time via the cookie banner footer link, or by clearing your browser cookies." : "Puedes cambiar tu elección en cualquier momento desde el enlace del pie del banner de cookies, o borrando las cookies de tu navegador."}</p>
+      <p>
+        {en
+          ? "You can change your choice at any time via the cookie banner footer link, or by clearing your browser cookies."
+          : "Puedes cambiar tu elección en cualquier momento desde el enlace del pie del banner de cookies, o borrando las cookies de tu navegador."}
+      </p>
     </LegalPage>
   );
 }
@@ -3784,13 +4547,27 @@ export async function sendLeadEmails(payload: ContactInput) {
   `;
 
   await Promise.all([
-    resend.emails.send({ from: env.CONTACT_EMAIL_FROM, to: env.CONTACT_EMAIL_TO, replyTo: payload.email, subject, html: leadBody }),
-    resend.emails.send({ from: env.CONTACT_EMAIL_FROM, to: payload.email, subject: "Hemos recibido tu mensaje · Tuagenciaweb", html: confirmBody }),
+    resend.emails.send({
+      from: env.CONTACT_EMAIL_FROM,
+      to: env.CONTACT_EMAIL_TO,
+      replyTo: payload.email,
+      subject,
+      html: leadBody,
+    }),
+    resend.emails.send({
+      from: env.CONTACT_EMAIL_FROM,
+      to: payload.email,
+      subject: "Hemos recibido tu mensaje · Tuagenciaweb",
+      html: confirmBody,
+    }),
   ]);
 }
 
 function escapeHtml(s: string) {
-  return s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c] as string));
+  return s.replace(
+    /[&<>"']/g,
+    (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c] as string,
+  );
 }
 ```
 
@@ -3861,7 +4638,9 @@ vi.mock("@/lib/env", () => ({
 }));
 
 vi.mock("@/lib/resend", () => ({ sendLeadEmails: vi.fn().mockResolvedValue(undefined) }));
-vi.mock("@/lib/ratelimit", () => ({ checkContactLimit: vi.fn().mockResolvedValue({ success: true, retryAfterSeconds: 0 }) }));
+vi.mock("@/lib/ratelimit", () => ({
+  checkContactLimit: vi.fn().mockResolvedValue({ success: true, retryAfterSeconds: 0 }),
+}));
 
 import { submitContact } from "@/app/[locale]/contacto/actions";
 
@@ -3873,42 +4652,48 @@ function fd(data: Record<string, string>) {
 
 describe("submitContact", () => {
   it("returns ok on valid payload", async () => {
-    const out = await submitContact(fd({
-      name: "Maria",
-      email: "m@example.com",
-      sector: "dental",
-      budget: "b1_2k",
-      message: "Necesito una web para mi clínica con 4 médicos.",
-      gdpr: "on",
-      website: "",
-    }));
+    const out = await submitContact(
+      fd({
+        name: "Maria",
+        email: "m@example.com",
+        sector: "dental",
+        budget: "b1_2k",
+        message: "Necesito una web para mi clínica con 4 médicos.",
+        gdpr: "on",
+        website: "",
+      }),
+    );
     expect(out.ok).toBe(true);
   });
 
   it("returns validation error on bad payload", async () => {
-    const out = await submitContact(fd({
-      name: "M",
-      email: "no-email",
-      sector: "dental",
-      budget: "b1_2k",
-      message: "short",
-      gdpr: "on",
-      website: "",
-    }));
+    const out = await submitContact(
+      fd({
+        name: "M",
+        email: "no-email",
+        sector: "dental",
+        budget: "b1_2k",
+        message: "short",
+        gdpr: "on",
+        website: "",
+      }),
+    );
     expect(out.ok).toBe(false);
     expect(out.error).toBe("validation");
   });
 
   it("silently succeeds when honeypot is filled", async () => {
-    const out = await submitContact(fd({
-      name: "Bot",
-      email: "bot@example.com",
-      sector: "dental",
-      budget: "b1_2k",
-      message: "Spam spam spam spam spam spam spam spam spam.",
-      gdpr: "on",
-      website: "http://spam.com",
-    }));
+    const out = await submitContact(
+      fd({
+        name: "Bot",
+        email: "bot@example.com",
+        sector: "dental",
+        budget: "b1_2k",
+        message: "Spam spam spam spam spam spam spam spam spam.",
+        gdpr: "on",
+        website: "http://spam.com",
+      }),
+    );
     expect(out.ok).toBe(true);
     expect(out.honeypot).toBe(true);
   });
@@ -4014,44 +4799,85 @@ export function ContactForm() {
     return (
       <div className="rounded-[var(--radius-card)] border border-[var(--color-border-default)] bg-[var(--color-elevated)] p-8">
         <CheckCircle size={36} weight="fill" className="text-[var(--color-accent)]" />
-        <h2 className="mt-3 font-display text-2xl font-bold">{t("successTitle")}</h2>
+        <h2 className="font-display mt-3 text-2xl font-bold">{t("successTitle")}</h2>
         <p className="mt-3 text-[var(--color-text-body)]">{t("successBody")}</p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={onSubmit} className="space-y-5 rounded-[var(--radius-card)] border border-[var(--color-border-default)] bg-[var(--color-elevated)] p-8">
-      <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
+    <form
+      onSubmit={onSubmit}
+      className="space-y-5 rounded-[var(--radius-card)] border border-[var(--color-border-default)] bg-[var(--color-elevated)] p-8"
+    >
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        className="hidden"
+        aria-hidden
+      />
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-        <div className="grid gap-2"><Label htmlFor="name">{t("name")}</Label><Input id="name" name="name" required /></div>
-        <div className="grid gap-2"><Label htmlFor="email">{t("email")}</Label><Input id="email" name="email" type="email" required /></div>
-        <div className="grid gap-2"><Label htmlFor="phone">{t("phone")}</Label><Input id="phone" name="phone" /></div>
-        <div className="grid gap-2"><Label htmlFor="company">{t("company")}</Label><Input id="company" name="company" /></div>
+        <div className="grid gap-2">
+          <Label htmlFor="name">{t("name")}</Label>
+          <Input id="name" name="name" required />
+        </div>
+        <div className="grid gap-2">
+          <Label htmlFor="email">{t("email")}</Label>
+          <Input id="email" name="email" type="email" required />
+        </div>
+        <div className="grid gap-2">
+          <Label htmlFor="phone">{t("phone")}</Label>
+          <Input id="phone" name="phone" />
+        </div>
+        <div className="grid gap-2">
+          <Label htmlFor="company">{t("company")}</Label>
+          <Input id="company" name="company" />
+        </div>
       </div>
 
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
         <div className="grid gap-2">
           <Label htmlFor="sector">{t("sector")}</Label>
-          <select id="sector" name="sector" required className="h-11 rounded-md border border-[var(--color-border-default)] bg-[var(--color-elevated)] px-3 text-sm">
+          <select
+            id="sector"
+            name="sector"
+            required
+            className="h-11 rounded-md border border-[var(--color-border-default)] bg-[var(--color-elevated)] px-3 text-sm"
+          >
             <option value="">—</option>
-            {(["dental", "legal", "reforms", "hospitality", "ecommerce", "other"] as const).map((k) => (
-              <option key={k} value={k}>{t(`sectors.${k}` as never)}</option>
-            ))}
+            {(["dental", "legal", "reforms", "hospitality", "ecommerce", "other"] as const).map(
+              (k) => (
+                <option key={k} value={k}>
+                  {t(`sectors.${k}` as never)}
+                </option>
+              ),
+            )}
           </select>
         </div>
         <div className="grid gap-2">
           <Label htmlFor="budget">{t("budget")}</Label>
-          <select id="budget" name="budget" required className="h-11 rounded-md border border-[var(--color-border-default)] bg-[var(--color-elevated)] px-3 text-sm">
+          <select
+            id="budget"
+            name="budget"
+            required
+            className="h-11 rounded-md border border-[var(--color-border-default)] bg-[var(--color-elevated)] px-3 text-sm"
+          >
             <option value="">—</option>
             {(["lt1k", "b1_2k", "b2_5k", "gt5k"] as const).map((k) => (
-              <option key={k} value={k}>{t(`budgets.${k}` as never)}</option>
+              <option key={k} value={k}>
+                {t(`budgets.${k}` as never)}
+              </option>
             ))}
           </select>
         </div>
       </div>
 
-      <div className="grid gap-2"><Label htmlFor="message">{t("message")}</Label><Textarea id="message" name="message" rows={5} required /></div>
+      <div className="grid gap-2">
+        <Label htmlFor="message">{t("message")}</Label>
+        <Textarea id="message" name="message" rows={5} required />
+      </div>
 
       <label className="flex items-start gap-3 text-sm">
         <input type="checkbox" name="gdpr" required className="mt-1" />
@@ -4064,7 +4890,12 @@ export function ContactForm() {
         </p>
       )}
 
-      <Button type="submit" disabled={status === "submitting"} size="lg" className="w-full md:w-auto">
+      <Button
+        type="submit"
+        disabled={status === "submitting"}
+        size="lg"
+        className="w-full md:w-auto"
+      >
         {status === "submitting" ? t("submitting") : t("submit")}
       </Button>
     </form>
@@ -4211,7 +5042,15 @@ export function buildMetadata({ locale, path, title, description, image }: SeoIn
         en: `${SITE}/en${path === "/" ? "" : path}`,
       },
     },
-    openGraph: { title, description, url, siteName: "Tuagenciaweb", images: [{ url: ogImage }], locale, type: "website" },
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName: "Tuagenciaweb",
+      images: [{ url: ogImage }],
+      locale,
+      type: "website",
+    },
     twitter: { card: "summary_large_image", title, description, images: [ogImage] },
   };
 }
@@ -4240,7 +5079,11 @@ Add equivalent `generateMetadata` to `/servicios`, `/portfolio`, `/sobre-nosotro
 For `/blog/[slug]`:
 
 ```tsx
-export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}) {
   const { locale, slug } = await params;
   const post = await getPost(locale as "es" | "en", slug);
   if (!post) return {};
@@ -4310,7 +5153,14 @@ export function localBusinessLd() {
   };
 }
 
-export function blogPostLd(post: { title: string; description: string; date: string; slug: string; cover: string | null; locale: "es" | "en" }) {
+export function blogPostLd(post: {
+  title: string;
+  description: string;
+  date: string;
+  slug: string;
+  cover: string | null;
+  locale: "es" | "en";
+}) {
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -4320,7 +5170,11 @@ export function blogPostLd(post: { title: string; description: string; date: str
     inLanguage: post.locale,
     mainEntityOfPage: `${SITE}/${post.locale}/blog/${post.slug}`,
     image: post.cover ?? `${SITE}/og/default.png`,
-    publisher: { "@type": "Organization", name: "Tuagenciaweb", logo: `${SITE}/logo/logo-full-light.svg` },
+    publisher: {
+      "@type": "Organization",
+      name: "Tuagenciaweb",
+      logo: `${SITE}/logo/logo-full-light.svg`,
+    },
   };
 }
 ```
@@ -4329,7 +5183,9 @@ export function blogPostLd(post: { title: string; description: string; date: str
 
 ```tsx
 export function JsonLd({ data }: { data: unknown }) {
-  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;
+  return (
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
+  );
 }
 ```
 
@@ -4350,7 +5206,16 @@ import { organizationLd, localBusinessLd } from "@/lib/jsonld";
 In `app/[locale]/blog/[slug]/page.tsx`, after the `<main>` opener:
 
 ```tsx
-<JsonLd data={blogPostLd({ title: post.title, description: post.description, date: post.date, slug, cover: post.cover, locale: locale as "es" | "en" })} />
+<JsonLd
+  data={blogPostLd({
+    title: post.title,
+    description: post.description,
+    date: post.date,
+    slug,
+    cover: post.cover,
+    locale: locale as "es" | "en",
+  })}
+/>
 ```
 
 - [ ] **Step 5: Verify with curl**
@@ -4386,18 +5251,46 @@ export async function GET(req: NextRequest) {
   const subtitle = searchParams.get("subtitle") ?? "Webs profesionales para tu negocio";
 
   return new ImageResponse(
-    (
-      <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between", padding: 80, background: "#0B1426", color: "white", fontFamily: "sans-serif" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-          <div style={{ width: 56, height: 56, borderRadius: 12, background: "#2C5BFF", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 36, fontWeight: 800 }}>t</div>
-          <div style={{ fontSize: 28, fontWeight: 700, letterSpacing: -1 }}>tuagenciaweb</div>
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        padding: 80,
+        background: "#0B1426",
+        color: "white",
+        fontFamily: "sans-serif",
+      }}
+    >
+      <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+        <div
+          style={{
+            width: 56,
+            height: 56,
+            borderRadius: 12,
+            background: "#2C5BFF",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: 36,
+            fontWeight: 800,
+          }}
+        >
+          t
         </div>
-        <div>
-          <div style={{ fontSize: 72, fontWeight: 800, letterSpacing: -3, lineHeight: 1.05 }}>{title}</div>
-          <div style={{ marginTop: 24, fontSize: 28, color: "rgba(255,255,255,0.7)" }}>{subtitle}</div>
+        <div style={{ fontSize: 28, fontWeight: 700, letterSpacing: -1 }}>tuagenciaweb</div>
+      </div>
+      <div>
+        <div style={{ fontSize: 72, fontWeight: 800, letterSpacing: -3, lineHeight: 1.05 }}>
+          {title}
+        </div>
+        <div style={{ marginTop: 24, fontSize: 28, color: "rgba(255,255,255,0.7)" }}>
+          {subtitle}
         </div>
       </div>
-    ),
+    </div>,
     { width: 1200, height: 630 },
   );
 }
@@ -4408,7 +5301,9 @@ export async function GET(req: NextRequest) {
 Modify `lib/seo.ts` so when `image` is not provided it defaults to:
 
 ```ts
-const ogImage = image ?? `${SITE}/og?title=${encodeURIComponent(title)}&subtitle=${encodeURIComponent(description.slice(0, 80))}`;
+const ogImage =
+  image ??
+  `${SITE}/og?title=${encodeURIComponent(title)}&subtitle=${encodeURIComponent(description.slice(0, 80))}`;
 ```
 
 - [ ] **Step 3: Verify**
@@ -4453,7 +5348,10 @@ async function main() {
   await fs.mkdir(out, { recursive: true });
 
   const browser = await chromium.launch();
-  const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2 });
+  const ctx = await browser.newContext({
+    viewport: { width: 1440, height: 900 },
+    deviceScaleFactor: 2,
+  });
 
   for (const t of TARGETS) {
     const page = await ctx.newPage();
@@ -4475,7 +5373,10 @@ async function main() {
   console.log("Done.");
 }
 
-main().catch((e) => { console.error(e); process.exit(1); });
+main().catch((e) => {
+  console.error(e);
+  process.exit(1);
+});
 ```
 
 - [ ] **Step 2: Add npm script and tsx dep**
@@ -4647,4 +5548,3 @@ Checked against the spec sections:
 - §14 Out of scope → respected (no sector landings, no CMS, no booking).
 
 No placeholders like "TBD" or "TODO later" in steps. Every code step shows the actual code. Type names are consistent (`Pack`, `Project`, `Sector`, `ContactInput`, `SubmitResult`, `Locale`).
-

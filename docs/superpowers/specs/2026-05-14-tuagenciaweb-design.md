@@ -21,19 +21,19 @@ Web corporativa de una agencia de desarrollo web orientada a pymes y autónomos 
 
 ## 2. Stack técnico
 
-| Capa | Tecnología | Notas |
-|---|---|---|
-| Framework | Next.js 15 (App Router) + React 19 + TypeScript | RSC por defecto, "use client" solo donde haga falta |
-| Estilos | Tailwind CSS v4 | 90% del CSS; tokens custom en `tailwind.config.ts` |
-| i18n | `next-intl` | Rutas localizadas: `/es/servicios` ↔ `/en/services` |
-| Motion | Framer Motion | Motion bajo (level ~4) — fade-up, stagger suave |
-| Componentes base | `shadcn/ui` personalizado | Radii, colores y shadows custom (nunca default) |
-| Iconos | `@phosphor-icons/react` | `strokeWidth=1.5` global |
-| Blog | MDX + `next-mdx-remote` (o Contentlayer 2) | Posts en `content/blog/{es,en}/*.mdx` |
-| Formularios | React Hook Form + Zod | Mismo schema cliente y servidor |
-| Email | Resend | Dominio verificado para `noreply@tuagenciaweb.es` |
-| Rate limit | Upstash Ratelimit | 1 envío de formulario / 60s / IP |
-| Analítica | Vercel Analytics + Speed Insights | Bloqueada hasta consentimiento |
+| Capa             | Tecnología                                      | Notas                                               |
+| ---------------- | ----------------------------------------------- | --------------------------------------------------- |
+| Framework        | Next.js 15 (App Router) + React 19 + TypeScript | RSC por defecto, "use client" solo donde haga falta |
+| Estilos          | Tailwind CSS v4                                 | 90% del CSS; tokens custom en `tailwind.config.ts`  |
+| i18n             | `next-intl`                                     | Rutas localizadas: `/es/servicios` ↔ `/en/services` |
+| Motion           | Framer Motion                                   | Motion bajo (level ~4) — fade-up, stagger suave     |
+| Componentes base | `shadcn/ui` personalizado                       | Radii, colores y shadows custom (nunca default)     |
+| Iconos           | `@phosphor-icons/react`                         | `strokeWidth=1.5` global                            |
+| Blog             | MDX + `next-mdx-remote` (o Contentlayer 2)      | Posts en `content/blog/{es,en}/*.mdx`               |
+| Formularios      | React Hook Form + Zod                           | Mismo schema cliente y servidor                     |
+| Email            | Resend                                          | Dominio verificado para `noreply@tuagenciaweb.es`   |
+| Rate limit       | Upstash Ratelimit                               | 1 envío de formulario / 60s / IP                    |
+| Analítica        | Vercel Analytics + Speed Insights               | Bloqueada hasta consentimiento                      |
 
 **Estructura de carpetas**:
 
@@ -112,19 +112,19 @@ Reglas duras de taste-skill aplicables a este proyecto:
 
 ### 3.3 Paleta (tokens en Tailwind)
 
-| Token | HEX | Uso |
-|---|---|---|
-| `bg.canvas` | `#FAFAFA` | Fondo general |
-| `bg.elevated` | `#FFFFFF` | Cards que necesitan elevación |
-| `bg.dark` | `#0B1426` | Footer y secciones oscuras (CTA final, hero alt) |
-| `text.strong` | `#0F172A` | Titulares |
-| `text.body` | `#475569` | Párrafos |
-| `text.muted` | `#94A3B8` | Textos secundarios, captions |
-| `border` | `#E2E8F0` | Bordes finos |
-| `divider` | `#F1F5F9` | Separadores |
-| `accent` | `#2C5BFF` | Único color de marca: CTAs, links, foco |
-| `accent.hover` | `#1E40FF` | Hover sobre el acento |
-| `accent.soft` | `#EFF4FF` | Fondos sutiles (badges "Más elegido", chips activos) |
+| Token          | HEX       | Uso                                                  |
+| -------------- | --------- | ---------------------------------------------------- |
+| `bg.canvas`    | `#FAFAFA` | Fondo general                                        |
+| `bg.elevated`  | `#FFFFFF` | Cards que necesitan elevación                        |
+| `bg.dark`      | `#0B1426` | Footer y secciones oscuras (CTA final, hero alt)     |
+| `text.strong`  | `#0F172A` | Titulares                                            |
+| `text.body`    | `#475569` | Párrafos                                             |
+| `text.muted`   | `#94A3B8` | Textos secundarios, captions                         |
+| `border`       | `#E2E8F0` | Bordes finos                                         |
+| `divider`      | `#F1F5F9` | Separadores                                          |
+| `accent`       | `#2C5BFF` | Único color de marca: CTAs, links, foco              |
+| `accent.hover` | `#1E40FF` | Hover sobre el acento                                |
+| `accent.soft`  | `#EFF4FF` | Fondos sutiles (badges "Más elegido", chips activos) |
 
 ### 3.4 Tipografía
 
@@ -134,32 +134,32 @@ Reglas duras de taste-skill aplicables a este proyecto:
 
 **Escala tipográfica (móvil → desktop)**:
 
-| Token | Tamaño | Uso |
-|---|---|---|
-| display-xl | `text-5xl md:text-7xl tracking-tighter leading-none` | H1 hero |
-| display-lg | `text-4xl md:text-6xl tracking-tighter leading-tight` | H1 páginas internas |
-| display-md | `text-3xl md:text-5xl tracking-tight leading-tight` | H2 sección |
-| heading | `text-2xl md:text-3xl font-semibold` | H3 |
-| body | `text-base text-text.body leading-relaxed max-w-[65ch]` | Párrafos |
-| caption | `text-sm text-text.muted` | Metas, captions |
+| Token      | Tamaño                                                  | Uso                 |
+| ---------- | ------------------------------------------------------- | ------------------- |
+| display-xl | `text-5xl md:text-7xl tracking-tighter leading-none`    | H1 hero             |
+| display-lg | `text-4xl md:text-6xl tracking-tighter leading-tight`   | H1 páginas internas |
+| display-md | `text-3xl md:text-5xl tracking-tight leading-tight`     | H2 sección          |
+| heading    | `text-2xl md:text-3xl font-semibold`                    | H3                  |
+| body       | `text-base text-text.body leading-relaxed max-w-[65ch]` | Párrafos            |
+| caption    | `text-sm text-text.muted`                               | Metas, captions     |
 
 ## 4. Arquitectura de información
 
 ### 4.1 Sitemap
 
-| Página | ES | EN |
-|---|---|---|
-| Home | `/es` | `/en` |
-| Servicios | `/es/servicios` | `/en/services` |
-| Portfolio | `/es/portfolio` | `/en/portfolio` |
-| Sobre nosotros | `/es/sobre-nosotros` | `/en/about` |
-| Blog (listado) | `/es/blog` | `/en/blog` |
-| Blog (post) | `/es/blog/[slug]` | `/en/blog/[slug]` |
-| Contacto | `/es/contacto` | `/en/contact` |
-| Aviso legal | `/es/legal/aviso-legal` | `/en/legal/legal-notice` |
-| Privacidad | `/es/legal/privacidad` | `/en/legal/privacy` |
-| Cookies | `/es/legal/cookies` | `/en/legal/cookies` |
-| 404 | (auto) | (auto) |
+| Página         | ES                      | EN                       |
+| -------------- | ----------------------- | ------------------------ |
+| Home           | `/es`                   | `/en`                    |
+| Servicios      | `/es/servicios`         | `/en/services`           |
+| Portfolio      | `/es/portfolio`         | `/en/portfolio`          |
+| Sobre nosotros | `/es/sobre-nosotros`    | `/en/about`              |
+| Blog (listado) | `/es/blog`              | `/en/blog`               |
+| Blog (post)    | `/es/blog/[slug]`       | `/en/blog/[slug]`        |
+| Contacto       | `/es/contacto`          | `/en/contact`            |
+| Aviso legal    | `/es/legal/aviso-legal` | `/en/legal/legal-notice` |
+| Privacidad     | `/es/legal/privacidad`  | `/en/legal/privacy`      |
+| Cookies        | `/es/legal/cookies`     | `/en/legal/cookies`      |
+| 404            | (auto)                  | (auto)                   |
 
 **Páginas técnicas**: `/sitemap.xml`, `/robots.txt`, `/og?…` (OG dinámica), Server Action `submitContact` (no expuesta como API pública).
 
@@ -171,9 +171,9 @@ Reglas duras de taste-skill aplicables a este proyecto:
 
 ## 5. Diseño del Home (sección por sección)
 
-1. **Hero (split 60/40)** — Izquierda: H1 *"Webs profesionales para tu negocio, listas en 2 semanas."* + subline + 2 CTAs (sólido + ghost) + microcopy "Sin permanencia · Sin sorpresas". Derecha: browser-frame con captura/scroll auto del proyecto destacado. Badge `+30 proyectos entregados` (placeholder, ajustar al número real). `min-h-[100dvh]`.
+1. **Hero (split 60/40)** — Izquierda: H1 _"Webs profesionales para tu negocio, listas en 2 semanas."_ + subline + 2 CTAs (sólido + ghost) + microcopy "Sin permanencia · Sin sorpresas". Derecha: browser-frame con captura/scroll auto del proyecto destacado. Badge `+30 proyectos entregados` (placeholder, ajustar al número real). `min-h-[100dvh]`.
 2. **Trust bar** — "Trabajamos en" + lockups por sector (clínicas, abogados, reformas, hostelería) en gris.
-3. **Servicios — los 3 packs** — Grid 3 columnas en desktop, central marcado "Más elegido" con borde y badge `accent.soft`. Cada card: icono Phosphor + nombre + precio + 5-7 features + CTA. *Excepción justificada a la regla "no 3 cards" por convención de pricing.*
+3. **Servicios — los 3 packs** — Grid 3 columnas en desktop, central marcado "Más elegido" con borde y badge `accent.soft`. Cada card: icono Phosphor + nombre + precio + 5-7 features + CTA. _Excepción justificada a la regla "no 3 cards" por convención de pricing._
 4. **Cómo trabajamos** — 4 pasos numerados (Reunión · Diseño · Desarrollo · Lanzamiento) en horizontal (vertical en móvil con línea conectora). Tagline: "De inicio a fin: 14 días laborables".
 5. **Portfolio destacado** — Grid asimétrico 2 columnas, 4 tarjetas grandes (Dentistlab, Chinaway, Reformlab, Forma Clínica) con captura + nombre + sector + `ArrowUpRight`. Hover: elevación sutil + zoom ligero. CTA "Ver todos los proyectos →".
 6. **Por qué Tuagenciaweb** — Lista left-aligned en 2 columnas (3+3 puntos) con `divide-y`/`border-t`, sin cajas. Puntos: rapidez · SEO técnico · mobile-first · soporte directo · sin permanencia · código limpio.
@@ -220,7 +220,7 @@ Reglas duras de taste-skill aplicables a este proyecto:
 
 CTA: "Quiero el Esencial".
 
-### 7.2 Pack Profesional — 990 € (pago único) — *Más elegido* ★
+### 7.2 Pack Profesional — 990 € (pago único) — _Más elegido_ ★
 
 > Web completa multi-página, lista para vender y posicionar.
 
@@ -258,14 +258,14 @@ CTA: "Quiero la Tienda".
 
 ### 7.4 Servicios extra (a la carta)
 
-| Servicio | Precio |
-|---|---|
-| Mantenimiento mensual (actualizaciones + backups + soporte) | **39 €/mes** |
-| Página adicional | **89 €** |
-| Redacción de contenidos por página | **49 €** |
-| Traducción extra a otro idioma (sobre web ya entregada) | **desde 199 €** |
-| Optimización SEO técnica avanzada | **desde 249 €** |
-| Integraciones a medida (CRM, reservas, etc.) | **desde 149 €** |
+| Servicio                                                    | Precio          |
+| ----------------------------------------------------------- | --------------- |
+| Mantenimiento mensual (actualizaciones + backups + soporte) | **39 €/mes**    |
+| Página adicional                                            | **89 €**        |
+| Redacción de contenidos por página                          | **49 €**        |
+| Traducción extra a otro idioma (sobre web ya entregada)     | **desde 199 €** |
+| Optimización SEO técnica avanzada                           | **desde 249 €** |
+| Integraciones a medida (CRM, reservas, etc.)                | **desde 149 €** |
 
 ### 7.5 Letra pequeña (pie de la sección)
 
@@ -276,14 +276,14 @@ CTA: "Quiero la Tienda".
 
 ## 8. Portfolio inicial
 
-| # | Nombre | Sector | URL | Estado |
-|---|---|---|---|---|
-| 1 | Dentistlab | Clínica dental | https://dentistlab.surge.sh | Captura por generar |
-| 2 | Chinaway | Multi-idioma | https://chinaway.vercel.app/es | Captura por generar |
-| 3 | Reformlab Barcelona | Reformas | https://reformlab-barcelona.surge.sh | Captura por generar |
-| 4 | Forma Clínica | Salud/Estética | https://forma-clinica.surge.sh | Captura por generar |
-| 5 | (slot) | — | — | "Próximamente" |
-| 6 | (slot) | — | — | "Próximamente" |
+| #   | Nombre              | Sector         | URL                                  | Estado              |
+| --- | ------------------- | -------------- | ------------------------------------ | ------------------- |
+| 1   | Dentistlab          | Clínica dental | https://dentistlab.surge.sh          | Captura por generar |
+| 2   | Chinaway            | Multi-idioma   | https://chinaway.vercel.app/es       | Captura por generar |
+| 3   | Reformlab Barcelona | Reformas       | https://reformlab-barcelona.surge.sh | Captura por generar |
+| 4   | Forma Clínica       | Salud/Estética | https://forma-clinica.surge.sh       | Captura por generar |
+| 5   | (slot)              | —              | —                                    | "Próximamente"      |
+| 6   | (slot)              | —              | —                                    | "Próximamente"      |
 
 **Generación de capturas**: durante implementación se decide entre (a) generar las 4 capturas en build con Playwright headless (mejor calidad, mantenible) o (b) servicio externo (microlink.io). Decisión queda para la fase de plan.
 
@@ -293,17 +293,17 @@ Las tarjetas abren la URL externa en pestaña nueva (`target="_blank"`, `rel="no
 
 ### 9.1 Campos y validación (`lib/schemas.ts`)
 
-| Campo | Tipo | Requerido | Validación Zod |
-|---|---|---|---|
-| `name` | string | sí | min 2, max 80 |
-| `email` | string | sí | `z.string().email()` |
-| `phone` | string | no | regex E.164 laxa |
-| `company` | string | no | max 100 |
-| `sector` | enum | sí | clínica / despacho / reformas / hostelería / e-commerce / otro |
-| `budget` | enum | sí | `<1k` / `1-2k` / `2-5k` / `>5k` |
-| `message` | string | sí | min 20, max 2000 |
-| `gdpr` | boolean | sí | debe ser `true` |
-| `website` (honeypot) | string | n/a | debe estar **vacío** |
+| Campo                | Tipo    | Requerido | Validación Zod                                                 |
+| -------------------- | ------- | --------- | -------------------------------------------------------------- |
+| `name`               | string  | sí        | min 2, max 80                                                  |
+| `email`              | string  | sí        | `z.string().email()`                                           |
+| `phone`              | string  | no        | regex E.164 laxa                                               |
+| `company`            | string  | no        | max 100                                                        |
+| `sector`             | enum    | sí        | clínica / despacho / reformas / hostelería / e-commerce / otro |
+| `budget`             | enum    | sí        | `<1k` / `1-2k` / `2-5k` / `>5k`                                |
+| `message`            | string  | sí        | min 20, max 2000                                               |
+| `gdpr`               | boolean | sí        | debe ser `true`                                                |
+| `website` (honeypot) | string  | n/a       | debe estar **vacío**                                           |
 
 ### 9.2 Flujo de envío (Server Action `submitContact`)
 
@@ -342,7 +342,7 @@ NEXT_PUBLIC_SITE_URL=https://tuagenciaweb.es
 ## 11. Cumplimiento legal (RGPD / LSSI)
 
 - **Banner de cookies propio** (no Cookiebot): aceptar / rechazar / personalizar. Bloquea Vercel Analytics y cualquier analítica hasta el consentimiento. Persistencia del consentimiento en cookie de primera parte de 12 meses (alineado con guía AEPD).
-- **Aviso legal** (LSSI 34/2002): identidad del prestador, contacto, datos registrales. *Datos exactos pendientes de aportar (CIF/NIF, dirección, registro).*
+- **Aviso legal** (LSSI 34/2002): identidad del prestador, contacto, datos registrales. _Datos exactos pendientes de aportar (CIF/NIF, dirección, registro)._
 - **Política de privacidad** (RGPD): qué datos se recogen (formulario), base legal (consentimiento + interés legítimo), plazos, derechos ARCO+P, encargados (Vercel, Resend, Upstash).
 - **Política de cookies**: lista detallada de cookies usadas, propósito, duración, proveedor.
 
@@ -350,7 +350,7 @@ NEXT_PUBLIC_SITE_URL=https://tuagenciaweb.es
 
 ## 12. Despliegue
 
-- **Repo en GitHub**: privado. Nombre tentativo `tuagenciaweb-web`. *Username y nombre final pendientes de confirmar al iniciar implementación.*
+- **Repo en GitHub**: privado. Nombre tentativo `tuagenciaweb-web`. _Username y nombre final pendientes de confirmar al iniciar implementación._
 - **Vercel**: framework Next.js detectado, zero config. Variables de entorno desde el panel.
 - **Branches**: `main` → producción; cualquier otra rama → preview.
 - **Dominio**: `tuagenciaweb.es` + redirección `www → apex`. Apuntar DNS al CNAME/A que indique Vercel.

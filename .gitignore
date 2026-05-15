@@ -10,6 +10,10 @@
 
 # testing
 /coverage
+/test-results
+/playwright-report
+/playwright/.cache
+content/blog/*/test-post.mdx
 
 # next.js
 /.next/
