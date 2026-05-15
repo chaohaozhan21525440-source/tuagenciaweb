@@ -7,6 +7,7 @@ import { PortfolioFeatured } from "@/components/sections/PortfolioFeatured";
 import { Differentiators } from "@/components/sections/Differentiators";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FAQ } from "@/components/sections/FAQ";
+import { FinalCTA } from "@/components/sections/FinalCTA";
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -21,6 +22,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <Differentiators />
       <Testimonials />
       <FAQ />
+      <FinalCTA />
     </main>
   );
 }
