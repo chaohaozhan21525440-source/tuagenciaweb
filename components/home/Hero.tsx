@@ -243,8 +243,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 30, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.9, ease, delay: 0.25 }}
-            className="relative"
-            style={{ minHeight: 580 }}
+            className="hero-visual relative"
           >
             <Image
               src="/hero-mockup-cutout.png"
@@ -252,18 +251,17 @@ export function Hero() {
               width={1536}
               height={1024}
               priority
-              className="block h-auto w-full select-none"
+              className="hero-laptop block h-auto w-full select-none"
               draggable={false}
-              style={{ transform: "scale(1.41)", transformOrigin: "center" }}
             />
 
-            <div className="absolute right-[11%] top-[-10%] z-10 animate-[float_6.5s_ease-in-out_infinite]">
+            <div className="hidden lg:block absolute right-[11%] top-[-10%] z-10 animate-[float_6.5s_ease-in-out_infinite]">
               <Card42 />
             </div>
-            <div className="absolute right-[-9%] top-[6%] z-10 animate-[float_7.5s_ease-in-out_-2s_infinite]">
+            <div className="hidden lg:block absolute right-[-9%] top-[6%] z-10 animate-[float_7.5s_ease-in-out_-2s_infinite]">
               <CardPageSpeed />
             </div>
-            <div className="absolute bottom-[2%] left-[18%] z-10 animate-[float_8s_ease-in-out_-4s_infinite]">
+            <div className="hidden lg:block absolute bottom-[2%] left-[18%] z-10 animate-[float_8s_ease-in-out_-4s_infinite]">
               <Card300 />
             </div>
           </motion.div>

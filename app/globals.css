@@ -64,6 +64,46 @@
   50% { transform: translateY(-8px); }
 }
 
+/* ===== Hero responsive (laptop scale only on desktop) ===== */
+.hero-visual { min-height: auto; }
+@media (min-width: 1024px) {
+  .hero-visual { min-height: 580px; }
+  .hero-laptop { transform: scale(1.41); transform-origin: center; }
+}
+
+/* ===== Mobile fixes (do not touch desktop) ===== */
+@media (max-width: 1023px) {
+  /* Contacto: hide the floating "Respuesta media < 24h" card on mobile so it doesn't escape the viewport */
+  .contact-page .resp-card { display: none; }
+  /* Contacto: tighten hero padding on mobile */
+  .contact-page .c-hero { padding: 24px 0 16px; }
+  /* Sobre nosotros: the absolute testimonial overflows on mobile — bring it back inside */
+  .about-page .testimonial { position: static; margin: 24px 0 0; width: auto; left: auto; bottom: auto; }
+  .about-page .vm-card { margin: 56px 0 56px; }
+  /* Sobre nosotros: shrink the 3D illustration height to avoid overlapping */
+  .about-page .illus { height: 260px; margin-top: 32px; }
+  .about-page .win-1 { right: 12px; }
+  .about-page .win-2 { right: 32px; }
+  .about-page .chart-card { right: 0; }
+}
+
+@media (max-width: 640px) {
+  /* Hero mobile: tighter spacing */
+  .hero-visual { margin-top: 12px; }
+  /* Contacto: keep the form readable, tighten container */
+  .contact-page .container-c { padding: 0 18px; }
+  /* Sobre nosotros: stat icons slightly smaller */
+  .about-page .stat .icon { width: 40px; height: 40px; margin-bottom: 10px; }
+  .about-page h1.headline { margin: 20px 0 18px; }
+  /* Headers margin in vm-card */
+  .about-page .vm-card { padding: 32px 22px; gap: 36px; }
+  /* Contact page reduce footer card text spacing */
+  .contact-page .cta-banner { padding: 24px 22px; }
+  /* About-page mission illustration: shift left to keep visible */
+  .about-page .win-1 { right: 4px; top: 8px; }
+  .about-page .win-2 { right: 16px; top: 70px; }
+}
+
 /* ===== Sobre Nosotros page (scoped) ===== */
 .about-page {
   --about-blue: #2563EB;
