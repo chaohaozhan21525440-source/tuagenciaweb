@@ -1,7 +1,7 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { buildMetadata } from "@/lib/seo";
 import { Hero } from "@/components/sections/Hero";
-import { TrustBar } from "@/components/sections/TrustBar";
+import { HeroTrustBand } from "@/components/sections/HeroTrustBand";
 import { ServicesGrid } from "@/components/sections/ServicesGrid";
 import { ProcessSteps } from "@/components/sections/ProcessSteps";
 import { PortfolioFeatured } from "@/components/sections/PortfolioFeatured";
@@ -27,7 +27,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   return (
     <main>
       <Hero />
-      <TrustBar />
+      <HeroTrustBand />
       <ServicesGrid />
       <ProcessSteps />
       <PortfolioFeatured />
