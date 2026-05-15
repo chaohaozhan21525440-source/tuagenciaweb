@@ -31,12 +31,11 @@ export function Hero() {
               <span className="size-2.5 rounded-full bg-[#28C840]" />
             </div>
             <Image
-              src="https://picsum.photos/seed/dentistlab-hero/1280/900"
+              src="/portfolio/dentistlab-hero.png"
               alt="Dentistlab"
               width={1280}
               height={900}
               priority
-              unoptimized
               className="h-auto w-full"
             />
           </div>
