@@ -6,6 +6,7 @@ import { ProcessSteps } from "@/components/sections/ProcessSteps";
 import { PortfolioFeatured } from "@/components/sections/PortfolioFeatured";
 import { Differentiators } from "@/components/sections/Differentiators";
 import { Testimonials } from "@/components/sections/Testimonials";
+import { FAQ } from "@/components/sections/FAQ";
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -19,6 +20,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <PortfolioFeatured />
       <Differentiators />
       <Testimonials />
+      <FAQ />
     </main>
   );
 }
