@@ -6,23 +6,28 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { CheckCircle } from "@phosphor-icons/react";
+import { submitContact } from "@/app/[locale]/contacto/actions";
+
+type Status = "idle" | "submitting" | "success" | "validation" | "ratelimit" | "send";
 
 export function ContactForm() {
   const t = useTranslations("contact.form");
-  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [status, setStatus] = useState<Status>("idle");
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("submitting");
-    const data = Object.fromEntries(new FormData(e.currentTarget).entries());
-    console.log("contact form submit (stub)", data);
-    setTimeout(() => setStatus("success"), 600);
+    const result = await submitContact(new FormData(e.currentTarget));
+    if (result.ok) setStatus("success");
+    else setStatus(result.error);
   }
 
   if (status === "success") {
     return (
       <div className="rounded-[var(--radius-card)] border border-[var(--color-border-default)] bg-[var(--color-elevated)] p-8">
-        <h2 className="font-display text-2xl font-bold">{t("successTitle")}</h2>
+        <CheckCircle size={36} weight="fill" className="text-[var(--color-accent)]" />
+        <h2 className="mt-3 font-display text-2xl font-bold">{t("successTitle")}</h2>
         <p className="mt-3 text-[var(--color-text-body)]">{t("successBody")}</p>
       </div>
     );
@@ -65,6 +70,12 @@ export function ContactForm() {
         <input type="checkbox" name="gdpr" required className="mt-1" />
         <span>{t("gdpr")}</span>
       </label>
+
+      {(status === "validation" || status === "ratelimit" || status === "send") && (
+        <p className="rounded-md border border-red-300 bg-red-50 p-3 text-sm text-red-800">
+          <strong>{t("errorTitle")}.</strong> {t("errorBody")}
+        </p>
+      )}
 
       <Button type="submit" disabled={status === "submitting"} size="lg" className="w-full md:w-auto">
         {status === "submitting" ? t("submitting") : t("submit")}
