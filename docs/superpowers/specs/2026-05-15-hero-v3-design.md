@@ -17,7 +17,7 @@ Que el hero del sitio sea visualmente **literal** a la imagen de referencia gene
 - Destino: `public/logo/logo-full.svg`.
 - Variantes a producir bajo `public/logo/`:
   - `logo-full.svg` (el SVG original, sirve en navbar y footer).
-  - `logo-mark.svg` (crop manual a la zona del monograma `tcw` — viewBox ajustada, sin necesidad de rasterizar).
+  - `logo-mark.svg` (mismo contenido SVG que `logo-full.svg`, pero solo se modifica el atributo `viewBox` para enmarcar la zona del monograma `tcw` — aproximadamente el primer tercio horizontal del viewBox `0 0 1536 1024`, ajuste fino durante implementación. No se recortan ni borran paths).
   - `favicon.png` 32×32 (rasterizado del SVG con sharp).
   - `apple-touch-icon.png` 180×180 (rasterizado).
 - Archivos a eliminar de `public/logo/`: `logo-full.png`, `logo-mark.png`, `favicon.png` (se regeneran), `apple-touch-icon.png` (se regenera).
