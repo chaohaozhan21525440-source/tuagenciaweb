@@ -1,28 +1,22 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 import { buildMetadata } from "@/lib/seo";
-import { ProcessSteps } from "@/components/sections/ProcessSteps";
+import { TeamBanner } from "@/components/about/TeamBanner";
+import { HowWeWork } from "@/components/about/HowWeWork";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { FadeUp } from "@/components/motion/FadeUp";
 
 const TECH = ["Next.js", "TypeScript", "Tailwind CSS", "Vercel", "Resend", "Framer Motion"];
 
-function AboutHero() {
-  const t = useTranslations("about.hero");
-  return (
-    <section className="container-page grid grid-cols-1 items-center gap-10 pt-16 md:grid-cols-12 md:pt-24">
-      <FadeUp className="md:col-span-7">
-        <h1 className="font-display text-4xl font-bold leading-[1.05] tracking-tighter md:text-6xl">{t("title")}</h1>
-        <p className="mt-5 text-base text-[var(--color-text-body)] md:text-lg">{t("subtitle")}</p>
-      </FadeUp>
-      <FadeUp delay={0.1} className="md:col-span-5">
-        <div className="aspect-[4/5] overflow-hidden rounded-[var(--radius-card)] bg-[var(--color-divider)]">
-          <Image src="https://picsum.photos/seed/tuagencia-team/800/1000" alt="Equipo" width={800} height={1000} className="h-full w-full object-cover" unoptimized />
-        </div>
-      </FadeUp>
-    </section>
-  );
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "about.hero" });
+  return buildMetadata({
+    locale: locale as "es" | "en",
+    path: "/sobre-nosotros",
+    title: `${t("title")} · Tuagenciaweb`,
+    description: t("subtitle"),
+  });
 }
 
 function StoryBlock() {
@@ -81,25 +75,14 @@ function TechBlock() {
   );
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "about.hero" });
-  return buildMetadata({
-    locale: locale as "es" | "en",
-    path: "/sobre-nosotros",
-    title: `${t("title")} · Tuagenciaweb`,
-    description: t("subtitle"),
-  });
-}
-
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
   return (
     <main>
-      <AboutHero />
+      <TeamBanner />
       <StoryBlock />
-      <ProcessSteps />
+      <HowWeWork />
       <CommitmentsBlock />
       <TechBlock />
       <FinalCTA />
