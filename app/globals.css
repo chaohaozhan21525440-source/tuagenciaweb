@@ -2,7 +2,7 @@
 
 @theme {
   /* Surfaces */
-  --color-canvas: #eef1f7;
+  --color-canvas: #ffffff;
   --color-surface: #f8fafc;
   --color-elevated: #ffffff;
 
@@ -65,11 +65,7 @@
 }
 
 /* ===== Hero responsive (laptop scale only on desktop) ===== */
-.hero-visual { min-height: auto; }
-@media (min-width: 1024px) {
-  .hero-visual { min-height: 620px; margin-top: 48px; }
-  .hero-laptop { transform: scale(1.55); transform-origin: center; }
-}
+/* Hero visual sizing handled inline now (grid items-center keeps it aligned) */
 
 /* Hero video mask is applied inline on the <video> element to avoid Tailwind's
    CSS minifier dropping the radial-gradient shape keyword (which silently breaks

@@ -140,15 +140,13 @@ const features = [
 
 /**
  * Floating card animation, synced to the looping hero video.
+ * DO NOT change timings or sequencing — they are matched to the 5s video loop.
  *
  * Cycle (5000ms total):
  *   0ms     hide cards
  *   1400ms  show cards (with per-card stagger 0 / 150 / 300ms)
  *   4000ms  hide cards (ease-in, slide slightly outward)
  *   5000ms  loop restart
- *
- * `direction` controls exit slide direction (right for right-side cards,
- * left for the bottom-left card).
  */
 function useHeroCardCycle() {
   const [visible, setVisible] = useState(false);
@@ -217,9 +215,6 @@ export function Hero() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const cardsVisible = useHeroCardCycle();
 
-  // Some mobile browsers respect autoplay only when the muted attribute is
-  // present and the play() call follows a user-gesture or DOMContentLoaded
-  // tick. We re-trigger play on mount for safety.
   useEffect(() => {
     const v = videoRef.current;
     if (!v) return;
@@ -229,22 +224,24 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden pt-8 md:pt-14">
+    <section className="relative overflow-hidden bg-[#f8fbff] pt-8 md:pt-14">
+      {/* Soft brand gradient over the page background */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 80% 50% at 80% 0%, rgba(37,99,235,0.12), transparent 60%), radial-gradient(ellipse 60% 60% at 20% 100%, rgba(37,99,235,0.06), transparent 70%)",
+            "radial-gradient(circle at 80% 10%, rgba(37,99,235,0.12), transparent 40%), radial-gradient(circle at 10% 90%, rgba(37,99,235,0.06), transparent 50%)",
         }}
       />
+      {/* Subtle grid */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0"
+        className="pointer-events-none absolute inset-0 opacity-40"
         style={{
           backgroundImage:
             "linear-gradient(to right, rgba(15,23,42,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(15,23,42,0.04) 1px, transparent 1px)",
-          backgroundSize: "48px 48px",
+          backgroundSize: "40px 40px",
           WebkitMaskImage: "radial-gradient(ellipse 70% 60% at 50% 0%, black, transparent 75%)",
           maskImage: "radial-gradient(ellipse 70% 60% at 50% 0%, black, transparent 75%)",
         }}
@@ -254,10 +251,10 @@ export function Hero() {
         initial="hidden"
         animate="show"
         variants={stagger}
-        className="relative mx-auto grid max-w-[1280px] grid-cols-12 items-center gap-10 px-6 pb-20 md:px-8"
+        className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 pb-20 lg:grid-cols-[0.95fr_1.05fr] lg:px-8"
       >
         {/* LEFT */}
-        <div className="col-span-12 pt-2 lg:col-span-6">
+        <div className="pt-2 min-w-0">
           <motion.div
             variants={fadeUp}
             className="inline-flex items-center gap-2 rounded-full border border-[var(--color-ink-100,#e2e8f0)] bg-white px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-ink-700,#1e293b)] shadow-sm"
@@ -271,13 +268,10 @@ export function Hero() {
 
           <motion.h1
             variants={fadeUp}
-            className="mt-7 whitespace-nowrap font-bold leading-[1.04] tracking-[-0.03em] text-[var(--color-ink-900,#0a1733)] text-[clamp(2.4rem,4.5vw,4rem)]"
+            className="mt-7 max-w-2xl break-normal text-balance font-bold leading-[0.95] tracking-[-0.03em] text-[var(--color-ink-900,#0a1733)] text-5xl sm:text-6xl lg:text-7xl"
           >
-            Diseñamos webs que
-            <br />
-            <span className="text-[var(--color-brand,#2563eb)]">convierten visitas</span>
-            <br />
-            en clientes.
+            Diseñamos webs que{" "}
+            <span className="text-[var(--color-brand,#2563eb)]">convierten visitas</span> en clientes.
           </motion.h1>
 
           <motion.p
@@ -322,24 +316,28 @@ export function Hero() {
           </motion.div>
         </div>
 
-        {/* RIGHT */}
-        <div className="relative col-span-12 lg:col-span-6">
+        {/* RIGHT — video composition (max-w-[760px], glows behind, blended video) */}
+        <div className="relative mx-auto w-full max-w-[760px]">
           <motion.div
             initial={{ opacity: 0, y: 30, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.9, ease, delay: 0.25 }}
-            className="hero-visual relative"
+            className="relative"
           >
-            {/*
-              Page background now matches the video's own background (#eef1f7),
-              so we no longer need a radial mask or mix-blend-mode. The video
-              sits flat on the page and its rectangle is invisible because the
-              colours are identical. Only a soft drop-shadow is kept to add
-              elevation around the laptop/phone silhouette.
-            */}
+            {/* Soft halos behind video — blend it into the page background */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-[-80px] -z-10 rounded-full bg-blue-100/50 blur-3xl"
+            />
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-[-40px] -z-10 rounded-full bg-white/70 blur-2xl"
+            />
+
+            {/* Video — mix-blend-multiply + radial mask remove the rectangular frame */}
             <video
               ref={videoRef}
-              className="hero-laptop hero-video relative block h-auto w-full select-none"
+              className="hero-laptop relative z-10 block h-auto w-full select-none object-contain"
               autoPlay
               muted
               loop
@@ -347,17 +345,22 @@ export function Hero() {
               preload="auto"
               aria-hidden
               style={{
-                filter: "drop-shadow(0 28px 40px rgba(10,23,51,0.10))",
+                mixBlendMode: "multiply",
+                WebkitMaskImage:
+                  "radial-gradient(ellipse at center, black 65%, transparent 100%)",
+                maskImage:
+                  "radial-gradient(ellipse at center, black 65%, transparent 100%)",
               }}
             >
               <source src="/hero-video.mp4" type="video/mp4" />
             </video>
 
+            {/* Floating cards — animation logic UNCHANGED; positions adjusted to follow the larger video */}
             <FloatingCard
               visible={cardsVisible}
               delay={0}
               direction="right"
-              className="hidden lg:block absolute right-[11%] top-[-10%] z-10"
+              className="absolute top-[8%] right-[4%] z-20 scale-75 sm:scale-90 lg:scale-100"
             >
               <Card42 />
             </FloatingCard>
@@ -366,7 +369,7 @@ export function Hero() {
               visible={cardsVisible}
               delay={0.15}
               direction="right"
-              className="hidden lg:block absolute right-[-9%] top-[6%] z-10"
+              className="absolute top-[34%] right-[-2%] z-20 scale-75 sm:scale-90 lg:scale-100"
             >
               <CardPageSpeed />
             </FloatingCard>
@@ -375,7 +378,7 @@ export function Hero() {
               visible={cardsVisible}
               delay={0.3}
               direction="left"
-              className="hidden lg:block absolute bottom-[2%] left-[18%] z-10"
+              className="absolute bottom-[8%] left-[18%] z-20 scale-75 sm:scale-90 lg:scale-100"
             >
               <Card300 />
             </FloatingCard>
