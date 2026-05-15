@@ -504,38 +504,52 @@
 .contact-page .cta-banner .copy h3 { margin: 0 0 4px; font-size: 22px; font-weight: 700; letter-spacing: -0.02em; color: #0B1220; }
 .contact-page .cta-banner .copy p { margin: 0; color: #64748B; font-size: 14.5px; }
 
-/* Footer (shared with Contacto for now) */
-.contact-page .c-footer { border-top: 1px solid #EEF1F6; padding: 56px 0 24px; position: relative; z-index: 1; }
-.contact-page .foot-grid {
+/* ===== Site Footer (shared) ===== */
+.site-footer {
+  --sf-blue: #2563EB;
+  --sf-blue-50: #EFF6FF;
+  border-top: 1px solid #EEF1F6;
+  padding: 56px 0 24px;
+  position: relative;
+  z-index: 1;
+  background: #fff;
+}
+.site-footer .sf-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+@media (min-width: 1024px) { .site-footer .sf-container { padding: 0 56px; } }
+.site-footer .foot-grid {
   display: grid; grid-template-columns: 1fr; gap: 32px; margin-bottom: 40px;
 }
-@media (min-width: 640px) { .contact-page .foot-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1024px) { .contact-page .foot-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr; gap: 40px; } }
-.contact-page .foot-brand .logo { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
-.contact-page .foot-brand .logo img.icon { height: 42px; width: auto; }
-.contact-page .foot-brand .logo img.wordmark { height: 26px; width: auto; }
-.contact-page .foot-brand p { color: #64748B; font-size: 13.5px; line-height: 1.55; max-width: 280px; margin: 0; }
-.contact-page .foot-col h5 { font-size: 14px; font-weight: 700; color: #0B1220; margin: 6px 0 16px; letter-spacing: -0.01em; }
-.contact-page .foot-col a { display: block; color: #64748B; text-decoration: none; font-size: 14px; margin-bottom: 10px; }
-.contact-page .foot-col a:hover { color: var(--c-blue); }
-.contact-page .social { display: flex; gap: 10px; margin-top: 4px; }
-.contact-page .social a {
+@media (min-width: 640px) { .site-footer .foot-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .site-footer .foot-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr; gap: 40px; } }
+.site-footer .foot-brand .logo { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.site-footer .foot-brand .logo img.icon { height: 42px; width: auto; }
+.site-footer .foot-brand .logo img.wordmark { height: 26px; width: auto; }
+.site-footer .foot-brand p { color: #64748B; font-size: 13.5px; line-height: 1.55; max-width: 280px; margin: 0; }
+.site-footer .foot-col h5 { font-size: 14px; font-weight: 700; color: #0B1220; margin: 6px 0 16px; letter-spacing: -0.01em; }
+.site-footer .foot-col a { display: block; color: #64748B; text-decoration: none; font-size: 14px; margin-bottom: 10px; }
+.site-footer .foot-col a:hover { color: var(--sf-blue); }
+.site-footer .social { display: flex; gap: 10px; margin-top: 4px; }
+.site-footer .social a {
   width: 36px; height: 36px; border-radius: 10px;
   background: #F1F5F9; color: #64748B;
   display: grid; place-items: center; margin: 0;
   transition: background .15s, color .15s;
 }
-.contact-page .social a:hover { background: var(--c-blue-50); color: var(--c-blue); }
-.contact-page .social a svg { width: 16px; height: 16px; }
-.contact-page .foot-bottom {
+.site-footer .social a:hover { background: var(--sf-blue-50); color: var(--sf-blue); }
+.site-footer .social a svg { width: 16px; height: 16px; }
+.site-footer .foot-bottom {
   display: flex; flex-direction: column; gap: 12px;
   padding-top: 22px; border-top: 1px solid #EEF1F6;
   font-size: 13px; color: #94A3B8;
 }
-@media (min-width: 640px) { .contact-page .foot-bottom { flex-direction: row; justify-content: space-between; align-items: center; } }
-.contact-page .foot-bottom .links { display: flex; gap: 28px; flex-wrap: wrap; }
-.contact-page .foot-bottom a { color: #64748B; text-decoration: none; }
-.contact-page .foot-bottom a:hover { color: var(--c-blue); }
+@media (min-width: 640px) { .site-footer .foot-bottom { flex-direction: row; justify-content: space-between; align-items: center; } }
+.site-footer .foot-bottom .links { display: flex; gap: 28px; flex-wrap: wrap; }
+.site-footer .foot-bottom a { color: #64748B; text-decoration: none; }
+.site-footer .foot-bottom a:hover { color: var(--sf-blue); }
 
 @layer utilities {
   .container-page {

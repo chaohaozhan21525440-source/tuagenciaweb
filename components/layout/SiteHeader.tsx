@@ -6,18 +6,12 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/cn";
 
 const NAV = [
-  { href: "#servicios", label: "Servicios" },
-  { href: "#proyectos", label: "Proyectos" },
+  { href: "/#servicios", label: "Servicios" },
+  { href: "/#proyectos", label: "Proyectos" },
+  { href: "/#precios", label: "Precios" },
   { href: "/sobre-nosotros", label: "Sobre nosotros" },
-  { href: "#blog", label: "Blog" },
   { href: "/contacto", label: "Contacto" },
 ];
-
-const Chevron = (p: React.SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 20 20" fill="none" {...p}>
-    <path d="M5 8l5 5 5-5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
 
 const List = (p: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" fill="none" {...p}>
@@ -56,22 +50,19 @@ export function SiteHeader() {
         </Link>
 
         <nav className="mx-auto hidden items-center gap-9 text-[14.5px] font-medium text-[var(--color-ink-700)] lg:flex">
-          <a href="#servicios" className="flex items-center gap-1 hover:text-[var(--color-ink-900)]">
-            Servicios <Chevron className="h-4 w-4 text-[var(--color-ink-400)]" />
-          </a>
-          {NAV.slice(1).map((item) => (
+          {NAV.map((item) => (
             <a key={item.href} href={item.href} className="hover:text-[var(--color-ink-900)]">
               {item.label}
             </a>
           ))}
         </nav>
 
-        <a
-          href="#contacto"
+        <Link
+          href="/contacto"
           className="ml-auto hidden lg:ml-0 lg:inline-flex items-center gap-2 rounded-xl bg-[var(--color-brand)] px-5 py-2.5 text-[14.5px] font-semibold text-white shadow-[0_18px_40px_-12px_rgba(37,99,235,0.55)] transition-colors hover:bg-[var(--color-brand-hover)]"
         >
           Solicitar presupuesto
-        </a>
+        </Link>
 
         <button className="ml-auto lg:hidden" aria-label="Menu" onClick={() => setOpen((v) => !v)}>
           {open ? <X className="h-7 w-7" /> : <List className="h-7 w-7" />}
@@ -93,13 +84,13 @@ export function SiteHeader() {
               </li>
             ))}
             <li className="pt-3">
-              <a
-                href="#contacto"
+              <Link
+                href="/contacto"
                 onClick={() => setOpen(false)}
                 className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--color-brand)] px-4 py-3 text-sm font-semibold text-white"
               >
                 Solicitar presupuesto
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

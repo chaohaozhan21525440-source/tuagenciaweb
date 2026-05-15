@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { SiteHeader } from "@/components/layout/SiteHeader";
+import { SiteFooter } from "@/components/layout/SiteFooter";
 
 export const metadata = {
   title: "Sobre nosotros · Tuagenciaweb",
@@ -218,6 +219,7 @@ export default function SobreNosotros() {
           <div className="footroom" />
         </div>
       </div>
+      <SiteFooter />
     </>
   );
 }
