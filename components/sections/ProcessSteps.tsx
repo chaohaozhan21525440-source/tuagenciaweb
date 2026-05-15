@@ -18,7 +18,7 @@ export function ProcessSteps() {
             <FadeUp key={s.title} delay={i * 0.08}>
               <li className="relative">
                 <div className="font-display text-6xl font-bold leading-none">
-                  <span className="bg-clip-text text-transparent" style={{ WebkitTextStroke: "1.5px var(--color-accent)" }}>{String(i + 1).padStart(2, "0")}</span>
+                  <span className="bg-clip-text text-transparent" style={{ WebkitTextStroke: "1.5px var(--color-accent-deep)" }}>{String(i + 1).padStart(2, "0")}</span>
                 </div>
                 <h3 className="mt-4 font-display text-xl font-semibold">{s.title}</h3>
                 <p className="mt-2 text-sm text-[var(--color-text-body)]">{s.body}</p>

@@ -6,7 +6,7 @@ export function organizationLd() {
     "@type": "Organization",
     name: "Tuagenciaweb",
     url: SITE,
-    logo: `${SITE}/logo/logo-full-light.svg`,
+    logo: `${SITE}/logo/logo-full.png`,
     sameAs: [],
     contactPoint: {
       "@type": "ContactPoint",
@@ -41,6 +41,6 @@ export function blogPostLd(post: { title: string; description: string; date: str
     inLanguage: post.locale,
     mainEntityOfPage: `${SITE}/${post.locale}/blog/${post.slug}`,
     image: post.cover ?? `${SITE}/og/default.png`,
-    publisher: { "@type": "Organization", name: "Tuagenciaweb", logo: `${SITE}/logo/logo-full-light.svg` },
+    publisher: { "@type": "Organization", name: "Tuagenciaweb", logo: `${SITE}/logo/logo-full.png` },
   };
 }

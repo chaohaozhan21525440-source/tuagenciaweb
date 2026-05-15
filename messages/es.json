@@ -45,12 +45,31 @@
   },
   "home": {
     "hero": {
-      "headline": "Webs profesionales para tu negocio, listas en 2 semanas.",
-      "subheadline": "Diseñamos y desarrollamos webs a medida para pymes y autónomos. Sin permanencia. Sin sorpresas.",
-      "ctaPrimary": "Pedir presupuesto",
-      "ctaSecondary": "Ver portfolio",
-      "microcopy": "Sin permanencia · Sin sorpresas",
-      "badgeProjects": "+30 proyectos entregados"
+      "tagline": "DISEÑO · DESARROLLO · RESULTADOS",
+      "headlineLead": "Diseñamos webs que",
+      "headlineHighlight": "convierten visitas en clientes",
+      "subheadline": "Creamos páginas web modernas, rápidas y optimizadas para SEO para que tu negocio genere más contactos y ventas todos los días.",
+      "ctaPrimary": "Solicitar presupuesto",
+      "ctaSecondary": "Ver proyectos",
+      "features": [
+        { "title": "Diseño a medida", "icon": "PaintBrush" },
+        { "title": "SEO optimizado", "icon": "MagnifyingGlass" },
+        { "title": "Responsive", "icon": "DeviceMobile" },
+        { "title": "Entrega rápida", "icon": "Rocket" }
+      ],
+      "rating": "5,0 valoración media",
+      "ratingSource": "Clientes verificados",
+      "badgeProjects": "+30 proyectos entregados",
+      "badgePagespeed": "95 Google PageSpeed",
+      "badgeLeads": "+300% leads"
+    },
+    "heroBand": {
+      "items": [
+        { "icon": "Check", "highlight": "+30", "label": "proyectos entregados" },
+        { "icon": "Lightning", "highlight": "14 días", "label": "entrega media" },
+        { "icon": "ShieldCheck", "highlight": "Sin permanencia", "label": "el código es tuyo" }
+      ],
+      "techTitle": "Tecnologías que usamos"
     },
     "trust": { "title": "Trabajamos en", "sectors": ["Clínicas", "Despachos", "Reformas", "Hostelería"] },
     "services": {
@@ -130,7 +149,22 @@
     "viewLive": "Ver web"
   },
   "about": {
-    "hero": { "title": "Webs honestas para negocios reales.", "subtitle": "Somos una agencia pequeña con foco en pymes y autónomos." },
+    "hero": {
+      "tag": "EL EQUIPO",
+      "title": "Personas detrás de cada web.",
+      "subtitle": "Un equipo joven que diseña, programa y posiciona webs para negocios reales."
+    },
+    "howWeWork": {
+      "title": "Trabajamos en equipo, no en silos.",
+      "body": "Cada proyecto pasa por diseño, desarrollo y revisión cruzada. Sin externalizar etapas, sin perder el hilo entre semanas. El mismo equipo te acompaña de principio a fin: la persona con la que hablas en la primera reunión es la misma que ajusta el último detalle antes del lanzamiento.",
+      "bullets": [
+        "No usamos plantillas: cada web se diseña desde cero.",
+        "No subcontratamos: el equipo de Tuagenciaweb hace todo.",
+        "No damos plazos vagos: te decimos la fecha y la cumplimos."
+      ],
+      "badgeMetric": "14 días",
+      "badgeLabel": "media de entrega"
+    },
     "story": { "title": "Cómo nacimos", "body": "Tuagenciaweb nació de ver demasiadas webs de pyme abandonadas, lentas o feas. Diseñamos cada proyecto desde cero, sin plantillas, con código moderno." },
     "method": { "title": "Nuestro método" },
     "commitments": {

@@ -25,7 +25,7 @@ export function Footer() {
     <footer className="mt-32 bg-[var(--color-dark)] text-white">
       <div className="container-page grid grid-cols-1 gap-12 py-16 md:grid-cols-4">
         <div className="flex flex-col gap-4">
-          <Image src="/logo/logo-full-dark.svg" alt="Tuagenciaweb" width={180} height={36} />
+          <Image src="/logo/logo-full.png" alt="Tuagenciaweb" width={200} height={50} className="h-10 w-auto brightness-0 invert" />
           <p className="max-w-xs text-sm text-white/70">{tFooter("tagline")}</p>
         </div>
 
@@ -59,6 +59,12 @@ export function Footer() {
               </li>
             ))}
           </ul>
+        </div>
+      </div>
+
+      <div className="border-t border-white/10">
+        <div className="container-page py-3 text-center text-xs font-medium uppercase tracking-[0.25em] text-white/40">
+          DISEÑO · DESARROLLO · RESULTADOS
         </div>
       </div>
 
