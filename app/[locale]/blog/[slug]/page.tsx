@@ -5,6 +5,20 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import { Link } from "@/i18n/routing";
 import { Button } from "@/components/ui/button";
 import { getPost, listPosts, readingTime, type Locale } from "@/lib/blog";
+import { buildMetadata } from "@/lib/seo";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }) {
+  const { locale, slug } = await params;
+  const post = await getPost(locale as Locale, slug);
+  if (!post) return {};
+  return buildMetadata({
+    locale: locale as "es" | "en",
+    path: `/blog/${slug}`,
+    title: `${post.title} · Tuagenciaweb`,
+    description: post.description,
+    image: post.cover ?? undefined,
+  });
+}
 
 export async function generateStaticParams() {
   const all = await Promise.all((["es", "en"] as Locale[]).map(async (l) => (await listPosts(l)).map((p) => ({ locale: l, slug: p.slug }))));

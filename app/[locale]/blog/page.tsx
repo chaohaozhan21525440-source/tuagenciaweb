@@ -2,7 +2,19 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
 import { listPosts, type Locale, type PostMeta } from "@/lib/blog";
+import { buildMetadata } from "@/lib/seo";
 import { FadeUp } from "@/components/motion/FadeUp";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "blog.hero" });
+  return buildMetadata({
+    locale: locale as "es" | "en",
+    path: "/blog",
+    title: `${t("title")} · Tuagenciaweb`,
+    description: t("subtitle"),
+  });
+}
 
 function PostCard({ post, featured = false, locale }: { post: PostMeta; featured?: boolean; locale: Locale }) {
   return (

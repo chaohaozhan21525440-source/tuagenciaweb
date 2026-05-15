@@ -1,5 +1,20 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { LegalPage } from "@/components/legal/LegalPage";
+import { buildMetadata } from "@/lib/seo";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "legal.cookies" });
+  const description = locale === "en"
+    ? "Information about the cookies used on this site and how to manage them."
+    : "Información sobre las cookies utilizadas en este sitio y cómo gestionarlas.";
+  return buildMetadata({
+    locale: locale as "es" | "en",
+    path: "/legal/cookies",
+    title: `${t("title")} · Tuagenciaweb`,
+    description,
+  });
+}
 
 export default async function Cookies({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

@@ -1,5 +1,6 @@
-import { setRequestLocale } from "next-intl/server";
+import { setRequestLocale, getTranslations } from "next-intl/server";
 import { useTranslations } from "next-intl";
+import { buildMetadata } from "@/lib/seo";
 import { PortfolioGrid } from "@/components/sections/PortfolioGrid";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { FadeUp } from "@/components/motion/FadeUp";
@@ -14,6 +15,17 @@ function PortfolioHero() {
       </FadeUp>
     </section>
   );
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "portfolio.hero" });
+  return buildMetadata({
+    locale: locale as "es" | "en",
+    path: "/portfolio",
+    title: `${t("title")} · Tuagenciaweb`,
+    description: t("subtitle"),
+  });
 }
 
 export default async function PortfolioPage({ params }: { params: Promise<{ locale: string }> }) {

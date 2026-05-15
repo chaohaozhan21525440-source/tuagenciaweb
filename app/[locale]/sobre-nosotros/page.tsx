@@ -1,6 +1,7 @@
-import { setRequestLocale } from "next-intl/server";
+import { setRequestLocale, getTranslations } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import { buildMetadata } from "@/lib/seo";
 import { ProcessSteps } from "@/components/sections/ProcessSteps";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { FadeUp } from "@/components/motion/FadeUp";
@@ -78,6 +79,17 @@ function TechBlock() {
       </div>
     </section>
   );
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "about.hero" });
+  return buildMetadata({
+    locale: locale as "es" | "en",
+    path: "/sobre-nosotros",
+    title: `${t("title")} · Tuagenciaweb`,
+    description: t("subtitle"),
+  });
 }
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {

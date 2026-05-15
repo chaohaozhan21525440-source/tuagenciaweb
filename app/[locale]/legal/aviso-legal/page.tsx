@@ -1,5 +1,20 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { LegalPage } from "@/components/legal/LegalPage";
+import { buildMetadata } from "@/lib/seo";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "legal.legalNotice" });
+  const description = locale === "en"
+    ? "Provider information and terms of use of the website."
+    : "Información legal del prestador y condiciones de uso.";
+  return buildMetadata({
+    locale: locale as "es" | "en",
+    path: "/legal/aviso-legal",
+    title: `${t("title")} · Tuagenciaweb`,
+    description,
+  });
+}
 
 export default async function AvisoLegal({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

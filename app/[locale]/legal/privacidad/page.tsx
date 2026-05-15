@@ -1,5 +1,20 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { LegalPage } from "@/components/legal/LegalPage";
+import { buildMetadata } from "@/lib/seo";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "legal.privacy" });
+  const description = locale === "en"
+    ? "How we collect, use and protect your personal data."
+    : "Cómo recogemos, usamos y protegemos tus datos personales.";
+  return buildMetadata({
+    locale: locale as "es" | "en",
+    path: "/legal/privacidad",
+    title: `${t("title")} · Tuagenciaweb`,
+    description,
+  });
+}
 
 export default async function Privacy({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

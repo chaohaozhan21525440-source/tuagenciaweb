@@ -1,5 +1,6 @@
-import { setRequestLocale } from "next-intl/server";
+import { setRequestLocale, getTranslations } from "next-intl/server";
 import { useTranslations } from "next-intl";
+import { buildMetadata } from "@/lib/seo";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { PacksDetailed } from "@/components/sections/PacksDetailed";
 import { ComparisonTable } from "@/components/sections/ComparisonTable";
@@ -41,6 +42,17 @@ function ServicesFAQ() {
       </div>
     </section>
   );
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "services.hero" });
+  return buildMetadata({
+    locale: locale as "es" | "en",
+    path: "/servicios",
+    title: `${t("title")} · Tuagenciaweb`,
+    description: t("subtitle"),
+  });
 }
 
 export default async function ServicesPage({ params }: { params: Promise<{ locale: string }> }) {
