@@ -65,11 +65,11 @@
 }
 
 /* ===== Hero responsive (laptop scale only on desktop) ===== */
-/* Hero visual sizing handled inline now (grid items-center keeps it aligned) */
-
-/* Hero video mask is applied inline on the <video> element to avoid Tailwind's
-   CSS minifier dropping the radial-gradient shape keyword (which silently breaks
-   the feathering on some browsers). See components/home/Hero.tsx. */
+.hero-visual { min-height: auto; }
+@media (min-width: 1024px) {
+  .hero-visual { min-height: 580px; }
+  .hero-laptop { transform: scale(1.41); transform-origin: center; }
+}
 
 /* ===== Mobile fixes (do not touch desktop) ===== */
 @media (max-width: 1023px) {

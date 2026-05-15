@@ -1,7 +1,7 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
 import { motion, type Variants } from "framer-motion";
 
 const ease = [0.16, 1, 0.3, 1] as const;
@@ -74,11 +74,17 @@ function Card42() {
           <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[var(--color-brand-soft,#eff4ff)]">
             <Trending className="h-5 w-5 text-[var(--color-brand,#2563eb)]" />
           </div>
-          <div className="text-[34px] font-extrabold leading-none tracking-tight text-[var(--color-ink-900,#0a1733)]">+42</div>
+          <div className="text-[34px] font-extrabold leading-none tracking-tight text-[var(--color-ink-900,#0a1733)]">
+            +42
+          </div>
         </div>
-        <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-[11px] font-semibold text-emerald-600">+18%</span>
+        <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-[11px] font-semibold text-emerald-600">
+          +18%
+        </span>
       </div>
-      <div className="mt-2 text-[12.5px] text-[var(--color-ink-500,#475569)]">Solicitudes este mes</div>
+      <div className="mt-2 text-[12.5px] text-[var(--color-ink-500,#475569)]">
+        Solicitudes este mes
+      </div>
       <svg viewBox="0 0 200 44" className="mt-2 h-9 w-full" aria-hidden>
         <defs>
           <linearGradient id="sp42" x1="0" y1="0" x2="0" y2="1">
@@ -138,110 +144,24 @@ const features = [
   { Icon: Phone, title: "Responsive", sub: "Perfecto en todos los dispositivos" },
 ] as const;
 
-/**
- * Floating card animation, synced to the looping hero video.
- * DO NOT change timings or sequencing — they are matched to the 5s video loop.
- *
- * Cycle (5000ms total):
- *   0ms     hide cards
- *   1400ms  show cards (with per-card stagger 0 / 150 / 300ms)
- *   4000ms  hide cards (ease-in, slide slightly outward)
- *   5000ms  loop restart
- */
-function useHeroCardCycle() {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    let showTimer: ReturnType<typeof setTimeout> | undefined;
-    let hideTimer: ReturnType<typeof setTimeout> | undefined;
-
-    const runCycle = () => {
-      setVisible(false);
-      if (showTimer) clearTimeout(showTimer);
-      if (hideTimer) clearTimeout(hideTimer);
-      showTimer = setTimeout(() => setVisible(true), 1400);
-      hideTimer = setTimeout(() => setVisible(false), 4000);
-    };
-
-    runCycle();
-    const cycleId = setInterval(runCycle, 5000);
-
-    return () => {
-      clearInterval(cycleId);
-      if (showTimer) clearTimeout(showTimer);
-      if (hideTimer) clearTimeout(hideTimer);
-    };
-  }, []);
-
-  return visible;
-}
-
-type FloatingCardProps = {
-  visible: boolean;
-  delay: number;
-  direction: "right" | "left";
-  className?: string;
-  children: React.ReactNode;
-};
-
-function FloatingCard({ visible, delay, direction, className, children }: FloatingCardProps) {
-  const hiddenX = direction === "right" ? 28 : -28;
-  return (
-    <motion.div
-      className={className}
-      initial={{ opacity: 0, x: hiddenX, scale: 0.95 }}
-      animate={
-        visible
-          ? {
-              opacity: 1,
-              x: 0,
-              scale: 1,
-              transition: { type: "spring", stiffness: 120, damping: 18, delay },
-            }
-          : {
-              opacity: 0,
-              x: hiddenX,
-              scale: 0.95,
-              transition: { duration: 0.45, ease: "easeIn" },
-            }
-      }
-    >
-      {children}
-    </motion.div>
-  );
-}
-
 export function Hero() {
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-  const cardsVisible = useHeroCardCycle();
-
-  useEffect(() => {
-    const v = videoRef.current;
-    if (!v) return;
-    v.muted = true;
-    const p = v.play();
-    if (p && typeof p.catch === "function") p.catch(() => {});
-  }, []);
-
   return (
-    <section className="relative overflow-hidden bg-[#f8fbff] pt-8 md:pt-14">
-      {/* Soft brand gradient over the page background */}
+    <section className="relative overflow-hidden pt-8 md:pt-14">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(circle at 80% 10%, rgba(37,99,235,0.12), transparent 40%), radial-gradient(circle at 10% 90%, rgba(37,99,235,0.06), transparent 50%)",
+            "radial-gradient(ellipse 80% 50% at 80% 0%, rgba(37,99,235,0.12), transparent 60%), radial-gradient(ellipse 60% 60% at 20% 100%, rgba(37,99,235,0.06), transparent 70%)",
         }}
       />
-      {/* Subtle grid */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-40"
+        className="pointer-events-none absolute inset-0"
         style={{
           backgroundImage:
             "linear-gradient(to right, rgba(15,23,42,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(15,23,42,0.04) 1px, transparent 1px)",
-          backgroundSize: "40px 40px",
+          backgroundSize: "48px 48px",
           WebkitMaskImage: "radial-gradient(ellipse 70% 60% at 50% 0%, black, transparent 75%)",
           maskImage: "radial-gradient(ellipse 70% 60% at 50% 0%, black, transparent 75%)",
         }}
@@ -251,10 +171,9 @@ export function Hero() {
         initial="hidden"
         animate="show"
         variants={stagger}
-        className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 pb-20 lg:grid-cols-[0.95fr_1.05fr] lg:px-8"
+        className="relative mx-auto grid max-w-[1280px] grid-cols-12 items-center gap-10 px-6 pb-20 md:px-8"
       >
-        {/* LEFT */}
-        <div className="pt-2 min-w-0">
+        <div className="col-span-12 pt-2 lg:col-span-6">
           <motion.div
             variants={fadeUp}
             className="inline-flex items-center gap-2 rounded-full border border-[var(--color-ink-100,#e2e8f0)] bg-white px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-ink-700,#1e293b)] shadow-sm"
@@ -268,10 +187,13 @@ export function Hero() {
 
           <motion.h1
             variants={fadeUp}
-            className="mt-7 max-w-2xl break-normal text-balance font-bold leading-[0.95] tracking-[-0.03em] text-[var(--color-ink-900,#0a1733)] text-5xl sm:text-6xl lg:text-7xl"
+            className="mt-7 whitespace-nowrap font-bold leading-[1.04] tracking-[-0.03em] text-[var(--color-ink-900,#0a1733)] text-[clamp(2.4rem,4.5vw,4rem)]"
           >
-            Diseñamos webs que{" "}
-            <span className="text-[var(--color-brand,#2563eb)]">convierten visitas</span> en clientes.
+            Diseñamos webs que
+            <br />
+            <span className="text-[var(--color-brand,#2563eb)]">convierten visitas</span>
+            <br />
+            en clientes.
           </motion.h1>
 
           <motion.p
@@ -283,14 +205,14 @@ export function Hero() {
 
           <motion.div variants={fadeUp} className="mt-9 flex flex-wrap items-center gap-3">
             <Link
-              href="/contacto"
+              href="#presupuesto"
               className="group inline-flex items-center gap-2.5 rounded-xl bg-[var(--color-brand,#2563eb)] px-5 py-3.5 text-[15px] font-semibold text-white shadow-[0_18px_40px_-12px_rgba(37,99,235,0.55)] transition-all hover:bg-[var(--color-brand-hover,#1d4ed8)] active:scale-[0.98]"
             >
               Solicitar presupuesto
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </Link>
             <Link
-              href="/#proyectos"
+              href="#proyectos"
               className="inline-flex items-center gap-2 rounded-xl border border-[var(--color-ink-200,#cbd5e1)] bg-white px-5 py-3.5 text-[15px] font-semibold text-[var(--color-ink-900,#0a1733)] transition-all hover:border-[var(--color-ink-300,#94a3b8)] active:scale-[0.98]"
             >
               <Play className="h-4 w-4" />
@@ -316,72 +238,32 @@ export function Hero() {
           </motion.div>
         </div>
 
-        {/* RIGHT — video composition (max-w-[760px], glows behind, blended video) */}
-        <div className="relative mx-auto w-full max-w-[760px]">
+        <div className="relative col-span-12 lg:col-span-6">
           <motion.div
             initial={{ opacity: 0, y: 30, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.9, ease, delay: 0.25 }}
-            className="relative"
+            className="hero-visual relative"
           >
-            {/* Soft halos behind video — blend it into the page background */}
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-[-80px] -z-10 rounded-full bg-blue-100/50 blur-3xl"
-            />
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-[-40px] -z-10 rounded-full bg-white/70 blur-2xl"
+            <Image
+              src="/hero-mockup-cutout.png"
+              alt="Vista de la web en MacBook y iPhone"
+              width={1536}
+              height={1024}
+              priority
+              className="hero-laptop block h-auto w-full select-none"
+              draggable={false}
             />
 
-            {/* Video — mix-blend-multiply + radial mask remove the rectangular frame */}
-            <video
-              ref={videoRef}
-              className="hero-laptop relative z-10 block h-auto w-full select-none object-contain"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="auto"
-              aria-hidden
-              style={{
-                mixBlendMode: "multiply",
-                WebkitMaskImage:
-                  "radial-gradient(ellipse at center, black 65%, transparent 100%)",
-                maskImage:
-                  "radial-gradient(ellipse at center, black 65%, transparent 100%)",
-              }}
-            >
-              <source src="/hero-video.mp4" type="video/mp4" />
-            </video>
-
-            {/* Floating cards — animation logic UNCHANGED; positions adjusted to follow the larger video */}
-            <FloatingCard
-              visible={cardsVisible}
-              delay={0}
-              direction="right"
-              className="absolute top-[8%] right-[4%] z-20 scale-75 sm:scale-90 lg:scale-100"
-            >
+            <div className="hidden lg:block absolute right-[11%] top-[-10%] z-10 animate-[float_6.5s_ease-in-out_infinite]">
               <Card42 />
-            </FloatingCard>
-
-            <FloatingCard
-              visible={cardsVisible}
-              delay={0.15}
-              direction="right"
-              className="absolute top-[34%] right-[-2%] z-20 scale-75 sm:scale-90 lg:scale-100"
-            >
+            </div>
+            <div className="hidden lg:block absolute right-[-9%] top-[6%] z-10 animate-[float_7.5s_ease-in-out_-2s_infinite]">
               <CardPageSpeed />
-            </FloatingCard>
-
-            <FloatingCard
-              visible={cardsVisible}
-              delay={0.3}
-              direction="left"
-              className="absolute bottom-[8%] left-[18%] z-20 scale-75 sm:scale-90 lg:scale-100"
-            >
+            </div>
+            <div className="hidden lg:block absolute bottom-[2%] left-[18%] z-10 animate-[float_8s_ease-in-out_-4s_infinite]">
               <Card300 />
-            </FloatingCard>
+            </div>
           </motion.div>
         </div>
       </motion.div>
