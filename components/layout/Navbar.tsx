@@ -40,7 +40,7 @@ export function Navbar() {
     >
       <nav className="container-page flex h-16 items-center justify-between md:h-20">
         <Link href="/" className="flex items-center" aria-label="Tuagenciaweb">
-          <Image src="/logo/logo-full.png" alt="Tuagenciaweb" width={200} height={50} priority className="h-10 w-auto" />
+          <Image src="/logo/logo-full.svg" alt="Tuagenciaweb" width={300} height={50} priority className="h-10 w-auto" />
         </Link>
 
         <ul className="hidden items-center gap-7 md:flex">
