@@ -13,30 +13,21 @@ export type SubmitResult =
 export async function POST(req: Request): Promise<NextResponse<SubmitResult>> {
   const formData = await req.formData();
   const raw = Object.fromEntries(formData.entries());
-
-  const parsed = contactSchema.safeParse({
-    ...raw,
-    gdpr: raw.gdpr === "on" || raw.gdpr === "true",
-  });
-
+  const parsed = contactSchema.safeParse({ ...raw, gdpr: raw.gdpr === "on" || raw.gdpr === "true" });
   if (!parsed.success) {
     if (typeof raw.website === "string" && raw.website.length > 0) {
       return NextResponse.json({ ok: true, honeypot: true });
     }
     return NextResponse.json({ ok: false, error: "validation" }, { status: 400 });
   }
-
   const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "anonymous";
   const { success, retryAfterSeconds } = await checkContactLimit(ip);
-  if (!success) {
-    return NextResponse.json({ ok: false, error: "ratelimit", retryAfterSeconds }, { status: 429 });
-  }
-
+  if (!success) return NextResponse.json({ ok: false, error: "ratelimit", retryAfterSeconds }, { status: 429 });
   try {
     await sendLeadEmails(parsed.data);
     return NextResponse.json({ ok: true });
-  } catch (err) {
-    console.error("[contact] sendLeadEmails failed:", err);
+  } catch (e) {
+    console.error("[contact] send failed:", e);
     return NextResponse.json({ ok: false, error: "send" }, { status: 500 });
   }
 }
