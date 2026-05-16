@@ -1,272 +1,219 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import { motion, type Variants } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
-const ease = [0.16, 1, 0.3, 1] as const;
+/* ────────────────────────────────────────────────────────────────────────────
+   Hero — implemented literally from the Claude Design "Hero.html" bundle.
+   - Page bg matches the video bg exactly (#eff1f9) → no rectangle seam.
+   - Floating cards visibility is driven by the looping video's currentTime
+     (show/hide thresholds per card) so they enter as the laptop opens and
+     dismiss as it closes — even across loop wraps.
+   ──────────────────────────────────────────────────────────────────────────── */
 
-const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease } },
-};
-
-const stagger: Variants = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.08, delayChildren: 0.05 } },
-};
-
-const ArrowRight = (p: React.SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 20 20" fill="none" {...p}>
-    <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
-const Play = (p: React.SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 20 20" fill="none" {...p}>
-    <rect x="3" y="5" width="14" height="11" rx="2.5" stroke="currentColor" strokeWidth="1.7" />
-    <path d="M9 8.5l3 1.7-3 1.7v-3.4z" fill="currentColor" />
-  </svg>
-);
-const Monitor = (p: React.SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 28 28" fill="none" {...p}>
-    <rect x="3.5" y="4.5" width="21" height="14" rx="2" stroke="currentColor" strokeWidth="1.7" />
-    <path d="M10 22h8M14 18.5V22" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-  </svg>
-);
-const Rocket = (p: React.SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 28 28" fill="none" {...p}>
-    <path d="M19 4c1.7 0 5 .6 5 5 0 4-3 7-5.5 8.5L13 13l3-3c1.5-1.5 2.7-3.7 3-6z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
-    <circle cx="17.5" cy="10.5" r="1.6" fill="currentColor" />
-    <path d="M11 17l-3 3M14 20l-2 2M8 14l-3 3" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-    <path d="M11 21c-2 1-4 1-4-2 3 0 3-2 4-2" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
-const Search = (p: React.SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 28 28" fill="none" {...p}>
-    <circle cx="12.5" cy="12.5" r="6.5" stroke="currentColor" strokeWidth="1.7" />
-    <path d="M17.5 17.5l5 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-  </svg>
-);
-const Phone = (p: React.SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 28 28" fill="none" {...p}>
-    <rect x="8" y="3.5" width="12" height="21" rx="3" stroke="currentColor" strokeWidth="1.7" />
-    <path d="M12 21h4" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-  </svg>
-);
-const Trending = (p: React.SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 22 22" fill="none" {...p}>
-    <path d="M3 16l5-5 3 3 7-8M13 6h5v5" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
-const Bars = (p: React.SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 22 22" fill="none" {...p}>
-    <rect x="3.5" y="12" width="3" height="6.5" rx="0.7" fill="currentColor" />
-    <rect x="9.5" y="8" width="3" height="10.5" rx="0.7" fill="currentColor" />
-    <rect x="15.5" y="4" width="3" height="14.5" rx="0.7" fill="currentColor" />
-  </svg>
-);
-
-function Card42() {
-  return (
-    <div className="w-[214px] rounded-2xl bg-white p-4 shadow-[0_30px_60px_-20px_rgba(10,23,51,0.18),0_12px_24px_-10px_rgba(10,23,51,0.10),0_0_0_1px_rgba(10,23,51,0.04)]">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2.5">
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[var(--color-brand-soft,#eff4ff)]">
-            <Trending className="h-5 w-5 text-[var(--color-brand,#2563eb)]" />
-          </div>
-          <div className="text-[34px] font-extrabold leading-none tracking-tight text-[var(--color-ink-900,#0a1733)]">
-            +42
-          </div>
-        </div>
-        <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-[11px] font-semibold text-emerald-600">
-          +18%
-        </span>
-      </div>
-      <div className="mt-2 text-[12.5px] text-[var(--color-ink-500,#475569)]">
-        Solicitudes este mes
-      </div>
-      <svg viewBox="0 0 200 44" className="mt-2 h-9 w-full" aria-hidden>
-        <defs>
-          <linearGradient id="sp42" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stopColor="#10b981" stopOpacity="0.22" />
-            <stop offset="1" stopColor="#10b981" stopOpacity="0" />
-          </linearGradient>
-        </defs>
-        <path d="M0 34 L22 30 L44 32 L66 24 L88 26 L110 18 L132 22 L154 14 L176 9 L200 3" fill="none" stroke="#10b981" strokeWidth="2" />
-        <path d="M0 34 L22 30 L44 32 L66 24 L88 26 L110 18 L132 22 L154 14 L176 9 L200 3 L200 44 L0 44 Z" fill="url(#sp42)" />
-      </svg>
-    </div>
-  );
-}
-
-function CardPageSpeed() {
-  const R = 32;
-  const C = 2 * Math.PI * R;
-  const VAL = 95;
-  return (
-    <div className="flex w-[178px] flex-col items-center rounded-2xl bg-white p-4 text-center shadow-[0_30px_60px_-20px_rgba(10,23,51,0.18),0_12px_24px_-10px_rgba(10,23,51,0.10),0_0_0_1px_rgba(10,23,51,0.04)]">
-      <svg viewBox="0 0 90 90" className="h-[84px] w-[84px]" aria-hidden>
-        <circle cx="45" cy="45" r={R} fill="none" stroke="#e6f4ec" strokeWidth="8" />
-        <circle cx="45" cy="45" r={R} fill="none" stroke="#10b981" strokeWidth="8" strokeLinecap="round" strokeDasharray={`${(VAL / 100) * C} ${C}`} transform="rotate(-90 45 45)" />
-        <text x="45" y="52" textAnchor="middle" fontSize="24" fontWeight="800" fill="#0a1733">{VAL}</text>
-      </svg>
-      <div className="mt-1 text-[13px] font-bold text-[var(--color-ink-900,#0a1733)]">Google PageSpeed</div>
-      <div className="mt-0.5 text-[11.5px] font-semibold text-emerald-600">Excelente</div>
-    </div>
-  );
-}
-
-function Card300() {
-  return (
-    <div className="flex w-[300px] items-center gap-3.5 rounded-2xl bg-white py-3.5 pl-4 pr-5 shadow-[0_30px_60px_-20px_rgba(10,23,51,0.18),0_12px_24px_-10px_rgba(10,23,51,0.10),0_0_0_1px_rgba(10,23,51,0.04)]">
-      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[var(--color-brand-soft,#eff4ff)]">
-        <Bars className="h-5 w-5 text-[var(--color-brand,#2563eb)]" />
-      </div>
-      <div className="min-w-0 flex-1">
-        <div className="text-[24px] font-extrabold leading-none tracking-tight text-[var(--color-ink-900,#0a1733)]">+300%</div>
-        <div className="mt-1 text-[11.5px] leading-snug text-[var(--color-ink-500,#475569)]">
-          Más leads generados
-          <br />
-          con nuestras webs
-        </div>
-      </div>
-      <svg viewBox="0 0 80 36" className="h-9 w-[70px] shrink-0" aria-hidden>
-        <path d="M0 28 L12 24 L24 26 L36 18 L48 14 L60 8 L72 4 L80 2" fill="none" stroke="#10b981" strokeWidth="2" />
-      </svg>
-    </div>
-  );
-}
-
-const features = [
-  { Icon: Monitor, title: "Diseño a medida", sub: "100% personalizado" },
-  { Icon: Rocket, title: "Rápido y seguro", sub: "Carga en < 2s" },
-  { Icon: Search, title: "SEO optimizado", sub: "Posicionamos tu web" },
-  { Icon: Phone, title: "Responsive", sub: "Perfecto en todos los dispositivos" },
+const CARDS = [
+  { id: "solicitudes", showAt: 0.75, hideAt: 4.55 },
+  { id: "pagespeed", showAt: 1.05, hideAt: 4.55 },
+  { id: "leads", showAt: 1.35, hideAt: 4.55 },
 ] as const;
 
-export function Hero() {
+type CardId = (typeof CARDS)[number]["id"];
+
+function CardSolicitudes() {
   return (
-    <section className="relative overflow-hidden pt-8 md:pt-14">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(ellipse 80% 50% at 80% 0%, rgba(37,99,235,0.12), transparent 60%), radial-gradient(ellipse 60% 60% at 20% 100%, rgba(37,99,235,0.06), transparent 70%)",
-        }}
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0"
-        style={{
-          backgroundImage:
-            "linear-gradient(to right, rgba(15,23,42,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(15,23,42,0.04) 1px, transparent 1px)",
-          backgroundSize: "48px 48px",
-          WebkitMaskImage: "radial-gradient(ellipse 70% 60% at 50% 0%, black, transparent 75%)",
-          maskImage: "radial-gradient(ellipse 70% 60% at 50% 0%, black, transparent 75%)",
-        }}
-      />
+    <>
+      <div className="cs-row">
+        <div>
+          <div className="cs-big">+42</div>
+          <div className="cs-sub">Solicitudes este mes</div>
+        </div>
+        <span className="cs-badge">+18%</span>
+      </div>
+      <svg className="cs-chart" viewBox="0 0 200 30" preserveAspectRatio="none" fill="none">
+        <defs>
+          <linearGradient id="csGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#16a34a" stopOpacity=".35" />
+            <stop offset="100%" stopColor="#16a34a" stopOpacity="0" />
+          </linearGradient>
+        </defs>
+        <path d="M2 24 L30 20 L55 22 L85 14 L115 16 L145 8 L175 10 L198 3 L198 30 L2 30 Z" fill="url(#csGrad)" />
+        <path d="M2 24 L30 20 L55 22 L85 14 L115 16 L145 8 L175 10 L198 3" stroke="#16a34a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    </>
+  );
+}
 
-      <motion.div
-        initial="hidden"
-        animate="show"
-        variants={stagger}
-        className="relative mx-auto grid max-w-[1280px] grid-cols-12 items-center gap-10 px-6 pb-20 md:px-8"
-      >
-        <div className="col-span-12 pt-2 lg:col-span-6">
-          <motion.div
-            variants={fadeUp}
-            className="inline-flex items-center gap-2 rounded-full border border-[var(--color-ink-100,#e2e8f0)] bg-white px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-ink-700,#1e293b)] shadow-sm"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-60" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+function CardPagespeed() {
+  return (
+    <>
+      <div className="ps-gauge">
+        <svg viewBox="0 0 100 100">
+          <circle className="track" cx="50" cy="50" r="42" fill="none" strokeWidth="8" />
+          <circle className="meter" cx="50" cy="50" r="42" fill="none" strokeWidth="8" strokeLinecap="round" strokeDasharray="263.9" strokeDashoffset="13.2" />
+        </svg>
+        <div className="ps-num">95</div>
+      </div>
+      <div className="ps-title">Google PageSpeed</div>
+      <div className="ps-sub">Excelente</div>
+    </>
+  );
+}
+
+function CardLeads() {
+  return (
+    <>
+      <div className="cl-row">
+        <div className="cl-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <rect x="4" y="12" width="3.5" height="8" rx="1" fill="currentColor" />
+            <rect x="10.25" y="7" width="3.5" height="13" rx="1" fill="currentColor" />
+            <rect x="16.5" y="4" width="3.5" height="16" rx="1" fill="currentColor" />
+          </svg>
+        </div>
+        <div style={{ flex: 1 }}>
+          <div className="cl-big">+300%</div>
+          <div className="cl-sub">
+            Más leads generados
+            <br />
+            con nuestras webs
+          </div>
+        </div>
+      </div>
+      <svg className="cl-chart" viewBox="0 0 280 26" preserveAspectRatio="none" fill="none">
+        <path d="M2 22 L40 19 L80 21 L120 14 L160 16 L200 9 L240 11 L278 3" stroke="#16a34a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    </>
+  );
+}
+
+export function Hero() {
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const [visible, setVisible] = useState<Record<CardId, boolean>>({
+    solicitudes: false,
+    pagespeed: false,
+    leads: false,
+  });
+
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = true;
+    v.play().catch(() => {});
+
+    const tick = () => {
+      const t = v.currentTime;
+      const next: Record<CardId, boolean> = { solicitudes: false, pagespeed: false, leads: false };
+      for (const c of CARDS) next[c.id] = t >= c.showAt && t < c.hideAt;
+      setVisible((prev) =>
+        prev.solicitudes === next.solicitudes && prev.pagespeed === next.pagespeed && prev.leads === next.leads
+          ? prev
+          : next,
+      );
+    };
+
+    v.addEventListener("timeupdate", tick);
+    v.addEventListener("seeked", tick);
+    v.addEventListener("loadeddata", tick);
+    const id = setInterval(tick, 80); // the loop wrap can fall between timeupdates
+
+    return () => {
+      v.removeEventListener("timeupdate", tick);
+      v.removeEventListener("seeked", tick);
+      v.removeEventListener("loadeddata", tick);
+      clearInterval(id);
+    };
+  }, []);
+
+  return (
+    <section className="hero-page">
+      <div className="hero-container">
+        <section className="hero-grid">
+          {/* LEFT */}
+          <div className="copy">
+            <span className="hero-pill">
+              DISEÑO WEB <span className="dot" /> SEO <span className="dot" /> RESULTADOS
             </span>
-            Diseño web · SEO · Resultados
-          </motion.div>
+            <h1 className="hero-h1">
+              Diseñamos webs que <span className="em">convierten visitas en clientes.</span>
+            </h1>
+            <p className="lede">
+              Creamos páginas web modernas, rápidas y optimizadas para SEO para que tu negocio genere más contactos y ventas todos los días.
+            </p>
+            <div className="cta-row">
+              <Link className="hero-btn hero-btn-primary" href="/contacto">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 5l7 7-7 7" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                Solicitar presupuesto
+              </Link>
+              <Link className="hero-btn hero-btn-ghost" href="/#proyectos">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="13" rx="2" stroke="currentColor" strokeWidth="1.8" /><path d="M10 10l5 3-5 3v-6z" fill="currentColor" /></svg>
+                Ver proyectos
+              </Link>
+            </div>
 
-          <motion.h1
-            variants={fadeUp}
-            className="mt-7 whitespace-nowrap font-bold leading-[1.04] tracking-[-0.03em] text-[var(--color-ink-900,#0a1733)] text-[clamp(2.4rem,4.5vw,4rem)]"
-          >
-            Diseñamos webs que
-            <br />
-            <span className="text-[var(--color-brand,#2563eb)]">convierten visitas</span>
-            <br />
-            en clientes.
-          </motion.h1>
-
-          <motion.p
-            variants={fadeUp}
-            className="mt-7 max-w-[520px] text-[17px] leading-[1.6] text-[var(--color-ink-500,#475569)]"
-          >
-            Creamos páginas web modernas, rápidas y optimizadas para SEO para que tu negocio genere más contactos y ventas todos los días.
-          </motion.p>
-
-          <motion.div variants={fadeUp} className="mt-9 flex flex-wrap items-center gap-3">
-            <Link
-              href="#presupuesto"
-              className="group inline-flex items-center gap-2.5 rounded-xl bg-[var(--color-brand,#2563eb)] px-5 py-3.5 text-[15px] font-semibold text-white shadow-[0_18px_40px_-12px_rgba(37,99,235,0.55)] transition-all hover:bg-[var(--color-brand-hover,#1d4ed8)] active:scale-[0.98]"
-            >
-              Solicitar presupuesto
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-            </Link>
-            <Link
-              href="#proyectos"
-              className="inline-flex items-center gap-2 rounded-xl border border-[var(--color-ink-200,#cbd5e1)] bg-white px-5 py-3.5 text-[15px] font-semibold text-[var(--color-ink-900,#0a1733)] transition-all hover:border-[var(--color-ink-300,#94a3b8)] active:scale-[0.98]"
-            >
-              <Play className="h-4 w-4" />
-              Ver proyectos
-            </Link>
-          </motion.div>
-
-          <motion.div
-            variants={stagger}
-            initial="hidden"
-            animate="show"
-            className="mt-12 grid max-w-[560px] grid-cols-2 gap-4 sm:grid-cols-4"
-          >
-            {features.map(({ Icon, title, sub }) => (
-              <motion.div key={title} variants={fadeUp} className="flex flex-col items-start">
-                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--color-brand-soft,#eff4ff)] text-[var(--color-brand,#2563eb)]">
-                  <Icon className="h-6 w-6" />
+            <div className="features">
+              <div className="feat">
+                <div className="feat-icon">
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="6" width="24" height="16" rx="2" stroke="currentColor" strokeWidth="1.8" /><path d="M12 26h8M16 22v4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>
                 </div>
-                <div className="text-[14px] font-semibold text-[var(--color-ink-900,#0a1733)]">{title}</div>
-                <div className="mt-0.5 text-balance text-[12.5px] leading-snug text-[var(--color-ink-400,#64748b)]">{sub}</div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
+                <div className="feat-title">Diseño a medida</div>
+                <div className="feat-sub">100% personalizado</div>
+              </div>
+              <div className="feat">
+                <div className="feat-icon">
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4c4 4 6 8 6 12a6 6 0 11-12 0c0-4 2-8 6-12z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" /><circle cx="16" cy="14" r="2.2" fill="currentColor" /><path d="M11 22l-3 4M21 22l3 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>
+                </div>
+                <div className="feat-title">Rápido y seguro</div>
+                <div className="feat-sub">Carga en &lt; 2s</div>
+              </div>
+              <div className="feat">
+                <div className="feat-icon">
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="14" cy="14" r="8" stroke="currentColor" strokeWidth="1.8" /><path d="M20 20l6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>
+                </div>
+                <div className="feat-title">SEO optimizado</div>
+                <div className="feat-sub">Posicionamos tu web</div>
+              </div>
+              <div className="feat">
+                <div className="feat-icon">
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="10" y="4" width="12" height="24" rx="2" stroke="currentColor" strokeWidth="1.8" /><circle cx="16" cy="24" r="1" fill="currentColor" /></svg>
+                </div>
+                <div className="feat-title">Responsive</div>
+                <div className="feat-sub">Perfecto en todos los dispositivos</div>
+              </div>
+            </div>
+          </div>
 
-        <div className="relative col-span-12 lg:col-span-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.9, ease, delay: 0.25 }}
-            className="hero-visual relative"
-          >
-            <Image
-              src="/hero-mockup-cutout.png"
-              alt="Vista de la web en MacBook y iPhone"
-              width={1536}
-              height={1024}
-              priority
-              className="hero-laptop block h-auto w-full select-none"
-              draggable={false}
-            />
+          {/* RIGHT */}
+          <div className="visual">
+            <div className="glow-a" />
 
-            <div className="hidden lg:block absolute right-[11%] top-[-10%] z-10 animate-[float_6.5s_ease-in-out_infinite]">
-              <Card42 />
+            <div className="video-stage">
+              <video
+                ref={videoRef}
+                className="hero-video"
+                src="/hero-animation.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
+                aria-hidden
+              />
             </div>
-            <div className="hidden lg:block absolute right-[-9%] top-[6%] z-10 animate-[float_7.5s_ease-in-out_-2s_infinite]">
-              <CardPageSpeed />
+
+            <div className={`float-card card-solicitudes${visible.solicitudes ? " visible" : ""}`}>
+              <CardSolicitudes />
             </div>
-            <div className="hidden lg:block absolute bottom-[2%] left-[18%] z-10 animate-[float_8s_ease-in-out_-4s_infinite]">
-              <Card300 />
+            <div className={`float-card card-pagespeed${visible.pagespeed ? " visible" : ""}`}>
+              <CardPagespeed />
             </div>
-          </motion.div>
-        </div>
-      </motion.div>
+            <div className={`float-card card-leads${visible.leads ? " visible" : ""}`}>
+              <CardLeads />
+            </div>
+
+            <div className="floor-shadow" />
+          </div>
+        </section>
+      </div>
     </section>
   );
 }
