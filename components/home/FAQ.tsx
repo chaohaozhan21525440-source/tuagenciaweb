@@ -1,51 +1,24 @@
-type QA = { q: string; a: string };
+import type { Dict } from "@/lib/i18n";
 
-const ITEMS: QA[] = [
-  {
-    q: "¿Por qué no cobráis cuota mensual como otras agencias?",
-    a: "Porque consideramos abusivo cobrar 80–150 €/mes durante años por una web que ya está construida y que apenas requiere mantenimiento real. Nuestro pack incluye un precio cerrado, único, y tú decides después si quieres mantenimiento puntual o no. La web, el dominio y el código son tuyos desde el día 1.",
-  },
-  {
-    q: "¿Cuánto se tarda en entregar la web?",
-    a: "Entre 2 y 3 semanas según el pack. El Esencial puede estar listo en 7 días laborables; la Profesional en torno a 14 días; la Tienda online unos 21 días. Te damos un calendario claro al iniciar.",
-  },
-  {
-    q: "¿Quién es dueño del dominio y del código?",
-    a: "Tú. Te entregamos credenciales de dominio, hosting y el repositorio con todo el código fuente. Sin dependencia con nosotros: si un día quieres mover la web, puedes hacerlo sin pedir permiso.",
-  },
-  {
-    q: "¿Y si necesito cambios después de la entrega?",
-    a: "Cada pack incluye rondas de revisiones durante el proyecto. Después de la entrega, puedes solicitar pequeñas modificaciones puntuales sin necesidad de contratar una cuota mensual. Si prefieres delegarlo, ofrecemos mantenimiento opcional.",
-  },
-  {
-    q: "¿Hacéis SEO de verdad?",
-    a: "Sí: schema markup, sitemap, optimización de Core Web Vitals, etiquetas Open Graph, contenidos optimizados y arquitectura técnica preparada para Google. No vendemos humo: te explicamos qué hacemos y por qué.",
-  },
-  {
-    q: "¿Puedo pagar a plazos?",
-    a: "Sí. Lo habitual es 50% al empezar el proyecto y 50% antes del lanzamiento. Si necesitas un fraccionamiento distinto, lo hablamos.",
-  },
-];
-
-export function FAQ() {
+export function FAQ({ dict }: { dict: Dict["faq"] }) {
   return (
     <section id="faq" className="relative bg-[#FBFCFE]">
       <div className="mx-auto max-w-[1280px] px-6 py-20 md:px-14 md:py-28">
         <div className="mx-auto max-w-[760px] text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-[#E5E7EB] bg-white px-4 py-1.5 text-[12.5px] font-semibold uppercase tracking-[0.08em] text-[var(--color-brand)] shadow-sm">
             <span className="h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_0_3px_rgba(16,185,129,.18)]" />
-            PREGUNTAS FRECUENTES
+            {dict.pill}
           </span>
           <h2 className="mt-5 text-balance text-[clamp(28px,3.4vw,42px)] font-bold leading-[1.1] tracking-[-0.025em] text-[#0B1220]">
-            Lo que más nos preguntan.
+            {dict.h2}
           </h2>
           <p className="mx-auto mt-4 max-w-[600px] text-[16px] leading-[1.6] text-[#475569]">
-            Si tu duda no está aquí, escríbenos y te respondemos en menos de 24 horas.
+            {dict.sub}
           </p>
         </div>
 
         <div className="mx-auto mt-12 max-w-[820px] space-y-3.5">
-          {ITEMS.map(({ q, a }) => (
+          {dict.items.map(({ q, a }) => (
             <details
               key={q}
               className="group rounded-2xl border border-[#EEF1F6] bg-white px-[22px] py-5 transition-shadow open:shadow-[0_18px_40px_-20px_rgba(15,23,42,.15)]"

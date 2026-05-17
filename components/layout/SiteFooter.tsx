@@ -1,6 +1,14 @@
 import Image from "next/image";
+import type { Dict, Locale } from "@/lib/i18n";
+import { path, sectionPath } from "@/lib/i18n";
 
-export function SiteFooter() {
+export function SiteFooter({
+  locale,
+  dict,
+}: {
+  locale: Locale;
+  dict: Dict["footer"];
+}) {
   return (
     <footer className="site-footer">
       <div className="sf-container">
@@ -10,29 +18,30 @@ export function SiteFooter() {
               <Image className="icon" src="/logo/logo-tw.png" alt="TuAgenciaWeb" width={64} height={64} />
               <Image className="wordmark" src="/logo/logo-wordmark.png" alt="tuagenciaweb" width={260} height={56} />
             </div>
-            <p>Diseñamos webs que convierten visitas en clientes. Páginas rápidas, modernas y optimizadas para SEO.</p>
+            <p>{dict.tagline}</p>
           </div>
           <div className="foot-col">
-            <h5>Servicios</h5>
-            <a href="/#servicios">Diseño Web</a>
-            <a href="/#servicios">SEO</a>
-            <a href="/#servicios">Mantenimiento</a>
-            <a href="/#servicios">Tiendas Online</a>
+            <h5>{dict.services.title}</h5>
+            {dict.services.items.map((label) => (
+              <a key={label} href={sectionPath("home", locale, "services")}>
+                {label}
+              </a>
+            ))}
           </div>
           <div className="foot-col">
-            <h5>Recursos</h5>
-            <a href="/#faq">Preguntas frecuentes</a>
-            <a href="/#precios">Precios</a>
-            <a href="/#proyectos">Proyectos</a>
+            <h5>{dict.resources.title}</h5>
+            <a href={sectionPath("home", locale, "faq")}>{dict.resources.faq}</a>
+            <a href={sectionPath("home", locale, "pricing")}>{dict.resources.pricing}</a>
+            <a href={sectionPath("home", locale, "projects")}>{dict.resources.projects}</a>
           </div>
           <div className="foot-col">
-            <h5>Empresa</h5>
-            <a href="/sobre-nosotros">Sobre nosotros</a>
-            <a href="/#proyectos">Proyectos</a>
-            <a href="/contacto">Contacto</a>
+            <h5>{dict.company.title}</h5>
+            <a href={path("about", locale)}>{dict.company.about}</a>
+            <a href={sectionPath("home", locale, "projects")}>{dict.company.projects}</a>
+            <a href={path("contact", locale)}>{dict.company.contact}</a>
           </div>
           <div className="foot-col">
-            <h5>Síguenos</h5>
+            <h5>{dict.social}</h5>
             <div className="social">
               <a href="#" aria-label="LinkedIn">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14M18.5 18.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" /></svg>
@@ -47,11 +56,11 @@ export function SiteFooter() {
           </div>
         </div>
         <div className="foot-bottom">
-          <span>© 2026 TuAgenciaWeb. Todos los derechos reservados.</span>
+          <span>{dict.copy}</span>
           <div className="links">
-            <a href="#aviso">Aviso legal</a>
-            <a href="#privacidad">Política de privacidad</a>
-            <a href="#cookies">Política de cookies</a>
+            <a href="#aviso">{dict.legal}</a>
+            <a href="#privacidad">{dict.privacy}</a>
+            <a href="#cookies">{dict.cookies}</a>
           </div>
         </div>
       </div>

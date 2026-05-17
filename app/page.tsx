@@ -1,25 +1,7 @@
-import { SiteHeader } from "@/components/layout/SiteHeader";
-import { SiteFooter } from "@/components/layout/SiteFooter";
-import { Hero } from "@/components/home/Hero";
-import { TrustBar } from "@/components/home/TrustBar";
-import { Services } from "@/components/home/Services";
-import { Projects } from "@/components/home/Projects";
-import { Pricing } from "@/components/home/Pricing";
-import { FAQ } from "@/components/home/FAQ";
+import { redirect } from "next/navigation";
 
-export default function Home() {
-  return (
-    <>
-      <SiteHeader />
-      <main>
-        <Hero />
-        <TrustBar />
-        <Services />
-        <Projects />
-        <Pricing />
-        <FAQ />
-      </main>
-      <SiteFooter />
-    </>
-  );
+// Fallback for environments without middleware. The middleware handles
+// Accept-Language-based redirection; this is a safety net for static fallbacks.
+export default function RootIndex() {
+  redirect("/es");
 }

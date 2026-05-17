@@ -2,13 +2,12 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import type { Locale } from "@/lib/i18n";
+import { path, sectionPath } from "@/lib/i18n";
+import type { Dict } from "@/lib/i18n";
 
 /* ────────────────────────────────────────────────────────────────────────────
    Hero — implemented literally from the Claude Design "Hero.html" bundle.
-   - Page bg matches the video bg exactly (#eff1f9) → no rectangle seam.
-   - Floating cards visibility is driven by the looping video's currentTime
-     (show/hide thresholds per card) so they enter as the laptop opens and
-     dismiss as it closes — even across loop wraps.
    ──────────────────────────────────────────────────────────────────────────── */
 
 const CARDS = [
@@ -19,15 +18,15 @@ const CARDS = [
 
 type CardId = (typeof CARDS)[number]["id"];
 
-function CardSolicitudes() {
+function CardSolicitudes({ d }: { d: Dict["hero"]["cards"]["solicitudes"] }) {
   return (
     <>
       <div className="cs-row">
         <div>
-          <div className="cs-big">+42</div>
-          <div className="cs-sub">Solicitudes este mes</div>
+          <div className="cs-big">{d.big}</div>
+          <div className="cs-sub">{d.sub}</div>
         </div>
-        <span className="cs-badge">+18%</span>
+        <span className="cs-badge">{d.badge}</span>
       </div>
       <svg className="cs-chart" viewBox="0 0 200 30" preserveAspectRatio="none" fill="none">
         <defs>
@@ -43,7 +42,7 @@ function CardSolicitudes() {
   );
 }
 
-function CardPagespeed() {
+function CardPagespeed({ d }: { d: Dict["hero"]["cards"]["pagespeed"] }) {
   return (
     <>
       <div className="ps-gauge">
@@ -51,15 +50,15 @@ function CardPagespeed() {
           <circle className="track" cx="50" cy="50" r="42" fill="none" strokeWidth="8" />
           <circle className="meter" cx="50" cy="50" r="42" fill="none" strokeWidth="8" strokeLinecap="round" strokeDasharray="263.9" strokeDashoffset="13.2" />
         </svg>
-        <div className="ps-num">95</div>
+        <div className="ps-num">{d.num}</div>
       </div>
-      <div className="ps-title">Google PageSpeed</div>
-      <div className="ps-sub">Excelente</div>
+      <div className="ps-title">{d.title}</div>
+      <div className="ps-sub">{d.sub}</div>
     </>
   );
 }
 
-function CardLeads() {
+function CardLeads({ d }: { d: Dict["hero"]["cards"]["leads"] }) {
   return (
     <>
       <div className="cl-row">
@@ -71,11 +70,11 @@ function CardLeads() {
           </svg>
         </div>
         <div style={{ flex: 1 }}>
-          <div className="cl-big">+300%</div>
+          <div className="cl-big">{d.big}</div>
           <div className="cl-sub">
-            Más leads generados
+            {d.sub}
             <br />
-            con nuestras webs
+            {d.sub2}
           </div>
         </div>
       </div>
@@ -86,7 +85,7 @@ function CardLeads() {
   );
 }
 
-export function Hero() {
+export function Hero({ dict, locale }: { dict: Dict["hero"]; locale: Locale }) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [visible, setVisible] = useState<Record<CardId, boolean>>({
     solicitudes: false,
@@ -114,7 +113,7 @@ export function Hero() {
     v.addEventListener("timeupdate", tick);
     v.addEventListener("seeked", tick);
     v.addEventListener("loadeddata", tick);
-    const id = setInterval(tick, 80); // the loop wrap can fall between timeupdates
+    const id = setInterval(tick, 80);
 
     return () => {
       v.removeEventListener("timeupdate", tick);
@@ -131,54 +130,36 @@ export function Hero() {
           {/* LEFT */}
           <div className="copy">
             <span className="hero-pill">
-              DISEÑO WEB <span className="dot" /> SEO <span className="dot" /> RESULTADOS
+              {dict.pill[0]} <span className="dot" /> {dict.pill[1]} <span className="dot" /> {dict.pill[2]}
             </span>
             <h1 className="hero-h1">
-              Diseñamos webs que <span className="em">convierten visitas en clientes.</span>
+              {dict.h1Pre}<span className="em">{dict.h1Em}</span>
             </h1>
-            <p className="lede">
-              Creamos páginas web modernas, rápidas y optimizadas para SEO para que tu negocio genere más contactos y ventas todos los días.
-            </p>
+            <p className="lede">{dict.lede}</p>
             <div className="cta-row">
-              <Link className="hero-btn hero-btn-primary" href="/contacto">
+              <Link className="hero-btn hero-btn-primary" href={path("contact", locale)}>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 5l7 7-7 7" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                Solicitar presupuesto
+                {dict.ctaPrimary}
               </Link>
-              <Link className="hero-btn hero-btn-ghost" href="/#proyectos">
+              <Link className="hero-btn hero-btn-ghost" href={sectionPath("home", locale, "projects")}>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="13" rx="2" stroke="currentColor" strokeWidth="1.8" /><path d="M10 10l5 3-5 3v-6z" fill="currentColor" /></svg>
-                Ver proyectos
+                {dict.ctaSecondary}
               </Link>
             </div>
 
             <div className="features">
-              <div className="feat">
-                <div className="feat-icon">
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="6" width="24" height="16" rx="2" stroke="currentColor" strokeWidth="1.8" /><path d="M12 26h8M16 22v4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>
+              {dict.features.map((f, i) => (
+                <div key={i} className="feat">
+                  <div className="feat-icon">
+                    {i === 0 && <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="6" width="24" height="16" rx="2" stroke="currentColor" strokeWidth="1.8" /><path d="M12 26h8M16 22v4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>}
+                    {i === 1 && <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4c4 4 6 8 6 12a6 6 0 11-12 0c0-4 2-8 6-12z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" /><circle cx="16" cy="14" r="2.2" fill="currentColor" /><path d="M11 22l-3 4M21 22l3 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>}
+                    {i === 2 && <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="14" cy="14" r="8" stroke="currentColor" strokeWidth="1.8" /><path d="M20 20l6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>}
+                    {i === 3 && <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="10" y="4" width="12" height="24" rx="2" stroke="currentColor" strokeWidth="1.8" /><circle cx="16" cy="24" r="1" fill="currentColor" /></svg>}
+                  </div>
+                  <div className="feat-title">{f.title}</div>
+                  <div className="feat-sub">{f.sub}</div>
                 </div>
-                <div className="feat-title">Diseño a medida</div>
-                <div className="feat-sub">100% personalizado</div>
-              </div>
-              <div className="feat">
-                <div className="feat-icon">
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4c4 4 6 8 6 12a6 6 0 11-12 0c0-4 2-8 6-12z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" /><circle cx="16" cy="14" r="2.2" fill="currentColor" /><path d="M11 22l-3 4M21 22l3 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>
-                </div>
-                <div className="feat-title">Rápido y seguro</div>
-                <div className="feat-sub">Carga en &lt; 2s</div>
-              </div>
-              <div className="feat">
-                <div className="feat-icon">
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="14" cy="14" r="8" stroke="currentColor" strokeWidth="1.8" /><path d="M20 20l6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>
-                </div>
-                <div className="feat-title">SEO optimizado</div>
-                <div className="feat-sub">Posicionamos tu web</div>
-              </div>
-              <div className="feat">
-                <div className="feat-icon">
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="10" y="4" width="12" height="24" rx="2" stroke="currentColor" strokeWidth="1.8" /><circle cx="16" cy="24" r="1" fill="currentColor" /></svg>
-                </div>
-                <div className="feat-title">Responsive</div>
-                <div className="feat-sub">Perfecto en todos los dispositivos</div>
-              </div>
+              ))}
             </div>
           </div>
 
@@ -204,13 +185,13 @@ export function Hero() {
             </div>
 
             <div className={`float-card card-solicitudes${visible.solicitudes ? " visible" : ""}`}>
-              <CardSolicitudes />
+              <CardSolicitudes d={dict.cards.solicitudes} />
             </div>
             <div className={`float-card card-pagespeed${visible.pagespeed ? " visible" : ""}`}>
-              <CardPagespeed />
+              <CardPagespeed d={dict.cards.pagespeed} />
             </div>
             <div className={`float-card card-leads${visible.leads ? " visible" : ""}`}>
-              <CardLeads />
+              <CardLeads d={dict.cards.leads} />
             </div>
 
             <div className="floor-shadow" />

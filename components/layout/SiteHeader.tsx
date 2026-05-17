@@ -4,14 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/cn";
-
-const NAV = [
-  { href: "/#servicios", label: "Servicios" },
-  { href: "/#proyectos", label: "Proyectos" },
-  { href: "/#precios", label: "Precios" },
-  { href: "/sobre-nosotros", label: "Sobre nosotros" },
-  { href: "/contacto", label: "Contacto" },
-];
+import type { Dict, Locale } from "@/lib/i18n";
+import { path, sectionPath } from "@/lib/i18n";
+import { LangSwitcher } from "./LangSwitcher";
 
 const List = (p: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" fill="none" {...p}>
@@ -25,7 +20,15 @@ const X = (p: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-export function SiteHeader() {
+export function SiteHeader({
+  locale,
+  dict,
+  langDict,
+}: {
+  locale: Locale;
+  dict: Dict["nav"];
+  langDict: Dict["langSwitcher"];
+}) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -36,6 +39,14 @@ export function SiteHeader() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const nav = [
+    { href: sectionPath("home", locale, "services"), label: dict.services },
+    { href: sectionPath("home", locale, "projects"), label: dict.projects },
+    { href: sectionPath("home", locale, "pricing"), label: dict.pricing },
+    { href: path("about", locale), label: dict.about },
+    { href: path("contact", locale), label: dict.contact },
+  ];
+
   return (
     <header
       className={cn(
@@ -44,27 +55,34 @@ export function SiteHeader() {
       )}
     >
       <div className="mx-auto flex max-w-[1280px] items-center px-6 pt-7 pb-3 md:px-8">
-        <Link href="/" className="flex items-center gap-2.5" aria-label="Tuagenciaweb">
+        <Link href={path("home", locale)} className="flex items-center gap-2.5" aria-label="Tuagenciaweb">
           <Image src="/logo/logo-mark.png" alt="" aria-hidden width={64} height={64} priority className="block h-9 w-auto" />
           <Image src="/logo/logo-wordmark.png" alt="tuagenciaweb" width={300} height={60} priority className="block h-[22px] w-auto" />
         </Link>
 
         <nav className="mx-auto hidden items-center gap-9 text-[14.5px] font-medium text-[var(--color-ink-700)] lg:flex">
-          {NAV.map((item) => (
+          {nav.map((item) => (
             <a key={item.href} href={item.href} className="hover:text-[var(--color-ink-900)]">
               {item.label}
             </a>
           ))}
         </nav>
 
-        <Link
-          href="/contacto"
-          className="ml-auto hidden lg:ml-0 lg:inline-flex items-center gap-2 rounded-xl bg-[var(--color-brand)] px-5 py-2.5 text-[14.5px] font-semibold text-white shadow-[0_18px_40px_-12px_rgba(37,99,235,0.55)] transition-colors hover:bg-[var(--color-brand-hover)]"
-        >
-          Solicitar presupuesto
-        </Link>
+        <div className="ml-auto hidden items-center gap-3 lg:ml-0 lg:flex">
+          <LangSwitcher locale={locale} dict={langDict} />
+          <Link
+            href={path("contact", locale)}
+            className="inline-flex items-center gap-2 rounded-xl bg-[var(--color-brand)] px-5 py-2.5 text-[14.5px] font-semibold text-white shadow-[0_18px_40px_-12px_rgba(37,99,235,0.55)] transition-colors hover:bg-[var(--color-brand-hover)]"
+          >
+            {dict.quote}
+          </Link>
+        </div>
 
-        <button className="ml-auto lg:hidden" aria-label="Menu" onClick={() => setOpen((v) => !v)}>
+        <button
+          className="ml-auto lg:hidden"
+          aria-label={dict.menuLabel}
+          onClick={() => setOpen((v) => !v)}
+        >
           {open ? <X className="h-7 w-7" /> : <List className="h-7 w-7" />}
         </button>
       </div>
@@ -72,7 +90,7 @@ export function SiteHeader() {
       {open && (
         <div className="border-t border-[var(--color-ink-100)] bg-white lg:hidden">
           <ul className="mx-auto max-w-[1280px] px-6 py-4 md:px-8">
-            {NAV.map((item) => (
+            {nav.map((item) => (
               <li key={item.href}>
                 <a
                   href={item.href}
@@ -83,13 +101,14 @@ export function SiteHeader() {
                 </a>
               </li>
             ))}
-            <li className="pt-3">
+            <li className="flex items-center justify-between pt-3">
+              <LangSwitcher locale={locale} dict={langDict} />
               <Link
-                href="/contacto"
+                href={path("contact", locale)}
                 onClick={() => setOpen(false)}
-                className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--color-brand)] px-4 py-3 text-sm font-semibold text-white"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--color-brand)] px-4 py-3 text-sm font-semibold text-white"
               >
-                Solicitar presupuesto
+                {dict.quote}
               </Link>
             </li>
           </ul>

@@ -1,3 +1,5 @@
+import type { Dict } from "@/lib/i18n";
+
 const BrushIcon = (p: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" {...p}>
     <path d="M9.06 11.9l8.07-8.06a2.85 2.85 0 1 1 4.03 4.03l-8.06 8.08" />
@@ -28,80 +30,51 @@ const Check = (p: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-type Service = {
-  Icon: (p: React.SVGProps<SVGSVGElement>) => React.ReactElement;
-  title: string;
-  body: string;
-  bullets: string[];
-};
+const ICONS = [BrushIcon, BagIcon, SearchIcon, ShieldIcon];
 
-const SERVICES: Service[] = [
-  {
-    Icon: BrushIcon,
-    title: "Diseño web a medida",
-    body: "Webs únicas, modernas y orientadas a conversión.",
-    bullets: ["Diseño 100% personalizado", "Mobile-first", "Animaciones cuidadas"],
-  },
-  {
-    Icon: BagIcon,
-    title: "Tienda online",
-    body: "Plataformas de e-commerce listas para vender desde el día 1.",
-    bullets: ["Shopify / WooCommerce", "Pasarelas de pago", "Gestión de stock"],
-  },
-  {
-    Icon: SearchIcon,
-    title: "SEO técnico y de contenidos",
-    body: "Posicionamos tu negocio en Google donde están tus clientes.",
-    bullets: ["Schema + sitemap", "Velocidad y Core Web Vitals", "Contenidos optimizados"],
-  },
-  {
-    Icon: ShieldIcon,
-    title: "Mantenimiento opcional",
-    body: "Si quieres, nos quedamos cerca después del lanzamiento. Sin obligación.",
-    bullets: ["Actualizaciones", "Backups", "Soporte directo"],
-  },
-];
-
-export function Services() {
+export function Services({ dict }: { dict: Dict["services"] }) {
   return (
     <section id="servicios" className="relative">
       <div className="mx-auto max-w-[1280px] px-6 py-20 md:px-14 md:py-28">
         <div className="mx-auto max-w-[760px] text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-[#E5E7EB] bg-white px-4 py-1.5 text-[12.5px] font-semibold uppercase tracking-[0.08em] text-[var(--color-brand)] shadow-sm">
             <span className="h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_0_3px_rgba(16,185,129,.18)]" />
-            SERVICIOS
+            {dict.pill}
           </span>
           <h2 className="mt-5 text-balance text-[clamp(28px,3.4vw,42px)] font-bold leading-[1.1] tracking-[-0.025em] text-[#0B1220]">
-            Todo lo que tu web necesita, en un solo pack.
+            {dict.h2}
           </h2>
           <p className="mx-auto mt-4 max-w-[600px] text-[16px] leading-[1.6] text-[#475569]">
-            Diseño, desarrollo, SEO y mantenimiento opcional. Cubrimos cada etapa para que tú solo te preocupes de tu negocio.
+            {dict.sub}
           </p>
         </div>
 
         <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-7">
-          {SERVICES.map((s) => (
-            <article
-              key={s.title}
-              className="group rounded-[20px] border border-[#EEF1F6] bg-white p-8 shadow-[0_10px_30px_-15px_rgba(15,23,42,.10)] transition hover:-translate-y-0.5 hover:shadow-[0_30px_60px_-25px_rgba(15,23,42,.20)]"
-            >
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#EFF4FF] text-[var(--color-brand)]">
-                <s.Icon className="h-[22px] w-[22px]" />
-              </div>
-              <h3 className="mt-5 text-[18px] font-bold tracking-[-0.01em] text-[#0B1220]">{s.title}</h3>
-              <p className="mt-2 text-[14px] leading-[1.55] text-[#64748B]">{s.body}</p>
-              <ul className="mt-5 space-y-2.5">
-                {s.bullets.map((b) => (
-                  <li key={b} className="flex items-start gap-2.5 text-[14px] text-[#0F172A]">
-                    <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#D1FADF] text-emerald-600">
-                      <Check className="h-3 w-3" />
-                    </span>
-                    {b}
-                  </li>
-                ))}
-              </ul>
-            </article>
-          ))}
+          {dict.items.map((s, i) => {
+            const Icon = ICONS[i] ?? BrushIcon;
+            return (
+              <article
+                key={i}
+                className="group rounded-[20px] border border-[#EEF1F6] bg-white p-8 shadow-[0_10px_30px_-15px_rgba(15,23,42,.10)] transition hover:-translate-y-0.5 hover:shadow-[0_30px_60px_-25px_rgba(15,23,42,.20)]"
+              >
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#EFF4FF] text-[var(--color-brand)]">
+                  <Icon className="h-[22px] w-[22px]" />
+                </div>
+                <h3 className="mt-5 text-[18px] font-bold tracking-[-0.01em] text-[#0B1220]">{s.title}</h3>
+                <p className="mt-2 text-[14px] leading-[1.55] text-[#64748B]">{s.body}</p>
+                <ul className="mt-5 space-y-2.5">
+                  {s.bullets.map((b) => (
+                    <li key={b} className="flex items-start gap-2.5 text-[14px] text-[#0F172A]">
+                      <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#D1FADF] text-emerald-600">
+                        <Check className="h-3 w-3" />
+                      </span>
+                      {b}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
