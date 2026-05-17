@@ -197,6 +197,9 @@ export function Hero() {
                 playsInline
                 preload="auto"
                 aria-hidden
+                disablePictureInPicture
+                disableRemotePlayback
+                controlsList="nodownload noplaybackrate noremoteplayback nofullscreen"
               />
             </div>
 
