@@ -174,28 +174,28 @@ export const en: Dict = {
       "If your question isn't here, drop us a line and we'll reply within 24 hours.",
     items: [
       {
-        q: "Why don't you charge a monthly fee like other agencies?",
-        a: "Because we think charging €80–150/month for years on a site that's already built and barely needs real maintenance is abusive. Our pack is a single, flat fee, and you decide afterwards whether you want occasional maintenance. The site, the domain and the code are yours from day 1.",
+        q: "What services does a digital marketing agency offer?",
+        a: "From SEO, PPC and web design to content marketing, we're a digital marketing agency offering end-to-end strategies. Every service is designed to scale your business, boost your visibility and maximise conversions. Whether you need more traffic, quality leads or a stronger online image, we have the right plan for you.",
+      },
+      {
+        q: "When is the best time to hire a digital marketing agency?",
+        a: "The best time is when a company needs to grow its online visibility, capture more customers or improve the ROI of its digital activity. It's also key when you want to scale the business or professionalise the digital strategy.",
+      },
+      {
+        q: "Do you include domain and hosting?",
+        a: "We can handle them for you or work with your current provider. The domain and the hosting will always be in your name.",
+      },
+      {
+        q: "Do you include contact forms and WhatsApp?",
+        a: "Yes. We can integrate forms, WhatsApp buttons, booking calendars and any lead-capture system.",
       },
       {
         q: "How long does it take to deliver the website?",
         a: "Between 2 and 3 weeks depending on the pack. Essential can be ready in 7 business days; Professional around 14 days; Online Shop around 21 days. We hand you a clear schedule when we start.",
       },
       {
-        q: "Who owns the domain and the code?",
-        a: "You do. We hand over the domain credentials, hosting and the repository with all the source code. No lock-in: if you ever want to move the site, you can do it without asking permission.",
-      },
-      {
         q: "What if I need changes after delivery?",
         a: "Each pack includes revision rounds during the project. After delivery, you can request small one-off tweaks without subscribing to a monthly plan. If you'd rather delegate it, we offer optional maintenance.",
-      },
-      {
-        q: "Do you actually do SEO?",
-        a: "Yes: schema markup, sitemap, Core Web Vitals optimisation, Open Graph tags, optimised content and a technical architecture built for Google. No smoke and mirrors: we explain what we do and why.",
-      },
-      {
-        q: "Can I pay in instalments?",
-        a: "Yes. Usually 50% to kick off and 50% before launch. If you need a different split, we can talk about it.",
       },
     ],
   },

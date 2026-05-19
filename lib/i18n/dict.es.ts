@@ -173,28 +173,28 @@ export const es = {
       "Si tu duda no está aquí, escríbenos y te respondemos en menos de 24 horas.",
     items: [
       {
-        q: "¿Por qué no cobráis cuota mensual como otras agencias?",
-        a: "Porque consideramos abusivo cobrar 80–150 €/mes durante años por una web que ya está construida y que apenas requiere mantenimiento real. Nuestro pack incluye un precio cerrado, único, y tú decides después si quieres mantenimiento puntual o no. La web, el dominio y el código son tuyos desde el día 1.",
+        q: "¿Qué servicios ofrece una agencia de marketing digital?",
+        a: "Desde SEO, PPC y diseño web, hasta marketing de contenidos, somos una agencia de marketing digital que ofrece estrategias integrales. Cada servicio está diseñado para escalar tu negocio, aumentar tu visibilidad y maximizar tus conversiones. Ya sea que necesites más tráfico, leads de calidad o mejorar tu imagen online, tenemos el plan perfecto para ti.",
+      },
+      {
+        q: "¿Cuándo es el mejor momento para contratar una agencia de marketing digital?",
+        a: "El mejor momento es cuando una empresa necesita aumentar su visibilidad online, captar más clientes o mejorar la rentabilidad de sus acciones digitales. También es clave cuando se quiere escalar el negocio o profesionalizar la estrategia digital.",
+      },
+      {
+        q: "¿Incluís dominio y hosting?",
+        a: "Podemos gestionarlo por ti o trabajar con tu proveedor actual. El dominio y el hosting siempre estarán a tu nombre.",
+      },
+      {
+        q: "¿Incluís formularios de contacto y WhatsApp?",
+        a: "Sí. Podemos integrar formularios, botones de WhatsApp, calendarios de reserva y cualquier sistema de captación.",
       },
       {
         q: "¿Cuánto se tarda en entregar la web?",
         a: "Entre 2 y 3 semanas según el pack. El Esencial puede estar listo en 7 días laborables; la Profesional en torno a 14 días; la Tienda online unos 21 días. Te damos un calendario claro al iniciar.",
       },
       {
-        q: "¿Quién es dueño del dominio y del código?",
-        a: "Tú. Te entregamos credenciales de dominio, hosting y el repositorio con todo el código fuente. Sin dependencia con nosotros: si un día quieres mover la web, puedes hacerlo sin pedir permiso.",
-      },
-      {
         q: "¿Y si necesito cambios después de la entrega?",
         a: "Cada pack incluye rondas de revisiones durante el proyecto. Después de la entrega, puedes solicitar pequeñas modificaciones puntuales sin necesidad de contratar una cuota mensual. Si prefieres delegarlo, ofrecemos mantenimiento opcional.",
-      },
-      {
-        q: "¿Hacéis SEO de verdad?",
-        a: "Sí: schema markup, sitemap, optimización de Core Web Vitals, etiquetas Open Graph, contenidos optimizados y arquitectura técnica preparada para Google. No vendemos humo: te explicamos qué hacemos y por qué.",
-      },
-      {
-        q: "¿Puedo pagar a plazos?",
-        a: "Sí. Lo habitual es 50% al empezar el proyecto y 50% antes del lanzamiento. Si necesitas un fraccionamiento distinto, lo hablamos.",
       },
     ],
   },
