@@ -88,7 +88,7 @@ export function MapContact({
                 </li>
                 <li>
                   <span className="ico"><MailIcon /></span>
-                  <a href="mailto:hola@tuagenciaweb.com">hola@tuagenciaweb.com</a>
+                  <a href="mailto:hola@tuagenciaweb.es">hola@tuagenciaweb.es</a>
                 </li>
               </ul>
             </div>
