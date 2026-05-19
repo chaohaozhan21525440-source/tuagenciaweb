@@ -942,6 +942,30 @@
   max-width: 640px; margin: 0 auto;
 }
 
+/* Block (real / conceptual) */
+.proyectos-section .block {
+  margin-top: 64px;
+}
+.proyectos-section .block + .block { margin-top: 88px; }
+.proyectos-section .block-head {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.proyectos-section .block-title {
+  margin: 0;
+  font-size: clamp(18px, 1.9vw, 22px);
+  font-weight: 700;
+  letter-spacing: -.01em;
+  color: var(--pr-ink);
+}
+.proyectos-section .block-sub {
+  margin: 6px auto 0;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--pr-muted);
+  max-width: 520px;
+}
+
 /* Carousel viewport */
 .proyectos-section .carousel {
   position: relative;

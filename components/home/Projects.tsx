@@ -2,7 +2,12 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { PROJECTS, type MockupTheme, type Project } from "@/lib/portfolio";
+import {
+  getConceptual,
+  getRealClients,
+  type Project,
+  type ProjectMockup,
+} from "@/lib/portfolio";
 import type { Dict } from "@/lib/i18n";
 
 const AUTOPLAY_MS = 3800;
@@ -25,25 +30,16 @@ const ExternalIcon = () => (
   </svg>
 );
 
-const MOCKUP_COPY: Record<MockupTheme, { eyebrow: string; wordmark: string; tagline: string; chromeLight?: boolean }> = {
-  red:      { eyebrow: "Trattoria · Bistrot · Pizzeria", wordmark: "Big Mamma", tagline: "Una experiencia italiana, ruidosa y honesta." },
-  green:    { eyebrow: "Dumpling House", wordmark: "Lady Dumpling", tagline: "Dim sum y bao en la barra." },
-  gold:     { eyebrow: "Hotel & Restaurant", wordmark: "NOBU", tagline: "Barcelona" },
-  graphite: { eyebrow: "Bjarke Ingels Group", wordmark: "BIG.", tagline: "Architecture · Engineering · Product Design", chromeLight: true },
-  blue:     { eyebrow: "Sonrisas que se cuidan", wordmark: "Dental Clinic", tagline: "Tu clínica dental cerca de ti.", chromeLight: true },
-};
-
-function ConceptualMockup({ theme }: { theme: MockupTheme }) {
-  const copy = MOCKUP_COPY[theme];
+function ConceptualMockup({ mockup }: { mockup: ProjectMockup }) {
   return (
-    <div className={`mockup themed theme-${theme}`} aria-hidden>
-      <div className={`chrome${copy.chromeLight ? " light" : ""}`}>
+    <div className={`mockup themed theme-${mockup.theme}`} aria-hidden>
+      <div className={`chrome${mockup.chromeLight ? " light" : ""}`}>
         <i /><i /><i />
       </div>
       <div className="stage">
-        <div className="eyebrow">{copy.eyebrow}</div>
-        <p className="wordmark">{copy.wordmark}</p>
-        <div className="tagline">{copy.tagline}</div>
+        <div className="eyebrow">{mockup.eyebrow}</div>
+        <p className="wordmark">{mockup.wordmark}</p>
+        <div className="tagline">{mockup.tagline}</div>
       </div>
     </div>
   );
@@ -63,8 +59,8 @@ function ProjectCard({ p, dict }: { p: Project; dict: Dict["projects"] }) {
             sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
           />
         </div>
-      ) : p.theme ? (
-        <ConceptualMockup theme={p.theme} />
+      ) : p.mockup ? (
+        <ConceptualMockup mockup={p.mockup} />
       ) : (
         <div className="mockup" />
       )}
@@ -105,15 +101,13 @@ function ProjectCard({ p, dict }: { p: Project; dict: Dict["projects"] }) {
   );
 }
 
-export function Projects({ dict }: { dict: Dict["projects"] }) {
-  const items = PROJECTS;
+function Carousel({ items, dict, ariaLabel }: { items: Project[]; dict: Dict["projects"]; ariaLabel: string }) {
   const N = items.length;
   const list = [...items, ...items.slice(0, CLONE_COUNT)];
 
   const [idx, setIdx] = useState(0);
   const [noAnim, setNoAnim] = useState(false);
   const pausedRef = useRef(false);
-  const trackRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const id = window.setInterval(() => {
@@ -144,6 +138,57 @@ export function Projects({ dict }: { dict: Dict["projects"] }) {
   const activeDot = ((idx % N) + N) % N;
 
   return (
+    <div
+      className="carousel"
+      aria-label={ariaLabel}
+      onMouseEnter={() => { pausedRef.current = true; }}
+      onMouseLeave={() => { pausedRef.current = false; }}
+      onFocus={() => { pausedRef.current = true; }}
+      onBlur={() => { pausedRef.current = false; }}
+    >
+      <button type="button" className="arrow prev" aria-label={dict.prev} onClick={goPrev}>
+        <ArrowLeft />
+      </button>
+
+      <div className="viewport">
+        <div
+          className={`track${noAnim ? " no-anim" : ""}`}
+          style={{ ["--idx" as never]: String(idx) } as React.CSSProperties}
+        >
+          {list.map((p, i) => (
+            <div key={`${p.slug}-${i}`} className="slot" data-pos={i - idx}>
+              <ProjectCard p={p} dict={dict} />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <button type="button" className="arrow next" aria-label={dict.next} onClick={goNext}>
+        <ArrowRight />
+      </button>
+
+      <div className="dots" role="tablist" aria-label={dict.goToSlide}>
+        {items.map((p, i) => (
+          <button
+            key={p.slug}
+            type="button"
+            role="tab"
+            aria-selected={i === activeDot}
+            aria-label={`${dict.goToSlide} ${i + 1}`}
+            className={i === activeDot ? "active" : ""}
+            onClick={() => goTo(i)}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export function Projects({ dict }: { dict: Dict["projects"] }) {
+  const realClients = getRealClients();
+  const conceptual = getConceptual();
+
+  return (
     <section id="proyectos" className="proyectos-section">
       <div className="container-p">
         <div className="section-head">
@@ -154,58 +199,20 @@ export function Projects({ dict }: { dict: Dict["projects"] }) {
           <p className="section-sub">{dict.sub}</p>
         </div>
 
-        <div
-          className="carousel"
-          onMouseEnter={() => { pausedRef.current = true; }}
-          onMouseLeave={() => { pausedRef.current = false; }}
-          onFocus={() => { pausedRef.current = true; }}
-          onBlur={() => { pausedRef.current = false; }}
-        >
-          <button
-            type="button"
-            className="arrow prev"
-            aria-label={dict.prev}
-            onClick={goPrev}
-          >
-            <ArrowLeft />
-          </button>
-
-          <div className="viewport">
-            <div
-              ref={trackRef}
-              className={`track${noAnim ? " no-anim" : ""}`}
-              style={{ ["--idx" as never]: String(idx) } as React.CSSProperties}
-            >
-              {list.map((p, i) => (
-                <div key={`${p.slug}-${i}`} className="slot" data-pos={i - idx}>
-                  <ProjectCard p={p} dict={dict} />
-                </div>
-              ))}
-            </div>
+        <div className="block">
+          <div className="block-head">
+            <h3 className="block-title">{dict.realClientsTitle}</h3>
+            <p className="block-sub">{dict.realClientsSub}</p>
           </div>
+          <Carousel items={realClients} dict={dict} ariaLabel={dict.realClientsTitle} />
+        </div>
 
-          <button
-            type="button"
-            className="arrow next"
-            aria-label={dict.next}
-            onClick={goNext}
-          >
-            <ArrowRight />
-          </button>
-
-          <div className="dots" role="tablist" aria-label={dict.goToSlide}>
-            {items.map((p, i) => (
-              <button
-                key={p.slug}
-                type="button"
-                role="tab"
-                aria-selected={i === activeDot}
-                aria-label={`${dict.goToSlide} ${i + 1}`}
-                className={i === activeDot ? "active" : ""}
-                onClick={() => goTo(i)}
-              />
-            ))}
+        <div className="block">
+          <div className="block-head">
+            <h3 className="block-title">{dict.conceptualTitle}</h3>
+            <p className="block-sub">{dict.conceptualSub}</p>
           </div>
+          <Carousel items={conceptual} dict={dict} ariaLabel={dict.conceptualTitle} />
         </div>
 
         <p className="legal">{dict.legal}</p>
