@@ -205,7 +205,7 @@ export const es = {
     tagline:
       "Diseñamos webs que convierten visitas en clientes. Páginas rápidas, modernas y optimizadas para SEO.",
     contactInfo: {
-      phone: "+34 613 566 027",
+      phone: "+34 613 65 42 73",
       address: "Calle Pelai 46, 08001 Barcelona",
       email: "hola@tuagenciaweb.es",
     },
