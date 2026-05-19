@@ -191,47 +191,33 @@ export const en: Dict = {
       },
     ],
   },
-  contactFooter: {
+  footer: {
     regionLabel: "Map and contact",
     mapTitle: "Map of Calle Pelai 48, Barcelona",
     mapBadge: "We're right in the heart of Barcelona",
-    tagline: "Web design and development agency in Barcelona.",
-    servicesTitle: "Services",
-    servicesLinks: [
-      "Web design",
-      "Online stores",
-      "Technical SEO",
-      "Website maintenance",
-    ],
-    moreTitle: "More information",
-    moreLinks: {
-      projects: "Projects",
-      about: "About us",
-      contact: "Contact",
-      blog: "Blog",
-      legal: "Legal notice",
-    },
-  },
-  footer: {
     tagline:
       "We design websites that turn visits into customers. Fast, modern, SEO-optimised pages.",
+    contactInfo: {
+      phone: "+34 613 566 027",
+      address: "Calle Pelai 48, 08001 Barcelona",
+      email: "hola@tuagenciaweb.es",
+    },
     services: {
       title: "Services",
-      items: ["Web Design", "SEO", "Maintenance", "Online Shops"],
+      items: ["Web design", "Online stores", "Technical SEO", "Website maintenance"],
     },
     resources: {
       title: "Resources",
       faq: "FAQ",
-      pricing: "Pricing",
       projects: "Projects",
+      blog: "Blog",
     },
     company: {
       title: "Company",
       about: "About us",
-      projects: "Projects",
       contact: "Contact",
     },
-    social: "Follow us",
+    socialTitle: "Follow us",
     copy: "© 2026 TuAgenciaWeb. All rights reserved.",
     legal: "Legal notice",
     privacy: "Privacy policy",
