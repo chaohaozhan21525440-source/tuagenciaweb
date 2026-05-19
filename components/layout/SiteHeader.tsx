@@ -62,7 +62,7 @@ export function SiteHeader({
             width={907}
             height={535}
             priority
-            className="block h-10 w-auto"
+            className="block h-12 w-auto"
           />
         </Link>
 

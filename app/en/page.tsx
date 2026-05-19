@@ -29,7 +29,7 @@ export default function HomeEn() {
     <main>
       <Hero dict={dict.hero} locale="en" />
       <TrustBar dict={dict.trustBar} />
-      <Services dict={dict.services} />
+      <Services dict={dict.services} locale="en" />
       <Projects dict={dict.projects} />
       <Pricing dict={dict.pricing} locale="en" />
       <FAQ dict={dict.faq} />

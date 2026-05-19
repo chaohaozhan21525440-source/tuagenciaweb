@@ -1,4 +1,6 @@
-import type { Dict } from "@/lib/i18n";
+import Link from "next/link";
+import type { Dict, Locale } from "@/lib/i18n";
+import { path } from "@/lib/i18n";
 
 const BrushIcon = (p: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" {...p}>
@@ -32,7 +34,7 @@ const Check = (p: React.SVGProps<SVGSVGElement>) => (
 
 const ICONS = [BrushIcon, BagIcon, SearchIcon, ShieldIcon];
 
-export function Services({ dict }: { dict: Dict["services"] }) {
+export function Services({ dict, locale }: { dict: Dict["services"]; locale: Locale }) {
   return (
     <section id="servicios" className="relative">
       <div className="mx-auto max-w-[1280px] px-6 py-20 md:px-14 md:py-28">
@@ -55,8 +57,14 @@ export function Services({ dict }: { dict: Dict["services"] }) {
             return (
               <article
                 key={i}
-                className="group rounded-[20px] border border-[#EEF1F6] bg-white p-8 shadow-[0_10px_30px_-15px_rgba(15,23,42,.10)] transition hover:-translate-y-0.5 hover:shadow-[0_30px_60px_-25px_rgba(15,23,42,.20)]"
+                className="group relative rounded-[20px] border border-[#EEF1F6] bg-white p-8 shadow-[0_10px_30px_-15px_rgba(15,23,42,.10)] transition hover:-translate-y-0.5 hover:shadow-[0_30px_60px_-25px_rgba(15,23,42,.20)]"
               >
+                {s.badge && (
+                  <span className="absolute right-5 top-5 inline-flex items-center gap-1.5 rounded-full bg-[#EFF4FF] px-3 py-1 text-[11.5px] font-semibold uppercase tracking-[0.06em] text-[var(--color-brand)] ring-1 ring-inset ring-[#DCE6FB]">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 shadow-[0_0_0_3px_rgba(16,185,129,.18)]" />
+                    {s.badge}
+                  </span>
+                )}
                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#EFF4FF] text-[var(--color-brand)]">
                   <Icon className="h-[22px] w-[22px]" />
                 </div>
@@ -75,6 +83,19 @@ export function Services({ dict }: { dict: Dict["services"] }) {
               </article>
             );
           })}
+        </div>
+
+        <div className="mt-14 flex flex-col items-center gap-5 rounded-[24px] border border-[#EEF1F6] bg-gradient-to-br from-[#F6F9FF] to-white px-6 py-10 text-center md:mt-16 md:flex-row md:justify-between md:gap-8 md:px-12 md:text-left">
+          <p className="max-w-[640px] text-[16px] leading-[1.6] text-[#475569]">
+            <strong className="font-semibold text-[#0B1220]">{dict.cta.leadBold}</strong>{" "}
+            {dict.cta.lead}
+          </p>
+          <Link
+            href={path("contact", locale)}
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--color-brand)] px-6 py-3 text-[14.5px] font-semibold text-white shadow-[0_18px_40px_-12px_rgba(37,99,235,0.55)] transition-colors hover:bg-[var(--color-brand-hover)]"
+          >
+            {dict.cta.button}
+          </Link>
         </div>
       </div>
     </section>
