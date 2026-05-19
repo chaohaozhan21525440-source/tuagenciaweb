@@ -104,15 +104,27 @@ export const es = {
   projects: {
     pill: "PROYECTOS",
     h2: "Trabajo reciente",
-    sub: "Una muestra de webs que hemos lanzado.",
+    sub:
+      "Una muestra de proyectos conceptuales diseñados para enseñar nuestro enfoque, estilo visual y capacidad técnica.",
     sectors: {
       dental: "Dental",
       legal: "Legal",
       reforms: "Reformas",
-      hospitality: "Hostelería",
+      hospitality: "Hospitality",
       ecommerce: "E-commerce",
+      restoration: "Restauración",
+      food: "Food Brand",
+      architecture: "Arquitectura",
       other: "Web",
     },
+    conceptualTag: "Conceptual",
+    inspiredBy: "Inspirado en",
+    viewProject: "Ver proyecto",
+    prev: "Anterior",
+    next: "Siguiente",
+    goToSlide: "Ir al proyecto",
+    legal:
+      "Proyectos conceptuales orientados en referencias públicas de diseño. No representan colaboraciones oficiales con las marcas mencionadas.",
     comingSoon: "Próximamente",
   },
   pricing: {

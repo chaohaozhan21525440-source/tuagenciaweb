@@ -105,15 +105,27 @@ export const en: Dict = {
   projects: {
     pill: "PROJECTS",
     h2: "Recent work",
-    sub: "A sample of websites we've launched.",
+    sub:
+      "A selection of conceptual projects designed to show our approach, visual style and technical capabilities.",
     sectors: {
       dental: "Dental",
       legal: "Legal",
       reforms: "Renovations",
       hospitality: "Hospitality",
       ecommerce: "E-commerce",
+      restoration: "Restaurants",
+      food: "Food Brand",
+      architecture: "Architecture",
       other: "Web",
     },
+    conceptualTag: "Conceptual",
+    inspiredBy: "Inspired by",
+    viewProject: "View project",
+    prev: "Previous",
+    next: "Next",
+    goToSlide: "Go to project",
+    legal:
+      "Conceptual projects guided by publicly available design references. They do not represent official collaborations with the brands mentioned.",
     comingSoon: "Coming soon",
   },
   pricing: {
