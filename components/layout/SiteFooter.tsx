@@ -57,7 +57,7 @@ export function SiteFooter({
     <footer className="site-footer" aria-label={dict.regionLabel}>
       <div className="map-wrap">
         <iframe
-          src="https://www.google.com/maps?q=Calle%20Pelai%2048%2008001%20Barcelona&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          src="https://www.google.com/maps?q=Calle%20Pelai%2046%2008001%20Barcelona&t=&z=15&ie=UTF8&iwloc=&output=embed"
           title={dict.mapTitle}
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
@@ -66,7 +66,7 @@ export function SiteFooter({
         />
         <a
           className="map-card"
-          href="https://www.google.com/maps/place/Carrer+de+Pelai,+48,+08001+Barcelona"
+          href="https://www.google.com/maps/place/Carrer+de+Pelai,+46,+08001+Barcelona"
           target="_blank"
           rel="noopener noreferrer"
         >

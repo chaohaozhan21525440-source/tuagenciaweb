@@ -200,13 +200,13 @@ export const es = {
   },
   footer: {
     regionLabel: "Mapa y contacto",
-    mapTitle: "Mapa de Calle Pelai 48, Barcelona",
+    mapTitle: "Mapa de Calle Pelai 46, Barcelona",
     mapBadge: "Estamos en el centro de Barcelona",
     tagline:
       "Diseñamos webs que convierten visitas en clientes. Páginas rápidas, modernas y optimizadas para SEO.",
     contactInfo: {
       phone: "+34 613 566 027",
-      address: "Calle Pelai 48, 08001 Barcelona",
+      address: "Calle Pelai 46, 08001 Barcelona",
       email: "hola@tuagenciaweb.es",
     },
     services: {

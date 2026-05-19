@@ -201,13 +201,13 @@ export const en: Dict = {
   },
   footer: {
     regionLabel: "Map and contact",
-    mapTitle: "Map of Calle Pelai 48, Barcelona",
+    mapTitle: "Map of Calle Pelai 46, Barcelona",
     mapBadge: "We're right in the heart of Barcelona",
     tagline:
       "We design websites that turn visits into customers. Fast, modern, SEO-optimised pages.",
     contactInfo: {
       phone: "+34 613 566 027",
-      address: "Calle Pelai 48, 08001 Barcelona",
+      address: "Calle Pelai 46, 08001 Barcelona",
       email: "hola@tuagenciaweb.es",
     },
     services: {
