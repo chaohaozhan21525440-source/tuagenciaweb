@@ -69,7 +69,8 @@ export const en: Dict = {
   },
   services: {
     pill: "SERVICES",
-    h2: "Everything your website needs, in a single pack.",
+    h2Top: "Everything your website needs,",
+    h2Accent: "in a single pack.",
     sub:
       "Design, development, SEO and optional maintenance. We cover every stage so you only need to focus on your business.",
     items: [
@@ -77,27 +78,24 @@ export const en: Dict = {
         title: "Bespoke web design",
         body: "Unique, modern websites built to convert.",
         bullets: ["100% custom design", "Mobile-first", "Crafted animations"],
-        badge: "",
       },
       {
         title: "Online shop",
         body: "E-commerce platforms ready to sell from day one.",
         bullets: ["Shopify / WooCommerce", "Payment gateways", "Stock management"],
-        badge: "",
       },
       {
         title: "Technical & content SEO",
         body: "We rank your business on Google where your customers are.",
         bullets: ["Schema + sitemap", "Speed & Core Web Vitals", "Optimised content"],
-        badge: "Average Google ranking 1",
       },
       {
         title: "Optional maintenance",
         body: "If you want, we stick around after launch. No obligation.",
         bullets: ["Updates", "Backups", "Direct support"],
-        badge: "",
       },
     ],
+    seoRank: { label: "Average position", source: "Google", rank: "1" },
     cta: {
       leadBold: "Not sure where to start?",
       lead: "We'll advise you with no strings attached and help you choose what you actually need.",

@@ -1,100 +1,203 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Dict, Locale } from "@/lib/i18n";
 import { path } from "@/lib/i18n";
 
-const BrushIcon = (p: React.SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" {...p}>
-    <path d="M9.06 11.9l8.07-8.06a2.85 2.85 0 1 1 4.03 4.03l-8.06 8.08" />
-    <path d="M7.07 14.94c-1.66 0-3 1.35-3 3.02 0 1.33-2.5 1.52-2 2.02 1.08 1.1 2.49 2.02 4 2.02 2.2 0 4-1.8 4-4.04a3.01 3.01 0 0 0-3-3.02z" />
+type Accent = "blue" | "green" | "purple" | "orange";
+
+const PencilIcon = (p: React.SVGProps<SVGSVGElement>) => (
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...p}>
+    <path d="M3 21c2 0 4-1 5-3l9-9-3-3-9 9c-2 1-3 3-3 6Z" />
+    <path d="M14 6l4 4" />
+    <path d="M17 3l4 4-3 3-4-4Z" />
   </svg>
 );
 const BagIcon = (p: React.SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" {...p}>
-    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
-    <line x1="3" y1="6" x2="21" y2="6" />
-    <path d="M16 10a4 4 0 0 1-8 0" />
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...p}>
+    <path d="M5 7h14l-1.2 12.2A2 2 0 0 1 15.8 21H8.2a2 2 0 0 1-2-1.8L5 7Z" />
+    <path d="M9 7V5a3 3 0 0 1 6 0v2" />
   </svg>
 );
 const SearchIcon = (p: React.SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" {...p}>
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...p}>
     <circle cx="11" cy="11" r="7" />
-    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+    <path d="m20 20-3.5-3.5" />
   </svg>
 );
 const ShieldIcon = (p: React.SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" {...p}>
-    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...p}>
+    <path d="M12 3 5 6v6c0 5 3 8 7 9 4-1 7-4 7-9V6l-7-3Z" />
   </svg>
 );
-const Check = (p: React.SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" {...p}>
-    <polyline points="20 6 9 17 4 12" />
+const CheckMark = () => (
+  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
+    <polyline points="5 12 10 17 19 7" />
+  </svg>
+);
+const ChatIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 12a8 8 0 0 1-12 7l-5 1 1-4a8 8 0 1 1 16-4Z" />
+    <circle cx="8.5" cy="12" r="1" fill="currentColor" stroke="none" />
+    <circle cx="12" cy="12" r="1" fill="currentColor" stroke="none" />
+    <circle cx="15.5" cy="12" r="1" fill="currentColor" stroke="none" />
+  </svg>
+);
+const ArrowRight = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M5 12h14M13 6l6 6-6 6" />
   </svg>
 );
 
-const ICONS = [BrushIcon, BagIcon, SearchIcon, ShieldIcon];
+const DevicesIllustration = () => (
+  <svg width="260" height="220" viewBox="0 0 260 220" fill="none" aria-hidden>
+    <g>
+      <rect x="70" y="30" width="170" height="120" rx="10" fill="#fff" stroke="#cfd6e6" strokeWidth="1.5" />
+      <rect x="80" y="42" width="150" height="36" rx="4" fill="#2f6bff" />
+      <rect x="80" y="86" width="68" height="56" rx="4" fill="#eef2fb" />
+      <rect x="156" y="86" width="74" height="26" rx="3" fill="#eef2fb" />
+      <rect x="156" y="118" width="74" height="24" rx="3" fill="#eef2fb" />
+    </g>
+    <g>
+      <rect x="22" y="62" width="78" height="138" rx="14" fill="#fff" stroke="#cfd6e6" strokeWidth="1.5" />
+      <rect x="30" y="74" width="62" height="10" rx="2" fill="#e6ebf5" />
+      <rect x="30" y="92" width="62" height="58" rx="6" fill="#eef2fb" />
+      <rect x="40" y="118" width="20" height="20" rx="3" fill="#b6c2d6" />
+      <path d="M50 118c-4-8 2-14 6-12-2 4-2 8-6 12Z" fill="#16b364" />
+      <path d="M50 118c4-6-2-12-6-10 2 4 4 6 6 10Z" fill="#16b364" opacity=".7" />
+      <rect x="30" y="158" width="62" height="8" rx="2" fill="#e6ebf5" />
+      <rect x="30" y="172" width="42" height="6" rx="2" fill="#e6ebf5" />
+      <rect x="30" y="184" width="50" height="6" rx="2" fill="#e6ebf5" />
+    </g>
+  </svg>
+);
+
+const SeoChartIllustration = ({ label, source, rank }: { label: string; source: string; rank: string }) => (
+  <svg width="240" height="200" viewBox="0 0 240 200" fill="none" aria-hidden>
+    <rect x="20" y="30" width="200" height="140" rx="14" fill="#fff" stroke="#e3e8f3" strokeWidth="1.5" />
+    <text x="38" y="58" fontFamily="inherit" fontSize="13" fontWeight="700" fill="#0b1326">
+      {label}
+    </text>
+    <text x="38" y="76" fontFamily="inherit" fontSize="12" fill="#6b7388">
+      {source}
+    </text>
+    <rect x="166" y="44" width="36" height="22" rx="6" fill="#e6f7ee" />
+    <text x="184" y="59" textAnchor="middle" fontFamily="inherit" fontSize="12" fontWeight="700" fill="#16b364">
+      {rank}
+    </text>
+    <defs>
+      <linearGradient id="sv-seo-line" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stopColor="#16b364" stopOpacity=".25" />
+        <stop offset="100%" stopColor="#16b364" stopOpacity="0" />
+      </linearGradient>
+    </defs>
+    <path
+      d="M38 142 C 56 138, 64 146, 76 134 S 96 118, 110 120 130 110, 144 96 168 84, 184 74 200 70, 210 64"
+      fill="none"
+      stroke="#16b364"
+      strokeWidth="2.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M38 142 C 56 138, 64 146, 76 134 S 96 118, 110 120 130 110, 144 96 168 84, 184 74 200 70, 210 64 L210 158 38 158 Z"
+      fill="url(#sv-seo-line)"
+    />
+    <line x1="38" y1="158" x2="210" y2="158" stroke="#eef2fb" strokeWidth="1" />
+  </svg>
+);
+
+const ACCENTS: Accent[] = ["blue", "green", "purple", "orange"];
+const ICONS = [PencilIcon, BagIcon, SearchIcon, ShieldIcon];
 
 export function Services({ dict, locale }: { dict: Dict["services"]; locale: Locale }) {
   return (
-    <section id="servicios" className="relative">
-      <div className="mx-auto max-w-[1280px] px-6 py-20 md:px-14 md:py-28">
-        <div className="mx-auto max-w-[760px] text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-[#E5E7EB] bg-white px-4 py-1.5 text-[12.5px] font-semibold uppercase tracking-[0.08em] text-[var(--color-brand)] shadow-sm">
-            <span className="h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_0_3px_rgba(16,185,129,.18)]" />
-            {dict.pill}
+    <section id="servicios" className="services-section">
+      <div className="container-s">
+        <div className="section-head">
+          <span className="badge">
+            <span className="dot" /> {dict.pill}
           </span>
-          <h2 className="mt-5 text-balance text-[clamp(28px,3.4vw,42px)] font-bold leading-[1.1] tracking-[-0.025em] text-[#0B1220]">
-            {dict.h2}
+          <h2 className="section-title">
+            {dict.h2Top}
+            <br />
+            <span className="alt">{dict.h2Accent}</span>
           </h2>
-          <p className="mx-auto mt-4 max-w-[600px] text-[16px] leading-[1.6] text-[#475569]">
-            {dict.sub}
-          </p>
+          <p className="section-sub">{dict.sub}</p>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-7">
+        <div className="grid">
           {dict.items.map((s, i) => {
-            const Icon = ICONS[i] ?? BrushIcon;
+            const accent = ACCENTS[i] ?? "blue";
+            const Icon = ICONS[i] ?? PencilIcon;
             return (
-              <article
-                key={i}
-                className="group relative rounded-[20px] border border-[#EEF1F6] bg-white p-8 shadow-[0_10px_30px_-15px_rgba(15,23,42,.10)] transition hover:-translate-y-0.5 hover:shadow-[0_30px_60px_-25px_rgba(15,23,42,.20)]"
-              >
-                {s.badge && (
-                  <span className="absolute right-5 top-5 inline-flex items-center gap-1.5 rounded-full bg-[#EFF4FF] px-3 py-1 text-[11.5px] font-semibold uppercase tracking-[0.06em] text-[var(--color-brand)] ring-1 ring-inset ring-[#DCE6FB]">
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 shadow-[0_0_0_3px_rgba(16,185,129,.18)]" />
-                    {s.badge}
-                  </span>
-                )}
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#EFF4FF] text-[var(--color-brand)]">
-                  <Icon className="h-[22px] w-[22px]" />
+              <article key={i} className="card">
+                <div className="body">
+                  <div className="top">
+                    <span className={`ico ${accent}`} aria-hidden>
+                      <Icon />
+                    </span>
+                    <div>
+                      <h3>{s.title}</h3>
+                      <p className="lead">{s.body}</p>
+                    </div>
+                  </div>
+                  <div className="rule" />
+                  <ul className="checks">
+                    {s.bullets.map((b) => (
+                      <li key={b}>
+                        <span className={`check ${accent}`}>
+                          <CheckMark />
+                        </span>
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <h3 className="mt-5 text-[18px] font-bold tracking-[-0.01em] text-[#0B1220]">{s.title}</h3>
-                <p className="mt-2 text-[14px] leading-[1.55] text-[#64748B]">{s.body}</p>
-                <ul className="mt-5 space-y-2.5">
-                  {s.bullets.map((b) => (
-                    <li key={b} className="flex items-start gap-2.5 text-[14px] text-[#0F172A]">
-                      <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#D1FADF] text-emerald-600">
-                        <Check className="h-3 w-3" />
-                      </span>
-                      {b}
-                    </li>
-                  ))}
-                </ul>
+                <div className={`illu ${accent}`} aria-hidden>
+                  <div className="halo" />
+                  {i === 0 && <DevicesIllustration />}
+                  {i === 1 && (
+                    <Image
+                      src="/services/basket.png"
+                      alt=""
+                      width={260}
+                      height={240}
+                      className="illu-img"
+                    />
+                  )}
+                  {i === 2 && (
+                    <SeoChartIllustration
+                      label={dict.seoRank.label}
+                      source={dict.seoRank.source}
+                      rank={dict.seoRank.rank}
+                    />
+                  )}
+                  {i === 3 && (
+                    <Image
+                      src="/services/shield.png"
+                      alt=""
+                      width={260}
+                      height={240}
+                      className="illu-img"
+                    />
+                  )}
+                </div>
               </article>
             );
           })}
         </div>
 
-        <div className="mt-14 flex flex-col items-center gap-5 rounded-[24px] border border-[#EEF1F6] bg-gradient-to-br from-[#F6F9FF] to-white px-6 py-10 text-center md:mt-16 md:flex-row md:justify-between md:gap-8 md:px-12 md:text-left">
-          <p className="max-w-[640px] text-[16px] leading-[1.6] text-[#475569]">
-            <strong className="font-semibold text-[#0B1220]">{dict.cta.leadBold}</strong>{" "}
-            {dict.cta.lead}
-          </p>
-          <Link
-            href={path("contact", locale)}
-            className="inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--color-brand)] px-6 py-3 text-[14.5px] font-semibold text-white shadow-[0_18px_40px_-12px_rgba(37,99,235,0.55)] transition-colors hover:bg-[var(--color-brand-hover)]"
-          >
+        <div className="cta-bar">
+          <div className="chat" aria-hidden>
+            <ChatIcon />
+          </div>
+          <div className="copy">
+            <strong>{dict.cta.leadBold}</strong>
+            <span>{dict.cta.lead}</span>
+          </div>
+          <Link href={path("contact", locale)} className="btn">
             {dict.cta.button}
+            <ArrowRight />
           </Link>
         </div>
       </div>

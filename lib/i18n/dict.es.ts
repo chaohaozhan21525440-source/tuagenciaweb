@@ -67,7 +67,8 @@ export const es = {
   },
   services: {
     pill: "SERVICIOS",
-    h2: "Todo lo que tu web necesita, en un solo pack.",
+    h2Top: "Todo lo que tu web necesita,",
+    h2Accent: "en un solo pack.",
     sub:
       "Diseño, desarrollo, SEO y mantenimiento opcional. Cubrimos cada etapa para que tú solo te preocupes de tu negocio.",
     items: [
@@ -75,27 +76,24 @@ export const es = {
         title: "Diseño web a medida",
         body: "Webs únicas, modernas y orientadas a conversión.",
         bullets: ["Diseño 100% personalizado", "Mobile-first", "Animaciones cuidadas"],
-        badge: "",
       },
       {
         title: "Tienda online",
         body: "Plataformas de e-commerce listas para vender desde el día 1.",
         bullets: ["Shopify / WooCommerce", "Pasarelas de pago", "Gestión de stock"],
-        badge: "",
       },
       {
         title: "SEO técnico y de contenidos",
         body: "Posicionamos tu negocio en Google donde están tus clientes.",
         bullets: ["Schema + sitemap", "Velocidad y Core Web Vitals", "Contenidos optimizados"],
-        badge: "Posición media Google 1",
       },
       {
         title: "Mantenimiento opcional",
         body: "Si quieres, nos quedamos cerca después del lanzamiento. Sin obligación.",
         bullets: ["Actualizaciones", "Backups", "Soporte directo"],
-        badge: "",
       },
     ],
+    seoRank: { label: "Posición media", source: "Google", rank: "1" },
     cta: {
       leadBold: "¿No sabes por dónde empezar?",
       lead:
