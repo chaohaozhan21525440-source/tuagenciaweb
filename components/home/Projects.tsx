@@ -7,7 +7,6 @@ import type { Dict } from "@/lib/i18n";
 
 const AUTOPLAY_MS = 3800;
 const TRANSITION_MS = 700;
-const CLONE_COUNT = 3;
 
 const ArrowLeft = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
@@ -87,9 +86,12 @@ function ProjectCard({ p, dict }: { p: Project; dict: Dict["projects"] }) {
 
 function Carousel({ items, dict, ariaLabel }: { items: Project[]; dict: Dict["projects"]; ariaLabel: string }) {
   const N = items.length;
-  const list = [...items, ...items.slice(0, CLONE_COUNT)];
+  // Render 3 full copies so we have a large buffer on both sides; start in the
+  // middle copy. Forward overflow snaps back by N, backward overflow snaps
+  // forward by N — both invisible because the new position is visually identical.
+  const list = [...items, ...items, ...items];
 
-  const [idx, setIdx] = useState(0);
+  const [idx, setIdx] = useState(N);
   const [noAnim, setNoAnim] = useState(false);
   const pausedRef = useRef(false);
 
@@ -101,25 +103,25 @@ function Carousel({ items, dict, ariaLabel }: { items: Project[]; dict: Dict["pr
     return () => window.clearInterval(id);
   }, []);
 
+  // Bidirectional snap: keep idx in [N, 2N) by jumping ±N after the transition.
   useEffect(() => {
-    if (idx < N) return;
-    const t = window.setTimeout(() => {
-      setNoAnim(true);
-      setIdx(0);
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => setNoAnim(false));
-      });
-    }, TRANSITION_MS);
-    return () => window.clearTimeout(t);
+    if (idx >= 2 * N || idx < N) {
+      const t = window.setTimeout(() => {
+        setNoAnim(true);
+        setIdx((i) => (i >= 2 * N ? i - N : i + N));
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => setNoAnim(false));
+        });
+      }, TRANSITION_MS);
+      return () => window.clearTimeout(t);
+    }
   }, [idx, N]);
 
   const goNext = useCallback(() => setIdx((i) => i + 1), []);
-  const goPrev = useCallback(() => {
-    setIdx((i) => (i <= 0 ? N - 1 : i - 1));
-  }, [N]);
-  const goTo = useCallback((j: number) => setIdx(j), []);
+  const goPrev = useCallback(() => setIdx((i) => i - 1), []);
+  const goTo = useCallback((j: number) => setIdx(N + j), [N]);
 
-  const activeDot = ((idx % N) + N) % N;
+  const activeDot = (((idx - N) % N) + N) % N;
 
   return (
     <div
