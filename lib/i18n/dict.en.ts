@@ -128,6 +128,12 @@ export const en: Dict = {
       "Conceptual projects guided by publicly available design references. They do not represent official collaborations with the brands mentioned.",
     comingSoon: "Coming soon",
   },
+  partners: {
+    title: "OUR PARTNERS",
+    scrollLabel: "See more",
+    tagline:
+      "Tools and platforms we use to build, measure and optimise digital projects.",
+  },
   pricing: {
     pill: "PRICING",
     h2: "Flat fee. The website is 100% yours.",

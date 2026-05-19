@@ -3,7 +3,7 @@ import { Hero } from "@/components/home/Hero";
 import { TrustBar } from "@/components/home/TrustBar";
 import { Services } from "@/components/home/Services";
 import { Projects } from "@/components/home/Projects";
-import { Pricing } from "@/components/home/Pricing";
+import { Partners } from "@/components/home/Partners";
 import { FAQ } from "@/components/home/FAQ";
 import { getDict } from "@/lib/i18n";
 
@@ -31,7 +31,7 @@ export default function HomeEn() {
       <TrustBar dict={dict.trustBar} />
       <Services dict={dict.services} locale="en" />
       <Projects dict={dict.projects} />
-      <Pricing dict={dict.pricing} locale="en" />
+      <Partners dict={dict.partners} />
       <FAQ dict={dict.faq} />
     </main>
   );

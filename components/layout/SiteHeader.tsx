@@ -42,7 +42,6 @@ export function SiteHeader({
   const nav = [
     { href: sectionPath("home", locale, "services"), label: dict.services },
     { href: sectionPath("home", locale, "projects"), label: dict.projects },
-    { href: sectionPath("home", locale, "pricing"), label: dict.pricing },
     { href: path("about", locale), label: dict.about },
     { href: path("contact", locale), label: dict.contact },
   ];

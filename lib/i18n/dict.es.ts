@@ -127,6 +127,12 @@ export const es = {
       "Proyectos conceptuales orientados en referencias públicas de diseño. No representan colaboraciones oficiales con las marcas mencionadas.",
     comingSoon: "Próximamente",
   },
+  partners: {
+    title: "NUESTROS PARTNERS",
+    scrollLabel: "Ver más",
+    tagline:
+      "Herramientas y plataformas que utilizamos para construir, medir y optimizar proyectos digitales.",
+  },
   pricing: {
     pill: "PRECIOS",
     h2: "Pack único. La web es 100% tuya.",

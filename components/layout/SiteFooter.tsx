@@ -31,7 +31,6 @@ export function SiteFooter({
           <div className="foot-col">
             <h5>{dict.resources.title}</h5>
             <a href={sectionPath("home", locale, "faq")}>{dict.resources.faq}</a>
-            <a href={sectionPath("home", locale, "pricing")}>{dict.resources.pricing}</a>
             <a href={sectionPath("home", locale, "projects")}>{dict.resources.projects}</a>
           </div>
           <div className="foot-col">
