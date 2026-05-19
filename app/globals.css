@@ -1630,6 +1630,184 @@
   line-height: 1.55;
 }
 
+/* In-depth detail blocks (one per service) */
+.services-page .sp-details {
+  padding: 56px 0 32px;
+  background: #fff;
+}
+@media (min-width: 1024px) { .services-page .sp-details { padding: 88px 0 56px; } }
+.services-page .sp-details .head {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 56px;
+}
+.services-page .sp-details .head h2 {
+  margin: 18px 0 12px;
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 1.15;
+  letter-spacing: -.02em;
+  font-weight: 800;
+  color: var(--sp-ink);
+}
+.services-page .sp-details .head p {
+  color: var(--sp-muted);
+  font-size: 15.5px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.services-page .dt-list {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+@media (min-width: 1024px) { .services-page .dt-list { gap: 72px; } }
+
+.services-page .dt-row {
+  --dt-bg: rgba(37, 99, 235, .06);
+  --dt-color: #2563eb;
+  --dt-color-strong: #1d4ed8;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  align-items: center;
+}
+@media (min-width: 1024px) {
+  .services-page .dt-row {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 56px;
+  }
+  .services-page .dt-row.reverse .dt-copy { order: 2; }
+  .services-page .dt-row.reverse .dt-visual { order: 1; }
+}
+
+.services-page .dt-row.accent-blue   { --dt-bg: rgba(37, 99, 235, .08);  --dt-color: #2563eb; --dt-color-strong: #1d4ed8; }
+.services-page .dt-row.accent-green  { --dt-bg: rgba(22, 179, 100, .08); --dt-color: #16b364; --dt-color-strong: #0f8a4d; }
+.services-page .dt-row.accent-purple { --dt-bg: rgba(109, 92, 240, .08); --dt-color: #6d5cf0; --dt-color-strong: #4f3fd0; }
+.services-page .dt-row.accent-orange { --dt-bg: rgba(245, 148, 69, .10); --dt-color: #f59445; --dt-color-strong: #c97328; }
+
+.services-page .dt-copy { display: flex; flex-direction: column; }
+.services-page .dt-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.services-page .dt-number {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .04em;
+  color: var(--dt-color);
+  background: var(--dt-bg);
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+.services-page .dt-tag {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  color: var(--sp-muted);
+}
+.services-page .dt-title {
+  margin: 14px 0 12px;
+  font-size: clamp(24px, 2.8vw, 34px);
+  line-height: 1.15;
+  letter-spacing: -.02em;
+  font-weight: 800;
+  color: var(--sp-ink);
+}
+.services-page .dt-lead {
+  margin: 0 0 22px;
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: var(--sp-muted);
+  max-width: 60ch;
+}
+.services-page .dt-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+@media (min-width: 640px) {
+  .services-page .dt-bullets { grid-template-columns: 1fr 1fr; column-gap: 24px; }
+}
+.services-page .dt-bullets li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: #1c2540;
+}
+.services-page .dt-check {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: var(--dt-bg);
+  color: var(--dt-color);
+  margin-top: 2px;
+}
+
+.services-page .dt-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.services-page .dt-card {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  aspect-ratio: 4 / 5;
+  background: linear-gradient(160deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid #eef1f6;
+  border-radius: 28px;
+  box-shadow: 0 30px 60px -28px rgba(15, 22, 40, .18);
+  padding: 32px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.services-page .dt-card::before {
+  content: "";
+  position: absolute;
+  inset: -40% -20% auto auto;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  background: var(--dt-bg);
+  filter: blur(2px);
+  z-index: 0;
+}
+.services-page .dt-card > * { position: relative; z-index: 1; }
+.services-page .dt-card-number {
+  font-size: clamp(56px, 8vw, 96px);
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -.04em;
+  color: var(--dt-color);
+}
+.services-page .dt-card-label {
+  display: inline-block;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  color: var(--sp-muted);
+  margin-top: 8px;
+}
+.services-page .dt-card-title {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -.015em;
+  color: var(--sp-ink);
+  line-height: 1.15;
+}
+
 .services-page .sp-marketing {
   padding: 64px 0 80px;
   background: #fbfcfe;

@@ -345,6 +345,76 @@ export const en: Dict = {
     h1: "Web design, digital marketing and SEO services",
     sub:
       "We build websites that convert and digital strategies focused on results.",
+    detailsPill: "IN DEPTH",
+    detailsH2: "How we work each service",
+    detailsSub:
+      "Clear processes, concrete deliverables and measurable results. Here's what every block includes.",
+    details: [
+      {
+        accent: "blue",
+        number: "01",
+        eyebrow: "DESIGN",
+        title: "Bespoke web design",
+        lead:
+          "We design unique websites, aligned with your brand and built to convert. Every project starts from a strategic wireframe, not a generic template. Mobile-first, with clear visual hierarchy, fast load times and crafted animations that support — not distract.",
+        bullets: [
+          "100% custom design, no templates",
+          "Wireframe and prototype approved before any code",
+          "Mobile-first and accessible (WCAG 2.1 AA)",
+          "Scalable design system to grow with you",
+          "Subtle animations, microinteractions and transitions",
+          "Image, font and progressive-loading optimisation",
+        ],
+      },
+      {
+        accent: "green",
+        number: "02",
+        eyebrow: "E-COMMERCE",
+        title: "Online store",
+        lead:
+          "We build e-commerce ready to sell from day 1, with Shopify or WooCommerce depending on your volume and budget. We set up payment gateways, shipping, taxes and a clean admin panel so you or your team can manage orders without depending on us.",
+        bullets: [
+          "Shopify, WooCommerce or headless depending on the case",
+          "Gateways: Stripe, PayPal, Bizum, bank transfer",
+          "Stock, variants and discount management",
+          "Automated shipping and tax calculation",
+          "Integration with CRM, email marketing and analytics",
+          "Optimised checkout: fewer fields, more conversion",
+        ],
+      },
+      {
+        accent: "purple",
+        number: "03",
+        eyebrow: "POSITIONING",
+        title: "Technical & content SEO",
+        lead:
+          "No smoke and mirrors: real technical SEO (schema markup, sitemap, Core Web Vitals) and content optimised for the queries that matter to your business. Search Console and Analytics 4 set up from day 1 to measure and improve continuously.",
+        bullets: [
+          "Technical audit + keyword plan",
+          "Schema markup and XML sitemap",
+          "Core Web Vitals optimisation (LCP, CLS, INP)",
+          "Open Graph and meta tags per page",
+          "Optimised content, never filler",
+          "Search Console and GA4 set up with events",
+        ],
+      },
+      {
+        accent: "orange",
+        number: "04",
+        eyebrow: "AFTER LAUNCH",
+        title: "Optional maintenance",
+        lead:
+          "If you want to delegate operations after launch, we stick around. Only if you want — no lock-in. We cover updates, backups, direct support and small improvements so the site keeps performing month after month.",
+        bullets: [
+          "Platform, theme and plugin updates",
+          "Daily automatic backups with fast restore",
+          "Direct support by email and WhatsApp",
+          "Small improvements and tweaks included monthly",
+          "Uptime and Core Web Vitals monitoring",
+          "No lock-in: cancel whenever you want",
+        ],
+      },
+    ],
     marketing: {
       pill: "MARKETING & SEO",
       h2: "End-to-end digital strategy",

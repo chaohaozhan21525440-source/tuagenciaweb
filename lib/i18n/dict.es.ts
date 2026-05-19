@@ -344,6 +344,76 @@ export const es = {
     h1: "Servicios de diseño web, marketing digital y SEO",
     sub:
       "Creamos webs que convierten y estrategias digitales orientadas a resultados.",
+    detailsPill: "EN PROFUNDIDAD",
+    detailsH2: "Cómo trabajamos cada servicio",
+    detailsSub:
+      "Procesos claros, entregables concretos y resultados medibles. Esto es lo que incluye cada bloque.",
+    details: [
+      {
+        accent: "blue",
+        number: "01",
+        eyebrow: "DISEÑO",
+        title: "Diseño web a medida",
+        lead:
+          "Diseñamos webs únicas, alineadas con tu marca y orientadas a convertir visitas en clientes. Cada proyecto parte de un wireframe estratégico, no de una plantilla genérica. Trabajamos mobile-first, con jerarquía visual clara, tiempos de carga rápidos y animaciones cuidadas que aportan sin distraer.",
+        bullets: [
+          "Diseño 100% personalizado, sin plantillas",
+          "Wireframe y prototipo aprobados antes de programar",
+          "Mobile-first y accesible (WCAG 2.1 AA)",
+          "Sistema de diseño escalable para crecer",
+          "Animaciones sutiles, microinteracciones y transiciones",
+          "Optimización de imágenes, fuentes y carga progresiva",
+        ],
+      },
+      {
+        accent: "green",
+        number: "02",
+        eyebrow: "E-COMMERCE",
+        title: "Tienda online",
+        lead:
+          "Construimos e-commerce listos para vender desde el día 1, con Shopify o WooCommerce según tu volumen y presupuesto. Configuramos pasarelas de pago, envíos, impuestos y un panel de gestión claro para que tú o tu equipo administréis pedidos sin depender de nosotros.",
+        bullets: [
+          "Shopify, WooCommerce o headless según el caso",
+          "Pasarelas: Stripe, PayPal, Bizum, transferencia",
+          "Gestión de stock, variantes y descuentos",
+          "Envíos y cálculo de impuestos automatizado",
+          "Integración con CRM, email marketing y analítica",
+          "Checkout optimizado: menos campos, más conversión",
+        ],
+      },
+      {
+        accent: "purple",
+        number: "03",
+        eyebrow: "POSICIONAMIENTO",
+        title: "SEO técnico y de contenidos",
+        lead:
+          "No vendemos humo: hacemos SEO técnico real (schema markup, sitemap, Core Web Vitals) y producimos contenidos optimizados para las consultas que importan a tu negocio. Configuramos Google Search Console y Analytics 4 desde el día 1 para medir y mejorar continuamente.",
+        bullets: [
+          "Auditoría técnica + plan de keywords",
+          "Schema markup y sitemap XML",
+          "Optimización de Core Web Vitals (LCP, CLS, INP)",
+          "Open Graph y meta tags por página",
+          "Contenidos optimizados, no relleno",
+          "Search Console y GA4 configurados con eventos",
+        ],
+      },
+      {
+        accent: "orange",
+        number: "04",
+        eyebrow: "DESPUÉS DEL LANZAMIENTO",
+        title: "Mantenimiento opcional",
+        lead:
+          "Si quieres delegarnos la operativa después del lanzamiento, nos quedamos cerca. Solo si quieres: no hay permanencia. Cubrimos actualizaciones, backups, soporte directo y pequeñas mejoras puntuales para que la web siga rindiendo mes a mes.",
+        bullets: [
+          "Actualizaciones de plataforma, temas y plugins",
+          "Backups automáticos diarios y restauración rápida",
+          "Soporte directo por email y WhatsApp",
+          "Pequeñas mejoras y cambios incluidos al mes",
+          "Monitorización de uptime y de Core Web Vitals",
+          "Sin permanencia: cancelable cuando quieras",
+        ],
+      },
+    ],
     marketing: {
       pill: "MARKETING & SEO",
       h2: "Estrategia digital end-to-end",

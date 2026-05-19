@@ -9,6 +9,12 @@ const ArrowRight = () => (
   </svg>
 );
 
+const Check = () => (
+  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+    <polyline points="5 12 10 17 19 7" />
+  </svg>
+);
+
 export function ServicesPageContent({
   dict,
   servicesDict,
@@ -31,6 +37,51 @@ export function ServicesPageContent({
       </section>
 
       <Services dict={servicesDict} locale={locale} />
+
+      <section className="sp-details">
+        <div className="container-sp">
+          <div className="head">
+            <span className="pill">
+              <span className="dot" /> {dict.detailsPill}
+            </span>
+            <h2>{dict.detailsH2}</h2>
+            <p>{dict.detailsSub}</p>
+          </div>
+
+          <div className="dt-list">
+            {dict.details.map((d, i) => (
+              <article
+                key={d.number}
+                className={`dt-row accent-${d.accent}${i % 2 === 1 ? " reverse" : ""}`}
+              >
+                <div className="dt-copy">
+                  <div className="dt-eyebrow">
+                    <span className="dt-number">{d.number}</span>
+                    <span className="dt-tag">{d.eyebrow}</span>
+                  </div>
+                  <h3 className="dt-title">{d.title}</h3>
+                  <p className="dt-lead">{d.lead}</p>
+                  <ul className="dt-bullets">
+                    {d.bullets.map((b) => (
+                      <li key={b}>
+                        <span className="dt-check"><Check /></span>
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="dt-visual" aria-hidden>
+                  <div className="dt-card">
+                    <span className="dt-card-number">{d.number}</span>
+                    <span className="dt-card-label">{d.eyebrow}</span>
+                    <div className="dt-card-title">{d.title}</div>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section className="sp-marketing">
         <div className="container-sp">
