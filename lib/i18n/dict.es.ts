@@ -190,6 +190,27 @@ export const es = {
       },
     ],
   },
+  contactFooter: {
+    regionLabel: "Mapa y contacto",
+    mapTitle: "Mapa de Calle Pelai 48, Barcelona",
+    mapBadge: "Estamos en el centro de Barcelona",
+    tagline: "Agencia de diseño y desarrollo web en Barcelona.",
+    servicesTitle: "Servicios",
+    servicesLinks: [
+      "Diseño web",
+      "Tiendas online",
+      "SEO técnico",
+      "Mantenimiento web",
+    ],
+    moreTitle: "Más información",
+    moreLinks: {
+      projects: "Proyectos",
+      about: "Sobre nosotros",
+      contact: "Contacto",
+      blog: "Blog",
+      legal: "Aviso legal",
+    },
+  },
   footer: {
     tagline:
       "Diseñamos webs que convierten visitas en clientes. Páginas rápidas, modernas y optimizadas para SEO.",

@@ -191,6 +191,27 @@ export const en: Dict = {
       },
     ],
   },
+  contactFooter: {
+    regionLabel: "Map and contact",
+    mapTitle: "Map of Calle Pelai 48, Barcelona",
+    mapBadge: "We're right in the heart of Barcelona",
+    tagline: "Web design and development agency in Barcelona.",
+    servicesTitle: "Services",
+    servicesLinks: [
+      "Web design",
+      "Online stores",
+      "Technical SEO",
+      "Website maintenance",
+    ],
+    moreTitle: "More information",
+    moreLinks: {
+      projects: "Projects",
+      about: "About us",
+      contact: "Contact",
+      blog: "Blog",
+      legal: "Legal notice",
+    },
+  },
   footer: {
     tagline:
       "We design websites that turn visits into customers. Fast, modern, SEO-optimised pages.",
