@@ -1,9 +1,11 @@
 import type { Locale } from "./config";
 
-export type RouteKey = "home" | "about" | "contact";
+export type RouteKey = "home" | "services" | "blog" | "about" | "contact";
 
 export const ROUTES: Record<RouteKey, Record<Locale, string>> = {
   home: { es: "/es", en: "/en" },
+  services: { es: "/es/servicios", en: "/en/services" },
+  blog: { es: "/es/blog", en: "/en/blog" },
   about: { es: "/es/sobre-nosotros", en: "/en/about" },
   contact: { es: "/es/contacto", en: "/en/contact" },
 };

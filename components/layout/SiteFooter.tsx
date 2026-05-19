@@ -125,7 +125,7 @@ export function SiteFooter({
               <ul className="col-links">
                 <li><a href={sectionPath("home", locale, "faq")}>{dict.resources.faq}</a></li>
                 <li><a href={sectionPath("home", locale, "projects")}>{dict.resources.projects}</a></li>
-                <li><a href="#blog">{dict.resources.blog}</a></li>
+                <li><a href={path("blog", locale)}>{dict.resources.blog}</a></li>
               </ul>
             </div>
 

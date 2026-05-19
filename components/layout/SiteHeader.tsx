@@ -40,8 +40,10 @@ export function SiteHeader({
   }, []);
 
   const nav = [
-    { href: sectionPath("home", locale, "services"), label: dict.services },
+    { href: path("home", locale), label: dict.home },
+    { href: path("services", locale), label: dict.services },
     { href: sectionPath("home", locale, "projects"), label: dict.projects },
+    { href: path("blog", locale), label: dict.blog },
     { href: path("about", locale), label: dict.about },
     { href: path("contact", locale), label: dict.contact },
   ];
@@ -65,7 +67,7 @@ export function SiteHeader({
           />
         </Link>
 
-        <nav className="mx-auto hidden items-center gap-9 text-[14.5px] font-medium text-[var(--color-ink-700)] lg:flex">
+        <nav className="mx-auto hidden items-center gap-8 text-[15px] font-medium text-[var(--color-ink-700)] lg:flex">
           {nav.map((item) => (
             <a key={item.href} href={item.href} className="hover:text-[var(--color-ink-900)]">
               {item.label}

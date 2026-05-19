@@ -18,8 +18,10 @@ export const es = {
     },
   },
   nav: {
+    home: "Inicio",
     services: "Servicios",
     projects: "Proyectos",
+    blog: "Blog",
     pricing: "Precios",
     about: "Sobre nosotros",
     contact: "Contacto",
@@ -330,6 +332,115 @@ export const es = {
     en: "English",
     shortEs: "ES",
     shortEn: "EN",
+  },
+  servicesPage: {
+    pill: "SERVICIOS",
+    h1: "Servicios de diseño web, marketing digital y SEO",
+    sub:
+      "Creamos webs que convierten y estrategias digitales orientadas a resultados.",
+    marketing: {
+      pill: "MARKETING & SEO",
+      h2: "Estrategia digital end-to-end",
+      sub:
+        "Combinamos posicionamiento orgánico, paid media, analítica y optimización para que cada visita rinda al máximo.",
+      items: [
+        { title: "SEO local",        body: "Posiciónate en Google Maps y captura clientes de tu zona." },
+        { title: "SEO técnico",      body: "Schema, sitemap, Core Web Vitals y arquitectura optimizada." },
+        { title: "Link building",    body: "Estrategia de enlaces de calidad y outreach editorial." },
+        { title: "Google Ads",       body: "Campañas de búsqueda y display orientadas a conversión." },
+        { title: "Meta Ads",         body: "Anuncios en Instagram y Facebook con creatividad y datos." },
+        { title: "Analítica web",    body: "GA4, eventos, embudos y dashboards accionables." },
+        { title: "CRO",              body: "Conversion Rate Optimization: tests A/B y mejora continua." },
+        { title: "Automatizaciones", body: "Email marketing, CRM y flujos que escalan tu negocio." },
+      ],
+    },
+    cta: {
+      eyebrow: "EMPECEMOS",
+      h2: "¿Hablamos de tu proyecto?",
+      sub: "Te preparamos una propuesta personalizada en menos de 24 horas. Sin compromiso.",
+      button: "Solicitar presupuesto",
+    },
+  },
+  blogPage: {
+    pill: "BLOG",
+    h1: "Insights y recursos",
+    sub:
+      "Consejos, estrategias y guías sobre diseño web, SEO y conversión.",
+    readMore: "Leer artículo",
+    articles: [
+      {
+        slug: "cuanto-cuesta-pagina-web-2026",
+        category: "Precios",
+        date: "15 ene 2026",
+        title: "Cuánto cuesta una página web profesional en 2026",
+        excerpt:
+          "Desglosamos qué incluye realmente una web profesional y los rangos de precio que puedes esperar este año.",
+        theme: "blue",
+      },
+      {
+        slug: "seo-local-barcelona",
+        category: "SEO",
+        date: "03 feb 2026",
+        title: "SEO local para negocios en Barcelona: guía completa",
+        excerpt:
+          "Cómo posicionar tu negocio en Google Maps y captar clientes de tu zona con SEO local bien hecho.",
+        theme: "green",
+      },
+      {
+        slug: "wordpress-vs-webflow",
+        category: "Plataformas",
+        date: "18 feb 2026",
+        title: "WordPress vs Webflow: qué plataforma elegir",
+        excerpt:
+          "Comparamos las dos plataformas más populares y te ayudamos a decidir cuál encaja mejor en tu proyecto.",
+        theme: "purple",
+      },
+      {
+        slug: "mejorar-velocidad-web",
+        category: "Performance",
+        date: "05 mar 2026",
+        title: "Cómo mejorar la velocidad de tu web",
+        excerpt:
+          "Optimizaciones prácticas para conseguir un Core Web Vitals impecable y una web más rápida.",
+        theme: "orange",
+      },
+      {
+        slug: "diseno-web-conversion",
+        category: "Diseño",
+        date: "22 mar 2026",
+        title: "Diseño web orientado a conversión",
+        excerpt:
+          "Los principios de UX, jerarquía visual y persuasión que convierten visitas en clientes.",
+        theme: "blue",
+      },
+      {
+        slug: "errores-paginas-corporativas",
+        category: "Diseño",
+        date: "10 abr 2026",
+        title: "Errores comunes en páginas corporativas",
+        excerpt:
+          "Diez patrones que están saboteando tu web — y cómo arreglarlos sin rehacerla desde cero.",
+        theme: "graphite",
+      },
+      {
+        slug: "shopify-vs-woocommerce",
+        category: "E-commerce",
+        date: "28 abr 2026",
+        title: "Shopify vs WooCommerce",
+        excerpt:
+          "Qué plataforma elegir para tu tienda online según tipo de producto, presupuesto y escala.",
+        theme: "green",
+      },
+      {
+        slug: "que-es-cro",
+        category: "Conversión",
+        date: "12 may 2026",
+        title: "Qué es CRO y por qué aumenta tus ventas",
+        excerpt:
+          "Cómo aplicar Conversion Rate Optimization para conseguir más resultados con el mismo tráfico.",
+        theme: "purple",
+      },
+    ],
   },
 };
 
