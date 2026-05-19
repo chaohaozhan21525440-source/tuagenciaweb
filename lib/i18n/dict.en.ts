@@ -128,6 +128,14 @@ export const en: Dict = {
       "Conceptual projects guided by publicly available design references. They do not represent official collaborations with the brands mentioned.",
     comingSoon: "Coming soon",
   },
+  brands: {
+    pill: "REFERENCES",
+    h2: "Brands that inspire us",
+    sub:
+      "Companies whose digital strategies shape our approach to design, conversion and positioning.",
+    scrollLabel: "See more",
+    note: "We continuously study strategies, experiences and technologies to take them to the next level.",
+  },
   partners: {
     title: "OUR PARTNERS",
     scrollLabel: "See more",

@@ -127,6 +127,14 @@ export const es = {
       "Proyectos conceptuales orientados en referencias públicas de diseño. No representan colaboraciones oficiales con las marcas mencionadas.",
     comingSoon: "Próximamente",
   },
+  brands: {
+    pill: "REFERENCIAS",
+    h2: "Marcas de referencia",
+    sub:
+      "Empresas con estrategias digitales que inspiran nuestro enfoque de diseño, conversión y posicionamiento.",
+    scrollLabel: "Ver más",
+    note: "Analizamos continuamente estrategias, experiencias y tecnologías para llevarlas al siguiente nivel.",
+  },
   partners: {
     title: "NUESTROS PARTNERS",
     scrollLabel: "Ver más",

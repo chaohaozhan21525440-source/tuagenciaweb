@@ -1268,6 +1268,163 @@
   box-shadow: 0 10px 24px rgba(37,99,235,.28), inset 0 -10px 16px rgba(37,99,235,.10);
 }
 
+/* ===== Marcas de referencia — scoped ===== */
+.marcas-section {
+  --mr-blue:      #2563ff;
+  --mr-blue-600:  #1d4ed8;
+  --mr-ink:       #0f172a;
+  --mr-muted:     #64748b;
+  --mr-bg:        #f7f8fa;
+  --mr-border:    #e8edf7;
+  --mr-logo:      #6b7280;
+
+  background: var(--mr-bg);
+  color: var(--mr-ink);
+  padding: 120px 32px;
+}
+@media (max-width: 1023px) { .marcas-section { padding: 80px 24px; } }
+
+.marcas-section .container-mr { max-width: 1400px; margin: 0 auto; }
+
+.marcas-section .head {
+  text-align: center;
+  display: flex; flex-direction: column; align-items: center;
+}
+.marcas-section .badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 9px 18px 9px 14px;
+  background: rgba(37, 99, 255, 0.08);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  color: var(--mr-blue);
+}
+.marcas-section .badge .dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--mr-blue);
+}
+
+.marcas-section .title {
+  margin-top: 28px;
+  font-size: clamp(38px, 5.4vw, 72px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -.025em;
+  color: var(--mr-ink);
+}
+
+.marcas-section .subtitle {
+  margin-top: 22px;
+  max-width: 900px;
+  font-size: clamp(17px, 1.6vw, 24px);
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--mr-muted);
+  text-wrap: pretty;
+}
+
+.marcas-section .chevron-btn {
+  margin-top: 40px;
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: var(--mr-blue);
+  color: #fff;
+  display: inline-flex; align-items: center; justify-content: center;
+  box-shadow: 0 8px 24px rgba(37, 99, 255, 0.28);
+  text-decoration: none;
+  transition: transform .3s ease, box-shadow .3s ease, background .15s ease;
+}
+.marcas-section .chevron-btn:hover {
+  transform: translateY(2px);
+  background: var(--mr-blue-600);
+  box-shadow: 0 12px 28px rgba(37, 99, 255, 0.36);
+}
+
+.marcas-section .logo-grid {
+  margin-top: 110px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  row-gap: 64px;
+  column-gap: 48px;
+}
+@media (max-width: 1023px) {
+  .marcas-section .logo-grid {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 56px; column-gap: 32px;
+    margin-top: 80px;
+  }
+}
+@media (max-width: 640px) {
+  .marcas-section .logo-grid {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 48px; column-gap: 24px;
+  }
+}
+
+.marcas-section .logo-cell {
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+  min-height: 56px;
+}
+@media (min-width: 1024px) {
+  .marcas-section .logo-cell:not(:nth-child(6n))::after {
+    content: "";
+    position: absolute;
+    right: -24px; top: 50%;
+    transform: translateY(-50%);
+    width: 1px; height: 38px;
+    background: var(--mr-border);
+  }
+}
+
+.marcas-section .logo {
+  color: var(--mr-logo);
+  opacity: .55;
+  display: inline-flex; align-items: center; justify-content: center;
+  transition: opacity .3s ease, transform .3s ease, color .3s ease;
+}
+.marcas-section .logo:hover {
+  opacity: 1;
+  transform: scale(1.03);
+  color: var(--mr-blue);
+}
+.marcas-section .logo svg {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+@media (max-width: 640px) {
+  .marcas-section .logo svg { height: 24px; }
+}
+
+.marcas-section .note {
+  margin-top: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+}
+@media (max-width: 1023px) { .marcas-section .note { margin-top: 80px; } }
+@media (max-width: 640px) { .marcas-section .note { gap: 18px; padding: 0 12px; } }
+
+.marcas-section .note .divider {
+  width: 1px; height: 44px;
+  background: var(--mr-border);
+}
+.marcas-section .note .sparkle {
+  color: var(--mr-blue);
+  flex-shrink: 0;
+  display: inline-flex;
+}
+.marcas-section .note p {
+  font-size: clamp(16px, 1.4vw, 18px);
+  line-height: 1.55;
+  color: var(--mr-muted);
+  max-width: 520px;
+  margin: 0;
+}
+
 /* ===== Partners section (marquee) — scoped ===== */
 .partners-section {
   background: #f7f8fa;
