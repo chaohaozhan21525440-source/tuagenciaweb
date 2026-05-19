@@ -2,12 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
-import {
-  getConceptual,
-  getRealClients,
-  type Project,
-  type ProjectMockup,
-} from "@/lib/portfolio";
+import { PROJECTS, type Project, type ProjectMockup } from "@/lib/portfolio";
 import type { Dict } from "@/lib/i18n";
 
 const AUTOPLAY_MS = 3800;
@@ -65,16 +60,14 @@ function ProjectCard({ p, dict }: { p: Project; dict: Dict["projects"] }) {
         <div className="mockup" />
       )}
 
-      {p.conceptual && (
-        <span className="conceptual-pill">
-          <span className="dot" />
-          {dict.conceptualTag}
-        </span>
-      )}
-
       <div className="card-body">
         <h3>{p.name}</h3>
-        <div className="meta">{sector} · {p.year}</div>
+        <div className="meta">
+          {sector} · {p.year}
+          {p.conceptual && (
+            <span className="conceptual-mark"> · *{dict.conceptualTag.toLowerCase()}</span>
+          )}
+        </div>
 
         {p.inspiredBy && (
           <div className="inspired">
@@ -185,9 +178,6 @@ function Carousel({ items, dict, ariaLabel }: { items: Project[]; dict: Dict["pr
 }
 
 export function Projects({ dict }: { dict: Dict["projects"] }) {
-  const realClients = getRealClients();
-  const conceptual = getConceptual();
-
   return (
     <section id="proyectos" className="proyectos-section">
       <div className="container-p">
@@ -199,21 +189,7 @@ export function Projects({ dict }: { dict: Dict["projects"] }) {
           <p className="section-sub">{dict.sub}</p>
         </div>
 
-        <div className="block">
-          <div className="block-head">
-            <h3 className="block-title">{dict.realClientsTitle}</h3>
-            <p className="block-sub">{dict.realClientsSub}</p>
-          </div>
-          <Carousel items={realClients} dict={dict} ariaLabel={dict.realClientsTitle} />
-        </div>
-
-        <div className="block">
-          <div className="block-head">
-            <h3 className="block-title">{dict.conceptualTitle}</h3>
-            <p className="block-sub">{dict.conceptualSub}</p>
-          </div>
-          <Carousel items={conceptual} dict={dict} ariaLabel={dict.conceptualTitle} />
-        </div>
+        <Carousel items={PROJECTS} dict={dict} ariaLabel={dict.h2} />
 
         <p className="legal">{dict.legal}</p>
       </div>
