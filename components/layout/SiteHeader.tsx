@@ -55,9 +55,15 @@ export function SiteHeader({
       )}
     >
       <div className="mx-auto flex max-w-[1280px] items-center px-6 pt-7 pb-3 md:px-8">
-        <Link href={path("home", locale)} className="flex items-center gap-2.5" aria-label="Tuagenciaweb">
-          <Image src="/logo/logo-mark.png" alt="" aria-hidden width={64} height={64} priority className="block h-9 w-auto" />
-          <Image src="/logo/logo-wordmark.png" alt="tuagenciaweb" width={300} height={60} priority className="block h-[22px] w-auto" />
+        <Link href={path("home", locale)} className="flex items-center" aria-label="Tuagenciaweb">
+          <Image
+            src="/logo/logo-design.svg"
+            alt="tuagenciaweb"
+            width={907}
+            height={535}
+            priority
+            className="block h-10 w-auto"
+          />
         </Link>
 
         <nav className="mx-auto hidden items-center gap-9 text-[14.5px] font-medium text-[var(--color-ink-700)] lg:flex">

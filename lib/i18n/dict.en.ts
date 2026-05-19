@@ -62,7 +62,7 @@ export const en: Dict = {
   },
   trustBar: {
     rating: { value: "5.0 average rating", base: "Based on 20+ reviews" },
-    projects: { value: "Over 20 projects", base: "successfully delivered" },
+    projects: { value: "Over 200 projects", base: "successfully delivered" },
     support: { value: "Support & guidance", base: "before, during and after" },
     delivery: { value: "Fast delivery", base: "on agreed deadlines" },
     tech: "Tech we use",

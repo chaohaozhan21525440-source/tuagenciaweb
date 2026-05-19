@@ -60,7 +60,7 @@ export const es = {
   },
   trustBar: {
     rating: { value: "5.0 valoración media", base: "Basado en 20+ reseñas" },
-    projects: { value: "Más de 20 proyectos", base: "entregados con éxito" },
+    projects: { value: "Más de 200 proyectos", base: "entregados con éxito" },
     support: { value: "Soporte y acompañamiento", base: "antes, durante y después" },
     delivery: { value: "Entrega rápida", base: "en plazos acordados" },
     tech: "Tecnologías que usamos",
