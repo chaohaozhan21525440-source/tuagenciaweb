@@ -65,18 +65,9 @@ function ProjectCard({ p, dict }: { p: Project; dict: Dict["projects"] }) {
         <div className="meta">
           {sector} · {p.year}
           {p.conceptual && (
-            <span className="conceptual-mark"> · *{dict.conceptualTag.toLowerCase()}</span>
+            <span className="conceptual-mark"> · #{dict.conceptualTag.toLowerCase()}</span>
           )}
         </div>
-
-        {p.inspiredBy && (
-          <div className="inspired">
-            {dict.inspiredBy}:{" "}
-            <a href={p.inspiredBy.url} target="_blank" rel="noopener noreferrer">
-              {p.inspiredBy.brand}
-            </a>
-          </div>
-        )}
 
         {p.url ? (
           <a href={p.url} target="_blank" rel="noopener noreferrer" className="view">
