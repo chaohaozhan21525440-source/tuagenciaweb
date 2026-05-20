@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ServicesPageContent } from "@/components/services/ServicesPageContent";
 import { getDict } from "@/lib/i18n";
+import { buildFaqPageSchema } from "@/lib/seo/faq-schema";
 
 const dict = getDict("en");
 
@@ -20,5 +21,14 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesEn() {
-  return <ServicesPageContent dict={dict.servicesPage} locale="en" />;
+  const faqJson = buildFaqPageSchema(dict.servicesPage.faq.items);
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: faqJson }}
+      />
+      <ServicesPageContent dict={dict.servicesPage} locale="en" />
+    </>
+  );
 }
