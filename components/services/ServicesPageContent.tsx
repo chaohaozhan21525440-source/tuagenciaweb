@@ -5,6 +5,7 @@ import { ProcessTimeline } from "./sr/ProcessTimeline";
 import { ComparisonTable } from "./sr/ComparisonTable";
 import { MarketingGrid } from "./sr/MarketingGrid";
 import { ServicesFaq } from "./sr/ServicesFaq";
+import { ServicesCta } from "./sr/ServicesCta";
 
 export function ServicesPageContent({ dict, locale }: { dict: Dict["servicesPage"]; locale: Locale }) {
   return (
@@ -15,6 +16,7 @@ export function ServicesPageContent({ dict, locale }: { dict: Dict["servicesPage
       <ComparisonTable dict={dict.comparison} />
       <MarketingGrid dict={dict.marketing} />
       <ServicesFaq dict={dict.faq} />
+      <ServicesCta dict={dict.cta} locale={locale} />
     </main>
   );
 }
