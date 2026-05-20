@@ -341,101 +341,203 @@ export const en: Dict = {
     shortEn: "EN",
   },
   servicesPage: {
-    pill: "SERVICES",
-    h1: "Web design, digital marketing and SEO services",
-    sub:
-      "We build websites that convert and digital strategies focused on results.",
-    detailsPill: "IN DEPTH",
-    detailsH2: "How we work each service",
-    detailsSub:
-      "Clear processes, concrete deliverables and measurable results. Here's what every block includes.",
-    details: [
-      {
-        accent: "blue",
-        number: "01",
-        eyebrow: "DESIGN",
-        title: "Bespoke web design",
-        lead:
-          "We design unique websites, aligned with your brand and built to convert. Every project starts from a strategic wireframe, not a generic template. Mobile-first, with clear visual hierarchy, fast load times and crafted animations that support — not distract.",
-        bullets: [
-          "100% custom design, no templates",
-          "Wireframe and prototype approved before any code",
-          "Mobile-first and accessible (WCAG 2.1 AA)",
-          "Scalable design system to grow with you",
-          "Subtle animations, microinteractions and transitions",
-          "Image, font and progressive-loading optimisation",
-        ],
-      },
-      {
-        accent: "green",
-        number: "02",
-        eyebrow: "E-COMMERCE",
-        title: "Online store",
-        lead:
-          "We build e-commerce ready to sell from day 1, with Shopify or WooCommerce depending on your volume and budget. We set up payment gateways, shipping, taxes and a clean admin panel so you or your team can manage orders without depending on us.",
-        bullets: [
-          "Shopify, WooCommerce or headless depending on the case",
-          "Gateways: Stripe, PayPal, Bizum, bank transfer",
-          "Stock, variants and discount management",
-          "Automated shipping and tax calculation",
-          "Integration with CRM, email marketing and analytics",
-          "Optimised checkout: fewer fields, more conversion",
-        ],
-      },
-      {
-        accent: "purple",
-        number: "03",
-        eyebrow: "POSITIONING",
-        title: "Technical & content SEO",
-        lead:
-          "No smoke and mirrors: real technical SEO (schema markup, sitemap, Core Web Vitals) and content optimised for the queries that matter to your business. Search Console and Analytics 4 set up from day 1 to measure and improve continuously.",
-        bullets: [
-          "Technical audit + keyword plan",
-          "Schema markup and XML sitemap",
-          "Core Web Vitals optimisation (LCP, CLS, INP)",
-          "Open Graph and meta tags per page",
-          "Optimised content, never filler",
-          "Search Console and GA4 set up with events",
-        ],
-      },
-      {
-        accent: "orange",
-        number: "04",
-        eyebrow: "AFTER LAUNCH",
-        title: "Optional maintenance",
-        lead:
-          "If you want to delegate operations after launch, we stick around. Only if you want — no lock-in. We cover updates, backups, direct support and small improvements so the site keeps performing month after month.",
-        bullets: [
-          "Platform, theme and plugin updates",
-          "Daily automatic backups with fast restore",
-          "Direct support by email and WhatsApp",
-          "Small improvements and tweaks included monthly",
-          "Uptime and Core Web Vitals monitoring",
-          "No lock-in: cancel whenever you want",
-        ],
-      },
-    ],
-    marketing: {
-      pill: "MARKETING & SEO",
-      h2: "End-to-end digital strategy",
+    meta: {
+      title: "Web design, SEO and digital marketing services | Tuagenciaweb",
+      description:
+        "Web design in Barcelona, online stores, technical SEO and digital marketing. Fast, conversion-focused websites.",
+    },
+    hero: {
+      badge: "SERVICES",
+      h1Top: "Web design, SEO and digital marketing",
+      h1Accent: "to grow your business.",
       sub:
-        "We combine organic positioning, paid media, analytics and optimisation so every visit performs at its best.",
+        "We build fast, modern, conversion-driven websites. From design to ranking, we handle everything so your site delivers results.",
+      ctaPrimary: "Request a quote",
+      ctaSecondary: "View projects",
+      trustPills: [
+        "No mandatory monthly fees",
+        "Technical SEO included",
+        "Delivered in 2–3 weeks",
+        "Code and domain 100% yours",
+      ],
+      navLabel: "ON THIS PAGE",
+      navItems: [
+        { num: "01", title: "Custom web design", anchor: "web-design" },
+        { num: "02", title: "Online stores", anchor: "online-stores" },
+        { num: "03", title: "Technical SEO & content", anchor: "technical-seo" },
+        { num: "04", title: "Optional maintenance", anchor: "maintenance" },
+      ],
+    },
+    detail: {
       items: [
-        { title: "Local SEO",        body: "Rank on Google Maps and capture customers from your area." },
-        { title: "Technical SEO",    body: "Schema, sitemap, Core Web Vitals and optimised architecture." },
-        { title: "Link building",    body: "Quality link strategy and editorial outreach." },
-        { title: "Google Ads",       body: "Search and display campaigns built for conversion." },
-        { title: "Meta Ads",         body: "Instagram and Facebook ads with creative and data." },
-        { title: "Web analytics",    body: "GA4, events, funnels and actionable dashboards." },
-        { title: "CRO",              body: "Conversion Rate Optimisation: A/B testing and continuous improvement." },
-        { title: "Automation",       body: "Email marketing, CRM and flows that scale your business." },
+        {
+          id: "web-design",
+          num: "01",
+          eyebrow: "WEB DESIGN",
+          title: "Custom web design",
+          lead:
+            "Unique sites in Next.js, no reused templates. We design every interface around your brand and around turning visitors into customers.",
+          bullets: [
+            "Bespoke UI/UX",
+            "Subtle animations and 100/100 performance",
+            "Editable by you after delivery",
+          ],
+        },
+        {
+          id: "online-stores",
+          num: "02",
+          eyebrow: "ONLINE STORES",
+          title: "Online stores",
+          lead:
+            "E-commerce with catalog, secure payment gateway and a simple admin panel. Ready to sell from day one.",
+          bullets: [
+            "Stripe, Redsys or PayPal",
+            "Automated inventory and shipping",
+            "Optimized for Google Shopping",
+          ],
+        },
+        {
+          id: "technical-seo",
+          num: "03",
+          eyebrow: "TECHNICAL SEO",
+          title: "Technical SEO & content",
+          lead:
+            "Indexing, speed, schema and optimized content so your site actually ranks — not just looks pretty.",
+          bullets: [
+            "Core Web Vitals in the green",
+            "Schema.org and dynamic sitemap",
+            "Optional monthly audit",
+          ],
+        },
+        {
+          id: "maintenance",
+          num: "04",
+          eyebrow: "MAINTENANCE",
+          title: "Optional maintenance",
+          lead:
+            "Support by the hour, no mandatory monthly fee. You decide when you need something and pay only for what you use.",
+          bullets: [
+            "Prepaid hour bank",
+            "Backups and 24/7 monitoring",
+            "No long-term contracts",
+          ],
+        },
+      ],
+    },
+    process: {
+      eyebrow: "PROCESS",
+      h2: "How we work",
+      sub: "Four clear phases, no surprises, with measurable deliverables in each one.",
+      steps: [
+        {
+          num: "01",
+          title: "Strategy",
+          desc: "We define goal, target audience and priorities before touching a single screen.",
+        },
+        {
+          num: "02",
+          title: "Design & development",
+          desc: "Bespoke UI and clean code on Next.js. No templates, no shortcuts.",
+        },
+        {
+          num: "03",
+          title: "SEO optimization",
+          desc: "Indexing, speed, schema and on-page from the first commit.",
+        },
+        {
+          num: "04",
+          title: "Launch & support",
+          desc: "Deploy, team training and optional maintenance with no lock-in.",
+        },
+      ],
+    },
+    comparison: {
+      h2Top: "More than a",
+      h2Accent: "pretty website.",
+      sub: "An honest comparison of what we offer versus most of the market.",
+      others: {
+        eyebrow: "OTHER AGENCIES",
+        items: [
+          "Generic templates",
+          "Endless monthly fees",
+          "Shallow or non-existent SEO",
+          "Code and domain under their control",
+        ],
+      },
+      us: {
+        eyebrow: "TUAGENCIAWEB",
+        items: [
+          "Custom design on Next.js",
+          "One-time payment, no mandatory fees",
+          "Real technical SEO, not patches",
+          "Code and domain 100% yours",
+          "Optional hourly support",
+        ],
+      },
+    },
+    marketing: {
+      eyebrow: "MARKETING & SEO",
+      h2: "End-to-end digital strategy",
+      sub: "Beyond design: we help your site attract, convert and grow.",
+      items: [
+        { icon: "pin",       title: "Local SEO",       desc: "Show up first in searches in your city and neighborhood." },
+        { icon: "gauge",     title: "Technical SEO",   desc: "Speed, indexing and schema ready for Google." },
+        { icon: "link",      title: "Link building",   desc: "Authority links to climb rankings." },
+        { icon: "google",    title: "Google Ads",      desc: "Profitable campaigns with real conversion tracking." },
+        { icon: "meta",      title: "Meta Ads",        desc: "Well-targeted ads on Instagram and Facebook." },
+        { icon: "chart",     title: "Web analytics",   desc: "GA4, Search Console and tailored dashboards." },
+        { icon: "target",    title: "CRO",             desc: "Conversion optimization based on real data." },
+        { icon: "workflow",  title: "Automations",     desc: "Email, CRM and workflows with no manual work." },
+      ],
+    },
+    faq: {
+      eyebrow: "FAQ",
+      h2: "Frequently asked questions",
+      sub: "Everything you usually ask us before we start.",
+      items: [
+        {
+          q: "How much does a website cost?",
+          a: "It depends on scope. A corporate website starts from €590, an online store from €1,890. We send you a closed quote within 24h with no commitment.",
+        },
+        {
+          q: "How long does it take?",
+          a: "Between 2 and 3 weeks for a corporate website. For an online store it's usually 4-6 weeks, depending on the catalog.",
+        },
+        {
+          q: "Who owns the domain and the code?",
+          a: "You, 100%. The domain is registered in your name from day one, and the source code is handed over to you at project close with no locks.",
+        },
+        {
+          q: "Is SEO included?",
+          a: "Yes: technical SEO (speed, schema, indexing, sitemap) is included in every pack. Content SEO and link building are optional and contracted separately.",
+        },
+        {
+          q: "Can I edit the website myself?",
+          a: "Yes. We give you an editing panel where you can change text, images and sections without touching code or depending on us.",
+        },
+        {
+          q: "Can I pay in installments?",
+          a: "Yes, we offer payment in 2 or 3 installments at no extra cost. We agree it when closing the quote.",
+        },
+        {
+          q: "Do you work with clients across Spain?",
+          a: "Yes. We work fully remote with clients anywhere in Spain. Meetings are by video call and you set the pace.",
+        },
+        {
+          q: "Do you offer maintenance after delivery?",
+          a: "Yes, optional maintenance via a prepaid hour bank. No mandatory monthly fee, you only pay for what you need.",
+        },
       ],
     },
     cta: {
-      eyebrow: "LET'S START",
+      eyebrow: "READY TO START",
       h2: "Shall we talk about your project?",
-      sub: "We'll send a tailored proposal in under 24 hours. No strings attached.",
-      button: "Get a quote",
+      sub: "We'll prepare a custom proposal in less than 24 hours.",
+      primary: "Request a quote",
+      whatsapp: "WhatsApp",
+      whatsappHref:
+        "https://wa.me/34613654273?text=Hi%2C%20I%27m%20interested%20in%20a%20quote%20for%20my%20website.",
+      indicators: ["Reply in 24h", "No commitment", "Detailed quote"],
     },
   },
   blogPage: {

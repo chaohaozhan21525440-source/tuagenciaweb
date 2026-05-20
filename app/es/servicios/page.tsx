@@ -1,32 +1,34 @@
 import type { Metadata } from "next";
 import { ServicesPageContent } from "@/components/services/ServicesPageContent";
 import { getDict } from "@/lib/i18n";
+import { buildFaqPageSchema } from "@/lib/seo/faq-schema";
 
 const dict = getDict("es");
 
 export const metadata: Metadata = {
-  title: "Servicios de diseño web, SEO y marketing digital | TuAgenciaWeb",
-  description:
-    "Diseño web a medida, tiendas online, SEO técnico, marketing digital y mantenimiento. Estrategia digital end-to-end para que tu negocio crezca.",
+  title: dict.servicesPage.meta.title,
+  description: dict.servicesPage.meta.description,
   alternates: {
     canonical: "/es/servicios",
     languages: { es: "/es/servicios", en: "/en/services", "x-default": "/es/servicios" },
   },
   openGraph: {
-    title: "Servicios de diseño web, SEO y marketing digital | TuAgenciaWeb",
-    description:
-      "Diseño web, SEO y marketing digital con foco en conversión y resultados medibles.",
+    title: dict.servicesPage.meta.title,
+    description: dict.servicesPage.meta.description,
     locale: "es_ES",
     type: "website",
   },
 };
 
 export default function ServiciosEs() {
+  const faqJson = buildFaqPageSchema(dict.servicesPage.faq.items);
   return (
-    <ServicesPageContent
-      dict={dict.servicesPage}
-      servicesDict={dict.services}
-      locale="es"
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: faqJson }}
+      />
+      <ServicesPageContent dict={dict.servicesPage} locale="es" />
+    </>
   );
 }
