@@ -2681,4 +2681,14 @@
 @media (max-width: 480px) {
   .sr-cta-actions { flex-direction: column; align-items: stretch; }
   .sr-cta-btn { justify-content: center; }
+
+  /* QA audit fix: prevent .sr-h1 from overflowing at 320–375px when min clamp font
+     (36px) combined with 18ch max-width yields a width that can exceed viewport
+     padding-box, especially for long unbreakable Spanish words. */
+  .sr-h1 { overflow-wrap: break-word; }
+
+  /* QA audit fix: stack hero CTA buttons full-width at <=480px for parity with
+     .sr-cta-actions and to guarantee comfortable touch targets at 320px. */
+  .sr-cta-row { flex-direction: column; align-items: stretch; }
+  .sr-cta-row .sr-btn { justify-content: center; }
 }
