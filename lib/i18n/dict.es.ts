@@ -340,101 +340,203 @@ export const es = {
     shortEn: "EN",
   },
   servicesPage: {
-    pill: "SERVICIOS",
-    h1: "Servicios de diseño web, marketing digital y SEO",
-    sub:
-      "Creamos webs que convierten y estrategias digitales orientadas a resultados.",
-    detailsPill: "EN PROFUNDIDAD",
-    detailsH2: "Cómo trabajamos cada servicio",
-    detailsSub:
-      "Procesos claros, entregables concretos y resultados medibles. Esto es lo que incluye cada bloque.",
-    details: [
-      {
-        accent: "blue",
-        number: "01",
-        eyebrow: "DISEÑO",
-        title: "Diseño web a medida",
-        lead:
-          "Diseñamos webs únicas, alineadas con tu marca y orientadas a convertir visitas en clientes. Cada proyecto parte de un wireframe estratégico, no de una plantilla genérica. Trabajamos mobile-first, con jerarquía visual clara, tiempos de carga rápidos y animaciones cuidadas que aportan sin distraer.",
-        bullets: [
-          "Diseño 100% personalizado, sin plantillas",
-          "Wireframe y prototipo aprobados antes de programar",
-          "Mobile-first y accesible (WCAG 2.1 AA)",
-          "Sistema de diseño escalable para crecer",
-          "Animaciones sutiles, microinteracciones y transiciones",
-          "Optimización de imágenes, fuentes y carga progresiva",
-        ],
-      },
-      {
-        accent: "green",
-        number: "02",
-        eyebrow: "E-COMMERCE",
-        title: "Tienda online",
-        lead:
-          "Construimos e-commerce listos para vender desde el día 1, con Shopify o WooCommerce según tu volumen y presupuesto. Configuramos pasarelas de pago, envíos, impuestos y un panel de gestión claro para que tú o tu equipo administréis pedidos sin depender de nosotros.",
-        bullets: [
-          "Shopify, WooCommerce o headless según el caso",
-          "Pasarelas: Stripe, PayPal, Bizum, transferencia",
-          "Gestión de stock, variantes y descuentos",
-          "Envíos y cálculo de impuestos automatizado",
-          "Integración con CRM, email marketing y analítica",
-          "Checkout optimizado: menos campos, más conversión",
-        ],
-      },
-      {
-        accent: "purple",
-        number: "03",
-        eyebrow: "POSICIONAMIENTO",
-        title: "SEO técnico y de contenidos",
-        lead:
-          "No vendemos humo: hacemos SEO técnico real (schema markup, sitemap, Core Web Vitals) y producimos contenidos optimizados para las consultas que importan a tu negocio. Configuramos Google Search Console y Analytics 4 desde el día 1 para medir y mejorar continuamente.",
-        bullets: [
-          "Auditoría técnica + plan de keywords",
-          "Schema markup y sitemap XML",
-          "Optimización de Core Web Vitals (LCP, CLS, INP)",
-          "Open Graph y meta tags por página",
-          "Contenidos optimizados, no relleno",
-          "Search Console y GA4 configurados con eventos",
-        ],
-      },
-      {
-        accent: "orange",
-        number: "04",
-        eyebrow: "DESPUÉS DEL LANZAMIENTO",
-        title: "Mantenimiento opcional",
-        lead:
-          "Si quieres delegarnos la operativa después del lanzamiento, nos quedamos cerca. Solo si quieres: no hay permanencia. Cubrimos actualizaciones, backups, soporte directo y pequeñas mejoras puntuales para que la web siga rindiendo mes a mes.",
-        bullets: [
-          "Actualizaciones de plataforma, temas y plugins",
-          "Backups automáticos diarios y restauración rápida",
-          "Soporte directo por email y WhatsApp",
-          "Pequeñas mejoras y cambios incluidos al mes",
-          "Monitorización de uptime y de Core Web Vitals",
-          "Sin permanencia: cancelable cuando quieras",
-        ],
-      },
-    ],
-    marketing: {
-      pill: "MARKETING & SEO",
-      h2: "Estrategia digital end-to-end",
+    meta: {
+      title: "Servicios de diseño web, SEO y marketing digital | Tuagenciaweb",
+      description:
+        "Diseño web en Barcelona, tiendas online, SEO técnico y marketing digital. Creamos webs rápidas y orientadas a conversión.",
+    },
+    hero: {
+      badge: "SERVICIOS",
+      h1Top: "Diseño web, SEO y marketing digital",
+      h1Accent: "para hacer crecer tu negocio.",
       sub:
-        "Combinamos posicionamiento orgánico, paid media, analítica y optimización para que cada visita rinda al máximo.",
+        "Creamos webs rápidas, modernas y orientadas a conversión. Desde el diseño hasta el posicionamiento, nos encargamos de todo para que tu web genere resultados.",
+      ctaPrimary: "Solicitar presupuesto",
+      ctaSecondary: "Ver proyectos",
+      trustPills: [
+        "Sin cuotas obligatorias",
+        "SEO técnico incluido",
+        "Entrega en 2–3 semanas",
+        "Código y dominio 100% tuyos",
+      ],
+      navLabel: "EN ESTA PÁGINA",
+      navItems: [
+        { num: "01", title: "Diseño web a medida", anchor: "diseno-web" },
+        { num: "02", title: "Tiendas online", anchor: "tiendas-online" },
+        { num: "03", title: "SEO técnico y contenidos", anchor: "seo-tecnico" },
+        { num: "04", title: "Mantenimiento opcional", anchor: "mantenimiento" },
+      ],
+    },
+    detail: {
       items: [
-        { title: "SEO local",        body: "Posiciónate en Google Maps y captura clientes de tu zona." },
-        { title: "SEO técnico",      body: "Schema, sitemap, Core Web Vitals y arquitectura optimizada." },
-        { title: "Link building",    body: "Estrategia de enlaces de calidad y outreach editorial." },
-        { title: "Google Ads",       body: "Campañas de búsqueda y display orientadas a conversión." },
-        { title: "Meta Ads",         body: "Anuncios en Instagram y Facebook con creatividad y datos." },
-        { title: "Analítica web",    body: "GA4, eventos, embudos y dashboards accionables." },
-        { title: "CRO",              body: "Conversion Rate Optimization: tests A/B y mejora continua." },
-        { title: "Automatizaciones", body: "Email marketing, CRM y flujos que escalan tu negocio." },
+        {
+          id: "diseno-web",
+          num: "01",
+          eyebrow: "DISEÑO WEB",
+          title: "Diseño web a medida",
+          lead:
+            "Webs únicas en Next.js, sin plantillas reutilizadas. Diseñamos cada interfaz pensando en tu marca y en convertir visitas en clientes.",
+          bullets: [
+            "Diseño UI/UX propio",
+            "Animaciones sutiles y rendimiento 100/100",
+            "Editable por ti tras la entrega",
+          ],
+        },
+        {
+          id: "tiendas-online",
+          num: "02",
+          eyebrow: "TIENDAS ONLINE",
+          title: "Tiendas online",
+          lead:
+            "E-commerce con catálogo, pasarela de pago segura y panel de gestión simple. Listas para vender desde el día 1.",
+          bullets: [
+            "Stripe, Redsys o PayPal",
+            "Inventario y envíos automatizados",
+            "Optimizado para Google Shopping",
+          ],
+        },
+        {
+          id: "seo-tecnico",
+          num: "03",
+          eyebrow: "SEO TÉCNICO",
+          title: "SEO técnico y contenidos",
+          lead:
+            "Indexación, velocidad, schema y contenido optimizado para que tu web posicione de verdad — no solo para que se vea bonita.",
+          bullets: [
+            "Core Web Vitals en verde",
+            "Schema.org y sitemap dinámico",
+            "Auditoría mensual opcional",
+          ],
+        },
+        {
+          id: "mantenimiento",
+          num: "04",
+          eyebrow: "MANTENIMIENTO",
+          title: "Mantenimiento opcional",
+          lead:
+            "Soporte por horas, sin cuota mensual obligatoria. Tú decides cuándo necesitas algo y solo pagas por lo que usas.",
+          bullets: [
+            "Bolsa de horas prepago",
+            "Backups y monitorización 24/7",
+            "Sin contratos de permanencia",
+          ],
+        },
+      ],
+    },
+    process: {
+      eyebrow: "PROCESO",
+      h2: "Cómo trabajamos",
+      sub: "Cuatro fases claras, sin sorpresas y con entregables medibles en cada una.",
+      steps: [
+        {
+          num: "01",
+          title: "Estrategia",
+          desc: "Definimos objetivo, público objetivo y prioridades antes de tocar una sola pantalla.",
+        },
+        {
+          num: "02",
+          title: "Diseño y desarrollo",
+          desc: "UI a medida y código limpio sobre Next.js. Sin plantillas, sin atajos.",
+        },
+        {
+          num: "03",
+          title: "Optimización SEO",
+          desc: "Indexación, velocidad, schema y on-page desde el primer commit.",
+        },
+        {
+          num: "04",
+          title: "Lanzamiento y soporte",
+          desc: "Deploy, formación al equipo y mantenimiento opcional sin permanencia.",
+        },
+      ],
+    },
+    comparison: {
+      h2Top: "Más que una",
+      h2Accent: "web bonita.",
+      sub: "Una comparación honesta de lo que ofrecemos frente a la mayoría del mercado.",
+      others: {
+        eyebrow: "OTRAS AGENCIAS",
+        items: [
+          "Plantillas genéricas",
+          "Cuotas mensuales eternas",
+          "SEO superficial o inexistente",
+          "Código y dominio bajo su control",
+        ],
+      },
+      us: {
+        eyebrow: "TUAGENCIAWEB",
+        items: [
+          "Diseño a medida sobre Next.js",
+          "Pago único, sin cuotas obligatorias",
+          "SEO técnico real, no parches",
+          "Código y dominio 100% tuyos",
+          "Soporte opcional por horas",
+        ],
+      },
+    },
+    marketing: {
+      eyebrow: "MARKETING & SEO",
+      h2: "Estrategia digital end-to-end",
+      sub: "Más allá del diseño: ayudamos a que tu web atraiga, convierta y crezca.",
+      items: [
+        { icon: "pin",       title: "SEO local",        desc: "Aparece primero en las búsquedas de tu ciudad y barrio." },
+        { icon: "gauge",     title: "SEO técnico",      desc: "Velocidad, indexación y schema listos para Google." },
+        { icon: "link",      title: "Link building",    desc: "Enlaces de autoridad para escalar posiciones." },
+        { icon: "google",    title: "Google Ads",       desc: "Campañas rentables con tracking de conversión real." },
+        { icon: "meta",      title: "Meta Ads",         desc: "Anuncios en Instagram y Facebook bien segmentados." },
+        { icon: "chart",     title: "Analítica web",    desc: "GA4, Search Console y dashboards a medida." },
+        { icon: "target",    title: "CRO",              desc: "Optimización de conversión basada en datos reales." },
+        { icon: "workflow",  title: "Automatizaciones", desc: "Email, CRM y flujos sin trabajo manual." },
+      ],
+    },
+    faq: {
+      eyebrow: "FAQ",
+      h2: "Preguntas frecuentes",
+      sub: "Todo lo que sueles preguntarnos antes de empezar.",
+      items: [
+        {
+          q: "¿Cuánto cuesta una página web?",
+          a: "Depende del alcance. Una web corporativa parte de 590€, una tienda online desde 1.890€. Te enviamos un presupuesto cerrado en 24h sin compromiso.",
+        },
+        {
+          q: "¿Cuánto se tarda en tener la web lista?",
+          a: "Entre 2 y 3 semanas para una web corporativa. Para una tienda online suelen ser 4-6 semanas, dependiendo del catálogo.",
+        },
+        {
+          q: "¿De quién es el dominio y el código?",
+          a: "Tuyos al 100%. El dominio se compra a tu nombre desde el día 1, y el código fuente se te entrega al cierre del proyecto sin candados.",
+        },
+        {
+          q: "¿Incluye SEO?",
+          a: "Sí: el SEO técnico (velocidad, schema, indexación, sitemap) está incluido en todos los packs. El SEO de contenidos y link building son opcionales y se contratan aparte.",
+        },
+        {
+          q: "¿Podré editar la web yo mismo?",
+          a: "Sí. Te entregamos un panel de edición con el que puedes cambiar textos, imágenes y secciones sin tocar código ni depender de nosotros.",
+        },
+        {
+          q: "¿Puedo pagar a plazos?",
+          a: "Sí, ofrecemos pago en 2 o 3 plazos sin recargo. Lo acordamos contigo al cerrar el presupuesto.",
+        },
+        {
+          q: "¿Trabajáis con clientes de toda España?",
+          a: "Sí. Trabajamos 100% en remoto con clientes en cualquier punto de España. Las reuniones son por videollamada y el ritmo lo marcas tú.",
+        },
+        {
+          q: "¿Ofrecéis mantenimiento después de la entrega?",
+          a: "Sí, mantenimiento opcional por bolsa de horas prepago. Sin cuota mensual obligatoria, solo pagas por lo que necesites.",
+        },
       ],
     },
     cta: {
-      eyebrow: "EMPECEMOS",
+      eyebrow: "LISTO PARA EMPEZAR",
       h2: "¿Hablamos de tu proyecto?",
-      sub: "Te preparamos una propuesta personalizada en menos de 24 horas. Sin compromiso.",
-      button: "Solicitar presupuesto",
+      sub: "Te preparamos una propuesta personalizada en menos de 24 horas.",
+      primary: "Solicitar presupuesto",
+      whatsapp: "WhatsApp",
+      whatsappHref:
+        "https://wa.me/34613654273?text=Hola%2C%20me%20interesa%20un%20presupuesto%20para%20mi%20web.",
+      indicators: ["Respuesta en 24h", "Sin compromiso", "Presupuesto detallado"],
     },
   },
   blogPage: {
