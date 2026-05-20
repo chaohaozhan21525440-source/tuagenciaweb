@@ -860,6 +860,52 @@
   .services-section .illu { min-height: 140px; }
 }
 
+.services-section .card,
+.services-section .card .ico,
+.services-section .card .illu .halo,
+.services-section .card .illu > svg,
+.services-section .card .illu > img {
+  transition:
+    transform .45s cubic-bezier(.2,.7,.2,1),
+    box-shadow .45s ease,
+    opacity .45s ease;
+}
+.services-section .card { will-change: transform; }
+.services-section .card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 20px 42px -18px rgba(11,19,38,.20),
+    0 8px 18px -10px rgba(11,19,38,.10);
+}
+.services-section .card:hover .ico {
+  transform: scale(1.08) rotate(-4deg);
+}
+.services-section .card:hover .illu .halo {
+  transform: scale(1.15);
+  opacity: .85;
+}
+.services-section .card:hover .illu > svg,
+.services-section .card:hover .illu > img {
+  transform: translateY(-3px) scale(1.03);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .services-section .card,
+  .services-section .card .ico,
+  .services-section .card .illu .halo,
+  .services-section .card .illu > svg,
+  .services-section .card .illu > img {
+    transition: none;
+  }
+  .services-section .card:hover,
+  .services-section .card:hover .ico,
+  .services-section .card:hover .illu .halo,
+  .services-section .card:hover .illu > svg,
+  .services-section .card:hover .illu > img {
+    transform: none;
+  }
+}
+
 .services-section .cta-bar {
   margin-top: 32px;
   background: #f3f6fc;
