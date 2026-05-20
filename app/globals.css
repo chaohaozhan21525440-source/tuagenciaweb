@@ -228,6 +228,11 @@
   .about-page .win-1 { right: 12px; }
   .about-page .win-2 { right: 32px; }
   .about-page .chart-card { right: 0; }
+  /* Hero: hide the absolute-positioned decorative floating cards when the layout
+     stacks vertically — they overlap the video and each other on narrow screens. */
+  .hero-page .card-solicitudes,
+  .hero-page .card-pagespeed,
+  .hero-page .card-leads { display: none; }
 }
 
 @media (max-width: 640px) {
@@ -245,6 +250,22 @@
   /* About-page mission illustration: shift left to keep visible */
   .about-page .win-1 { right: 4px; top: 8px; }
   .about-page .win-2 { right: 16px; top: 70px; }
+  /* Carrusel: ocultar flechas en móvil — el swipe + dots sirven */
+  .proyectos-section .arrow { display: none; }
+  /* Carrusel: ampliar área táctil de los dots a ~44px sin cambiar el aspecto visual */
+  .proyectos-section .dots { gap: 4px; }
+  .proyectos-section .dots button {
+    padding: 18px 10px;
+    background-clip: content-box;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Hero: features en 1 columna en pantallas muy estrechas para legibilidad */
+  .hero-page .features { grid-template-columns: 1fr; gap: 16px; max-width: none; }
+  /* Hero: botones CTA más compactos */
+  .hero-btn { padding: 12px 18px; font-size: 14px; }
+  .hero-page .cta-row { gap: 10px; margin-bottom: 36px; }
 }
 
 /* ===== Sobre Nosotros page (scoped) ===== */

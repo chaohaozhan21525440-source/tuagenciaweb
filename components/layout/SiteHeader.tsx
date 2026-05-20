@@ -86,7 +86,7 @@ export function SiteHeader({
         </div>
 
         <button
-          className="ml-auto lg:hidden"
+          className="ml-auto -mr-2 inline-flex h-11 w-11 items-center justify-center rounded-lg text-[var(--color-ink-900)] lg:hidden"
           aria-label={dict.menuLabel}
           onClick={() => setOpen((v) => !v)}
         >
@@ -102,7 +102,7 @@ export function SiteHeader({
                 <a
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="block py-2 text-lg font-medium text-[var(--color-ink-900)]"
+                  className="block py-3 text-lg font-medium text-[var(--color-ink-900)]"
                 >
                   {item.label}
                 </a>
