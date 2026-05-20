@@ -531,7 +531,7 @@ export const en: Dict = {
     },
     cta: {
       eyebrow: "READY TO START",
-      h2: "Let's talk about your project?",
+      h2: "Shall we talk about your project?",
       sub: "We'll prepare a custom proposal in less than 24 hours.",
       primary: "Request a quote",
       whatsapp: "WhatsApp",
