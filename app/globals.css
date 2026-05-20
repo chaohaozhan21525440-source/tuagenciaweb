@@ -2585,3 +2585,84 @@
   transition: transform 0.3s ease, color 0.3s ease;
 }
 .sr-nav a:hover .sr-nav-arrow { transform: translateX(4px); color: var(--sr-brand); }
+
+/* Detail blocks */
+.sr-detail-wrap { padding: 24px 0 48px; }
+@media (min-width: 1024px) { .sr-detail-wrap { padding: 32px 0 80px; } }
+
+.sr-detail {
+  position: relative;
+  padding: 56px 0 56px;
+  border-top: 1px solid var(--sr-line);
+  scroll-margin-top: 96px;
+}
+.sr-detail:first-child { border-top: none; padding-top: 32px; }
+
+.sr-detail-ghost {
+  position: absolute;
+  top: 28px;
+  left: 0;
+  font-size: clamp(72px, 12vw, 144px);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  color: var(--sr-brand);
+  opacity: 0.08;
+  line-height: 1;
+  pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.sr-detail:hover .sr-detail-ghost {
+  opacity: 0.16;
+  transform: scale(1.05);
+}
+
+.sr-detail-body { position: relative; padding-top: 24px; max-width: 760px; }
+@media (min-width: 768px) { .sr-detail-body { padding-top: 56px; padding-left: 48px; } }
+@media (min-width: 1024px) { .sr-detail-body { padding-left: 120px; } }
+
+.sr-detail-eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  color: var(--sr-brand);
+  margin-bottom: 16px;
+}
+.sr-detail-title {
+  font-size: clamp(28px, 3.6vw, 40px);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  font-weight: 800;
+  color: var(--sr-ink);
+  margin: 0 0 14px;
+}
+.sr-detail-lead {
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: var(--sr-ink-2);
+  max-width: 56ch;
+  margin: 0 0 24px;
+}
+.sr-detail-bullets {
+  list-style: none; padding: 0; margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+@media (min-width: 768px) { .sr-detail-bullets { grid-template-columns: repeat(3, 1fr); gap: 18px; } }
+.sr-detail-bullets li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--sr-ink);
+}
+.sr-detail-check {
+  width: 22px; height: 22px;
+  flex: 0 0 22px;
+  border-radius: 50%;
+  background: var(--sr-brand-soft);
+  color: var(--sr-brand);
+  display: inline-flex; align-items: center; justify-content: center;
+}
