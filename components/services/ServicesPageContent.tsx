@@ -3,6 +3,7 @@ import { ServicesHero } from "./sr/ServicesHero";
 import { ServicesDetail } from "./sr/ServicesDetail";
 import { ProcessTimeline } from "./sr/ProcessTimeline";
 import { ComparisonTable } from "./sr/ComparisonTable";
+import { MarketingGrid } from "./sr/MarketingGrid";
 
 export function ServicesPageContent({ dict, locale }: { dict: Dict["servicesPage"]; locale: Locale }) {
   return (
@@ -11,6 +12,7 @@ export function ServicesPageContent({ dict, locale }: { dict: Dict["servicesPage
       <ServicesDetail dict={dict.detail} />
       <ProcessTimeline dict={dict.process} />
       <ComparisonTable dict={dict.comparison} />
+      <MarketingGrid dict={dict.marketing} />
     </main>
   );
 }
