@@ -16,7 +16,7 @@ export function proxy(req: NextRequest) {
   if (pathname === "/") {
     const url = req.nextUrl.clone();
     url.pathname = "/es";
-    return NextResponse.redirect(url, 307);
+    return NextResponse.redirect(url, 301);
   }
 
   // 301 redirect legacy service slugs after the SEO + maintenance merge:

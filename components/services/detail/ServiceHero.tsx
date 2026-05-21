@@ -47,8 +47,9 @@ export function ServiceHero({
               <span aria-current="page">{service.hero.h1Top}</span>
             </nav>
 
-            <h1 className="sr-only">
-              {service.hero.h1Top} {service.hero.h1Accent}
+            <h1 className="sd-h1 sd-h1-image">
+              {service.hero.h1Top}{" "}
+              <span className="sr-accent">{service.hero.h1Accent}</span>
             </h1>
 
             <figure className="sd-hero-figure">

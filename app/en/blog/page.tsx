@@ -15,9 +15,16 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Web design, SEO and conversion blog | TuAgenciaWeb",
     description:
-      "Insights on web design, SEO, e-commerce and CRO.",
-    locale: "en_GB",
+      "Tips, strategies and guides on web design, technical SEO, e-commerce and CRO.",
+    url: "https://www.tuagenciaweb.es/en/blog",
+    locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Web design, SEO and conversion blog | TuAgenciaWeb",
+    description:
+      "Tips, strategies and guides on web design, technical SEO, e-commerce and CRO.",
   },
 };
 

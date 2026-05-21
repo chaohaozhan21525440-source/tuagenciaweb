@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import { headers } from "next/headers";
 import "./globals.css";
+import { buildOrganizationSchema, buildLocalBusinessSchema } from "@/lib/seo/schemas";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -15,6 +16,13 @@ const display = Space_Grotesk({
   weight: ["500", "600", "700"],
   display: "swap",
 });
+
+const OG_IMAGE = {
+  url: "/og-image.png",
+  width: 1200,
+  height: 630,
+  alt: "Tuagenciaweb — Agencia web en Barcelona",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.tuagenciaweb.es"),
@@ -31,6 +39,17 @@ export const metadata: Metadata = {
     ],
     shortcut: "/logo/favicon.png",
   },
+  openGraph: {
+    siteName: "Tuagenciaweb",
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tuagenciaweb",
+    description:
+      "Agencia web para pymes y autónomos. Diseño, SEO y mantenimiento.",
+    images: [OG_IMAGE.url],
+  },
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
@@ -39,7 +58,17 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const lang = pathname.startsWith("/en") ? "en" : "es";
   return (
     <html lang={lang} className={`${inter.variable} ${display.variable}`}>
-      <body>{children}</body>
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: buildOrganizationSchema() }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: buildLocalBusinessSchema() }}
+        />
+        {children}
+      </body>
     </html>
   );
 }
