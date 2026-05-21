@@ -31,17 +31,11 @@ const SearchIcon = () => (
     <path d="m20 20-3.5-3.5" />
   </svg>
 );
-const ShieldIcon = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-    <path d="M12 3 5 6v6c0 5 3 8 7 9 4-1 7-4 7-9V6l-7-3Z" />
-  </svg>
-);
 
 const ICONS: Record<ServiceId, () => ReactElement> = {
   design: PencilIcon,
   shop: BagIcon,
   seo: SearchIcon,
-  maintenance: ShieldIcon,
 };
 
 export function HubCards({
