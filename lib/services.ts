@@ -1,4 +1,4 @@
-import type { Locale } from "./i18n";
+import { ROUTES, type Locale } from "./i18n";
 
 export const SERVICE_IDS = ["design", "shop", "seo", "maintenance"] as const;
 export type ServiceId = (typeof SERVICE_IDS)[number];
@@ -10,13 +10,8 @@ export const SERVICE_SLUGS: Record<ServiceId, Record<Locale, string>> = {
   maintenance: { es: "mantenimiento",  en: "maintenance" },
 };
 
-const SERVICES_ROOT: Record<Locale, string> = {
-  es: "/es/servicios",
-  en: "/en/services",
-};
-
 export function servicePath(id: ServiceId, locale: Locale): string {
-  return `${SERVICES_ROOT[locale]}/${SERVICE_SLUGS[id][locale]}`;
+  return `${ROUTES.services[locale]}/${SERVICE_SLUGS[id][locale]}`;
 }
 
 /**
