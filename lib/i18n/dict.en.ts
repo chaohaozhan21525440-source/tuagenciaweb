@@ -317,7 +317,7 @@ export const en: Dict = {
       photoAlts: [
         "Tuagenciaweb office in Barcelona",
         "Tuagenciaweb team at work",
-        "Tuagenciaweb workspace",
+        "Tuagenciaweb mug on the desk",
       ],
     },
     valuesPill: "OUR VALUES",

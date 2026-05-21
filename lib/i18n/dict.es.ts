@@ -317,7 +317,7 @@ export const es = {
       photoAlts: [
         "Oficina de Tuagenciaweb en Barcelona",
         "Equipo de Tuagenciaweb trabajando",
-        "Espacio de Tuagenciaweb",
+        "Taza de Tuagenciaweb sobre el escritorio",
       ],
     },
     valuesPill: "NUESTROS VALORES",
