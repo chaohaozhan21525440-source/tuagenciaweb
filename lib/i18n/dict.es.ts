@@ -77,21 +77,25 @@ export const es = {
       "Diseño, desarrollo, SEO y mantenimiento opcional. Cubrimos cada etapa para que tú solo te preocupes de tu negocio.",
     items: [
       {
+        id: "design",
         title: "Diseño web a medida",
         body: "Webs únicas, modernas y orientadas a conversión.",
         bullets: ["Diseño 100% personalizado", "Mobile-first", "Animaciones cuidadas"],
       },
       {
+        id: "shop",
         title: "Tienda online",
         body: "Plataformas de e-commerce listas para vender desde el día 1.",
         bullets: ["Shopify / WooCommerce", "Pasarelas de pago", "Gestión de stock"],
       },
       {
+        id: "seo",
         title: "SEO técnico y de contenidos",
         body: "Posicionamos tu negocio en Google donde están tus clientes.",
         bullets: ["Schema + sitemap", "Velocidad y Core Web Vitals", "Contenidos optimizados"],
       },
       {
+        id: "maintenance",
         title: "Mantenimiento opcional",
         body: "Si quieres, nos quedamos cerca después del lanzamiento. Sin obligación.",
         bullets: ["Actualizaciones", "Backups", "Soporte directo"],

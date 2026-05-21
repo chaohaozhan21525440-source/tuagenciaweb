@@ -78,21 +78,25 @@ export const en: Dict = {
       "Design, development, SEO and optional maintenance. We cover every stage so you only need to focus on your business.",
     items: [
       {
+        id: "design",
         title: "Bespoke web design",
         body: "Unique, modern websites built to convert.",
         bullets: ["100% custom design", "Mobile-first", "Crafted animations"],
       },
       {
+        id: "shop",
         title: "Online shop",
         body: "E-commerce platforms ready to sell from day one.",
         bullets: ["Shopify / WooCommerce", "Payment gateways", "Stock management"],
       },
       {
+        id: "seo",
         title: "Technical & content SEO",
         body: "We rank your business on Google where your customers are.",
         bullets: ["Schema + sitemap", "Speed & Core Web Vitals", "Optimised content"],
       },
       {
+        id: "maintenance",
         title: "Optional maintenance",
         body: "If you want, we stick around after launch. No obligation.",
         bullets: ["Updates", "Backups", "Direct support"],

@@ -3569,3 +3569,25 @@
   .sd-cta-btn { justify-content: center; }
 }
 
+/* Home Services — clickable card arrow indicator */
+.services-section .card {
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+.services-section .card .card-arrow {
+  position: absolute;
+  right: 22px;
+  bottom: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--sr-muted-2, #94a3b8);
+  transition: transform 0.32s cubic-bezier(0.2, 0.7, 0.2, 1), color 0.32s ease;
+  z-index: 2;
+}
+.services-section .card:hover .card-arrow {
+  transform: translateX(4px);
+  color: var(--sr-brand, #2563eb);
+}
+

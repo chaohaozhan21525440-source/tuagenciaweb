@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Dict, Locale } from "@/lib/i18n";
 import { path } from "@/lib/i18n";
+import { servicePath, type ServiceId } from "@/lib/services";
 
 type Accent = "blue" | "green" | "purple" | "orange";
 
@@ -130,7 +131,11 @@ export function Services({ dict, locale }: { dict: Dict["services"]; locale: Loc
             const accent = ACCENTS[i] ?? "blue";
             const Icon = ICONS[i] ?? PencilIcon;
             return (
-              <article key={i} className="card">
+              <Link
+                key={s.id}
+                href={servicePath(s.id as ServiceId, locale)}
+                className="card"
+              >
                 <div className="body">
                   <div className="top">
                     <span className={`ico ${accent}`} aria-hidden>
@@ -182,7 +187,10 @@ export function Services({ dict, locale }: { dict: Dict["services"]; locale: Loc
                     />
                   )}
                 </div>
-              </article>
+                <span className="card-arrow" aria-hidden>
+                  <ArrowRight />
+                </span>
+              </Link>
             );
           })}
         </div>
