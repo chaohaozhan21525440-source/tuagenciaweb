@@ -54,7 +54,7 @@ export function ServicesHero({
               ))}
             </ul>
           </div>
-          <ServicesNav label={dict.navLabel} items={dict.navItems} />
+          <ServicesNav label={dict.navLabel} items={dict.navItems} locale={locale} />
         </motion.div>
       </div>
     </section>
