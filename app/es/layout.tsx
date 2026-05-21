@@ -6,7 +6,12 @@ export default function EsLayout({ children }: { children: React.ReactNode }) {
   const dict = getDict("es");
   return (
     <>
-      <SiteHeader locale="es" dict={dict.nav} langDict={dict.langSwitcher} />
+      <SiteHeader
+        locale="es"
+        dict={dict.nav}
+        langDict={dict.langSwitcher}
+        servicesNavItems={dict.servicesPage.hero.navItems}
+      />
       {children}
       <SiteFooter locale="es" dict={dict.footer} />
     </>

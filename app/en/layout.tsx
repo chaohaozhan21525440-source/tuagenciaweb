@@ -6,7 +6,12 @@ export default function EnLayout({ children }: { children: React.ReactNode }) {
   const dict = getDict("en");
   return (
     <>
-      <SiteHeader locale="en" dict={dict.nav} langDict={dict.langSwitcher} />
+      <SiteHeader
+        locale="en"
+        dict={dict.nav}
+        langDict={dict.langSwitcher}
+        servicesNavItems={dict.servicesPage.hero.navItems}
+      />
       {children}
       <SiteFooter locale="en" dict={dict.footer} />
     </>
