@@ -30,6 +30,7 @@ export const en: Dict = {
     contact: "Contact",
     quote: "Get a quote",
     menuLabel: "Menu",
+    servicesViewAll: "See all services",
   },
   hero: {
     pill: ["WEB DESIGN", "SEO", "RESULTS"],

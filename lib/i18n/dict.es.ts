@@ -29,6 +29,7 @@ export const es = {
     contact: "Contacto",
     quote: "Solicitar presupuesto",
     menuLabel: "Menú",
+    servicesViewAll: "Ver todos los servicios",
   },
   hero: {
     pill: ["DISEÑO WEB", "SEO", "RESULTADOS"],

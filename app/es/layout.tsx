@@ -11,6 +11,7 @@ export default function EsLayout({ children }: { children: React.ReactNode }) {
         dict={dict.nav}
         langDict={dict.langSwitcher}
         servicesNavItems={dict.servicesPage.hero.navItems}
+        viewAllLabel={dict.nav.servicesViewAll}
       />
       {children}
       <SiteFooter locale="es" dict={dict.footer} />

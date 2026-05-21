@@ -11,6 +11,7 @@ export default function EnLayout({ children }: { children: React.ReactNode }) {
         dict={dict.nav}
         langDict={dict.langSwitcher}
         servicesNavItems={dict.servicesPage.hero.navItems}
+        viewAllLabel={dict.nav.servicesViewAll}
       />
       {children}
       <SiteFooter locale="en" dict={dict.footer} />

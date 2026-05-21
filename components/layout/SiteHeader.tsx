@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/cn";
 import type { Dict, Locale } from "@/lib/i18n";
 import { path, sectionPath } from "@/lib/i18n";
+import { servicePath, type ServiceId } from "@/lib/services";
 import { LangSwitcher } from "./LangSwitcher";
 
 const List = (p: React.SVGProps<SVGSVGElement>) => (
@@ -56,16 +57,20 @@ const ArrowRight = () => (
   </svg>
 );
 
-type ServiceItem = { num: string; title: string; anchor: string };
+type ServiceItem = { num: string; id: string; title: string };
 
 function ServicesNavDropdown({
   label,
   href,
   items,
+  locale,
+  viewAllLabel,
 }: {
   label: string;
   href: string;
   items: ServiceItem[];
+  locale: Locale;
+  viewAllLabel: string;
 }) {
   const [open, setOpen] = useState(false);
   const wrapperRef = useRef<HTMLDivElement | null>(null);
@@ -137,8 +142,8 @@ function ServicesNavDropdown({
       >
         {items.map((it) => (
           <a
-            key={it.anchor}
-            href={`${href}#${it.anchor}`}
+            key={it.id}
+            href={servicePath(it.id as ServiceId, locale)}
             role="menuitem"
             className="group flex items-center gap-3 rounded-xl px-3 py-3 transition-colors hover:bg-[var(--color-brand-soft)]"
             onClick={() => setOpen(false)}
@@ -156,6 +161,16 @@ function ServicesNavDropdown({
             </span>
           </a>
         ))}
+
+        <div className="mx-2 mt-1 border-t border-[var(--color-ink-100)]" />
+        <a
+          href={href}
+          role="menuitem"
+          className="block rounded-xl px-3 py-3 text-center text-[13.5px] font-semibold text-[var(--color-brand)] transition-colors hover:bg-[var(--color-brand-soft)]"
+          onClick={() => setOpen(false)}
+        >
+          {viewAllLabel} →
+        </a>
       </div>
     </div>
   );
@@ -166,11 +181,13 @@ export function SiteHeader({
   dict,
   langDict,
   servicesNavItems,
+  viewAllLabel,
 }: {
   locale: Locale;
   dict: Dict["nav"];
   langDict: Dict["langSwitcher"];
   servicesNavItems: ServiceItem[];
+  viewAllLabel: string;
 }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -220,6 +237,8 @@ export function SiteHeader({
                 label={item.label}
                 href={item.href}
                 items={servicesNavItems}
+                locale={locale}
+                viewAllLabel={viewAllLabel}
               />
             ) : (
               <a
@@ -267,9 +286,9 @@ export function SiteHeader({
                 {item.key === "services" && (
                   <ul className="-mt-1 mb-2 ml-3 border-l border-[var(--color-ink-100)] pl-4">
                     {servicesNavItems.map((s) => (
-                      <li key={s.anchor}>
+                      <li key={s.id}>
                         <a
-                          href={`${servicesHref}#${s.anchor}`}
+                          href={servicePath(s.id as ServiceId, locale)}
                           onClick={() => setOpen(false)}
                           className="block py-2 text-[15px] font-medium text-[var(--color-ink-500)]"
                         >
@@ -280,6 +299,15 @@ export function SiteHeader({
                         </a>
                       </li>
                     ))}
+                    <li>
+                      <a
+                        href={servicesHref}
+                        onClick={() => setOpen(false)}
+                        className="block py-2 text-[14px] font-semibold text-[var(--color-brand)]"
+                      >
+                        {viewAllLabel} →
+                      </a>
+                    </li>
                   </ul>
                 )}
               </li>
