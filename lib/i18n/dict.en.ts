@@ -639,7 +639,7 @@ export const en: Dict = {
           "E-commerce with catalog, secure payment gateway and a simple admin panel. Built so you sell, without relying on us for every change.",
         ctaPrimary: "Request a quote",
         ctaSecondary: "See all services",
-        heroImage: "",
+        heroImage: "/services/shop/hero.png",
       },
       valueProp: {
         eyebrow: "WHY IT MATTERS",
@@ -664,10 +664,10 @@ export const en: Dict = {
         eyebrow: "HOW WE WORK",
         h2: "From idea to a working store in 4–6 weeks.",
         steps: [
-          { num: "01", title: "Catalog architecture",   desc: "Categories, attributes, filters and technical product SEO.",                              image: "" },
-          { num: "02", title: "Design and development", desc: "Bespoke UI, payment and shipping integrations, admin panel.",                            image: "" },
-          { num: "03", title: "Initial load and QA",    desc: "We upload your catalog, configure payment methods and test the entire flow.",            image: "" },
-          { num: "04", title: "Launch and training",    desc: "We teach you to manage orders, products and promotions.",                                image: "" },
+          { num: "01", title: "Catalog architecture",   desc: "Categories, attributes, filters and technical product SEO.",                              image: "/services/shop/arquitectura.jpg" },
+          { num: "02", title: "Design and development", desc: "Bespoke UI, payment and shipping integrations, admin panel.",                            image: "/services/shop/desarrollo.png" },
+          { num: "03", title: "Initial load and QA",    desc: "We upload your catalog, configure payment methods and test the entire flow.",            image: "/services/shop/qa.jpg" },
+          { num: "04", title: "Launch and training",    desc: "We teach you to manage orders, products and promotions.",                                image: "/services/shop/lanzamiento.jpg" },
         ],
       },
       useCases: {

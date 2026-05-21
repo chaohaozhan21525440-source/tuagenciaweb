@@ -639,7 +639,7 @@ export const es = {
           "E-commerce con catálogo, pasarela de pago segura y panel de gestión simple. Pensadas para que vendas tú, sin depender de nosotros para cada cambio.",
         ctaPrimary: "Solicitar presupuesto",
         ctaSecondary: "Ver todos los servicios",
-        heroImage: "",
+        heroImage: "/services/shop/hero.png",
       },
       valueProp: {
         eyebrow: "POR QUÉ IMPORTA",
@@ -664,10 +664,10 @@ export const es = {
         eyebrow: "CÓMO TRABAJAMOS",
         h2: "De idea a tienda funcionando en 4–6 semanas.",
         steps: [
-          { num: "01", title: "Arquitectura del catálogo", desc: "Categorías, atributos, filtros y SEO técnico de producto.",                        image: "" },
-          { num: "02", title: "Diseño y desarrollo",       desc: "UI a medida, integraciones de pago y envío, panel de gestión.",                    image: "" },
-          { num: "03", title: "Carga inicial y QA",        desc: "Subimos tu catálogo, configuramos métodos de pago y probamos el flujo entero.",     image: "" },
-          { num: "04", title: "Lanzamiento y formación",   desc: "Te enseñamos a gestionar pedidos, productos y promociones.",                       image: "" },
+          { num: "01", title: "Arquitectura del catálogo", desc: "Categorías, atributos, filtros y SEO técnico de producto.",                        image: "/services/shop/arquitectura.jpg" },
+          { num: "02", title: "Diseño y desarrollo",       desc: "UI a medida, integraciones de pago y envío, panel de gestión.",                    image: "/services/shop/desarrollo.png" },
+          { num: "03", title: "Carga inicial y QA",        desc: "Subimos tu catálogo, configuramos métodos de pago y probamos el flujo entero.",     image: "/services/shop/qa.jpg" },
+          { num: "04", title: "Lanzamiento y formación",   desc: "Te enseñamos a gestionar pedidos, productos y promociones.",                       image: "/services/shop/lanzamiento.jpg" },
         ],
       },
       useCases: {
