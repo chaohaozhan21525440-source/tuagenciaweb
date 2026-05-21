@@ -3767,3 +3767,69 @@
   .hero-cta-3d.parent:hover .card .logo .circle5 { transform: none; }
 }
 
+/* ===== Mobile pass 3 — fixes only inside max-width queries ===== */
+
+/* HubCards on /servicios: side padding so cards don't kiss viewport edge */
+@media (max-width: 640px) {
+  .hub-cards-grid {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+
+/* Hub card min-height auto on tablet so the 2-col grid doesn't get tall gaps */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .hub-card { min-height: auto; }
+}
+
+/* Home hero 3D card: shrink on tight phones to avoid cramming next to ghost CTA */
+@media (max-width: 375px) {
+  .hero-cta-3d.parent { width: 210px; height: 240px; }
+  .hero-page .cta-row { gap: 10px; }
+}
+
+/* About page: extra padding around the photo mosaic so it doesn't edge-crop */
+@media (max-width: 480px) {
+  .about-page .ab-space-grid {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+/* Blog post: tighter container + lists at tiny phones */
+@media (max-width: 480px) {
+  .blog-post .container-bp { padding: 0 18px; }
+  .blog-post .bp-body-content ul,
+  .blog-post .bp-body-content ol { padding-left: 20px; }
+  .blog-post .bp-cover { margin: 24px 0; border-radius: 16px; }
+}
+
+/* Service detail hero: tighten breadcrumb spacing and h1 margins at phones */
+@media (max-width: 480px) {
+  .sd-breadcrumb { margin-bottom: 16px; font-size: 12px; }
+  .sd-h1 { margin: 12px 0 16px; }
+  .sd-hero-image .sd-container { padding: 0 18px; }
+}
+
+/* Service detail CTA: tighter padding at tiny phones (was 48px 28px) */
+@media (max-width: 375px) {
+  .sd-cta-card {
+    padding: 32px 18px;
+  }
+}
+
+/* Service detail Included + UseCases: tighter gap at mobile (cards already padded inside) */
+@media (max-width: 480px) {
+  .sd-included-grid,
+  .sd-usecases-grid { gap: 12px; }
+}
+
+/* Testimonials: shrink decorative quote mark so it doesn't overflow small cards */
+@media (max-width: 480px) {
+  .tm-quote-mark {
+    font-size: 48px;
+    right: 14px;
+    top: 8px;
+  }
+}
+
