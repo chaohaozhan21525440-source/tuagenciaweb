@@ -81,8 +81,8 @@ export function Testimonials({ dict }: { dict: Dict["testimonials"] }) {
                 </div>
                 <div className="tm-meta">
                   <div className="tm-author">{it.author}</div>
-                  <div className="tm-date">
-                    <GoogleG /> {it.date}
+                  <div className="tm-source">
+                    <GoogleG /> Google
                   </div>
                 </div>
               </footer>
