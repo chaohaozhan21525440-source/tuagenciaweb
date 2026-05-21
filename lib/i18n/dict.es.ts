@@ -348,6 +348,7 @@ export const es = {
       photoAlts: [
         "Oficina de Tuagenciaweb en Barcelona",
         "Hoodie de Tuagenciaweb en la oficina",
+        "Taza de Tuagenciaweb sobre el escritorio",
         "Equipo de Tuagenciaweb trabajando",
       ],
     },
