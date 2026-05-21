@@ -794,7 +794,7 @@
 
 .services-section .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 @media (max-width: 1100px) {
@@ -3643,5 +3643,127 @@
     transition: none;
     transform: none;
   }
+}
+
+/* ===== Home Hero — 3D card CTA (brand blue) ===== */
+.hero-cta-row-3d { align-items: flex-start; gap: 20px; flex-wrap: wrap; }
+
+.hero-cta-3d.parent { width: 240px; height: 260px; perspective: 1000px; }
+.hero-cta-3d .card {
+  height: 100%;
+  border-radius: 40px;
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  transition: all 0.5s ease-in-out;
+  transform-style: preserve-3d;
+  box-shadow: rgba(15, 32, 73, 0) 40px 50px 25px -40px,
+              rgba(15, 32, 73, 0.25) 0px 25px 25px -5px;
+  position: relative;
+}
+.hero-cta-3d .glass {
+  transform-style: preserve-3d;
+  position: absolute;
+  inset: 7px;
+  border-radius: 45px;
+  border-top-right-radius: 100%;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.349) 0%, rgba(255, 255, 255, 0.815) 100%);
+  transform: translate3d(0px, 0px, 25px);
+  border-left: 1px solid white;
+  border-bottom: 1px solid white;
+  transition: all 0.5s ease-in-out;
+  pointer-events: none;
+}
+.hero-cta-3d .content {
+  display: block;
+  padding: 78px 44px 0 22px;
+  transform: translate3d(0, 0, 26px);
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+.hero-cta-3d .content .title { display: block; color: #1d4ed8; font-weight: 900; font-size: 19px; line-height: 1.15; letter-spacing: -0.01em; }
+.hero-cta-3d .content .text  { display: block; color: rgba(29, 78, 216, 0.78); font-size: 12.5px; margin-top: 12px; line-height: 1.45; }
+
+.hero-cta-3d .bottom {
+  padding: 8px 10px;
+  transform-style: preserve-3d;
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transform: translate3d(0, 0, 26px);
+}
+.hero-cta-3d .bottom .view-more { display: flex; align-items: center; gap: 4px; justify-content: flex-end; text-decoration: none; transition: all 0.2s ease-in-out; }
+.hero-cta-3d .bottom .view-more:hover { transform: translate3d(0, 0, 10px); }
+.hero-cta-3d .bottom .view-more .view-more-button { background: none; border: none; color: #1d4ed8; font-weight: 700; font-size: 10.5px; padding: 0; cursor: pointer; white-space: nowrap; }
+.hero-cta-3d .bottom .view-more .svg { fill: none; stroke: #1d4ed8; stroke-width: 3px; max-height: 13px; }
+
+.hero-cta-3d .bottom .social-buttons-container { display: flex; gap: 8px; transform-style: preserve-3d; }
+.hero-cta-3d .bottom .social-buttons-container .social-button {
+  width: 26px;
+  height: 26px;
+  padding: 4px;
+  background: #fff;
+  border-radius: 50%;
+  border: none;
+  display: grid;
+  place-content: center;
+  box-shadow: rgba(15, 32, 73, 0.45) 0px 6px 5px -5px;
+  text-decoration: none;
+}
+.hero-cta-3d .bottom .social-buttons-container .social-button:first-child  { transition: transform 0.2s ease-in-out 0.4s, box-shadow 0.2s ease-in-out 0.4s; }
+.hero-cta-3d .bottom .social-buttons-container .social-button:nth-child(2) { transition: transform 0.2s ease-in-out 0.6s, box-shadow 0.2s ease-in-out 0.6s; }
+.hero-cta-3d .bottom .social-buttons-container .social-button:nth-child(3) { transition: transform 0.2s ease-in-out 0.8s, box-shadow 0.2s ease-in-out 0.8s; }
+.hero-cta-3d .bottom .social-buttons-container .social-button .svg { width: 13px; height: 13px; fill: #1d4ed8; }
+.hero-cta-3d .bottom .social-buttons-container .social-button:hover { background: #0a1733; }
+.hero-cta-3d .bottom .social-buttons-container .social-button:hover .svg { fill: #fff; }
+
+.hero-cta-3d .logo { position: absolute; right: 0; top: 0; transform-style: preserve-3d; pointer-events: none; }
+.hero-cta-3d .logo .circle {
+  display: block;
+  position: absolute;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  top: 0;
+  right: 0;
+  box-shadow: rgba(15, 32, 73, 0.20) -10px 10px 20px 0px;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  background: rgba(96, 165, 250, 0.30);
+  transition: all 0.5s ease-in-out;
+}
+.hero-cta-3d .logo .circle1 { width: 140px; transform: translate3d(0, 0, 20px);  top: 7px;  right: 7px;  }
+.hero-cta-3d .logo .circle2 { width: 115px; transform: translate3d(0, 0, 40px);  top: 9px;  right: 9px;  -webkit-backdrop-filter: blur(1px); backdrop-filter: blur(1px); transition-delay: 0.4s; }
+.hero-cta-3d .logo .circle3 { width: 90px;  transform: translate3d(0, 0, 60px);  top: 14px; right: 14px; transition-delay: 0.8s; }
+.hero-cta-3d .logo .circle4 { width: 66px;  transform: translate3d(0, 0, 80px);  top: 19px; right: 19px; transition-delay: 1.2s; }
+.hero-cta-3d .logo .circle5 { width: 42px;  transform: translate3d(0, 0, 100px); top: 25px; right: 25px; display: grid; place-content: center; transition-delay: 1.6s; }
+.hero-cta-3d .logo .circle5 .svg { width: 17px; height: 17px; stroke: #fff; fill: none; }
+
+.hero-cta-3d.parent:hover .card {
+  transform: rotate3d(1, 1, 0, 22deg);
+  box-shadow: rgba(15, 32, 73, 0.3) 30px 50px 25px -40px,
+              rgba(15, 32, 73, 0.12) 0px 25px 30px 0px;
+}
+.hero-cta-3d.parent:hover .card .bottom .social-buttons-container .social-button {
+  transform: translate3d(0, 0, 50px);
+  box-shadow: rgba(15, 32, 73, 0.25) -5px 20px 10px 0px;
+}
+.hero-cta-3d.parent:hover .card .logo .circle2 { transform: translate3d(0, 0, 60px);  }
+.hero-cta-3d.parent:hover .card .logo .circle3 { transform: translate3d(0, 0, 80px);  }
+.hero-cta-3d.parent:hover .card .logo .circle4 { transform: translate3d(0, 0, 100px); }
+.hero-cta-3d.parent:hover .card .logo .circle5 { transform: translate3d(0, 0, 120px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-cta-3d .card,
+  .hero-cta-3d .logo .circle,
+  .hero-cta-3d .bottom .social-buttons-container .social-button { transition: none; }
+  .hero-cta-3d.parent:hover .card,
+  .hero-cta-3d.parent:hover .card .bottom .social-buttons-container .social-button,
+  .hero-cta-3d.parent:hover .card .logo .circle2,
+  .hero-cta-3d.parent:hover .card .logo .circle3,
+  .hero-cta-3d.parent:hover .card .logo .circle4,
+  .hero-cta-3d.parent:hover .card .logo .circle5 { transform: none; }
 }
 

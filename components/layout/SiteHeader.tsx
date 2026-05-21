@@ -130,46 +130,35 @@ function ServicesNavDropdown({
 
       <div
         className={cn(
-          "absolute left-1/2 top-full z-40 mt-3 w-[340px] -translate-x-1/2 rounded-2xl border border-[var(--color-ink-100)] bg-white p-2",
-          "shadow-[0_24px_48px_-20px_rgba(15,23,42,0.18),0_8px_18px_-8px_rgba(15,23,42,0.08)]",
-          "transition-all duration-200 ease-out",
+          "absolute left-1/2 top-full z-40 mt-2 w-[200px] -translate-x-1/2 border-t-2 border-[var(--color-brand)] bg-white",
+          "transition-opacity duration-150 ease-out",
           open
-            ? "pointer-events-auto translate-y-0 opacity-100"
-            : "pointer-events-none -translate-y-1 opacity-0",
+            ? "pointer-events-auto opacity-100"
+            : "pointer-events-none opacity-0",
         )}
         role="menu"
         aria-hidden={!open}
+        style={{ boxShadow: "0 8px 16px -8px rgba(15,23,42,0.10)" }}
       >
         {items.map((it) => (
           <a
             key={it.id}
             href={servicePath(it.id as ServiceId, locale)}
             role="menuitem"
-            className="group flex items-center gap-3 rounded-xl px-3 py-3 transition-colors hover:bg-[var(--color-brand-soft)]"
+            className="block px-4 py-2.5 text-[13.5px] text-[var(--color-ink-700)] transition-colors hover:text-[var(--color-brand)]"
             onClick={() => setOpen(false)}
           >
-            <span
-              className="inline-flex h-9 w-9 flex-none items-center justify-center rounded-lg bg-[var(--color-brand-soft)] text-[12px] font-bold tracking-wider text-[var(--color-brand)] transition-colors group-hover:bg-white"
-            >
-              {it.num}
-            </span>
-            <span className="flex-1 text-[14.5px] font-semibold text-[var(--color-ink-900)]">
-              {it.title}
-            </span>
-            <span className="text-[var(--color-ink-300)] transition-all group-hover:translate-x-1 group-hover:text-[var(--color-brand)]">
-              <ArrowRight />
-            </span>
+            {it.title}
           </a>
         ))}
 
-        <div className="mx-2 mt-1 border-t border-[var(--color-ink-100)]" />
         <a
           href={href}
           role="menuitem"
-          className="block rounded-xl px-3 py-3 text-center text-[13.5px] font-semibold text-[var(--color-brand)] transition-colors hover:bg-[var(--color-brand-soft)]"
+          className="block px-4 py-2.5 text-[12px] text-[var(--color-ink-400)] transition-colors hover:text-[var(--color-ink-900)] border-t border-[var(--color-ink-100)]"
           onClick={() => setOpen(false)}
         >
-          {viewAllLabel} →
+          {viewAllLabel}
         </a>
       </div>
     </div>

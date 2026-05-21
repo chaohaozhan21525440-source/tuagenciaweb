@@ -40,6 +40,8 @@ export const en: Dict = {
       "We build modern, fast, SEO-optimised websites so your business gets more contacts and sales every day.",
     ctaPrimary: "Get a quote",
     ctaSecondary: "View projects",
+    ctaCardTitle: "Shall we talk?",
+    ctaCardSub: "We'll send you a custom proposal in less than 24 hours. No strings attached.",
     features: [
       { title: "Bespoke design", sub: "100% tailored" },
       { title: "Fast & secure", sub: "Loads in < 2s" },
@@ -92,9 +94,15 @@ export const en: Dict = {
       },
       {
         id: "seo",
-        title: "Technical SEO & maintenance",
-        body: "We rank your business on Google and look after the site month after month.",
-        bullets: ["Schema + Core Web Vitals", "Optimised content", "Hour bank + backups"],
+        title: "Technical & content SEO",
+        body: "We rank your business on Google where your customers are.",
+        bullets: ["Schema + sitemap", "Speed & Core Web Vitals", "Optimised content"],
+      },
+      {
+        id: "seo",
+        title: "Optional maintenance",
+        body: "If you want, we stick around after launch. No obligation.",
+        bullets: ["Prepaid hour bank", "Backups & monitoring", "Direct support"],
       },
     ],
     seoRank: { label: "Average position", source: "Google", rank: "1" },

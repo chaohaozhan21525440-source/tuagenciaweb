@@ -136,11 +136,47 @@ export function Hero({ dict, locale }: { dict: Dict["hero"]; locale: Locale }) {
               {dict.h1Pre}<span className="em">{dict.h1Em}</span>
             </h1>
             <p className="lede">{dict.lede}</p>
-            <div className="cta-row">
-              <Link className="hero-btn hero-btn-primary" href={path("contact", locale)}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 5l7 7-7 7" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                {dict.ctaPrimary}
-              </Link>
+            <div className="cta-row hero-cta-row-3d">
+              <div className="hero-cta-3d parent">
+                <div className="card">
+                  <div className="logo" aria-hidden>
+                    <span className="circle circle1" />
+                    <span className="circle circle2" />
+                    <span className="circle circle3" />
+                    <span className="circle circle4" />
+                    <span className="circle circle5">
+                      <svg className="svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M5 12h14M13 5l7 7-7 7" />
+                      </svg>
+                    </span>
+                  </div>
+                  <div className="glass" />
+                  <Link href={path("contact", locale)} className="content">
+                    <span className="title">{dict.ctaCardTitle}</span>
+                    <span className="text">{dict.ctaCardSub}</span>
+                  </Link>
+                  <div className="bottom">
+                    <div className="social-buttons-container">
+                      <a className="social-button" href="https://wa.me/34613654273" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                        <svg className="svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11 11 0 0 0 3 17l-1 5 5-1a11 11 0 0 0 16.4-9.4 11 11 0 0 0-2.9-8.1Zm-8.5 17a9 9 0 0 1-4.6-1.3l-.3-.2-3 .6.6-3-.2-.3A9 9 0 1 1 12 20.5Zm5-6.7c-.3-.2-1.6-.8-1.9-.9-.2-.1-.4-.1-.6.1l-.9 1c-.1.2-.3.2-.5.1a7 7 0 0 1-3.6-3.2c-.1-.2 0-.4.1-.5l.4-.5.2-.3v-.4l-.9-2c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.8.4 3 3 0 0 0-1 2.2c0 1.3 1 2.5 1.1 2.7.1.2 1.9 2.9 4.6 4.1a16 16 0 0 0 1.5.6c.6.2 1.2.2 1.7.1.5-.1 1.6-.7 1.8-1.3.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z" /></svg>
+                      </a>
+                      <a className="social-button" href="mailto:info@tuagenciaweb.es" aria-label="Email">
+                        <svg className="svg" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm0 2v.5l8 5 8-5V6H4zm0 2.5V18h16V8.5l-8 5-8-5z" /></svg>
+                      </a>
+                      <a className="social-button" href="tel:+34613654273" aria-label="Teléfono">
+                        <svg className="svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1 1 0 0 0-1.02.24l-2.2 2.2a15.05 15.05 0 0 1-6.59-6.59l2.2-2.2a1 1 0 0 0 .24-1.02A11.36 11.36 0 0 1 8.5 4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3.5a1 1 0 0 0-1-1z" /></svg>
+                      </a>
+                    </div>
+                    <Link href={path("contact", locale)} className="view-more">
+                      <span className="view-more-button">{dict.ctaPrimary}</span>
+                      <svg className="svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                        <polyline points="12 5 19 12 12 19" />
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+              </div>
               <Link className="hero-btn hero-btn-ghost" href={sectionPath("home", locale, "projects")}>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="13" rx="2" stroke="currentColor" strokeWidth="1.8" /><path d="M10 10l5 3-5 3v-6z" fill="currentColor" /></svg>
                 {dict.ctaSecondary}
