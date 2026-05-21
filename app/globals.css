@@ -223,11 +223,6 @@
   /* Sobre nosotros: the absolute testimonial overflows on mobile — bring it back inside */
   .about-page .testimonial { position: static; margin: 24px 0 0; width: auto; left: auto; bottom: auto; }
   .about-page .vm-card { margin: 56px 0 56px; }
-  /* Sobre nosotros: shrink the 3D illustration height to avoid overlapping */
-  .about-page .illus { height: 260px; margin-top: 32px; }
-  .about-page .win-1 { right: 12px; }
-  .about-page .win-2 { right: 32px; }
-  .about-page .chart-card { right: 0; }
   /* Hero: hide the absolute-positioned decorative floating cards when the layout
      stacks vertically — they overlap the video and each other on narrow screens. */
   .hero-page .card-solicitudes,
@@ -247,9 +242,6 @@
   .about-page .vm-card { padding: 32px 22px; gap: 36px; }
   /* Contact page reduce footer card text spacing */
   .contact-page .cta-banner { padding: 24px 22px; }
-  /* About-page mission illustration: shift left to keep visible */
-  .about-page .win-1 { right: 4px; top: 8px; }
-  .about-page .win-2 { right: 16px; top: 70px; }
   /* Carrusel: ocultar flechas en móvil — el swipe + dots sirven */
   .proyectos-section .arrow { display: none; }
   /* Carrusel: ampliar área táctil de los dots a ~44px sin cambiar el aspecto visual */
@@ -384,14 +376,6 @@
   background: linear-gradient(160deg, rgba(11,18,32,0) 50%, rgba(11,18,32,.18));
   pointer-events: none;
 }
-.about-page .photo .watermark {
-  position: absolute; right: 28px; bottom: 28px;
-  width: 110px; opacity: 0.92;
-  filter: drop-shadow(0 6px 18px rgba(0,0,0,.35));
-  z-index: 2;
-}
-.about-page .photo .watermark img { width: 100%; height: auto; display: block; }
-
 .about-page .testimonial {
   position: absolute;
   left: -20px;
@@ -458,48 +442,85 @@
 .about-page .mission .copy h2 .accent { color: var(--about-blue); }
 .about-page .mission .copy p { margin: 0; color: #475569; font-size: 15px; line-height: 1.6; }
 
-.about-page .illus { position: relative; height: 300px; margin-top: 28px; min-width: 0; overflow: hidden; }
-.about-page .win {
-  position: absolute;
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 30px 60px -25px rgba(15,23,42,.30), 0 8px 24px -12px rgba(15,23,42,.10);
-  border: 1px solid #EEF1F6;
-  overflow: hidden;
-}
-.about-page .win .bar {
-  height: 26px; background: #F1F5F9; border-bottom: 1px solid #E5E7EB;
-  display: flex; align-items: center; padding: 0 12px; gap: 6px;
-}
-.about-page .win .bar i { width: 8px; height: 8px; border-radius: 50%; background: #CBD5E1; display: inline-block; }
-.about-page .win-1 { width: 190px; height: 150px; right: 20px; top: 4px; transform: rotate(-1deg); }
-.about-page .win-1 .body { padding: 14px; display: flex; flex-direction: column; gap: 8px; }
-.about-page .win-1 .tw-logo { height: 28px; width: auto; margin: 4px 0 2px; display: block; }
-.about-page .win-1 .line { height: 8px; border-radius: 4px; background: #EEF2F7; }
-.about-page .win-1 .line.s { width: 60%; }
-.about-page .win-1 .cta { margin-top: 6px; height: 26px; border-radius: 6px; background: var(--about-blue); }
-.about-page .win-2 { width: 230px; height: 160px; right: 50px; top: 64px; transform: rotate(2deg); }
-.about-page .win-2 .body { padding: 16px; display: flex; flex-direction: column; gap: 10px; }
-.about-page .win-2 .row { display: flex; gap: 8px; }
-.about-page .win-2 .line { height: 8px; border-radius: 4px; background: #EEF2F7; flex: 1; }
-.about-page .win-2 .cta { height: 28px; width: 110px; border-radius: 8px; background: var(--about-blue); margin-top: 4px; }
-.about-page .win-2 .line.long { width: 100%; }
-.about-page .win-2 .line.mid { width: 70%; }
-
-.about-page .chart-card {
-  position: absolute; right: 0; bottom: 0; width: 190px;
-  background: #fff; border-radius: 16px;
-  border: 1px solid #EEF1F6; box-shadow: var(--about-shadow-md);
-  padding: 12px 14px;
-}
-.about-page .chart-card .head { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
-.about-page .chart-card .head .ico { width: 24px; height: 24px; border-radius: 6px; background: var(--about-green-soft); display: grid; place-items: center; }
-.about-page .chart-card .head .ico svg { width: 14px; height: 14px; color: var(--about-green); }
-.about-page .chart-card .head .pct { font-size: 11px; font-weight: 600; color: var(--about-green); background: var(--about-green-soft); padding: 2px 6px; border-radius: 999px; margin-left: auto; }
-.about-page .chart-card .head .label { font-size: 12px; color: #64748B; font-weight: 500; }
-.about-page .chart-card svg.spark { display: block; }
-
 .about-page .footroom { height: 80px; }
+
+/* About — Nuestro espacio section */
+.about-page .ab-space {
+  margin: 72px 0 0;
+}
+@media (min-width: 1024px) { .about-page .ab-space { margin: 96px 0 0; } }
+
+.about-page .ab-space-head { text-align: center; margin-bottom: 32px; max-width: 720px; margin-left: auto; margin-right: auto; }
+.about-page .ab-space-h2 {
+  font-size: clamp(28px, 3.6vw, 40px);
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  font-weight: 800;
+  color: #0b1220;
+  margin: 18px 0 14px;
+}
+.about-page .ab-space-sub {
+  color: #475569;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 560px;
+}
+
+.about-page .ab-space-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 36px;
+}
+@media (min-width: 768px) {
+  .about-page .ab-space-grid {
+    grid-template-columns: 1.4fr 1fr;
+    gap: 20px;
+  }
+}
+
+.about-page .ab-space-big,
+.about-page .ab-space-small {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #f1f5f9;
+  border: 1px solid #e5e7eb;
+}
+.about-page .ab-space-big { aspect-ratio: 4/3; }
+.about-page .ab-space-small { aspect-ratio: 4/3; }
+@media (min-width: 768px) {
+  .about-page .ab-space-big { aspect-ratio: auto; height: 100%; min-height: 480px; }
+  .about-page .ab-space-small { aspect-ratio: 16/10; }
+}
+
+.about-page .ab-space-col {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+}
+
+.about-page .ab-space-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.about-page .ab-space-big:hover .ab-space-img,
+.about-page .ab-space-small:hover .ab-space-img {
+  transform: scale(1.03);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-page .ab-space-img,
+  .about-page .ab-space-big:hover .ab-space-img,
+  .about-page .ab-space-small:hover .ab-space-img {
+    transition: none;
+    transform: none;
+  }
+}
 
 /* ===== Contacto page (scoped) ===== */
 .contact-page {

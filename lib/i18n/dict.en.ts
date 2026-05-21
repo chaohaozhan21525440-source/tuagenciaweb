@@ -305,7 +305,7 @@ export const en: Dict = {
     h1Accent: "drive businesses",
     h1Post: " and deliver results.",
     lead:
-      "We're a team of professionals passionate about design, development and digital marketing. We help businesses like yours stand out online.",
+      "We're a small Barcelona studio obsessed with detail. We build fast, clean, conversion-driven websites. No templates, no empty promises, no endless monthly fees.",
     stats: [
       { title: "+5 years", sub: "of experience" },
       { title: "+120 projects", sub: "delivered" },
@@ -317,6 +317,17 @@ export const en: Dict = {
       body:
         "We believe in the power of good design and a solid digital strategy to transform businesses.",
       src: "— TuAgenciaWeb",
+    },
+    space: {
+      pill: "OUR SPACE",
+      h2: "Where every project is built.",
+      sub:
+        "Our workspace in Barcelona. Coffee, code, and conversations that turn into conversion-driven websites.",
+      photoAlts: [
+        "Tuagenciaweb office in Barcelona",
+        "Tuagenciaweb team at work",
+        "Tuagenciaweb workspace",
+      ],
     },
     valuesPill: "OUR VALUES",
     values: [

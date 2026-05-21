@@ -305,7 +305,7 @@ export const es = {
     h1Accent: "impulsan negocios",
     h1Post: " y generan resultados.",
     lead:
-      "Somos un equipo de profesionales apasionados por el diseño, el desarrollo y el marketing digital. Ayudamos a empresas como la tuya a destacar en internet.",
+      "Somos un pequeño estudio en Barcelona obsesionado con el detalle. Diseñamos webs rápidas, claras y orientadas a vender. Sin plantillas, sin promesas vacías, sin cuotas mensuales eternas.",
     stats: [
       { title: "+5 años", sub: "de experiencia" },
       { title: "+120 proyectos", sub: "entregados" },
@@ -317,6 +317,17 @@ export const es = {
       body:
         "Creemos en el poder de un buen diseño y una estrategia digital sólida para transformar negocios.",
       src: "— TuAgenciaWeb",
+    },
+    space: {
+      pill: "NUESTRO ESPACIO",
+      h2: "Aquí construimos cada proyecto.",
+      sub:
+        "Nuestro espacio de trabajo en Barcelona. Café, código y conversaciones que terminan en webs que convierten.",
+      photoAlts: [
+        "Oficina de Tuagenciaweb en Barcelona",
+        "Equipo de Tuagenciaweb trabajando",
+        "Espacio de Tuagenciaweb",
+      ],
     },
     valuesPill: "NUESTROS VALORES",
     values: [
