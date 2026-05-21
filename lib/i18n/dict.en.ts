@@ -435,6 +435,9 @@ export const en: Dict = {
         },
       ],
     },
+    detailNav: {
+      hubLabel: "Services",
+    },
     process: {
       eyebrow: "PROCESS",
       h2: "How we work",

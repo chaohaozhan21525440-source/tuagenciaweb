@@ -435,6 +435,9 @@ export const es = {
         },
       ],
     },
+    detailNav: {
+      hubLabel: "Servicios",
+    },
     process: {
       eyebrow: "PROCESO",
       h2: "Cómo trabajamos",
