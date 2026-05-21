@@ -253,15 +253,6 @@ export const es = {
       location: "Ubicación",
       country: "España",
     },
-    faq: {
-      title: "Preguntas frecuentes",
-      items: [
-        "¿Cuánto tarda una web?",
-        "¿Incluye SEO?",
-        "¿Trabajáis con autónomos?",
-        "¿Ofrecéis mantenimiento?",
-      ],
-    },
     cta: {
       title: "¿Listo para impulsar tu negocio?",
       body:

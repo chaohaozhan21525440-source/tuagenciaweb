@@ -66,7 +66,7 @@ export function ContactContent({
         </section>
 
         <section className="info-bar">
-          <a href="mailto:chao@tuagenciaweb.es" className="info" style={{ textDecoration: "none", color: "inherit" }}>
+          <a href="mailto:info@tuagenciaweb.es" className="info" style={{ textDecoration: "none", color: "inherit" }}>
             <div className="ic">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
@@ -75,7 +75,7 @@ export function ContactContent({
             </div>
             <div className="txt">
               <div className="lab">{dict.info.email}</div>
-              <div className="val">chao@tuagenciaweb.es</div>
+              <div className="val">info@tuagenciaweb.es</div>
             </div>
             <svg className="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
               <line x1="5" y1="12" x2="19" y2="12" />
@@ -127,21 +127,6 @@ export function ContactContent({
               <line x1="5" y1="12" x2="19" y2="12" />
               <polyline points="12 5 19 12 12 19" />
             </svg>
-          </div>
-        </section>
-
-        <section className="faq">
-          <h2>{dict.faq.title}</h2>
-          <div className="faq-grid">
-            {dict.faq.items.map((q) => (
-              <div key={q} className="faq-item">
-                <span>{q}</span>
-                <svg className="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg>
-              </div>
-            ))}
           </div>
         </section>
 

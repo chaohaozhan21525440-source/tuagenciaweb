@@ -253,15 +253,6 @@ export const en: Dict = {
       location: "Location",
       country: "Spain",
     },
-    faq: {
-      title: "Frequently asked",
-      items: [
-        "How long does a website take?",
-        "Does it include SEO?",
-        "Do you work with freelancers?",
-        "Do you offer maintenance?",
-      ],
-    },
     cta: {
       title: "Ready to grow your business?",
       body:
