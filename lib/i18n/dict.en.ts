@@ -639,7 +639,7 @@ export const en: Dict = {
           "E-commerce with catalog, secure payment gateway and a simple admin panel. Built so you sell, without relying on us for every change.",
         ctaPrimary: "Request a quote",
         ctaSecondary: "See all services",
-        heroImage: "",
+        heroImage: "/services/shop/hero.png",
       },
       valueProp: {
         eyebrow: "WHY IT MATTERS",

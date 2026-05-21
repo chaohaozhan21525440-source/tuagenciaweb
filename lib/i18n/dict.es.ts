@@ -639,7 +639,7 @@ export const es = {
           "E-commerce con catálogo, pasarela de pago segura y panel de gestión simple. Pensadas para que vendas tú, sin depender de nosotros para cada cambio.",
         ctaPrimary: "Solicitar presupuesto",
         ctaSecondary: "Ver todos los servicios",
-        heroImage: "",
+        heroImage: "/services/shop/hero.png",
       },
       valueProp: {
         eyebrow: "POR QUÉ IMPORTA",
