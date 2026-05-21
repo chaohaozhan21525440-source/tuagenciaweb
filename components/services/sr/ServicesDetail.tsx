@@ -1,7 +1,21 @@
 "use client";
 
 import { motion } from "framer-motion";
-import type { Dict } from "@/lib/i18n";
+
+// NOTE: Component scheduled for removal in Task 10 (dict.servicesPage.detail
+// was replaced by dict.servicesPage.hubCards + top-level dict.servicesDetail).
+// Kept on disk with a local prop type so the project still type-checks until
+// the cleanup task removes it.
+type ServicesDetailDict = {
+  items: Array<{
+    id: string;
+    num: string;
+    eyebrow: string;
+    title: string;
+    lead: string;
+    bullets: string[];
+  }>;
+};
 
 const Check = () => (
   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
@@ -9,7 +23,7 @@ const Check = () => (
   </svg>
 );
 
-export function ServicesDetail({ dict }: { dict: Dict["servicesPage"]["detail"] }) {
+export function ServicesDetail({ dict }: { dict: ServicesDetailDict }) {
   return (
     <section className="sr-detail-wrap">
       <div className="sr-container">
