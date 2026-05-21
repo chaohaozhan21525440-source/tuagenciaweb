@@ -3,6 +3,7 @@ import { Hero } from "@/components/home/Hero";
 import { TrustBar } from "@/components/home/TrustBar";
 import { Services } from "@/components/home/Services";
 import { Projects } from "@/components/home/Projects";
+import { Testimonials } from "@/components/home/Testimonials";
 import { Partners } from "@/components/home/Partners";
 import { FAQ } from "@/components/home/FAQ";
 import { getDict } from "@/lib/i18n";
@@ -31,6 +32,7 @@ export default function HomeEs() {
       <TrustBar dict={dict.trustBar} />
       <Services dict={dict.services} locale="es" />
       <Projects dict={dict.projects} />
+      <Testimonials dict={dict.testimonials} />
       <Partners dict={dict.partners} />
       <FAQ dict={dict.faq} />
     </main>

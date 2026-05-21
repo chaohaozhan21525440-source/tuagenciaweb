@@ -138,6 +138,40 @@ export const en: Dict = {
       "Conceptual projects guided by publicly available design references. They do not represent official collaborations with the brands mentioned.",
     comingSoon: "Coming soon",
   },
+  testimonials: {
+    pill: "REVIEWS FROM GOOGLE",
+    h2Top: "What our clients",
+    h2Accent: "say about us.",
+    sub: "Real testimonials from clients we've already worked with.",
+    googleLink: "View profile on Google",
+    googleHref: "https://share.google/qxpDAMUL5teufbKLJ",
+    items: [
+      {
+        author: "Maydo Sushi",
+        avatarColor: "blue",
+        rating: 5,
+        date: "1 day ago",
+        text:
+          "Since we started working with TUAGENCIAWEB, our online presence has improved tremendously. They designed an elegant, fast and easy-to-use website that perfectly reflects our restaurant's image. They also optimized our local SEO and we now receive many more reservations through Google. The treatment has been close, professional and very efficient. A fully recommendable agency.",
+      },
+      {
+        author: "Xavi Wang",
+        avatarColor: "green",
+        rating: 5,
+        date: "1 day ago",
+        text:
+          "We've been working with TUAGENCIAWEB for several years and the experience has been excellent. They helped us redesign our website and improve our Google ranking, which translated into a significant increase in inquiries and online sales. I highlight their professionalism, speed and the clarity with which they explain every step. Fully recommended for any business that wants to improve its digital presence.",
+      },
+      {
+        author: "Zihao Xu",
+        avatarColor: "purple",
+        rating: 5,
+        date: "16 hours ago",
+        text:
+          "Hiring TUAGENCIAWEB was one of the best decisions for our business. From day one, they showed deep technical knowledge and a real capacity to understand our needs. The process was transparent: they met every deadline, communication was smooth, and the result exceeded our expectations. The site is perfectly optimized for SEO, fast and responsive. They also trained us to manage the content ourselves and provided excellent post-launch support. I recommend them to anyone looking for quality, trust and a team that truly cares about their clients' digital success.",
+      },
+    ],
+  },
   brands: {
     pill: "REFERENCES",
     h2: "Brands that inspire us",

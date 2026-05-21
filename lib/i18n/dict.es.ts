@@ -138,6 +138,40 @@ export const es = {
       "Proyectos conceptuales orientados en referencias públicas de diseño. No representan colaboraciones oficiales con las marcas mencionadas.",
     comingSoon: "Próximamente",
   },
+  testimonials: {
+    pill: "OPINIONES DESDE GOOGLE",
+    h2Top: "Lo que nuestros usuarios",
+    h2Accent: "dicen de nosotros.",
+    sub: "Testimonios reales de clientes con los que ya hemos trabajado.",
+    googleLink: "Ver perfil en Google",
+    googleHref: "https://share.google/qxpDAMUL5teufbKLJ",
+    items: [
+      {
+        author: "Maydo Sushi",
+        avatarColor: "blue",
+        rating: 5,
+        date: "Hace 1 día",
+        text:
+          "Desde que trabajamos con TUAGENCIAWEB, nuestra presencia online ha mejorado muchísimo. Nos diseñaron una web elegante, rápida y muy fácil de usar, que refleja perfectamente la imagen de nuestro restaurante. Además, optimizaron el SEO local y ahora recibimos muchas más reservas a través de Google. El trato ha sido cercano, profesional y muy eficiente. Sin duda, una agencia totalmente recomendable.",
+      },
+      {
+        author: "Xavi Wang",
+        avatarColor: "green",
+        rating: 5,
+        date: "Hace 1 día",
+        text:
+          "Llevamos varios años trabajando con TUAGENCIAWEB y la experiencia ha sido excelente. Nos ayudaron a rediseñar nuestra página web y a mejorar el posicionamiento en Google, lo que se ha traducido en un aumento notable de consultas y ventas online. Destaco especialmente su profesionalidad, rapidez y la claridad con la que explican todo el proceso. Totalmente recomendables para cualquier empresa que quiera mejorar su presencia digital.",
+      },
+      {
+        author: "Zihao Xu",
+        avatarColor: "purple",
+        rating: 5,
+        date: "Hace 16 horas",
+        text:
+          "Contratar a TUAGENCIAWEB fue una de las mejores decisiones para nuestro negocio. Desde el primer momento, demostraron un profundo conocimiento técnico y una gran capacidad para entender nuestras necesidades. El proceso fue muy transparente: cumplieron con los plazos, la comunicación fue fluida y el resultado superó nuestras expectativas. La web está perfectamente optimizada para SEO, es rápida y responsive. Además, nos ofrecieron formación para gestionar el contenido y un soporte post-lanzamiento excelente. Los recomiendo para quien busque calidad, confianza y un equipo que realmente se preocupa por el éxito digital de sus clientes.",
+      },
+    ],
+  },
   brands: {
     pill: "REFERENCIAS",
     h2: "Marcas de referencia",
