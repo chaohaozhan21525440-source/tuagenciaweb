@@ -58,7 +58,7 @@ export function BlogPageContent({
                   <div className="bp-cover-thumb">
                     <Image
                       src={a.cover}
-                      alt=""
+                      alt={a.title}
                       width={800}
                       height={500}
                       className="bp-cover-img"

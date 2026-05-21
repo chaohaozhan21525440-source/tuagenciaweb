@@ -14,8 +14,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: dict.meta.about.title,
     description: dict.meta.about.description,
+    url: "https://www.tuagenciaweb.es/en/about",
     locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: dict.meta.about.title,
+    description: dict.meta.about.description,
   },
 };
 

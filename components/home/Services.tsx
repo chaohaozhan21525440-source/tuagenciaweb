@@ -164,7 +164,7 @@ export function Services({ dict, locale }: { dict: Dict["services"]; locale: Loc
                   {i === 1 && (
                     <Image
                       src="/services/basket.png"
-                      alt=""
+                      alt={s.title}
                       width={260}
                       height={240}
                       className="illu-img"
@@ -180,7 +180,7 @@ export function Services({ dict, locale }: { dict: Dict["services"]; locale: Loc
                   {i === 3 && (
                     <Image
                       src="/services/shield.png"
-                      alt=""
+                      alt={s.title}
                       width={260}
                       height={240}
                       className="illu-img"
