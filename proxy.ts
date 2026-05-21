@@ -2,23 +2,14 @@ import { NextResponse, type NextRequest } from "next/server";
 
 const LOCALES = ["es", "en"] as const;
 
-function pickLocale(req: NextRequest): "es" | "en" {
-  const al = req.headers.get("accept-language") ?? "";
-  // Prefer EN if Accept-Language starts with en, otherwise ES default
-  if (/^en\b/i.test(al.trim()) || al.toLowerCase().split(",").some((p) => p.trim().startsWith("en"))) {
-    return "en";
-  }
-  return "es";
-}
-
 export function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
-  // Root: redirect to preferred locale
+  // Root: always redirect to Spanish. Visitors who want English can switch
+  // via the language switcher in the header.
   if (pathname === "/") {
-    const locale = pickLocale(req);
     const url = req.nextUrl.clone();
-    url.pathname = `/${locale}`;
+    url.pathname = "/es";
     return NextResponse.redirect(url, 307);
   }
 
