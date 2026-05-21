@@ -794,7 +794,7 @@
 
 .services-section .grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 @media (max-width: 1100px) {
@@ -3004,7 +3004,7 @@
   margin: 0 auto;
 }
 @media (min-width: 640px) { .hub-cards-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; } }
-@media (min-width: 1280px) { .hub-cards-grid { grid-template-columns: repeat(4, 1fr); gap: 24px; } }
+@media (min-width: 1024px) { .hub-cards-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; } }
 
 .hub-card {
   display: grid;
