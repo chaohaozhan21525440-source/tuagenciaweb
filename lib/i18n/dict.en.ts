@@ -30,6 +30,7 @@ export const en: Dict = {
     contact: "Contact",
     quote: "Get a quote",
     menuLabel: "Menu",
+    servicesViewAll: "See all services",
   },
   hero: {
     pill: ["WEB DESIGN", "SEO", "RESULTS"],
@@ -78,21 +79,25 @@ export const en: Dict = {
       "Design, development, SEO and optional maintenance. We cover every stage so you only need to focus on your business.",
     items: [
       {
+        id: "design",
         title: "Bespoke web design",
         body: "Unique, modern websites built to convert.",
         bullets: ["100% custom design", "Mobile-first", "Crafted animations"],
       },
       {
+        id: "shop",
         title: "Online shop",
         body: "E-commerce platforms ready to sell from day one.",
         bullets: ["Shopify / WooCommerce", "Payment gateways", "Stock management"],
       },
       {
+        id: "seo",
         title: "Technical & content SEO",
         body: "We rank your business on Google where your customers are.",
         bullets: ["Schema + sitemap", "Speed & Core Web Vitals", "Optimised content"],
       },
       {
+        id: "maintenance",
         title: "Optional maintenance",
         body: "If you want, we stick around after launch. No obligation.",
         bullets: ["Updates", "Backups", "Direct support"],
@@ -398,67 +403,47 @@ export const en: Dict = {
       ],
       navLabel: "ON THIS PAGE",
       navItems: [
-        { num: "01", title: "Custom web design", anchor: "web-design" },
-        { num: "02", title: "Online stores", anchor: "online-stores" },
-        { num: "03", title: "Technical SEO & content", anchor: "technical-seo" },
-        { num: "04", title: "Optional maintenance", anchor: "maintenance" },
+        { num: "01", id: "design",      title: "Custom web design" },
+        { num: "02", id: "shop",        title: "Online stores" },
+        { num: "03", id: "seo",         title: "Technical SEO & content" },
+        { num: "04", id: "maintenance", title: "Optional maintenance" },
       ],
     },
-    detail: {
+    hubCards: {
+      eyebrow: "WHAT WE DO",
+      h2: "Four services, one focused approach.",
+      sub:
+        "Pick the service that fits your project. Each has its own page with everything it includes, how we work and real examples.",
       items: [
         {
-          id: "web-design",
-          num: "01",
+          id: "design",
           eyebrow: "WEB DESIGN",
           title: "Custom web design",
-          lead:
-            "Unique sites in Next.js, no reused templates. We design every interface around your brand and around turning visitors into customers.",
-          bullets: [
-            "Bespoke UI/UX",
-            "Subtle animations and 100/100 performance",
-            "Editable by you after delivery",
-          ],
+          blurb: "Unique websites in Next.js, built around your brand and engineered to convert.",
         },
         {
-          id: "online-stores",
-          num: "02",
+          id: "shop",
           eyebrow: "ONLINE STORES",
           title: "Online stores",
-          lead:
-            "E-commerce with catalog, secure payment gateway and a simple admin panel. Ready to sell from day one.",
-          bullets: [
-            "Stripe, Redsys or PayPal",
-            "Automated inventory and shipping",
-            "Optimized for Google Shopping",
-          ],
+          blurb: "E-commerce with secure payments, a simple admin panel and ready to sell on day one.",
         },
         {
-          id: "technical-seo",
-          num: "03",
+          id: "seo",
           eyebrow: "TECHNICAL SEO",
           title: "Technical SEO & content",
-          lead:
-            "Indexing, speed, schema and optimized content so your site actually ranks — not just looks pretty.",
-          bullets: [
-            "Core Web Vitals in the green",
-            "Schema.org and dynamic sitemap",
-            "Optional monthly audit",
-          ],
+          blurb: "Indexing, speed, schema and content so your site actually ranks.",
         },
         {
           id: "maintenance",
-          num: "04",
           eyebrow: "MAINTENANCE",
           title: "Optional maintenance",
-          lead:
-            "Support by the hour, no mandatory monthly fee. You decide when you need something and pay only for what you use.",
-          bullets: [
-            "Prepaid hour bank",
-            "Backups and 24/7 monitoring",
-            "No long-term contracts",
-          ],
+          blurb: "Hourly support, no monthly fee. You only pay for what you actually need.",
         },
       ],
+    },
+    detailNav: {
+      hubLabel: "Services",
+      viewProject: "View project",
     },
     process: {
       eyebrow: "PROCESS",
@@ -574,6 +559,284 @@ export const en: Dict = {
       whatsappHref:
         "https://wa.me/34613654273?text=Hi%2C%20I%27m%20interested%20in%20a%20quote%20for%20my%20website.",
       indicators: ["Reply in 24h", "No commitment", "Detailed quote"],
+    },
+  },
+  servicesDetail: {
+    design: {
+      meta: {
+        title: "Custom Next.js web design | Tuagenciaweb",
+        description:
+          "We design unique, fast, conversion-focused websites. Bespoke UI/UX, clean code and editable by you after delivery.",
+      },
+      hero: {
+        eyebrow: "WEB DESIGN",
+        h1Top: "Custom web design",
+        h1Accent: "that turns visits into customers.",
+        sub:
+          "Unique websites in Next.js, no templates. We design every interface around your brand, around how your customers behave and around the actions we want to drive.",
+        ctaPrimary: "Request a quote",
+        ctaSecondary: "See all services",
+      },
+      valueProp: {
+        eyebrow: "WHY IT MATTERS",
+        h2: "Your website is your first digital impression.",
+        body:
+          "Every business is different. That's why we don't use templates. We design every interface thinking about how your brand is positioned, how your customers behave and what actions we want to drive. The result is a website that doesn't just look good — it works, ranks and sells.",
+      },
+      included: {
+        eyebrow: "WHAT'S INCLUDED",
+        h2: "Everything you need to launch.",
+        sub: "A closed project, no surprises, with clear deliverables from day one.",
+        items: [
+          { title: "Bespoke UI/UX design", desc: "Wireframes, prototype and tailored visual design for your brand." },
+          { title: "Clean Next.js code", desc: "No templates, no heavy frameworks. Fast, maintainable website." },
+          { title: "Mobile-first responsive", desc: "Tested on 320–1440px so it looks perfect on any device." },
+          { title: "Core Web Vitals optimization", desc: "WebP images, lazy loading and reduced bundles for 100/100 on Lighthouse." },
+          { title: "Editable panel", desc: "Change text, images and sections yourself without touching code." },
+          { title: "Analytics connected", desc: "Google Analytics 4 and Search Console configured with key events." },
+        ],
+      },
+      process: {
+        eyebrow: "HOW WE WORK",
+        h2: "From idea to launch in 2–3 weeks.",
+        steps: [
+          { num: "01", title: "Strategy", desc: "We define goal, audience and priorities before touching Figma." },
+          { num: "02", title: "Wireframes and design", desc: "Structure first, style next. We validate with you before coding." },
+          { num: "03", title: "Development", desc: "Clean code in Next.js. Subtle animations and performance from the first commit." },
+          { num: "04", title: "Launch", desc: "Deploy, training and delivery of code + domain in your name." },
+        ],
+      },
+      useCases: {
+        eyebrow: "WHEN IT MAKES SENSE",
+        h2: "This is for you if…",
+        sub: "Some typical situations where a custom redesign makes the difference.",
+        items: [
+          { title: "Your current site doesn't convert", desc: "Traffic arrives but nobody fills forms or buys." },
+          { title: "You just launched your business", desc: "You need a solid online presence from day one." },
+          { title: "Your brand has evolved", desc: "Your visual identity changed and the website was left behind." },
+          { title: "You need a specific landing page", desc: "Page tailored to a campaign, event or product." },
+        ],
+      },
+      examples: {
+        eyebrow: "EXAMPLES",
+        h2: "Recent work in this line.",
+        sub: "A sample of websites we've designed following this approach.",
+        projectSlugs: ["chinaway", "reformlab-barcelona"],
+      },
+      cta: {
+        eyebrow: "LET'S START",
+        h2: "Ready for your next website?",
+        sub: "We'll prepare a custom proposal in less than 24 hours.",
+        primary: "Request a quote",
+        secondary: "WhatsApp",
+      },
+    },
+    shop: {
+      meta: {
+        title: "Custom online stores with Stripe and Redsys | Tuagenciaweb",
+        description:
+          "E-commerce ready to sell. Catalog, secure payments, simple management and optimization for Google Shopping.",
+      },
+      hero: {
+        eyebrow: "ONLINE STORES",
+        h1Top: "Online stores",
+        h1Accent: "ready to sell on day one.",
+        sub:
+          "E-commerce with catalog, secure payment gateway and a simple admin panel. Built so you sell, without relying on us for every change.",
+        ctaPrimary: "Request a quote",
+        ctaSecondary: "See all services",
+      },
+      valueProp: {
+        eyebrow: "WHY IT MATTERS",
+        h2: "An online store is much more than a catalog.",
+        body:
+          "Selling online requires frictionless checkout, clear inventory management, payment and shipping integrations, and technical SEO that makes you appear in product searches. We set all that up so you manage the business, not the tool.",
+      },
+      included: {
+        eyebrow: "WHAT'S INCLUDED",
+        h2: "A complete store, ready to scale.",
+        sub: "No technical surprises or hidden fees. One-time payment, your code.",
+        items: [
+          { title: "Stripe, Redsys or PayPal gateways", desc: "We integrate the one that best fits your volume and country of operation." },
+          { title: "Inventory and variants", desc: "Manage stock, sizes, colors and discounts from a clear panel." },
+          { title: "Automated shipping", desc: "Rate calculation, integration with SEUR, MRW or local carriers." },
+          { title: "Optimized for Google Shopping", desc: "Product feed, schema and meta tags ready for Merchant Center." },
+          { title: "Optimized checkout", desc: "Fewer fields, more conversion. A/B tests on the purchase flow." },
+          { title: "Email marketing connected", desc: "Abandoned carts, post-purchase and automated segmentation." },
+        ],
+      },
+      process: {
+        eyebrow: "HOW WE WORK",
+        h2: "From idea to a working store in 4–6 weeks.",
+        steps: [
+          { num: "01", title: "Catalog architecture", desc: "Categories, attributes, filters and technical product SEO." },
+          { num: "02", title: "Design and development", desc: "Bespoke UI, payment and shipping integrations, admin panel." },
+          { num: "03", title: "Initial load and QA", desc: "We upload your catalog, configure payment methods and test the entire flow." },
+          { num: "04", title: "Launch and training", desc: "We teach you to manage orders, products and promotions." },
+        ],
+      },
+      useCases: {
+        eyebrow: "WHEN IT MAKES SENSE",
+        h2: "This is for you if…",
+        sub: "Some typical starting points.",
+        items: [
+          { title: "You sell on social and want to scale", desc: "You need your own store that doesn't depend on DMs." },
+          { title: "You have a physical business", desc: "You want to open an online channel without reinventing your operations." },
+          { title: "You've outgrown Shopify/Wix", desc: "You need a store with more control and fewer monthly fees." },
+          { title: "You're launching a new product", desc: "You want a dedicated store for a product or collection." },
+        ],
+      },
+      examples: {
+        eyebrow: "EXAMPLES",
+        h2: "Projects in this line.",
+        sub: "Websites with a commercial component we've launched recently.",
+        projectSlugs: ["melodify", "yg-event-solutions"],
+      },
+      cta: {
+        eyebrow: "LET'S START",
+        h2: "Ready to sell online?",
+        sub: "We'll prepare a closed proposal in less than 24 hours.",
+        primary: "Request a quote",
+        secondary: "WhatsApp",
+      },
+    },
+    seo: {
+      meta: {
+        title: "Technical SEO and content | Tuagenciaweb",
+        description:
+          "Audit, Core Web Vitals, schema, sitemap and optimized content so Google understands and ranks your website.",
+      },
+      hero: {
+        eyebrow: "TECHNICAL SEO",
+        h1Top: "Technical SEO & content",
+        h1Accent: "so your site actually ranks.",
+        sub:
+          "Indexing, speed, schema and optimized content. We make Google understand your website and rank it where your customers are searching.",
+        ctaPrimary: "Request an audit",
+        ctaSecondary: "See all services",
+      },
+      valueProp: {
+        eyebrow: "WHY IT MATTERS",
+        h2: "SEO is not just keywords.",
+        body:
+          "80% of effective SEO is technical: structure, speed, indexing and structured data. Without that, no content however good will rank. We audit your site, fix the technical foundations and then build the content that really matters to your business.",
+      },
+      included: {
+        eyebrow: "WHAT'S INCLUDED",
+        h2: "Technical and content SEO, end-to-end.",
+        sub: "Measurable work and monthly reports with clear metrics.",
+        items: [
+          { title: "Full technical audit", desc: "Indexing, crawl errors, redirects, canonicals, robots.txt." },
+          { title: "Core Web Vitals in the green", desc: "LCP < 2.5s, CLS < 0.1, INP < 200ms on every key page." },
+          { title: "Schema.org and rich snippets", desc: "FAQPage, LocalBusiness, Product, Article — whichever applies." },
+          { title: "Dynamic sitemap", desc: "XML updated on every deploy, with correct priorities and frequencies." },
+          { title: "Optimized content", desc: "Keyword research, briefs and writing focused on search intent." },
+          { title: "Search Console and GA4", desc: "Configured with conversion events and query monitoring." },
+        ],
+      },
+      process: {
+        eyebrow: "HOW WE WORK",
+        h2: "Diagnosis, foundations and growth.",
+        steps: [
+          { num: "01", title: "Initial audit", desc: "We detect technical errors, content gaps and concrete opportunities." },
+          { num: "02", title: "Technical fix", desc: "We fix indexing, speed and schema. Solid base before writing a single word." },
+          { num: "03", title: "Content strategy", desc: "We define the 10–20 topics that can bring the most qualified traffic." },
+          { num: "04", title: "Production and tracking", desc: "We publish, measure positions and adjust every month." },
+        ],
+      },
+      useCases: {
+        eyebrow: "WHEN IT MAKES SENSE",
+        h2: "This is for you if…",
+        sub: "Situations where technical SEO makes the difference.",
+        items: [
+          { title: "Your website doesn't appear on Google", desc: "You have a site but searches like '<your service> in <your city>' don't show you." },
+          { title: "You have traffic but it doesn't convert", desc: "Visits that aren't your ideal customer — keyword targeting is off." },
+          { title: "You just launched", desc: "You want to build SEO from day one rather than patch it later." },
+          { title: "You compete in a specific city", desc: "You need local SEO to capture customers in your area." },
+        ],
+      },
+      examples: {
+        eyebrow: "EXAMPLES",
+        h2: "Projects where SEO was key.",
+        sub: "Websites where organic ranking changed the results.",
+        projectSlugs: ["redline-marketing"],
+      },
+      cta: {
+        eyebrow: "LET'S START",
+        h2: "Want to appear where you're searched?",
+        sub: "We'll send you a free initial audit in less than 48 hours.",
+        primary: "Request an audit",
+        secondary: "WhatsApp",
+      },
+    },
+    maintenance: {
+      meta: {
+        title: "Hourly web maintenance, no fixed fee | Tuagenciaweb",
+        description:
+          "Prepaid hour bank, daily backups, 24/7 monitoring and direct support. No lock-in.",
+      },
+      hero: {
+        eyebrow: "MAINTENANCE",
+        h1Top: "Optional maintenance",
+        h1Accent: "by the hour, no fixed fee.",
+        sub:
+          "Support via a prepaid hour bank, no lock-in. You decide when you need something and only pay for what you use. Zero endless commitments.",
+        ctaPrimary: "Request a quote",
+        ctaSecondary: "See all services",
+      },
+      valueProp: {
+        eyebrow: "WHY IT MATTERS",
+        h2: "Your website stays alive after launch.",
+        body:
+          "A website without maintenance breaks: outdated dependencies, stale content, errors that appear without warning. We take care of it so you don't have to think about it, and we only charge you for what you actually use — not a monthly fee you pay even when nothing needs doing.",
+      },
+      included: {
+        eyebrow: "WHAT'S INCLUDED",
+        h2: "What's necessary, not what's superfluous.",
+        sub: "You pay for the hours you consume. No lock-in, cancellable whenever you want.",
+        items: [
+          { title: "Prepaid hour bank", desc: "Buy 5h, 10h or 20h. Use them when you need them, no annual expiry." },
+          { title: "Daily automatic backups", desc: "Your website restorable in minutes in the event of any incident." },
+          { title: "24/7 monitoring", desc: "We let you know if the site goes down before your customers notice." },
+          { title: "Dependency updates", desc: "Next.js, plugins and libraries up to date to avoid vulnerabilities." },
+          { title: "WhatsApp support", desc: "Fast response during business hours for urgent issues." },
+          { title: "Small improvements and changes", desc: "Copy edits, images, sections, integrations — all within your hour bank." },
+        ],
+      },
+      process: {
+        eyebrow: "HOW WE WORK",
+        h2: "Simple, transparent, no surprises.",
+        steps: [
+          { num: "01", title: "Onboarding", desc: "We access your website, configure backups and monitoring." },
+          { num: "02", title: "Initial bank", desc: "You pick the bank size (5/10/20h). You load it and it stays available." },
+          { num: "03", title: "On-demand use", desc: "You write us what you need, we confirm cost and do it." },
+          { num: "04", title: "Monthly report", desc: "We send you a summary of hours used and remaining balance." },
+        ],
+      },
+      useCases: {
+        eyebrow: "WHEN IT MAKES SENSE",
+        h2: "This is for you if…",
+        sub: "Typical cases where hourly maintenance works better than a fixed fee.",
+        items: [
+          { title: "You don't want to worry about the website", desc: "You want to delegate 100% and only hear from us when everything's fine." },
+          { title: "You need occasional changes", desc: "Update prices, add sections, launch promotions." },
+          { title: "Your site has technical issues", desc: "500 errors, forms that fail, slowness — we fix them." },
+          { title: "You want to avoid endless fees", desc: "Pay only when there's real work, no fixed monthly invoices." },
+        ],
+      },
+      examples: {
+        eyebrow: "EXAMPLES",
+        h2: "Active maintenance clients.",
+        sub: "Projects we maintain day to day.",
+        projectSlugs: [],
+      },
+      cta: {
+        eyebrow: "LET'S START",
+        h2: "Need a team to look after your website?",
+        sub: "We start with a 5h bank with no annual commitment.",
+        primary: "Request a quote",
+        secondary: "WhatsApp",
+      },
     },
   },
   blogPage: {

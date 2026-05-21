@@ -1,6 +1,6 @@
 import type { Dict, Locale } from "@/lib/i18n";
 import { ServicesHero } from "./sr/ServicesHero";
-import { ServicesDetail } from "./sr/ServicesDetail";
+import { HubCards } from "./sr/HubCards";
 import { ProcessTimeline } from "./sr/ProcessTimeline";
 import { ComparisonTable } from "./sr/ComparisonTable";
 import { MarketingGrid } from "./sr/MarketingGrid";
@@ -11,7 +11,7 @@ export function ServicesPageContent({ dict, locale }: { dict: Dict["servicesPage
   return (
     <main className="services-redesign">
       <ServicesHero dict={dict.hero} locale={locale} />
-      <ServicesDetail dict={dict.detail} />
+      <HubCards dict={dict.hubCards} locale={locale} />
       <ProcessTimeline dict={dict.process} />
       <ComparisonTable dict={dict.comparison} />
       <MarketingGrid dict={dict.marketing} />

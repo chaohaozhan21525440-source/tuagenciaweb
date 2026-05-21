@@ -29,6 +29,7 @@ export const es = {
     contact: "Contacto",
     quote: "Solicitar presupuesto",
     menuLabel: "Menú",
+    servicesViewAll: "Ver todos los servicios",
   },
   hero: {
     pill: ["DISEÑO WEB", "SEO", "RESULTADOS"],
@@ -77,21 +78,25 @@ export const es = {
       "Diseño, desarrollo, SEO y mantenimiento opcional. Cubrimos cada etapa para que tú solo te preocupes de tu negocio.",
     items: [
       {
+        id: "design",
         title: "Diseño web a medida",
         body: "Webs únicas, modernas y orientadas a conversión.",
         bullets: ["Diseño 100% personalizado", "Mobile-first", "Animaciones cuidadas"],
       },
       {
+        id: "shop",
         title: "Tienda online",
         body: "Plataformas de e-commerce listas para vender desde el día 1.",
         bullets: ["Shopify / WooCommerce", "Pasarelas de pago", "Gestión de stock"],
       },
       {
+        id: "seo",
         title: "SEO técnico y de contenidos",
         body: "Posicionamos tu negocio en Google donde están tus clientes.",
         bullets: ["Schema + sitemap", "Velocidad y Core Web Vitals", "Contenidos optimizados"],
       },
       {
+        id: "maintenance",
         title: "Mantenimiento opcional",
         body: "Si quieres, nos quedamos cerca después del lanzamiento. Sin obligación.",
         bullets: ["Actualizaciones", "Backups", "Soporte directo"],
@@ -398,67 +403,47 @@ export const es = {
       ],
       navLabel: "EN ESTA PÁGINA",
       navItems: [
-        { num: "01", title: "Diseño web a medida", anchor: "diseno-web" },
-        { num: "02", title: "Tiendas online", anchor: "tiendas-online" },
-        { num: "03", title: "SEO técnico y contenidos", anchor: "seo-tecnico" },
-        { num: "04", title: "Mantenimiento opcional", anchor: "mantenimiento" },
+        { num: "01", id: "design",      title: "Diseño web a medida" },
+        { num: "02", id: "shop",        title: "Tiendas online" },
+        { num: "03", id: "seo",         title: "SEO técnico y contenidos" },
+        { num: "04", id: "maintenance", title: "Mantenimiento opcional" },
       ],
     },
-    detail: {
+    hubCards: {
+      eyebrow: "QUÉ HACEMOS",
+      h2: "Cuatro servicios, un mismo enfoque.",
+      sub:
+        "Elige el servicio que más encaja con tu proyecto. Cada uno tiene su propia página con todo lo que incluye, cómo trabajamos y ejemplos reales.",
       items: [
         {
-          id: "diseno-web",
-          num: "01",
+          id: "design",
           eyebrow: "DISEÑO WEB",
           title: "Diseño web a medida",
-          lead:
-            "Webs únicas en Next.js, sin plantillas reutilizadas. Diseñamos cada interfaz pensando en tu marca y en convertir visitas en clientes.",
-          bullets: [
-            "Diseño UI/UX propio",
-            "Animaciones sutiles y rendimiento 100/100",
-            "Editable por ti tras la entrega",
-          ],
+          blurb: "Webs únicas en Next.js, pensadas para tu marca y orientadas a convertir.",
         },
         {
-          id: "tiendas-online",
-          num: "02",
+          id: "shop",
           eyebrow: "TIENDAS ONLINE",
           title: "Tiendas online",
-          lead:
-            "E-commerce con catálogo, pasarela de pago segura y panel de gestión simple. Listas para vender desde el día 1.",
-          bullets: [
-            "Stripe, Redsys o PayPal",
-            "Inventario y envíos automatizados",
-            "Optimizado para Google Shopping",
-          ],
+          blurb: "E-commerce con pasarela segura, panel simple y listas para vender desde el día 1.",
         },
         {
-          id: "seo-tecnico",
-          num: "03",
+          id: "seo",
           eyebrow: "SEO TÉCNICO",
           title: "SEO técnico y contenidos",
-          lead:
-            "Indexación, velocidad, schema y contenido optimizado para que tu web posicione de verdad — no solo para que se vea bonita.",
-          bullets: [
-            "Core Web Vitals en verde",
-            "Schema.org y sitemap dinámico",
-            "Auditoría mensual opcional",
-          ],
+          blurb: "Indexación, velocidad, schema y contenidos para que tu web posicione de verdad.",
         },
         {
-          id: "mantenimiento",
-          num: "04",
+          id: "maintenance",
           eyebrow: "MANTENIMIENTO",
           title: "Mantenimiento opcional",
-          lead:
-            "Soporte por horas, sin cuota mensual obligatoria. Tú decides cuándo necesitas algo y solo pagas por lo que usas.",
-          bullets: [
-            "Bolsa de horas prepago",
-            "Backups y monitorización 24/7",
-            "Sin contratos de permanencia",
-          ],
+          blurb: "Soporte por horas, sin cuota mensual. Solo pagas por lo que necesitas.",
         },
       ],
+    },
+    detailNav: {
+      hubLabel: "Servicios",
+      viewProject: "Ver proyecto",
     },
     process: {
       eyebrow: "PROCESO",
@@ -574,6 +559,284 @@ export const es = {
       whatsappHref:
         "https://wa.me/34613654273?text=Hola%2C%20me%20interesa%20un%20presupuesto%20para%20mi%20web.",
       indicators: ["Respuesta en 24h", "Sin compromiso", "Presupuesto detallado"],
+    },
+  },
+  servicesDetail: {
+    design: {
+      meta: {
+        title: "Diseño web a medida en Next.js | Tuagenciaweb",
+        description:
+          "Diseñamos webs únicas, rápidas y orientadas a conversión. UI/UX propio, código limpio y editable por ti tras la entrega.",
+      },
+      hero: {
+        eyebrow: "DISEÑO WEB",
+        h1Top: "Diseño web a medida",
+        h1Accent: "que convierte visitas en clientes.",
+        sub:
+          "Webs únicas en Next.js, sin plantillas. Diseñamos cada interfaz pensando en tu marca, en cómo se comportan tus clientes y en qué acciones queremos que ocurran.",
+        ctaPrimary: "Solicitar presupuesto",
+        ctaSecondary: "Ver todos los servicios",
+      },
+      valueProp: {
+        eyebrow: "POR QUÉ IMPORTA",
+        h2: "Tu web es tu primera impresión digital.",
+        body:
+          "Cada negocio es distinto. Por eso no usamos plantillas. Diseñamos cada interfaz pensando en cómo se posiciona tu marca, cómo se comportan tus clientes y qué acciones queremos que ocurran. El resultado es una web que no solo se ve bien — funciona, posiciona y vende.",
+      },
+      included: {
+        eyebrow: "QUÉ INCLUYE",
+        h2: "Todo lo que necesitas para lanzar.",
+        sub: "Un proyecto cerrado, sin sorpresas, con entregables claros desde el primer día.",
+        items: [
+          { title: "Diseño UI/UX propio", desc: "Wireframes, prototipo y diseño visual a medida para tu marca." },
+          { title: "Código limpio Next.js", desc: "Sin plantillas, sin frameworks pesados. Web rápida y mantenible." },
+          { title: "Mobile-first responsive", desc: "Probada en 320–1440px para que se vea perfecta en cualquier dispositivo." },
+          { title: "Optimización Core Web Vitals", desc: "Imágenes WebP, lazy loading y bundles reducidos para 100/100 en Lighthouse." },
+          { title: "Panel editable", desc: "Cambias textos, imágenes y secciones tú mismo sin tocar código." },
+          { title: "Analítica conectada", desc: "Google Analytics 4 y Search Console configurados con eventos clave." },
+        ],
+      },
+      process: {
+        eyebrow: "CÓMO TRABAJAMOS",
+        h2: "De la idea al lanzamiento en 2–3 semanas.",
+        steps: [
+          { num: "01", title: "Estrategia", desc: "Definimos objetivo, público y prioridades antes de tocar Figma." },
+          { num: "02", title: "Wireframes y diseño", desc: "Estructura primero, después estilo. Validamos contigo antes de programar." },
+          { num: "03", title: "Desarrollo", desc: "Código limpio en Next.js. Animaciones sutiles y rendimiento desde el primer commit." },
+          { num: "04", title: "Lanzamiento", desc: "Deploy, formación y entrega de código + dominio a tu nombre." },
+        ],
+      },
+      useCases: {
+        eyebrow: "CUÁNDO TIENE SENTIDO",
+        h2: "Esto es para ti si…",
+        sub: "Algunas situaciones típicas donde un rediseño a medida marca la diferencia.",
+        items: [
+          { title: "Tu web actual no convierte", desc: "Tráfico que llega pero no rellena formularios ni compra." },
+          { title: "Acabas de lanzar tu negocio", desc: "Necesitas una presencia online sólida desde el día 1." },
+          { title: "Tu marca ha evolucionado", desc: "La identidad visual cambió y la web se quedó vieja." },
+          { title: "Necesitas una landing concreta", desc: "Página específica para una campaña, evento o producto." },
+        ],
+      },
+      examples: {
+        eyebrow: "EJEMPLOS",
+        h2: "Trabajos recientes en esta línea.",
+        sub: "Una muestra de webs que hemos diseñado siguiendo este enfoque.",
+        projectSlugs: ["chinaway", "reformlab-barcelona"],
+      },
+      cta: {
+        eyebrow: "EMPECEMOS",
+        h2: "¿Listo para tu próxima web?",
+        sub: "Te preparamos una propuesta personalizada en menos de 24 horas.",
+        primary: "Solicitar presupuesto",
+        secondary: "WhatsApp",
+      },
+    },
+    shop: {
+      meta: {
+        title: "Tiendas online a medida con Stripe y Redsys | Tuagenciaweb",
+        description:
+          "E-commerce listas para vender. Catálogo, pasarela segura, gestión simple y optimización para Google Shopping.",
+      },
+      hero: {
+        eyebrow: "TIENDAS ONLINE",
+        h1Top: "Tiendas online",
+        h1Accent: "listas para vender desde el día 1.",
+        sub:
+          "E-commerce con catálogo, pasarela de pago segura y panel de gestión simple. Pensadas para que vendas tú, sin depender de nosotros para cada cambio.",
+        ctaPrimary: "Solicitar presupuesto",
+        ctaSecondary: "Ver todos los servicios",
+      },
+      valueProp: {
+        eyebrow: "POR QUÉ IMPORTA",
+        h2: "Una tienda online es mucho más que un catálogo.",
+        body:
+          "Vender online requiere checkout sin fricción, gestión clara de inventario, integración con pagos y envíos, y un SEO técnico que te haga aparecer en búsquedas de producto. Nosotros montamos todo eso de forma que tú gestionas el negocio, no la herramienta.",
+      },
+      included: {
+        eyebrow: "QUÉ INCLUYE",
+        h2: "Una tienda completa, lista para escalar.",
+        sub: "Sin sorpresas técnicas ni cuotas escondidas. Pago único, código tuyo.",
+        items: [
+          { title: "Pasarelas Stripe, Redsys o PayPal", desc: "Integramos la que mejor encaja con tu volumen y país de operación." },
+          { title: "Inventario y variantes", desc: "Gestión de stock, tallas, colores y descuentos desde un panel claro." },
+          { title: "Envíos automatizados", desc: "Cálculo de tarifas, integración con SEUR, MRW o transportistas locales." },
+          { title: "Optimizado para Google Shopping", desc: "Feed de producto, schema y meta tags listos para Merchant Center." },
+          { title: "Checkout optimizado", desc: "Menos campos, más conversión. Pruebas A/B sobre el flujo de compra." },
+          { title: "Email marketing conectado", desc: "Carritos abandonados, post-compra y segmentación automatizada." },
+        ],
+      },
+      process: {
+        eyebrow: "CÓMO TRABAJAMOS",
+        h2: "De idea a tienda funcionando en 4–6 semanas.",
+        steps: [
+          { num: "01", title: "Arquitectura del catálogo", desc: "Categorías, atributos, filtros y SEO técnico de producto." },
+          { num: "02", title: "Diseño y desarrollo", desc: "UI a medida, integraciones de pago y envío, panel de gestión." },
+          { num: "03", title: "Carga inicial y QA", desc: "Subimos tu catálogo, configuramos métodos de pago y probamos el flujo entero." },
+          { num: "04", title: "Lanzamiento y formación", desc: "Te enseñamos a gestionar pedidos, productos y promociones." },
+        ],
+      },
+      useCases: {
+        eyebrow: "CUÁNDO TIENE SENTIDO",
+        h2: "Esto es para ti si…",
+        sub: "Algunos puntos de partida típicos.",
+        items: [
+          { title: "Vendes en redes y quieres escalar", desc: "Necesitas una tienda propia que no dependa de DMs." },
+          { title: "Tienes negocio físico", desc: "Quieres abrir un canal online sin reinventar tu operativa." },
+          { title: "Te quedaste pequeño con Shopify/Wix", desc: "Necesitas una tienda con más control y menos cuotas mensuales." },
+          { title: "Lanzas un producto nuevo", desc: "Quieres una tienda específica para un producto o colección." },
+        ],
+      },
+      examples: {
+        eyebrow: "EJEMPLOS",
+        h2: "Proyectos en esta línea.",
+        sub: "Webs con componente comercial que hemos lanzado recientemente.",
+        projectSlugs: ["melodify", "yg-event-solutions"],
+      },
+      cta: {
+        eyebrow: "EMPECEMOS",
+        h2: "¿Listo para vender online?",
+        sub: "Te preparamos una propuesta cerrada en menos de 24 horas.",
+        primary: "Solicitar presupuesto",
+        secondary: "WhatsApp",
+      },
+    },
+    seo: {
+      meta: {
+        title: "SEO técnico y de contenidos | Tuagenciaweb",
+        description:
+          "Auditoría, Core Web Vitals, schema, sitemap y contenidos optimizados para que Google entienda y posicione tu web.",
+      },
+      hero: {
+        eyebrow: "SEO TÉCNICO",
+        h1Top: "SEO técnico y contenidos",
+        h1Accent: "para que tu web posicione de verdad.",
+        sub:
+          "Indexación, velocidad, schema y contenidos optimizados. Hacemos que Google entienda tu web y la posicione donde tus clientes la buscan.",
+        ctaPrimary: "Solicitar auditoría",
+        ctaSecondary: "Ver todos los servicios",
+      },
+      valueProp: {
+        eyebrow: "POR QUÉ IMPORTA",
+        h2: "El SEO no es solo palabras clave.",
+        body:
+          "El 80% del SEO efectivo es técnico: estructura, velocidad, indexación y datos estructurados. Sin eso, ningún contenido por bueno que sea posiciona. Auditamos tu web, arreglamos los fundamentos técnicos y luego construimos los contenidos que realmente importan a tu negocio.",
+      },
+      included: {
+        eyebrow: "QUÉ INCLUYE",
+        h2: "SEO técnico y de contenidos, end-to-end.",
+        sub: "Trabajo medible y reportes mensuales con métricas claras.",
+        items: [
+          { title: "Auditoría técnica completa", desc: "Indexación, errores de crawl, redirects, canonicals, robots.txt." },
+          { title: "Core Web Vitals en verde", desc: "LCP < 2.5s, CLS < 0.1, INP < 200ms en todas las páginas clave." },
+          { title: "Schema.org y rich snippets", desc: "FAQPage, LocalBusiness, Product, Article — el que aplique." },
+          { title: "Sitemap dinámico", desc: "XML actualizado en cada deploy, con prioridades y frecuencias correctas." },
+          { title: "Contenidos optimizados", desc: "Investigación de keywords, briefs y redacción enfocada en intención de búsqueda." },
+          { title: "Search Console y GA4", desc: "Configurados con eventos de conversión y monitoring de queries." },
+        ],
+      },
+      process: {
+        eyebrow: "CÓMO TRABAJAMOS",
+        h2: "Diagnóstico, fundamentos y crecimiento.",
+        steps: [
+          { num: "01", title: "Auditoría inicial", desc: "Detectamos errores técnicos, gaps de contenido y oportunidades concretas." },
+          { num: "02", title: "Fix técnico", desc: "Arreglamos indexación, velocidad y schema. Base sólida antes de escribir nada." },
+          { num: "03", title: "Estrategia de contenidos", desc: "Definimos los 10–20 temas que más tráfico cualificado pueden traer." },
+          { num: "04", title: "Producción y seguimiento", desc: "Publicamos, medimos posiciones y ajustamos cada mes." },
+        ],
+      },
+      useCases: {
+        eyebrow: "CUÁNDO TIENE SENTIDO",
+        h2: "Esto es para ti si…",
+        sub: "Situaciones donde el SEO técnico marca la diferencia.",
+        items: [
+          { title: "Tu web no aparece en Google", desc: "Tienes web pero búsquedas como '<tu servicio> en <tu ciudad>' no te muestran." },
+          { title: "Tienes tráfico pero no convierte", desc: "Visitas que no son de tu cliente ideal — falta segmentación de keywords." },
+          { title: "Acabas de lanzar", desc: "Quieres construir SEO desde día 1 en lugar de remendar luego." },
+          { title: "Compites en una ciudad concreta", desc: "Necesitas SEO local para captar clientes de tu zona." },
+        ],
+      },
+      examples: {
+        eyebrow: "EJEMPLOS",
+        h2: "Proyectos donde el SEO fue clave.",
+        sub: "Webs en las que el posicionamiento orgánico cambió los resultados.",
+        projectSlugs: ["redline-marketing"],
+      },
+      cta: {
+        eyebrow: "EMPECEMOS",
+        h2: "¿Quieres aparecer donde te buscan?",
+        sub: "Te enviamos una auditoría inicial gratuita en menos de 48 horas.",
+        primary: "Solicitar auditoría",
+        secondary: "WhatsApp",
+      },
+    },
+    maintenance: {
+      meta: {
+        title: "Mantenimiento web por horas, sin cuota fija | Tuagenciaweb",
+        description:
+          "Bolsa de horas prepago, backups diarios, monitorización 24/7 y soporte directo. Sin permanencia.",
+      },
+      hero: {
+        eyebrow: "MANTENIMIENTO",
+        h1Top: "Mantenimiento opcional",
+        h1Accent: "por horas, sin cuota fija.",
+        sub:
+          "Soporte por bolsa de horas prepago, sin permanencia. Tú decides cuándo necesitas algo y solo pagas por lo que usas. Cero compromisos eternos.",
+        ctaPrimary: "Solicitar presupuesto",
+        ctaSecondary: "Ver todos los servicios",
+      },
+      valueProp: {
+        eyebrow: "POR QUÉ IMPORTA",
+        h2: "Tu web sigue viva después del lanzamiento.",
+        body:
+          "Una web sin mantenimiento se rompe: dependencias desactualizadas, contenido obsoleto, errores que aparecen sin previo aviso. Nosotros la cuidamos para que tú no tengas que pensar en ella, y solo te cobramos lo que realmente usas — no una cuota mensual que pagas aunque no haya nada que hacer.",
+      },
+      included: {
+        eyebrow: "QUÉ INCLUYE",
+        h2: "Lo necesario, no lo superfluo.",
+        sub: "Pagas por las horas que consumes. Sin permanencia, cancelable cuando quieras.",
+        items: [
+          { title: "Bolsa de horas prepago", desc: "Compras 5h, 10h o 20h. Las usas cuando las necesitas, sin caducidad anual." },
+          { title: "Backups automáticos diarios", desc: "Tu web restaurable en minutos ante cualquier incidente." },
+          { title: "Monitorización 24/7", desc: "Te avisamos si la web se cae antes de que tus clientes lo noten." },
+          { title: "Actualizaciones de dependencias", desc: "Next.js, plugins y librerías al día para evitar vulnerabilidades." },
+          { title: "Soporte por WhatsApp", desc: "Respuesta rápida en horario laboral para urgencias." },
+          { title: "Pequeñas mejoras y cambios", desc: "Cambios de copy, imágenes, secciones, integraciones — todo dentro de tu bolsa." },
+        ],
+      },
+      process: {
+        eyebrow: "CÓMO TRABAJAMOS",
+        h2: "Simple, transparente, sin sorpresas.",
+        steps: [
+          { num: "01", title: "Onboarding", desc: "Accedemos a tu web, configuramos backups y monitorización." },
+          { num: "02", title: "Bolsa inicial", desc: "Eliges el tamaño de bolsa (5/10/20h). La cargas y queda disponible." },
+          { num: "03", title: "Uso bajo demanda", desc: "Nos escribes lo que necesitas, te confirmamos coste y lo hacemos." },
+          { num: "04", title: "Reporte mensual", desc: "Te enviamos un resumen de horas usadas y saldo restante." },
+        ],
+      },
+      useCases: {
+        eyebrow: "CUÁNDO TIENE SENTIDO",
+        h2: "Esto es para ti si…",
+        sub: "Casos típicos donde el mantenimiento por horas funciona mejor que una cuota fija.",
+        items: [
+          { title: "No quieres preocuparte por la web", desc: "Quieres delegar 100% y solo enterarte cuando todo va bien." },
+          { title: "Necesitas cambios puntuales", desc: "Actualizar precios, añadir secciones, lanzar promociones." },
+          { title: "Tu web da problemas técnicos", desc: "Errores 500, formularios que fallan, lentitud — los arreglamos." },
+          { title: "Quieres evitar cuotas eternas", desc: "Pagar solo cuando hay trabajo real, sin facturas mensuales fijas." },
+        ],
+      },
+      examples: {
+        eyebrow: "EJEMPLOS",
+        h2: "Clientes activos en mantenimiento.",
+        sub: "Proyectos que mantenemos día a día.",
+        projectSlugs: [],
+      },
+      cta: {
+        eyebrow: "EMPECEMOS",
+        h2: "¿Necesitas un equipo que cuide tu web?",
+        sub: "Empezamos con una bolsa de 5h sin compromiso anual.",
+        primary: "Solicitar presupuesto",
+        secondary: "WhatsApp",
+      },
     },
   },
   blogPage: {
