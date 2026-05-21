@@ -3226,3 +3226,98 @@
   .sd-cta-row { flex-direction: column; align-items: stretch; }
   .sd-cta-row .sr-btn { justify-content: center; }
 }
+
+/* Service Detail — shared section styles */
+.sd-eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  color: var(--sr-brand);
+  margin-bottom: 16px;
+}
+.sd-h2 {
+  font-size: clamp(28px, 3.6vw, 42px);
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  font-weight: 800;
+  color: var(--sr-ink);
+  margin: 0 0 16px;
+  max-width: 22ch;
+}
+.sd-body {
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: var(--sr-ink-2);
+  max-width: 64ch;
+  margin: 0;
+}
+.sd-section-head {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 48px;
+}
+.sd-section-head .sd-h2,
+.sd-section-head .sd-body {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 640px;
+}
+
+/* §2 ValueProp */
+.sd-vp { padding: 32px 0 64px; }
+@media (min-width: 1024px) { .sd-vp { padding: 48px 0 88px; } }
+.sd-vp .sd-body { font-size: 17.5px; max-width: 64ch; }
+
+/* §3 Included */
+.sd-included { padding: 56px 0 72px; background: var(--sr-bg-soft); }
+@media (min-width: 1024px) { .sd-included { padding: 88px 0 96px; } }
+
+.sd-included-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+@media (min-width: 640px) { .sd-included-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; } }
+@media (min-width: 1024px) { .sd-included-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; } }
+
+.sd-included-card {
+  background: #fff;
+  border: 1px solid var(--sr-line);
+  border-radius: 16px;
+  padding: 22px 22px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.sd-included-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--sr-brand);
+  box-shadow: 0 18px 32px -16px rgba(37, 99, 235, 0.16);
+}
+.sd-included-check {
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  background: var(--sr-brand-soft);
+  color: var(--sr-brand);
+  display: inline-flex; align-items: center; justify-content: center;
+  margin-bottom: 6px;
+}
+.sd-included-card h3 {
+  font-size: 15.5px;
+  font-weight: 700;
+  letter-spacing: -0.005em;
+  color: var(--sr-ink);
+  margin: 0;
+  line-height: 1.25;
+}
+.sd-included-card p {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--sr-muted);
+  margin: 0;
+}
+

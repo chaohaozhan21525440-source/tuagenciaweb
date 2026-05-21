@@ -1,5 +1,7 @@
 import type { Dict, Locale } from "@/lib/i18n";
 import { ServiceHero } from "./ServiceHero";
+import { ServiceValueProp } from "./ServiceValueProp";
+import { ServiceIncluded } from "./ServiceIncluded";
 
 type Service = Dict["servicesDetail"][keyof Dict["servicesDetail"]];
 
@@ -15,8 +17,8 @@ export function ServiceDetailPage({
   return (
     <main className="services-redesign service-detail">
       <ServiceHero service={service} locale={locale} hubLabel={hubLabel} />
-      {/* TODO Task 4: <ServiceValueProp /> */}
-      {/* TODO Task 4: <ServiceIncluded /> */}
+      <ServiceValueProp data={service.valueProp} />
+      <ServiceIncluded data={service.included} />
       {/* TODO Task 5: <ServiceProcess /> */}
       {/* TODO Task 5: <ServiceUseCases /> */}
       {/* TODO Task 6: <ServiceExamples /> */}
