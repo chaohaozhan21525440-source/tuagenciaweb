@@ -40,6 +40,8 @@ export const en: Dict = {
       "We build modern, fast, SEO-optimised websites so your business gets more contacts and sales every day.",
     ctaPrimary: "Get a quote",
     ctaSecondary: "View projects",
+    ctaCardTitle: "Shall we talk?",
+    ctaCardSub: "We'll send you a custom proposal in less than 24 hours. No strings attached.",
     features: [
       { title: "Bespoke design", sub: "100% tailored" },
       { title: "Fast & secure", sub: "Loads in < 2s" },

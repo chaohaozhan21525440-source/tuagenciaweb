@@ -39,6 +39,8 @@ export const es = {
       "Creamos páginas web modernas, rápidas y optimizadas para SEO para que tu negocio genere más contactos y ventas todos los días.",
     ctaPrimary: "Solicitar presupuesto",
     ctaSecondary: "Ver proyectos",
+    ctaCardTitle: "¿Hablamos?",
+    ctaCardSub: "Te enviamos una propuesta personalizada en menos de 24 horas. Sin compromiso.",
     features: [
       { title: "Diseño a medida", sub: "100% personalizado" },
       { title: "Rápido y seguro", sub: "Carga en < 2s" },
