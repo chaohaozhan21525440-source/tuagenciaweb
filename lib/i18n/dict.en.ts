@@ -443,7 +443,6 @@ export const en: Dict = {
     },
     detailNav: {
       hubLabel: "Services",
-      viewProject: "View project",
     },
     process: {
       eyebrow: "PROCESS",
@@ -576,6 +575,7 @@ export const en: Dict = {
           "Unique websites in Next.js, no templates. We design every interface around your brand, around how your customers behave and around the actions we want to drive.",
         ctaPrimary: "Request a quote",
         ctaSecondary: "See all services",
+        heroImage: "/services/design/hero.png",
       },
       valueProp: {
         eyebrow: "WHY IT MATTERS",
@@ -600,10 +600,10 @@ export const en: Dict = {
         eyebrow: "HOW WE WORK",
         h2: "From idea to launch in 2–3 weeks.",
         steps: [
-          { num: "01", title: "Strategy", desc: "We define goal, audience and priorities before touching Figma." },
-          { num: "02", title: "Wireframes and design", desc: "Structure first, style next. We validate with you before coding." },
-          { num: "03", title: "Development", desc: "Clean code in Next.js. Subtle animations and performance from the first commit." },
-          { num: "04", title: "Launch", desc: "Deploy, training and delivery of code + domain in your name." },
+          { num: "01", title: "Strategy",              desc: "We define goal, audience and priorities before touching Figma.",                   image: "/services/design/estrategia.jpg" },
+          { num: "02", title: "Wireframes and design", desc: "Structure first, style next. We validate with you before coding.",                image: "/services/design/wireframe.jpg" },
+          { num: "03", title: "Development",           desc: "Clean code in Next.js. Subtle animations and performance from the first commit.", image: "/services/design/desarrollo.jpg" },
+          { num: "04", title: "Launch",                desc: "Deploy, training and delivery of code + domain in your name.",                    image: "/services/design/lanzamiento.jpg" },
         ],
       },
       useCases: {
@@ -616,12 +616,6 @@ export const en: Dict = {
           { title: "Your brand has evolved", desc: "Your visual identity changed and the website was left behind." },
           { title: "You need a specific landing page", desc: "Page tailored to a campaign, event or product." },
         ],
-      },
-      examples: {
-        eyebrow: "EXAMPLES",
-        h2: "Recent work in this line.",
-        sub: "A sample of websites we've designed following this approach.",
-        projectSlugs: ["chinaway", "reformlab-barcelona"],
       },
       cta: {
         eyebrow: "LET'S START",
@@ -645,6 +639,7 @@ export const en: Dict = {
           "E-commerce with catalog, secure payment gateway and a simple admin panel. Built so you sell, without relying on us for every change.",
         ctaPrimary: "Request a quote",
         ctaSecondary: "See all services",
+        heroImage: "",
       },
       valueProp: {
         eyebrow: "WHY IT MATTERS",
@@ -669,10 +664,10 @@ export const en: Dict = {
         eyebrow: "HOW WE WORK",
         h2: "From idea to a working store in 4–6 weeks.",
         steps: [
-          { num: "01", title: "Catalog architecture", desc: "Categories, attributes, filters and technical product SEO." },
-          { num: "02", title: "Design and development", desc: "Bespoke UI, payment and shipping integrations, admin panel." },
-          { num: "03", title: "Initial load and QA", desc: "We upload your catalog, configure payment methods and test the entire flow." },
-          { num: "04", title: "Launch and training", desc: "We teach you to manage orders, products and promotions." },
+          { num: "01", title: "Catalog architecture",   desc: "Categories, attributes, filters and technical product SEO.",                              image: "" },
+          { num: "02", title: "Design and development", desc: "Bespoke UI, payment and shipping integrations, admin panel.",                            image: "" },
+          { num: "03", title: "Initial load and QA",    desc: "We upload your catalog, configure payment methods and test the entire flow.",            image: "" },
+          { num: "04", title: "Launch and training",    desc: "We teach you to manage orders, products and promotions.",                                image: "" },
         ],
       },
       useCases: {
@@ -685,12 +680,6 @@ export const en: Dict = {
           { title: "You've outgrown Shopify/Wix", desc: "You need a store with more control and fewer monthly fees." },
           { title: "You're launching a new product", desc: "You want a dedicated store for a product or collection." },
         ],
-      },
-      examples: {
-        eyebrow: "EXAMPLES",
-        h2: "Projects in this line.",
-        sub: "Websites with a commercial component we've launched recently.",
-        projectSlugs: ["melodify", "yg-event-solutions"],
       },
       cta: {
         eyebrow: "LET'S START",
@@ -714,6 +703,7 @@ export const en: Dict = {
           "Indexing, speed, schema and optimized content. We make Google understand your website and rank it where your customers are searching.",
         ctaPrimary: "Request an audit",
         ctaSecondary: "See all services",
+        heroImage: "",
       },
       valueProp: {
         eyebrow: "WHY IT MATTERS",
@@ -738,10 +728,10 @@ export const en: Dict = {
         eyebrow: "HOW WE WORK",
         h2: "Diagnosis, foundations and growth.",
         steps: [
-          { num: "01", title: "Initial audit", desc: "We detect technical errors, content gaps and concrete opportunities." },
-          { num: "02", title: "Technical fix", desc: "We fix indexing, speed and schema. Solid base before writing a single word." },
-          { num: "03", title: "Content strategy", desc: "We define the 10–20 topics that can bring the most qualified traffic." },
-          { num: "04", title: "Production and tracking", desc: "We publish, measure positions and adjust every month." },
+          { num: "01", title: "Initial audit",            desc: "We detect technical errors, content gaps and concrete opportunities.",          image: "" },
+          { num: "02", title: "Technical fix",            desc: "We fix indexing, speed and schema. Solid base before writing a single word.",  image: "" },
+          { num: "03", title: "Content strategy",         desc: "We define the 10–20 topics that can bring the most qualified traffic.",        image: "" },
+          { num: "04", title: "Production and tracking", desc: "We publish, measure positions and adjust every month.",                         image: "" },
         ],
       },
       useCases: {
@@ -754,12 +744,6 @@ export const en: Dict = {
           { title: "You just launched", desc: "You want to build SEO from day one rather than patch it later." },
           { title: "You compete in a specific city", desc: "You need local SEO to capture customers in your area." },
         ],
-      },
-      examples: {
-        eyebrow: "EXAMPLES",
-        h2: "Projects where SEO was key.",
-        sub: "Websites where organic ranking changed the results.",
-        projectSlugs: ["redline-marketing"],
       },
       cta: {
         eyebrow: "LET'S START",
@@ -783,6 +767,7 @@ export const en: Dict = {
           "Support via a prepaid hour bank, no lock-in. You decide when you need something and only pay for what you use. Zero endless commitments.",
         ctaPrimary: "Request a quote",
         ctaSecondary: "See all services",
+        heroImage: "",
       },
       valueProp: {
         eyebrow: "WHY IT MATTERS",
@@ -807,10 +792,10 @@ export const en: Dict = {
         eyebrow: "HOW WE WORK",
         h2: "Simple, transparent, no surprises.",
         steps: [
-          { num: "01", title: "Onboarding", desc: "We access your website, configure backups and monitoring." },
-          { num: "02", title: "Initial bank", desc: "You pick the bank size (5/10/20h). You load it and it stays available." },
-          { num: "03", title: "On-demand use", desc: "You write us what you need, we confirm cost and do it." },
-          { num: "04", title: "Monthly report", desc: "We send you a summary of hours used and remaining balance." },
+          { num: "01", title: "Onboarding",    desc: "We access your website, configure backups and monitoring.",        image: "" },
+          { num: "02", title: "Initial bank",  desc: "You pick the bank size (5/10/20h). You load it and it stays available.", image: "" },
+          { num: "03", title: "On-demand use", desc: "You write us what you need, we confirm cost and do it.",            image: "" },
+          { num: "04", title: "Monthly report", desc: "We send you a summary of hours used and remaining balance.",       image: "" },
         ],
       },
       useCases: {
@@ -823,12 +808,6 @@ export const en: Dict = {
           { title: "Your site has technical issues", desc: "500 errors, forms that fail, slowness — we fix them." },
           { title: "You want to avoid endless fees", desc: "Pay only when there's real work, no fixed monthly invoices." },
         ],
-      },
-      examples: {
-        eyebrow: "EXAMPLES",
-        h2: "Active maintenance clients.",
-        sub: "Projects we maintain day to day.",
-        projectSlugs: [],
       },
       cta: {
         eyebrow: "LET'S START",

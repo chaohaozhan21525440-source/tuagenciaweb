@@ -443,7 +443,6 @@ export const es = {
     },
     detailNav: {
       hubLabel: "Servicios",
-      viewProject: "Ver proyecto",
     },
     process: {
       eyebrow: "PROCESO",
@@ -576,6 +575,7 @@ export const es = {
           "Webs únicas en Next.js, sin plantillas. Diseñamos cada interfaz pensando en tu marca, en cómo se comportan tus clientes y en qué acciones queremos que ocurran.",
         ctaPrimary: "Solicitar presupuesto",
         ctaSecondary: "Ver todos los servicios",
+        heroImage: "/services/design/hero.png",
       },
       valueProp: {
         eyebrow: "POR QUÉ IMPORTA",
@@ -600,10 +600,10 @@ export const es = {
         eyebrow: "CÓMO TRABAJAMOS",
         h2: "De la idea al lanzamiento en 2–3 semanas.",
         steps: [
-          { num: "01", title: "Estrategia", desc: "Definimos objetivo, público y prioridades antes de tocar Figma." },
-          { num: "02", title: "Wireframes y diseño", desc: "Estructura primero, después estilo. Validamos contigo antes de programar." },
-          { num: "03", title: "Desarrollo", desc: "Código limpio en Next.js. Animaciones sutiles y rendimiento desde el primer commit." },
-          { num: "04", title: "Lanzamiento", desc: "Deploy, formación y entrega de código + dominio a tu nombre." },
+          { num: "01", title: "Estrategia",          desc: "Definimos objetivo, público y prioridades antes de tocar Figma.",                       image: "/services/design/estrategia.jpg" },
+          { num: "02", title: "Wireframes y diseño", desc: "Estructura primero, después estilo. Validamos contigo antes de programar.",              image: "/services/design/wireframe.jpg" },
+          { num: "03", title: "Desarrollo",          desc: "Código limpio en Next.js. Animaciones sutiles y rendimiento desde el primer commit.",   image: "/services/design/desarrollo.jpg" },
+          { num: "04", title: "Lanzamiento",         desc: "Deploy, formación y entrega de código + dominio a tu nombre.",                          image: "/services/design/lanzamiento.jpg" },
         ],
       },
       useCases: {
@@ -616,12 +616,6 @@ export const es = {
           { title: "Tu marca ha evolucionado", desc: "La identidad visual cambió y la web se quedó vieja." },
           { title: "Necesitas una landing concreta", desc: "Página específica para una campaña, evento o producto." },
         ],
-      },
-      examples: {
-        eyebrow: "EJEMPLOS",
-        h2: "Trabajos recientes en esta línea.",
-        sub: "Una muestra de webs que hemos diseñado siguiendo este enfoque.",
-        projectSlugs: ["chinaway", "reformlab-barcelona"],
       },
       cta: {
         eyebrow: "EMPECEMOS",
@@ -645,6 +639,7 @@ export const es = {
           "E-commerce con catálogo, pasarela de pago segura y panel de gestión simple. Pensadas para que vendas tú, sin depender de nosotros para cada cambio.",
         ctaPrimary: "Solicitar presupuesto",
         ctaSecondary: "Ver todos los servicios",
+        heroImage: "",
       },
       valueProp: {
         eyebrow: "POR QUÉ IMPORTA",
@@ -669,10 +664,10 @@ export const es = {
         eyebrow: "CÓMO TRABAJAMOS",
         h2: "De idea a tienda funcionando en 4–6 semanas.",
         steps: [
-          { num: "01", title: "Arquitectura del catálogo", desc: "Categorías, atributos, filtros y SEO técnico de producto." },
-          { num: "02", title: "Diseño y desarrollo", desc: "UI a medida, integraciones de pago y envío, panel de gestión." },
-          { num: "03", title: "Carga inicial y QA", desc: "Subimos tu catálogo, configuramos métodos de pago y probamos el flujo entero." },
-          { num: "04", title: "Lanzamiento y formación", desc: "Te enseñamos a gestionar pedidos, productos y promociones." },
+          { num: "01", title: "Arquitectura del catálogo", desc: "Categorías, atributos, filtros y SEO técnico de producto.",                        image: "" },
+          { num: "02", title: "Diseño y desarrollo",       desc: "UI a medida, integraciones de pago y envío, panel de gestión.",                    image: "" },
+          { num: "03", title: "Carga inicial y QA",        desc: "Subimos tu catálogo, configuramos métodos de pago y probamos el flujo entero.",     image: "" },
+          { num: "04", title: "Lanzamiento y formación",   desc: "Te enseñamos a gestionar pedidos, productos y promociones.",                       image: "" },
         ],
       },
       useCases: {
@@ -685,12 +680,6 @@ export const es = {
           { title: "Te quedaste pequeño con Shopify/Wix", desc: "Necesitas una tienda con más control y menos cuotas mensuales." },
           { title: "Lanzas un producto nuevo", desc: "Quieres una tienda específica para un producto o colección." },
         ],
-      },
-      examples: {
-        eyebrow: "EJEMPLOS",
-        h2: "Proyectos en esta línea.",
-        sub: "Webs con componente comercial que hemos lanzado recientemente.",
-        projectSlugs: ["melodify", "yg-event-solutions"],
       },
       cta: {
         eyebrow: "EMPECEMOS",
@@ -714,6 +703,7 @@ export const es = {
           "Indexación, velocidad, schema y contenidos optimizados. Hacemos que Google entienda tu web y la posicione donde tus clientes la buscan.",
         ctaPrimary: "Solicitar auditoría",
         ctaSecondary: "Ver todos los servicios",
+        heroImage: "",
       },
       valueProp: {
         eyebrow: "POR QUÉ IMPORTA",
@@ -738,10 +728,10 @@ export const es = {
         eyebrow: "CÓMO TRABAJAMOS",
         h2: "Diagnóstico, fundamentos y crecimiento.",
         steps: [
-          { num: "01", title: "Auditoría inicial", desc: "Detectamos errores técnicos, gaps de contenido y oportunidades concretas." },
-          { num: "02", title: "Fix técnico", desc: "Arreglamos indexación, velocidad y schema. Base sólida antes de escribir nada." },
-          { num: "03", title: "Estrategia de contenidos", desc: "Definimos los 10–20 temas que más tráfico cualificado pueden traer." },
-          { num: "04", title: "Producción y seguimiento", desc: "Publicamos, medimos posiciones y ajustamos cada mes." },
+          { num: "01", title: "Auditoría inicial",        desc: "Detectamos errores técnicos, gaps de contenido y oportunidades concretas.",  image: "" },
+          { num: "02", title: "Fix técnico",              desc: "Arreglamos indexación, velocidad y schema. Base sólida antes de escribir nada.", image: "" },
+          { num: "03", title: "Estrategia de contenidos", desc: "Definimos los 10–20 temas que más tráfico cualificado pueden traer.",          image: "" },
+          { num: "04", title: "Producción y seguimiento", desc: "Publicamos, medimos posiciones y ajustamos cada mes.",                         image: "" },
         ],
       },
       useCases: {
@@ -754,12 +744,6 @@ export const es = {
           { title: "Acabas de lanzar", desc: "Quieres construir SEO desde día 1 en lugar de remendar luego." },
           { title: "Compites en una ciudad concreta", desc: "Necesitas SEO local para captar clientes de tu zona." },
         ],
-      },
-      examples: {
-        eyebrow: "EJEMPLOS",
-        h2: "Proyectos donde el SEO fue clave.",
-        sub: "Webs en las que el posicionamiento orgánico cambió los resultados.",
-        projectSlugs: ["redline-marketing"],
       },
       cta: {
         eyebrow: "EMPECEMOS",
@@ -783,6 +767,7 @@ export const es = {
           "Soporte por bolsa de horas prepago, sin permanencia. Tú decides cuándo necesitas algo y solo pagas por lo que usas. Cero compromisos eternos.",
         ctaPrimary: "Solicitar presupuesto",
         ctaSecondary: "Ver todos los servicios",
+        heroImage: "",
       },
       valueProp: {
         eyebrow: "POR QUÉ IMPORTA",
@@ -807,10 +792,10 @@ export const es = {
         eyebrow: "CÓMO TRABAJAMOS",
         h2: "Simple, transparente, sin sorpresas.",
         steps: [
-          { num: "01", title: "Onboarding", desc: "Accedemos a tu web, configuramos backups y monitorización." },
-          { num: "02", title: "Bolsa inicial", desc: "Eliges el tamaño de bolsa (5/10/20h). La cargas y queda disponible." },
-          { num: "03", title: "Uso bajo demanda", desc: "Nos escribes lo que necesitas, te confirmamos coste y lo hacemos." },
-          { num: "04", title: "Reporte mensual", desc: "Te enviamos un resumen de horas usadas y saldo restante." },
+          { num: "01", title: "Onboarding",       desc: "Accedemos a tu web, configuramos backups y monitorización.",       image: "" },
+          { num: "02", title: "Bolsa inicial",    desc: "Eliges el tamaño de bolsa (5/10/20h). La cargas y queda disponible.", image: "" },
+          { num: "03", title: "Uso bajo demanda", desc: "Nos escribes lo que necesitas, te confirmamos coste y lo hacemos.", image: "" },
+          { num: "04", title: "Reporte mensual",  desc: "Te enviamos un resumen de horas usadas y saldo restante.",          image: "" },
         ],
       },
       useCases: {
@@ -823,12 +808,6 @@ export const es = {
           { title: "Tu web da problemas técnicos", desc: "Errores 500, formularios que fallan, lentitud — los arreglamos." },
           { title: "Quieres evitar cuotas eternas", desc: "Pagar solo cuando hay trabajo real, sin facturas mensuales fijas." },
         ],
-      },
-      examples: {
-        eyebrow: "EJEMPLOS",
-        h2: "Clientes activos en mantenimiento.",
-        sub: "Proyectos que mantenemos día a día.",
-        projectSlugs: [],
       },
       cta: {
         eyebrow: "EMPECEMOS",
