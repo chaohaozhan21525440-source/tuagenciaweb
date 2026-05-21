@@ -1,4 +1,9 @@
-import type { Dict } from "@/lib/i18n";
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import type { Dict, Locale } from "@/lib/i18n";
+import { path } from "@/lib/i18n";
 
 type Theme = "blue" | "green" | "purple" | "orange" | "graphite";
 
@@ -22,9 +27,11 @@ function ArticleMockup({ theme, title }: { theme: Theme; title: string }) {
 export function BlogPageContent({
   dict,
   readMoreLabel,
+  locale,
 }: {
   dict: Dict["blogPage"];
   readMoreLabel: string;
+  locale: Locale;
 }) {
   return (
     <main className="blog-page">
@@ -42,8 +49,24 @@ export function BlogPageContent({
         <div className="container-bp">
           <div className="bp-grid">
             {dict.articles.map((a) => (
-              <article key={a.slug} className="bp-card">
-                <ArticleMockup theme={a.theme as Theme} title={a.title} />
+              <Link
+                key={a.slug}
+                href={`${path("blog", locale)}/${a.slug}`}
+                className="bp-card"
+              >
+                {a.cover ? (
+                  <div className="bp-cover-thumb">
+                    <Image
+                      src={a.cover}
+                      alt=""
+                      width={800}
+                      height={500}
+                      className="bp-cover-img"
+                    />
+                  </div>
+                ) : (
+                  <ArticleMockup theme={a.theme as Theme} title={a.title} />
+                )}
                 <div className="bp-body">
                   <div className="bp-meta">
                     <span className="bp-cat">{a.category}</span>
@@ -52,12 +75,12 @@ export function BlogPageContent({
                   </div>
                   <h2 className="bp-title">{a.title}</h2>
                   <p className="bp-excerpt">{a.excerpt}</p>
-                  <a className="bp-read" href={`#${a.slug}`}>
+                  <span className="bp-read">
                     {readMoreLabel}
                     <ArrowRight />
-                  </a>
+                  </span>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </div>

@@ -22,5 +22,11 @@ export const metadata: Metadata = {
 };
 
 export default function BlogEs() {
-  return <BlogPageContent dict={dict.blogPage} readMoreLabel={dict.blogPage.readMore} />;
+  return (
+    <BlogPageContent
+      dict={dict.blogPage}
+      readMoreLabel={dict.blogPage.readMore}
+      locale="es"
+    />
+  );
 }
