@@ -107,8 +107,17 @@ export function AboutContent({ dict }: { dict: Dict["about"] }) {
               </div>
               <div className="ab-space-small">
                 <Image
-                  src="/team/team-working.png"
+                  src="/team/team-mug.png"
                   alt={dict.space.photoAlts[2]}
+                  width={800}
+                  height={520}
+                  className="ab-space-img"
+                />
+              </div>
+              <div className="ab-space-small">
+                <Image
+                  src="/team/team-working.png"
+                  alt={dict.space.photoAlts[3]}
                   width={800}
                   height={520}
                   className="ab-space-img"
