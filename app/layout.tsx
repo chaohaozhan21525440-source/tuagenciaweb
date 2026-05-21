@@ -22,8 +22,14 @@ export const metadata: Metadata = {
   description:
     "Agencia web para pymes y autónomos. Pack único, sin cuotas mensuales.",
   icons: {
-    icon: "/logo/favicon.png",
-    apple: "/logo/apple-touch-icon.png",
+    icon: [
+      { url: "/logo/favicon.png", type: "image/png", sizes: "32x32" },
+      { url: "/logo/icon-512.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: [
+      { url: "/logo/apple-touch-icon.png", sizes: "192x192" },
+    ],
+    shortcut: "/logo/favicon.png",
   },
 };
 
