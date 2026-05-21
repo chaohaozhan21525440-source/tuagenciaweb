@@ -59,21 +59,61 @@ export function AboutContent({ dict }: { dict: Dict["about"] }) {
           <div className="hero-media">
             <div className="photo">
               <Image
-                src="/team/group.jpg"
+                src="/team/team-working.png"
                 alt={dict.teamAlt}
                 width={1200}
                 height={930}
                 className="block h-full w-full object-cover"
                 priority
               />
-              <div className="watermark">
-                <Image src="/logo/logo-tw.png" alt="" aria-hidden width={220} height={220} />
-              </div>
             </div>
             <div className="testimonial">
               <div className="quote-mark">&ldquo;</div>
               <p>{dict.testimonial.body}</p>
               <div className="src">{dict.testimonial.src}</div>
+            </div>
+          </div>
+        </section>
+
+        <section className="ab-space">
+          <div className="ab-space-head">
+            <span className="pill blue">
+              <span className="dot" />
+              {dict.space.pill}
+            </span>
+            <h2 className="ab-space-h2">{dict.space.h2}</h2>
+            <p className="ab-space-sub">{dict.space.sub}</p>
+          </div>
+
+          <div className="ab-space-grid">
+            <div className="ab-space-big">
+              <Image
+                src="/team/team-office.png"
+                alt={dict.space.photoAlts[0]}
+                width={1200}
+                height={800}
+                className="ab-space-img"
+              />
+            </div>
+            <div className="ab-space-col">
+              <div className="ab-space-small">
+                <Image
+                  src="/team/team-hoodie.png"
+                  alt={dict.space.photoAlts[1]}
+                  width={800}
+                  height={520}
+                  className="ab-space-img"
+                />
+              </div>
+              <div className="ab-space-small">
+                <Image
+                  src="/team/team-working.png"
+                  alt={dict.space.photoAlts[2]}
+                  width={800}
+                  height={520}
+                  className="ab-space-img"
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -136,54 +176,6 @@ export function AboutContent({ dict }: { dict: Dict["about"] }) {
                 {dict.missionH2Post}
               </h2>
               <p>{dict.missionBody}</p>
-            </div>
-
-            <div className="illus">
-              <div className="win win-1">
-                <div className="bar">
-                  <i /><i /><i />
-                </div>
-                <div className="body">
-                  <Image className="tw-logo" src="/logo/logo-tw.png" alt="" aria-hidden width={120} height={36} />
-                  <div className="line" />
-                  <div className="line s" />
-                  <div className="cta" />
-                </div>
-              </div>
-              <div className="win win-2">
-                <div className="bar">
-                  <i /><i /><i />
-                </div>
-                <div className="body">
-                  <div className="cta" />
-                  <div className="line long" />
-                  <div className="line mid" />
-                  <div className="line long" />
-                  <div className="line mid" />
-                </div>
-              </div>
-              <div className="chart-card">
-                <div className="head">
-                  <div className="ico">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M3 17l6-6 4 4 8-8" />
-                      <path d="M14 7h7v7" />
-                    </svg>
-                  </div>
-                  <span className="label">{dict.chartLabel}</span>
-                  <span className="pct">+24%</span>
-                </div>
-                <svg className="spark" viewBox="0 0 200 60" width="100%" height="50">
-                  <defs>
-                    <linearGradient id="gg" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0" stopColor="#10B981" stopOpacity=".25" />
-                      <stop offset="1" stopColor="#10B981" stopOpacity="0" />
-                    </linearGradient>
-                  </defs>
-                  <path d="M0 45 C 25 40, 40 50, 65 35 S 110 10, 135 18 S 180 5, 200 8 L 200 60 L 0 60 Z" fill="url(#gg)" />
-                  <path d="M0 45 C 25 40, 40 50, 65 35 S 110 10, 135 18 S 180 5, 200 8" fill="none" stroke="#10B981" strokeWidth="2.2" strokeLinecap="round" />
-                </svg>
-              </div>
             </div>
           </div>
         </section>

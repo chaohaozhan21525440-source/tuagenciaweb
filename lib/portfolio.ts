@@ -9,6 +9,7 @@ export type Sector =
   | "architecture"
   | "marketing"
   | "events"
+  | "music"
   | "other";
 
 export type MockupTheme = "red" | "green" | "gold" | "graphite" | "blue";
@@ -67,6 +68,14 @@ export const PROJECTS: Project[] = [
     url: "https://ygeventsolutions.com/",
     image: "/portfolio/yg-event-solutions.png",
   },
+  {
+    slug: "melodify",
+    name: "Melodify",
+    sector: "music",
+    year: 2026,
+    url: "https://melodify.es",
+    image: "/portfolio/melodify.png",
+  },
 
   // ── Conceptuales ──────────────────────────────────────────
   {
@@ -116,6 +125,7 @@ export const FEATURED_SLUGS = [
   "reformlab-barcelona",
   "redline-marketing",
   "yg-event-solutions",
+  "melodify",
 ] as const;
 
 export function getFeatured(): Project[] {
