@@ -402,10 +402,10 @@ export const en: Dict = {
       ],
       navLabel: "ON THIS PAGE",
       navItems: [
-        { num: "01", id: "design",      title: "Custom web design",       anchor: "web-design" },
-        { num: "02", id: "shop",        title: "Online stores",           anchor: "online-stores" },
-        { num: "03", id: "seo",         title: "Technical SEO & content", anchor: "technical-seo" },
-        { num: "04", id: "maintenance", title: "Optional maintenance",    anchor: "maintenance" },
+        { num: "01", id: "design",      title: "Custom web design" },
+        { num: "02", id: "shop",        title: "Online stores" },
+        { num: "03", id: "seo",         title: "Technical SEO & content" },
+        { num: "04", id: "maintenance", title: "Optional maintenance" },
       ],
     },
     hubCards: {

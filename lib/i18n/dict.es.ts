@@ -402,10 +402,10 @@ export const es = {
       ],
       navLabel: "EN ESTA PÁGINA",
       navItems: [
-        { num: "01", id: "design",      title: "Diseño web a medida",     anchor: "diseno-web" },
-        { num: "02", id: "shop",        title: "Tiendas online",          anchor: "tiendas-online" },
-        { num: "03", id: "seo",         title: "SEO técnico y contenidos", anchor: "seo-tecnico" },
-        { num: "04", id: "maintenance", title: "Mantenimiento opcional",  anchor: "mantenimiento" },
+        { num: "01", id: "design",      title: "Diseño web a medida" },
+        { num: "02", id: "shop",        title: "Tiendas online" },
+        { num: "03", id: "seo",         title: "SEO técnico y contenidos" },
+        { num: "04", id: "maintenance", title: "Mantenimiento opcional" },
       ],
     },
     hubCards: {
