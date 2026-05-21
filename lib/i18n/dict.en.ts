@@ -437,6 +437,7 @@ export const en: Dict = {
     },
     detailNav: {
       hubLabel: "Services",
+      viewProject: "View project",
     },
     process: {
       eyebrow: "PROCESS",

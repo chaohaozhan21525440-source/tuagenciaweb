@@ -437,6 +437,7 @@ export const es = {
     },
     detailNav: {
       hubLabel: "Servicios",
+      viewProject: "Ver proyecto",
     },
     process: {
       eyebrow: "PROCESO",

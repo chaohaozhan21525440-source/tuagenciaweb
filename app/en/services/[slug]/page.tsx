@@ -46,6 +46,7 @@ export default async function ServiceDetailEn({ params }: Props) {
       service={service}
       locale="en"
       hubLabel={dict.servicesPage.detailNav.hubLabel}
+      viewProjectLabel={dict.servicesPage.detailNav.viewProject}
     />
   );
 }
