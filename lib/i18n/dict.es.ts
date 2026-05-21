@@ -347,8 +347,8 @@ export const es = {
         "Nuestro espacio de trabajo en Barcelona. Café, código y conversaciones que terminan en webs que convierten.",
       photoAlts: [
         "Oficina de Tuagenciaweb en Barcelona",
+        "Hoodie de Tuagenciaweb en la oficina",
         "Equipo de Tuagenciaweb trabajando",
-        "Taza de Tuagenciaweb sobre el escritorio",
       ],
     },
     valuesPill: "NUESTROS VALORES",

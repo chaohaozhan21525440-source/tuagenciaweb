@@ -347,8 +347,8 @@ export const en: Dict = {
         "Our workspace in Barcelona. Coffee, code, and conversations that turn into conversion-driven websites.",
       photoAlts: [
         "Tuagenciaweb office in Barcelona",
+        "Tuagenciaweb hoodie in the office",
         "Tuagenciaweb team at work",
-        "Tuagenciaweb mug on the desk",
       ],
     },
     valuesPill: "OUR VALUES",
