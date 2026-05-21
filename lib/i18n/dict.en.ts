@@ -698,7 +698,7 @@ export const en: Dict = {
           "We rank your website on Google and keep it alive after launch. Technical audit, optimized content, backups and hourly support — a single team for growth and details.",
         ctaPrimary: "Request a quote",
         ctaSecondary: "See all services",
-        heroImage: "",
+        heroImage: "/services/seo/hero.png",
       },
       valueProp: {
         eyebrow: "WHY IT MATTERS",
@@ -723,10 +723,10 @@ export const en: Dict = {
         eyebrow: "HOW WE WORK",
         h2: "Diagnosis, foundations, growth and support.",
         steps: [
-          { num: "01", title: "Initial audit",                       desc: "We detect technical errors, content gaps and concrete opportunities.",          image: "" },
-          { num: "02", title: "Technical fix + maintenance setup",  desc: "We fix indexing, speed and schema. We configure backups and monitoring.",        image: "" },
-          { num: "03", title: "Content + monitoring",                desc: "We produce the topics with the most potential while watching uptime and ranks.", image: "" },
-          { num: "04", title: "Ongoing optimization and support",    desc: "Monthly tweaks, reports and an hour bank available for whatever comes up.",      image: "" },
+          { num: "01", title: "Initial audit",                       desc: "We detect technical errors, content gaps and concrete opportunities.",          image: "/services/seo/auditoria.jpg" },
+          { num: "02", title: "Technical fix + maintenance setup",  desc: "We fix indexing, speed and schema. We configure backups and monitoring.",        image: "/services/seo/fixtecnico.png" },
+          { num: "03", title: "Content + monitoring",                desc: "We produce the topics with the most potential while watching uptime and ranks.", image: "/services/seo/contenidos.jpg" },
+          { num: "04", title: "Ongoing optimization and support",    desc: "Monthly tweaks, reports and an hour bank available for whatever comes up.",      image: "/services/seo/optimizacion.jpg" },
         ],
       },
       useCases: {

@@ -698,7 +698,7 @@ export const es = {
           "Posicionamos tu web en Google y la mantenemos viva después del lanzamiento. Auditoría técnica, contenidos optimizados, backups y soporte por horas — un solo equipo que se encarga del crecimiento y de los detalles.",
         ctaPrimary: "Solicitar presupuesto",
         ctaSecondary: "Ver todos los servicios",
-        heroImage: "",
+        heroImage: "/services/seo/hero.png",
       },
       valueProp: {
         eyebrow: "POR QUÉ IMPORTA",
@@ -723,10 +723,10 @@ export const es = {
         eyebrow: "CÓMO TRABAJAMOS",
         h2: "Diagnóstico, fundamentos, crecimiento y soporte.",
         steps: [
-          { num: "01", title: "Auditoría inicial",                 desc: "Detectamos errores técnicos, gaps de contenido y oportunidades concretas.",            image: "" },
-          { num: "02", title: "Fix técnico + setup mantenimiento", desc: "Arreglamos indexación, velocidad y schema. Configuramos backups y monitorización.",   image: "" },
-          { num: "03", title: "Contenidos + monitorización",       desc: "Producimos los temas con más potencial mientras vigilamos uptime y posiciones.",     image: "" },
-          { num: "04", title: "Optimización y soporte continuo",   desc: "Ajustes mensuales, reportes y bolsa de horas disponible para lo que surja.",          image: "" },
+          { num: "01", title: "Auditoría inicial",                 desc: "Detectamos errores técnicos, gaps de contenido y oportunidades concretas.",            image: "/services/seo/auditoria.jpg" },
+          { num: "02", title: "Fix técnico + setup mantenimiento", desc: "Arreglamos indexación, velocidad y schema. Configuramos backups y monitorización.",   image: "/services/seo/fixtecnico.png" },
+          { num: "03", title: "Contenidos + monitorización",       desc: "Producimos los temas con más potencial mientras vigilamos uptime y posiciones.",     image: "/services/seo/contenidos.jpg" },
+          { num: "04", title: "Optimización y soporte continuo",   desc: "Ajustes mensuales, reportes y bolsa de horas disponible para lo que surja.",          image: "/services/seo/optimizacion.jpg" },
         ],
       },
       useCases: {
