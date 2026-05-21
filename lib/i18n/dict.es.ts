@@ -93,9 +93,15 @@ export const es = {
       },
       {
         id: "seo",
-        title: "SEO técnico y mantenimiento",
-        body: "Posicionamos tu negocio en Google y cuidamos tu web mes a mes.",
-        bullets: ["Schema + Core Web Vitals", "Contenidos optimizados", "Bolsa de horas + backups"],
+        title: "SEO técnico y de contenidos",
+        body: "Posicionamos tu negocio en Google donde están tus clientes.",
+        bullets: ["Schema + sitemap", "Velocidad y Core Web Vitals", "Contenidos optimizados"],
+      },
+      {
+        id: "seo",
+        title: "Mantenimiento opcional",
+        body: "Si quieres, nos quedamos cerca después del lanzamiento. Sin obligación.",
+        bullets: ["Bolsa de horas prepago", "Backups y monitorización", "Soporte directo"],
       },
     ],
     seoRank: { label: "Posición media", source: "Google", rank: "1" },

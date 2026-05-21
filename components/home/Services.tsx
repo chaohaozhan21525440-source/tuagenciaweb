@@ -132,7 +132,7 @@ export function Services({ dict, locale }: { dict: Dict["services"]; locale: Loc
             const Icon = ICONS[i] ?? PencilIcon;
             return (
               <Link
-                key={s.id}
+                key={i}
                 href={servicePath(s.id as ServiceId, locale)}
                 className="card"
               >

@@ -94,9 +94,15 @@ export const en: Dict = {
       },
       {
         id: "seo",
-        title: "Technical SEO & maintenance",
-        body: "We rank your business on Google and look after the site month after month.",
-        bullets: ["Schema + Core Web Vitals", "Optimised content", "Hour bank + backups"],
+        title: "Technical & content SEO",
+        body: "We rank your business on Google where your customers are.",
+        bullets: ["Schema + sitemap", "Speed & Core Web Vitals", "Optimised content"],
+      },
+      {
+        id: "seo",
+        title: "Optional maintenance",
+        body: "If you want, we stick around after launch. No obligation.",
+        bullets: ["Prepaid hour bank", "Backups & monitoring", "Direct support"],
       },
     ],
     seoRank: { label: "Average position", source: "Google", rank: "1" },
