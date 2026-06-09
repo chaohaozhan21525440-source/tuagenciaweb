@@ -37,6 +37,14 @@ export type Project = {
 export const PROJECTS: Project[] = [
   // ── Real clients ──────────────────────────────────────────
   {
+    slug: "klippup",
+    name: "KlippUp",
+    sector: "marketing",
+    year: 2026,
+    url: "https://klippup.com/",
+    image: "/portfolio/klippup.png",
+  },
+  {
     slug: "chinaway",
     name: "Chinaway",
     sector: "other",
@@ -121,6 +129,7 @@ export const PROJECTS: Project[] = [
 ];
 
 export const FEATURED_SLUGS = [
+  "klippup",
   "chinaway",
   "reformlab-barcelona",
   "redline-marketing",
