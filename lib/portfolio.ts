@@ -53,14 +53,6 @@ export const PROJECTS: Project[] = [
     image: "/portfolio/chinaway.png",
   },
   {
-    slug: "reformlab-barcelona",
-    name: "Reformlab Barcelona",
-    sector: "reforms",
-    year: 2025,
-    url: "https://reformlab-barcelona.surge.sh",
-    image: "/portfolio/reformlab.png",
-  },
-  {
     slug: "redline-marketing",
     name: "Redline Marketing",
     sector: "marketing",
@@ -131,7 +123,6 @@ export const PROJECTS: Project[] = [
 export const FEATURED_SLUGS = [
   "klippup",
   "chinaway",
-  "reformlab-barcelona",
   "redline-marketing",
   "yg-event-solutions",
   "melodify",
