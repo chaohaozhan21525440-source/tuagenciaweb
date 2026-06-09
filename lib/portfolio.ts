@@ -45,6 +45,14 @@ export const PROJECTS: Project[] = [
     image: "/portfolio/klippup.png",
   },
   {
+    slug: "sushimaydo",
+    name: "Sushi Maydo",
+    sector: "restoration",
+    year: 2026,
+    url: "https://sushimaydo.es/",
+    image: "/portfolio/sushimaydo.png",
+  },
+  {
     slug: "chinaway",
     name: "Chinaway",
     sector: "other",
@@ -122,6 +130,7 @@ export const PROJECTS: Project[] = [
 
 export const FEATURED_SLUGS = [
   "klippup",
+  "sushimaydo",
   "chinaway",
   "redline-marketing",
   "yg-event-solutions",
