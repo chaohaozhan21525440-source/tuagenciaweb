@@ -31,13 +31,13 @@ export const metadata: Metadata = {
     "Agencia web para pymes y autónomos. Pack único, sin cuotas mensuales.",
   icons: {
     icon: [
-      { url: "/logo/favicon.png", type: "image/png", sizes: "32x32" },
-      { url: "/logo/icon-512.png", type: "image/png", sizes: "512x512" },
+      { url: "/logo/favicon.png?v=2", type: "image/png", sizes: "32x32" },
+      { url: "/logo/icon-512.png?v=2", type: "image/png", sizes: "512x512" },
     ],
     apple: [
-      { url: "/logo/apple-touch-icon.png", sizes: "192x192" },
+      { url: "/logo/apple-touch-icon.png?v=2", sizes: "192x192" },
     ],
-    shortcut: "/logo/favicon.png",
+    shortcut: "/logo/favicon.png?v=2",
   },
   openGraph: {
     siteName: "Tuagenciaweb",
