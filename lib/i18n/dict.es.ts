@@ -246,7 +246,7 @@ export const es = {
     tagline:
       "Diseñamos webs que convierten visitas en clientes. Páginas rápidas, modernas y optimizadas para SEO.",
     contactInfo: {
-      phone: "+34 613 65 42 73",
+      phone: "+34 632 18 93 29",
       address: "Calle Pelai 46, 08001 Barcelona",
       email: "hola@tuagenciaweb.es",
     },
@@ -551,7 +551,7 @@ export const es = {
       primary: "Solicitar presupuesto",
       whatsapp: "WhatsApp",
       whatsappHref:
-        "https://wa.me/34613654273?text=Hola%2C%20me%20interesa%20un%20presupuesto%20para%20mi%20web.",
+        "https://wa.me/34632189329?text=Hola%2C%20me%20interesa%20un%20presupuesto%20para%20mi%20web.",
       indicators: ["Respuesta en 24h", "Sin compromiso", "Presupuesto detallado"],
     },
   },

@@ -246,7 +246,7 @@ export const en: Dict = {
     tagline:
       "We design websites that turn visits into customers. Fast, modern, SEO-optimised pages.",
     contactInfo: {
-      phone: "+34 613 65 42 73",
+      phone: "+34 632 18 93 29",
       address: "Calle Pelai 46, 08001 Barcelona",
       email: "hola@tuagenciaweb.es",
     },
@@ -551,7 +551,7 @@ export const en: Dict = {
       primary: "Request a quote",
       whatsapp: "WhatsApp",
       whatsappHref:
-        "https://wa.me/34613654273?text=Hi%2C%20I%27m%20interested%20in%20a%20quote%20for%20my%20website.",
+        "https://wa.me/34632189329?text=Hi%2C%20I%27m%20interested%20in%20a%20quote%20for%20my%20website.",
       indicators: ["Reply in 24h", "No commitment", "Detailed quote"],
     },
   },

@@ -157,13 +157,13 @@ export function Hero({ dict, locale }: { dict: Dict["hero"]; locale: Locale }) {
                   </Link>
                   <div className="bottom">
                     <div className="social-buttons-container">
-                      <a className="social-button" href="https://wa.me/34613654273" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                      <a className="social-button" href="https://wa.me/34632189329" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
                         <svg className="svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11 11 0 0 0 3 17l-1 5 5-1a11 11 0 0 0 16.4-9.4 11 11 0 0 0-2.9-8.1Zm-8.5 17a9 9 0 0 1-4.6-1.3l-.3-.2-3 .6.6-3-.2-.3A9 9 0 1 1 12 20.5Zm5-6.7c-.3-.2-1.6-.8-1.9-.9-.2-.1-.4-.1-.6.1l-.9 1c-.1.2-.3.2-.5.1a7 7 0 0 1-3.6-3.2c-.1-.2 0-.4.1-.5l.4-.5.2-.3v-.4l-.9-2c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.8.4 3 3 0 0 0-1 2.2c0 1.3 1 2.5 1.1 2.7.1.2 1.9 2.9 4.6 4.1a16 16 0 0 0 1.5.6c.6.2 1.2.2 1.7.1.5-.1 1.6-.7 1.8-1.3.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z" /></svg>
                       </a>
                       <a className="social-button" href="mailto:info@tuagenciaweb.es" aria-label="Email">
                         <svg className="svg" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm0 2v.5l8 5 8-5V6H4zm0 2.5V18h16V8.5l-8 5-8-5z" /></svg>
                       </a>
-                      <a className="social-button" href="tel:+34613654273" aria-label="Teléfono">
+                      <a className="social-button" href="tel:+34632189329" aria-label="Teléfono">
                         <svg className="svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1 1 0 0 0-1.02.24l-2.2 2.2a15.05 15.05 0 0 1-6.59-6.59l2.2-2.2a1 1 0 0 0 .24-1.02A11.36 11.36 0 0 1 8.5 4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3.5a1 1 0 0 0-1-1z" /></svg>
                       </a>
                     </div>

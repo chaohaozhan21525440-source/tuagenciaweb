@@ -14,7 +14,7 @@ const BUSINESS_CORE = {
   logo: `${BASE_URL}/logo/icon-512.png`,
   image: `${BASE_URL}/og-image.png`,
   email: "info@tuagenciaweb.es",
-  telephone: "+34613654273",
+  telephone: "+34632189329",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Calle Pelai 46",

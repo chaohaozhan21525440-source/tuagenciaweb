@@ -14,7 +14,7 @@ const WhatsAppIcon = () => (
 );
 
 const WA_HREF =
-  "https://wa.me/34613654273?text=Hola%2C%20me%20interesa%20un%20presupuesto%20para%20mi%20web.";
+  "https://wa.me/34632189329?text=Hola%2C%20me%20interesa%20un%20presupuesto%20para%20mi%20web.";
 
 export function ServiceCta({
   data,
